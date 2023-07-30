@@ -1,6 +1,6 @@
 # Basic
 title: 刘浩
-subtitle: 个人博客
+subtitle: 山东大学 崇新学堂
 description: 欢迎来到我的个人博客~
 # 头像里面的标题
 avatarTitle: neverwin
@@ -20,12 +20,12 @@ comment:
 # Social
 social:
     weibo: 5366874726 
-    github: leopardpan
+    github: neverwinHao
     # zhihu: panpanleopard
     # juejin: xxx
     jianshu: 2ada30d8d0f7
     # twitter: 
-    mail: leopardpan@icloud.com
+    mail: L206457414@163.com
 
 
 # 百度统计 
@@ -66,7 +66,7 @@ blog_button:
 # Navigation buttons in the front page.s
 nav:
     - {title: 所有文章, description: archive, url: '/archive'}   
-    - {title: 标签, description: tags, url: '/tags'}      
+    - {title: 个人笔记, description: tags, url: '/tags'}      
     - {title: 技术支持, description: support, url: '/support'}      
     - {title: 关于我, description: about, url: '/about'}   
     
