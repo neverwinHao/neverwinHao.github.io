@@ -1,5 +1,12 @@
 # jupyter导入新的虚拟环境
 
+---
+layout: post
+title: jupyter导入新的虚拟环境
+date: 2023-12-07
+tags: markdown   
+---
+
 ## 第一步
 
 ```
