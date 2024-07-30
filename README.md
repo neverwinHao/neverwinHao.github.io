@@ -1,1 +1,1 @@
-[HomePage of HaoLiu](https://neverwinHao.github.io/HaoLiu.htm).
+[HomePage of HaoLiu](https://neverwinHao.github.io).
