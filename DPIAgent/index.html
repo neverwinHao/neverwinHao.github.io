@@ -1,0 +1,1704 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DPIAgent: Divide, Protocol, Isolate for Agentic Reproduction Test Generation.">
+  <title>DPIAgent | Divide, Protocol, Isolate</title>
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #ffffff;
+      --bg-soft: #f7f8fb;
+      --panel: #ffffff;
+      --line: #e6e8ef;
+      --line-dark: #d3d7e0;
+      --text: #0b1020;
+      --muted: #555a6a;
+      --faint: #8a90a0;
+      --accent: #0078d4;
+      --accent-deep: #005a9e;
+      --accent-mint: #00d4a8;
+      --ms-red: #f25022;
+      --ms-green: #7fba00;
+      --ms-yellow: #ffb900;
+      --green: #107c41;
+      --red: #d83b01;
+      --gradient-brand: linear-gradient(135deg, #0078d4 0%, #00d4a8 100%);
+      --gradient-title: linear-gradient(135deg, #0b1020 0%, #0078d4 62%, #00a887 100%);
+      --gradient-soft: radial-gradient(ellipse 80% 56% at 50% 0%, rgba(0, 120, 212, 0.08) 0%, rgba(0, 212, 168, 0.045) 44%, transparent 74%);
+      --shadow: 0 30px 60px -20px rgba(11, 16, 32, 0.22), 0 18px 36px -18px rgba(11, 16, 32, 0.15);
+      --shadow-sm: 0 10px 30px -12px rgba(11, 16, 32, 0.16), 0 4px 10px -4px rgba(11, 16, 32, 0.08);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes pulseLine {
+      0%, 100% { opacity: 0.45; transform: translateX(-50%) scaleX(0.92); }
+      50% { opacity: 1; transform: translateX(-50%) scaleX(1.08); }
+    }
+
+    @keyframes flowLine {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    @keyframes scanLens {
+      0%, 27%, 100% { transform: translateX(calc(var(--d-center) - 34px)) scale(1); }
+      33%, 60% { transform: translateX(calc(var(--p-center) - 34px)) scale(1); }
+      66%, 93% { transform: translateX(calc(var(--i-center) - 34px)) scale(1); }
+    }
+
+    @keyframes scanHandle {
+      0%, 27%, 100% { transform: translateX(calc(var(--d-center) + 18px)) rotate(45deg); }
+      33%, 60% { transform: translateX(calc(var(--p-center) + 18px)) rotate(45deg); }
+      66%, 93% { transform: translateX(calc(var(--i-center) + 18px)) rotate(45deg); }
+    }
+
+    @keyframes stageJump {
+      0%, 28%, 100% {
+        transform: translateY(0) scale(1);
+        color: var(--accent-deep);
+        background: #ffffff;
+        box-shadow: none;
+      }
+      8%, 16% {
+        transform: translateY(-8px) scale(1.14);
+        color: #ffffff;
+        background: var(--accent);
+        box-shadow: 0 12px 24px rgba(0, 120, 212, 0.20);
+      }
+    }
+
+    @keyframes labelCycle {
+      0%, 27% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      33%, 100% {
+        opacity: 0;
+        transform: translateY(8px) scale(0.98);
+      }
+    }
+
+    @keyframes ringPulse {
+      0%, 28%, 100% { opacity: 0; transform: scale(0.72); }
+      7%, 18% { opacity: 0.42; transform: scale(1.95); }
+    }
+
+    @keyframes lensSheen {
+      0%, 20%, 100% { transform: translateX(-140%) skewX(-18deg); opacity: 0; }
+      9% { opacity: 0.75; }
+      16% { transform: translateX(145%) skewX(-18deg); opacity: 0; }
+    }
+
+    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--gradient-soft), var(--bg);
+      background-repeat: no-repeat;
+      background-size: 100% 640px;
+      font-family: "Inter var", "Inter", "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-feature-settings: "cv11", "ss01", "ss03";
+      line-height: 1.58;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1120px, calc(100vw - 40px));
+      margin: 0 auto;
+    }
+
+    .container-narrow {
+      width: min(900px, calc(100vw - 40px));
+      margin: 0 auto;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid #ebeff5;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .ms-logo {
+      width: 22px;
+      height: 22px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      flex: 0 0 auto;
+    }
+
+    .ms-logo span:nth-child(1) { background: var(--ms-red); }
+    .ms-logo span:nth-child(2) { background: var(--ms-green); }
+    .ms-logo span:nth-child(3) { background: var(--accent); }
+    .ms-logo span:nth-child(4) { background: var(--ms-yellow); }
+
+    .brand em {
+      color: var(--muted);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .brand-mark {
+      width: 31px;
+      height: 31px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      background: var(--gradient-brand);
+      -webkit-text-fill-color: #ffffff;
+      font-family: "Inter var", "Inter", sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 21px;
+      color: var(--muted);
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero {
+      padding: 40px 0 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(to right, rgba(230, 232, 239, 0.55) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(230, 232, 239, 0.55) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse at 50% 0%, #000 28%, transparent 72%);
+      -webkit-mask-image: radial-gradient(ellipse at 50% 0%, #000 28%, transparent 72%);
+      opacity: 0.55;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .stage-mark {
+      --d-center: -144px;
+      --p-center: 0px;
+      --i-center: 144px;
+      width: min(560px, 78vw);
+      height: 138px;
+      margin: 0 auto 22px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      isolation: isolate;
+    }
+
+    .stage-mark::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 8px;
+      width: min(440px, 82vw);
+      height: 96px;
+      transform: translateX(-50%);
+      border: 1px solid rgba(0, 120, 212, 0.12);
+      border-radius: 22px;
+      background:
+        linear-gradient(90deg, rgba(0, 120, 212, 0.055), transparent 40%, rgba(0, 212, 168, 0.06)),
+        rgba(255, 255, 255, 0.62);
+      box-shadow: 0 22px 44px rgba(11, 16, 32, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.86);
+      z-index: -2;
+    }
+
+    .stage-mark::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 17px;
+      width: min(392px, 74vw);
+      height: 78px;
+      transform: translateX(-50%);
+      border-radius: 18px;
+      background-image:
+        linear-gradient(rgba(0, 120, 212, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 120, 212, 0.07) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent);
+      z-index: -1;
+    }
+
+    .stage-track {
+      width: min(360px, 72vw);
+      height: 4px;
+      background: linear-gradient(90deg, transparent 0%, rgba(0, 120, 212, 0.25) 16%, rgba(0, 212, 168, 0.9) 48%, rgba(255, 185, 0, 0.8) 64%, rgba(0, 120, 212, 0.28) 84%, transparent 100%);
+      background-size: 200% 100%;
+      position: absolute;
+      top: 46px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      box-shadow: 0 0 22px rgba(0, 120, 212, 0.28);
+      animation: flowLine 4.8s linear infinite, pulseLine 4.8s ease-in-out infinite;
+    }
+
+    .stage-lens {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      width: 68px;
+      height: 68px;
+      overflow: hidden;
+      border: 2px solid rgba(0, 120, 212, 0.7);
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.10) 54%, rgba(0, 120, 212, 0.035) 100%);
+      box-shadow: 0 14px 30px rgba(0, 120, 212, 0.18), 0 0 0 6px rgba(0, 120, 212, 0.045), inset 0 0 0 5px rgba(0, 212, 168, 0.05);
+      backdrop-filter: blur(2px);
+      animation: scanLens 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+      z-index: 1;
+    }
+
+    .stage-lens::before {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(0, 212, 168, 0.35);
+      border-radius: 13px;
+    }
+
+    .stage-lens::after {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: 0;
+      width: 28px;
+      height: 92px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.78), transparent);
+      animation: lensSheen 1.6s ease-in-out infinite;
+    }
+
+    .stage-handle {
+      position: absolute;
+      top: 70px;
+      left: 50%;
+      width: 26px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--accent);
+      transform: translateX(var(--d-center)) rotate(45deg);
+      transform-origin: left center;
+      box-shadow: 0 6px 14px rgba(0, 120, 212, 0.22);
+      animation: scanHandle 4.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+      z-index: 1;
+    }
+
+    .stage-node {
+      position: absolute;
+      top: 30px;
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line-dark);
+      background: #ffffff;
+      color: var(--accent-deep);
+      font-size: 13px;
+      font-weight: 800;
+      z-index: 3;
+      animation: stageJump 4.8s ease-in-out infinite;
+    }
+
+    .stage-node::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 1px solid rgba(0, 120, 212, 0.32);
+      animation: ringPulse 4.8s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    .stage-node-d { left: calc(50% + var(--d-center) - 17px); }
+    .stage-node-p { left: calc(50% + var(--p-center) - 17px); animation-delay: 1.6s; }
+    .stage-node-i { left: calc(50% + var(--i-center) - 17px); animation-delay: 3.2s; }
+    .stage-node-p::before { animation-delay: 1.6s; }
+    .stage-node-i::before { animation-delay: 3.2s; }
+
+    .stage-labels {
+      position: absolute;
+      left: 50%;
+      top: 92px;
+      width: min(390px, 78vw);
+      height: 40px;
+      transform: translateX(-50%);
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 780;
+      letter-spacing: -0.02em;
+    }
+
+    .stage-labels span {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      opacity: 0;
+      animation: labelCycle 4.8s ease-in-out infinite;
+    }
+
+    .stage-labels strong {
+      color: var(--accent-deep);
+      font-size: 18px;
+    }
+
+    .stage-labels em {
+      color: var(--muted);
+      font-style: normal;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .stage-labels span:nth-child(2) { animation-delay: 1.6s; }
+    .stage-labels span:nth-child(3) { animation-delay: 3.2s; }
+
+    .method-name {
+      display: inline-flex;
+      align-items: center;
+      min-height: 31px;
+      padding: 0 14px;
+      border: 1px solid rgba(0, 120, 212, 0.20);
+      border-radius: 999px;
+      color: var(--accent);
+      background: rgba(0, 120, 212, 0.075);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
+    .paper-title {
+      max-width: 1120px;
+      margin: 18px auto 0;
+      font-size: clamp(36px, 5.6vw, 60px);
+      font-weight: 780;
+      line-height: 1.01;
+      letter-spacing: -0.055em;
+      background: var(--gradient-title);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 9s ease-in-out infinite;
+      position: relative;
+    }
+
+    .paper-title::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -14px;
+      width: min(220px, 32%);
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, var(--accent), var(--accent-mint), transparent);
+      animation: pulseLine 3.4s ease-in-out infinite;
+    }
+
+    .author-line,
+    .affiliation-line {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px 15px;
+      max-width: 940px;
+      margin: 20px auto 0;
+      color: #333a46;
+      font-size: 15px;
+    }
+
+    .affiliation-line {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .note-line {
+      margin: 8px auto 0;
+      color: var(--faint);
+      font-size: 13px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 11px;
+      margin-top: 27px;
+    }
+
+    .project-button {
+      min-height: 40px;
+      padding: 0 16px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #ffffff;
+      background: #172033;
+      box-shadow: 0 8px 18px rgba(11, 16, 32, 0.10);
+      font-size: 14px;
+      font-weight: 650;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .project-button:hover {
+      transform: translateY(-1px);
+      background: var(--accent);
+      box-shadow: 0 12px 26px rgba(0, 120, 212, 0.18);
+    }
+
+    .project-button.disabled {
+      color: #67778a;
+      background: #edf2f7;
+      box-shadow: none;
+      cursor: default;
+    }
+
+    .project-button.disabled:hover {
+      transform: none;
+      color: #67778a;
+      background: #edf2f7;
+      box-shadow: none;
+    }
+
+    .project-button svg {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 auto;
+    }
+
+    .teaser {
+      padding: 30px 0 58px;
+    }
+
+    .image-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      background: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .image-panel img {
+      width: 100%;
+      border: 0;
+      border-radius: var(--radius-md);
+      background: #ffffff;
+    }
+
+    .teaser-caption,
+    .caption {
+      max-width: 900px;
+      margin: 15px auto 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .section {
+      padding: 66px 0;
+    }
+
+    .section-soft {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--bg-soft);
+    }
+
+    .content-block {
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(30px, 4.1vw, 46px);
+      font-weight: 760;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      color: var(--text);
+    }
+
+    .section-copy,
+    .section-intro {
+      max-width: 880px;
+      margin: 22px auto 0;
+      color: #3f4652;
+      font-size: 17px;
+      text-align: left;
+    }
+
+    .section-intro {
+      text-align: center;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .metric-card,
+    .feature-card,
+    .framework-note {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .metric-card {
+      min-height: 128px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .metric-card strong {
+      display: block;
+      color: var(--accent-deep);
+      font-size: 31px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .metric-card span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 31px;
+    }
+
+    .feature-card {
+      padding: 24px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: var(--gradient-brand);
+    }
+
+    .feature-card h3 {
+      margin: 0 0 10px;
+      color: var(--text);
+      font-size: 20px;
+      line-height: 1.24;
+    }
+
+    .feature-card p,
+    .framework-note p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .framework-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.28fr) minmax(260px, 0.72fr);
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 31px;
+    }
+
+    .framework-notes {
+      display: grid;
+      gap: 14px;
+    }
+
+    .framework-note {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .framework-note h3 {
+      margin: 0 0 7px;
+      color: var(--accent-deep);
+      font-size: 18px;
+    }
+
+    .results-layout,
+    .analysis-layout,
+    .selection-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+      gap: 18px;
+      align-items: start;
+      margin-top: 31px;
+    }
+
+    .analysis-layout {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .selection-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .table-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    th:first-child,
+    td:first-child {
+      text-align: left;
+      white-space: normal;
+    }
+
+    th {
+      color: #52616f;
+      background: #f4f7fb;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    tbody tr:last-child td { border-bottom: 0; }
+    .best { color: var(--green); font-weight: 750; }
+
+    .main-results-panel {
+      margin-top: 18px;
+      overflow-x: auto;
+    }
+
+    .main-results-panel table {
+      min-width: 860px;
+      table-layout: fixed;
+    }
+
+    .ablation-results-panel table {
+      min-width: 980px;
+      table-layout: auto;
+    }
+
+    .ablation-results-panel th,
+    .ablation-results-panel td {
+      width: auto;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .ablation-results-panel th:first-child,
+    .ablation-results-panel td:first-child {
+      width: 120px;
+      text-align: left;
+    }
+
+    .main-results-panel th,
+    .main-results-panel td {
+      vertical-align: middle;
+    }
+
+    .main-results-panel th:first-child,
+    .main-results-panel td[rowspan],
+    .main-results-panel .model-cell {
+      width: 168px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .main-results-panel th:nth-child(2),
+    .main-results-panel td[rowspan] + td,
+    .main-results-panel .model-cell + td,
+    .main-results-panel td:first-child:not([rowspan]):not(.model-cell) {
+      width: 190px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .main-results-panel th:nth-child(n+3),
+    .main-results-panel td:nth-child(n+3) {
+      width: 104px;
+      text-align: right;
+    }
+
+    .main-results-panel.ablation-results-panel th,
+    .main-results-panel.ablation-results-panel td {
+      width: auto;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .main-results-panel.ablation-results-panel th:first-child,
+    .main-results-panel.ablation-results-panel td:first-child {
+      width: 120px;
+      text-align: left;
+    }
+
+    .main-results-panel caption {
+      caption-side: top;
+      padding: 0 16px 14px;
+      color: #52616f;
+      font-size: 14px;
+      font-weight: 650;
+      line-height: 1.45;
+      text-align: left;
+    }
+
+    .model-pill {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 5px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      font-weight: 760;
+      white-space: nowrap;
+    }
+
+    .model-gpt4o { background: #e8f0fe; color: #174ea6; }
+    .model-claude37 { background: #f5e9dc; color: #7a3f12; }
+    .model-amazonq { background: #fff3cf; color: #7a4f00; }
+    .model-gemini25p { background: #e8f5e9; color: #176b36; }
+    .model-gpt5m { background: #eaf3ff; color: #005a9e; }
+    .model-gpt5 { background: #e8f0fe; color: #244c9a; }
+    .model-claude45 { background: #f1e7dc; color: #704214; }
+
+    .table-note {
+      margin: 10px 16px 16px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+      text-align: left;
+    }
+
+    .analysis-tabs {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 30px;
+      padding: 5px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .analysis-tab-row {
+      text-align: center;
+    }
+
+    #analysis .section-intro {
+      text-align: left;
+    }
+
+    #analysis .content-block {
+      text-align: left;
+    }
+
+    .analysis-tab {
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 16px;
+      color: #52616f;
+      background: transparent;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 720;
+      cursor: pointer;
+      transition: background 160ms ease, color 160ms ease, box-shadow 160ms ease;
+    }
+
+    .analysis-tab[aria-selected="true"] {
+      color: #ffffff;
+      background: var(--accent);
+      box-shadow: 0 8px 18px rgba(0, 120, 212, 0.22);
+    }
+
+    .analysis-panel {
+      display: none;
+      margin-top: 28px;
+      animation: panelFade 180ms ease;
+    }
+
+    .analysis-panel.active {
+      display: block;
+    }
+
+    .analysis-panel .section-intro {
+      margin-top: 0;
+      text-align: left;
+    }
+
+    .analysis-panel .section-intro + .section-intro {
+      margin-top: 16px;
+    }
+
+    .analysis-combo {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 18px;
+      align-items: start;
+      margin-top: 22px;
+    }
+
+    .analysis-combo .main-results-panel {
+      margin-top: 0;
+    }
+
+    .analysis-combo .image-panel {
+      height: 100%;
+    }
+
+    .compact-results-panel table {
+      min-width: 620px;
+    }
+
+    .main-results-panel.metric-results-panel table {
+      table-layout: auto;
+    }
+
+    .main-results-panel.metric-results-panel th,
+    .main-results-panel.metric-results-panel td {
+      width: auto;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .main-results-panel.metric-results-panel th:first-child,
+    .main-results-panel.metric-results-panel td:first-child {
+      width: 120px;
+      text-align: left;
+    }
+
+    @media (max-width: 900px) {
+      .analysis-combo {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @keyframes panelFade {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    pre {
+      margin: 30px 0 0;
+      padding: 22px;
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+      color: #e6edf3;
+      background: #111827;
+      font-size: 13px;
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      background: #ffffff;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-inner {
+        min-height: auto;
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .hero {
+        padding-top: 30px;
+      }
+
+      .stage-mark {
+        --d-center: -104px;
+        --i-center: 104px;
+      }
+
+      .metric-grid,
+      .feature-grid,
+      .framework-layout,
+      .results-layout,
+      .analysis-layout,
+      .selection-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 52px 0;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="DPIAgent project page">
+        <span class="ms-logo" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span>DPIAgent</span>
+      </a>
+      <div class="nav-links">
+        <a href="#abstract">Abstract</a>
+        <a href="#framework">Framework</a>
+        <a href="#results">Results</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#bibtex">BibTeX</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="stage-mark" aria-hidden="true">
+          <div class="stage-track"></div>
+          <div class="stage-lens"></div>
+          <div class="stage-handle"></div>
+          <div class="stage-node stage-node-d">D</div>
+          <div class="stage-node stage-node-p">P</div>
+          <div class="stage-node stage-node-i">I</div>
+          <div class="stage-labels">
+            <span><strong>Divide</strong><em>separate phases</em></span>
+            <span><strong>Protocol</strong><em>handoff diagnosis</em></span>
+            <span><strong>Isolate</strong><em>gate tools</em></span>
+          </div>
+        </div>
+        <h1 class="paper-title">DPIAgent: Agentic Reproduction Test Generation with Structured Phase Boundaries</h1>
+        <div class="author-line">
+          <span>Hao Liu<sup>1*,&dagger;</sup></span>
+          <span>Steven Liu<sup>1*,&dagger;</sup></span>
+          <span>Xin Zhang<sup>1*,&ddagger;</sup></span>
+          <span>Jane Luo<sup>1,&dagger;</sup></span>
+          <span>Yu Kang<sup>1</sup></span>
+          <span>Jie Wu<sup>1,2,&dagger;</sup></span>
+          <span>Fangkai Yang<sup>1</sup></span>
+          <span>Yangyu Huang<sup>1</sup></span>
+          <span>Pengfei Gao<sup>1</sup></span>
+          <span>Scarlett Li<sup>1</sup></span>
+          <span>Yan Lu<sup>1</sup></span>
+        </div>
+        <div class="affiliation-line">
+          <span><sup>1</sup>Microsoft</span>
+          <span><sup>2</sup>Tsinghua University</span>
+        </div>
+        <p class="note-line"><sup>*</sup>Equal contribution. <sup>&ddagger;</sup>Corresponding author. <sup>&dagger;</sup>Work done during internship at Microsoft Research Asia.</p>
+        <div class="cta-row">
+          <a class="project-button" href="../preprient/main.tex">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Z" stroke="currentColor" stroke-width="2"/><path d="M14 3v5h5M8 13h8M8 17h6" stroke="currentColor" stroke-width="2"/></svg>
+            <span>Paper</span>
+          </a>
+          <span class="project-button disabled" aria-disabled="true">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2.5M15 22v-3.9a3.4 3.4 0 0 0-.9-2.6c3-.3 6.1-1.5 6.1-6.7A5.2 5.2 0 0 0 18.8 5a4.8 4.8 0 0 0-.1-3.6s-1.1-.3-3.7 1.4a12.7 12.7 0 0 0-6.7 0C5.7 1.1 4.6 1.4 4.6 1.4A4.8 4.8 0 0 0 4.5 5a5.2 5.2 0 0 0-1.4 3.8c0 5.2 3.1 6.4 6.1 6.7a3.4 3.4 0 0 0-.9 2.6V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Code Coming Soon</span>
+          </span>
+          <a class="project-button" href="#results">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V5M4 19h16M8 16v-5M12 16V8M16 16v-9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <span>Results</span>
+          </a>
+          <a class="project-button" href="#bibtex">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 7h10M7 12h10M7 17h6M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2"/></svg>
+            <span>BibTeX</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="teaser">
+      <div class="container">
+        <div class="image-panel">
+          <img src="assets/teaser_barchart-refine.png" alt="Main result figure showing DPI's gains in success rate and agent steps across three backbones.">
+        </div>
+        <p class="teaser-caption">DPIAgent consistently improves reproduction success and TDD coverage over SWE-Agent across GPT-5-Mini, GPT-5, and Claude-Opus-4.5.</p>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="abstract">
+      <div class="container-narrow">
+        <div class="content-block">
+          <h2 class="section-title">Abstract</h2>
+          <div class="section-copy">
+            <p>Reproduction test generation, producing a failing-then-passing test that captures a reported bug, is a critical step in automated software engineering. Existing agentic methods treat this as a monolithic loop, despite the task inherently comprising two subtasks of distinct nature: diagnosing the root cause and writing a fail-to-pass test. Without explicit separation, the agent faces a compound objective with underspecified intermediate goals, leading to goal drift. We propose DPIAgent, a structured agentic framework built on three principles, Divide, Protocol, Isolate (DPI), that mitigates compound-objective ambiguity and goal drift: it Divides the task into single-objective phases of defect exploration and test generation; enforces a handoff Protocol that records the diagnosis and test plan, preventing context loss; and Isolates each phase's action space by tailoring the toolset to its task, preventing irrelevant tools from misleading execution. On SWT-Bench Verified, DPIAgent outperforms seven baselines across three backbone LLMs. With DPI alone it reaches 81.76% success rate on GPT-5, the highest reported among open-source methods, gaining up to 11.88 points over the strongest baseline on GPT-5-Mini; adding test selection further raises it to 86.17%. Our analysis shows that architectural structure and backbone capability are complementary axes rather than substitutes, demonstrating DPI's generalizability across model classes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="framework">
+      <div class="container">
+        <div class="content-block">
+          <h2 class="section-title">Framework</h2>
+          <p class="section-intro">DPIAgent turns reproduction test generation into a two-stage executable workflow: first explore the defect, then write a targeted fail-to-pass test from the handoff.</p>
+        </div>
+        <div class="framework-layout">
+          <div class="image-panel">
+            <img src="assets/pipeline-refine.png" alt="DPIAgent pipeline overview.">
+          </div>
+          <div class="framework-notes">
+            <div class="framework-note">
+              <h3>Exploration Phase</h3>
+              <p>The agent localizes the defect and collects evidence before any test edit is made.</p>
+            </div>
+            <div class="framework-note">
+              <h3>Structured Handoff</h3>
+              <p>The phase boundary records diagnosis, trigger condition, call path, oracle, and test plan.</p>
+            </div>
+            <div class="framework-note">
+              <h3>Test Generation Phase</h3>
+              <p>The agent writes the reproduction test under an edit-oriented toolset and validates the fail-to-pass signal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container">
+        <div class="content-block">
+          <h2 class="section-title">Results</h2>
+          <p class="section-intro">DPI improves both reproduction success and test quality. The gain is largest on weaker backbones, where structured decomposition compensates for limited self-correction.</p>
+        </div>
+        <div class="image-panel" style="margin-top: 31px;">
+          <img src="assets/teaser_barchart-refine.png" alt="DPIAgent result chart.">
+          <p class="caption">DPIAgent consistently improves success rate and TDD coverage over SWE-Agent across three backbones.</p>
+        </div>
+        <div class="table-panel main-results-panel">
+          <table>
+            <caption>Performance results on SWT-Bench Verified. Ours applies DPI on top of SWE-Agent, without test selection.</caption>
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Method</th>
+                <th>S &uarr;</th>
+                <th>&Delta;C &uarr;</th>
+                <th>Cov. &uarr;</th>
+                <th>TDD &uarr;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="model-cell" rowspan="4"><span class="model-pill model-gpt4o">GPT-4o</span></td>
+                <td>LIBRO<sup>&dagger;</sup></td>
+                <td>17.80</td>
+                <td>38.00</td>
+                <td>--</td>
+                <td>--</td>
+              </tr>
+              <tr>
+                <td>AssertFlip<sup>&dagger;</sup></td>
+                <td>45.50</td>
+                <td>47.40</td>
+                <td>--</td>
+                <td>--</td>
+              </tr>
+              <tr>
+                <td>Otter<sup>&dagger;</sup></td>
+                <td>31.60</td>
+                <td>37.60</td>
+                <td>74.59</td>
+                <td>25.78</td>
+              </tr>
+              <tr>
+                <td>Otter++<sup>&dagger;</sup></td>
+                <td>37.40</td>
+                <td>42.80</td>
+                <td>79.47</td>
+                <td>34.04</td>
+              </tr>
+              <tr>
+                <td class="model-cell"><span class="model-pill model-claude37">Claude-Sonnet-3.7</span></td>
+                <td>e-Otter++<sup>&dagger;</sup></td>
+                <td>62.10</td>
+                <td>62.30</td>
+                <td>85.73</td>
+                <td>56.80</td>
+              </tr>
+              <tr>
+                <td class="model-cell"><span class="model-pill model-amazonq">v20250405-dev</span></td>
+                <td>Amazon Q<sup>&dagger;</sup></td>
+                <td>51.00</td>
+                <td>57.40</td>
+                <td>70.04</td>
+                <td>42.72</td>
+              </tr>
+              <tr>
+                <td class="model-cell"><span class="model-pill model-gemini25p">Gemini-2.5-Pro</span></td>
+                <td>Echo<sup>&dagger;</sup></td>
+                <td>66.30</td>
+                <td>68.50</td>
+                <td>--</td>
+                <td>--</td>
+              </tr>
+              <tr>
+                <td class="model-cell" rowspan="8"><span class="model-pill model-gpt5m">GPT-5-Mini</span></td>
+                <td>TraeAgent</td>
+                <td>60.74</td>
+                <td>55.95</td>
+                <td>64.75</td>
+                <td>47.23</td>
+              </tr>
+              <tr>
+                <td>Mini-SWE-Agent</td>
+                <td>38.80</td>
+                <td>41.54</td>
+                <td>53.11</td>
+                <td>35.02</td>
+              </tr>
+              <tr>
+                <td>OpenHands<sup>&dagger;</sup></td>
+                <td>62.40</td>
+                <td>60.60</td>
+                <td>69.92</td>
+                <td>42.13</td>
+              </tr>
+              <tr>
+                <td>Claude Code</td>
+                <td>55.65</td>
+                <td>53.11</td>
+                <td>67.62</td>
+                <td>45.69</td>
+              </tr>
+              <tr>
+                <td>Aider</td>
+                <td>40.42</td>
+                <td>41.33</td>
+                <td>47.62</td>
+                <td>30.62</td>
+              </tr>
+              <tr>
+                <td>Terminus-2</td>
+                <td>42.73</td>
+                <td>50.39</td>
+                <td>60.21</td>
+                <td>35.04</td>
+              </tr>
+              <tr>
+                <td>SWE-Agent</td>
+                <td>60.12</td>
+                <td>64.78</td>
+                <td class="best">80.12</td>
+                <td>54.29</td>
+              </tr>
+              <tr>
+                <td class="best">Ours</td>
+                <td class="best">74.28</td>
+                <td class="best">65.51</td>
+                <td>75.97</td>
+                <td class="best">62.22</td>
+              </tr>
+              <tr>
+                <td class="model-cell" rowspan="8"><span class="model-pill model-gpt5">GPT-5</span></td>
+                <td>TraeAgent</td>
+                <td>69.98</td>
+                <td>61.77</td>
+                <td>75.80</td>
+                <td>60.59</td>
+              </tr>
+              <tr>
+                <td>Mini-SWE-Agent</td>
+                <td>54.27</td>
+                <td>44.80</td>
+                <td>54.69</td>
+                <td>41.94</td>
+              </tr>
+              <tr>
+                <td>OpenHands<sup>&dagger;</sup></td>
+                <td>79.80</td>
+                <td>66.30</td>
+                <td>68.85</td>
+                <td>45.79</td>
+              </tr>
+              <tr>
+                <td>Claude Code</td>
+                <td>72.51</td>
+                <td>64.63</td>
+                <td>78.50</td>
+                <td>59.94</td>
+              </tr>
+              <tr>
+                <td>Aider</td>
+                <td>34.87</td>
+                <td>39.33</td>
+                <td>46.84</td>
+                <td>26.59</td>
+              </tr>
+              <tr>
+                <td>Terminus-2</td>
+                <td>44.11</td>
+                <td>48.14</td>
+                <td>58.46</td>
+                <td>34.23</td>
+              </tr>
+              <tr>
+                <td>SWE-Agent</td>
+                <td>72.52</td>
+                <td>69.26</td>
+                <td>84.47</td>
+                <td>56.30</td>
+              </tr>
+              <tr>
+                <td class="best">Ours</td>
+                <td class="best">81.76</td>
+                <td class="best">70.95</td>
+                <td class="best">84.92</td>
+                <td class="best">68.02</td>
+              </tr>
+              <tr>
+                <td class="model-cell" rowspan="8"><span class="model-pill model-claude45">Claude-Opus-4.5</span></td>
+                <td>TraeAgent</td>
+                <td>77.60</td>
+                <td>60.25</td>
+                <td>72.22</td>
+                <td>59.75</td>
+              </tr>
+              <tr>
+                <td>Mini-SWE-Agent</td>
+                <td>76.67</td>
+                <td>67.91</td>
+                <td>82.37</td>
+                <td>66.85</td>
+              </tr>
+              <tr>
+                <td>OpenHands</td>
+                <td>73.90</td>
+                <td>57.17</td>
+                <td>71.69</td>
+                <td>55.34</td>
+              </tr>
+              <tr>
+                <td>Claude Code</td>
+                <td>73.21</td>
+                <td>59.48</td>
+                <td>70.70</td>
+                <td>55.35</td>
+              </tr>
+              <tr>
+                <td>Aider</td>
+                <td>48.26</td>
+                <td>51.29</td>
+                <td>59.59</td>
+                <td>35.97</td>
+              </tr>
+              <tr>
+                <td>Terminus-2</td>
+                <td>68.13</td>
+                <td>54.22</td>
+                <td>59.57</td>
+                <td>41.99</td>
+              </tr>
+              <tr>
+                <td>SWE-Agent</td>
+                <td>76.91</td>
+                <td>71.62</td>
+                <td>86.64</td>
+                <td>69.77</td>
+              </tr>
+              <tr>
+                <td class="best">Ours</td>
+                <td class="best">78.98</td>
+                <td class="best">71.74</td>
+                <td class="best">89.52</td>
+                <td class="best">73.77</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="table-note"><sup>&dagger;</sup> Results reported from the public leaderboard.</p>
+        </div>
+        <div class="content-block" style="margin-top: 48px;">
+          <h2 class="section-title">Test Selection</h2>
+          <p class="section-intro">We rank candidate tests using surrogate code patches. The selection curves compare ranked resolve rate with the pass@k oracle upper bound as the number of test candidates increases.</p>
+        </div>
+        <div class="selection-grid">
+          <div class="image-panel">
+            <img src="assets/passk_vs_selection_5mini.png" alt="GPT-5-Mini test selection curve.">
+            <p class="caption">GPT-5-Mini</p>
+          </div>
+          <div class="image-panel">
+            <img src="assets/passk_vs_selection_gpt5.png" alt="GPT-5 test selection curve.">
+            <p class="caption">GPT-5</p>
+          </div>
+          <div class="image-panel">
+            <img src="assets/passk_vs_selection_opus.png" alt="Claude-Opus-4.5 test selection curve.">
+            <p class="caption">Claude-Opus-4.5</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="analysis">
+      <div class="container">
+        <div class="content-block">
+          <h2 class="section-title">Analysis</h2>
+          <p class="section-intro">We analyze DPI from three angles: first-edit readiness before execution feedback, component ablations, and attribution against individual tool or prompt additions.</p>
+          <div class="analysis-tab-row">
+          <div class="analysis-tabs" role="tablist" aria-label="Analysis views">
+            <button class="analysis-tab" id="tab-readiness" type="button" role="tab" aria-selected="true" aria-controls="panel-readiness" data-panel="panel-readiness">Pre-feedback Readiness</button>
+            <button class="analysis-tab" id="tab-ablation" type="button" role="tab" aria-selected="false" aria-controls="panel-ablation" data-panel="panel-ablation">Component Ablation</button>
+            <button class="analysis-tab" id="tab-attribution" type="button" role="tab" aria-selected="false" aria-controls="panel-attribution" data-panel="panel-attribution">Tool Attribution</button>
+          </div>
+          </div>
+        </div>
+
+        <div class="analysis-panel" id="panel-ablation" role="tabpanel" aria-labelledby="tab-ablation">
+          <p class="section-intro">We remove the structured handoff summary, expose all tools across phases, and collapse the two-stage design into a single reactive loop to isolate Protocol, Isolate, and Divide.</p>
+          <div class="table-panel main-results-panel ablation-results-panel">
+            <table>
+              <caption>Ablation study of DPI principles on SWT-Bench. w/o Prot. removes the structured handoff summary, w/o Isol. exposes all tools across phases, and w/o Divd. collapses the two-stage design into a single reactive loop.</caption>
+              <thead>
+                <tr>
+                  <th rowspan="2">Metric</th>
+                  <th colspan="4"><span class="model-pill model-gpt5m">GPT-5-Mini</span></th>
+                  <th colspan="4"><span class="model-pill model-claude45">Claude-Opus-4.5</span></th>
+                </tr>
+                <tr>
+                  <th>Full</th>
+                  <th>w/o Prot.</th>
+                  <th>w/o Isol.</th>
+                  <th>w/o Divd.</th>
+                  <th>Full</th>
+                  <th>w/o Prot.</th>
+                  <th>w/o Isol.</th>
+                  <th>w/o Divd.</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>S &uarr;</td>
+                  <td class="best">74.28</td>
+                  <td>70.90</td>
+                  <td>72.70</td>
+                  <td>67.66</td>
+                  <td class="best">78.98</td>
+                  <td>75.51</td>
+                  <td>76.21</td>
+                  <td>69.05</td>
+                </tr>
+                <tr>
+                  <td>&Delta;C &uarr;</td>
+                  <td class="best">65.51</td>
+                  <td>63.71</td>
+                  <td>59.40</td>
+                  <td>54.59</td>
+                  <td class="best">71.74</td>
+                  <td>65.98</td>
+                  <td>64.03</td>
+                  <td>61.03</td>
+                </tr>
+                <tr>
+                  <td>Cov. &uarr;</td>
+                  <td class="best">75.97</td>
+                  <td>72.88</td>
+                  <td>67.80</td>
+                  <td>64.28</td>
+                  <td class="best">89.52</td>
+                  <td>79.27</td>
+                  <td>79.50</td>
+                  <td>75.96</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="analysis-panel" id="panel-attribution" role="tabpanel" aria-labelledby="tab-attribution">
+          <p class="section-intro">To disentangle architectural structure from implementation differences, we add individual mechanisms from DPI to the monolithic SWE-Agent baseline on GPT-5-Mini. The edit-tool trace shows that without the two-phase design, the agent begins invoking edit tools from the first steps, interleaving test writing with repository exploration.</p>
+          <p class="section-intro">Adding Search Code improves success rate but lowers TDD coverage, while a one-shot summary prompt or standalone transition tool does not reproduce DPI's gain. Applying the DPI phase structure with standard SWE-Agent tools achieves the largest improvement, showing that the executable phase boundary is the primary source of the gain.</p>
+          <div class="analysis-combo">
+            <div class="image-panel">
+              <img src="assets/edit-tool.png" alt="Edit tool usage rate across steps for Pipeline and w/o Divide variant.">
+              <p class="caption">Edit tool usage rate across steps for Pipeline and w/o Divide variant.</p>
+            </div>
+            <div class="table-panel main-results-panel compact-results-panel">
+              <table>
+                <caption>Attribution study on GPT-5-Mini. Tool Contribution rows add individual mechanisms to monolithic SWE-Agent; + DPI applies DPI phase structure with standard SWE-Agent tools and no Search Code.</caption>
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Config.</th>
+                    <th>S &uarr;</th>
+                    <th>TDD &uarr;</th>
+                    <th>&Delta;S</th>
+                    <th>&Delta;TDD</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Baseline</td>
+                    <td>SWE-Agent</td>
+                    <td>60.12</td>
+                    <td>54.29</td>
+                    <td>--</td>
+                    <td>--</td>
+                  </tr>
+                  <tr>
+                    <td>Tool Contribution</td>
+                    <td>+ Search Code</td>
+                    <td>67.66</td>
+                    <td>50.40</td>
+                    <td>+7.54</td>
+                    <td>-3.89</td>
+                  </tr>
+                  <tr>
+                    <td>Tool Contribution</td>
+                    <td>+ Summary Prompt</td>
+                    <td>54.96</td>
+                    <td>42.44</td>
+                    <td>-5.16</td>
+                    <td>-11.85</td>
+                  </tr>
+                  <tr>
+                    <td>Tool Contribution</td>
+                    <td>+ Transition Tool</td>
+                    <td>61.20</td>
+                    <td>48.68</td>
+                    <td>+1.08</td>
+                    <td>-5.61</td>
+                  </tr>
+                  <tr>
+                    <td class="best">DPI Contribution</td>
+                    <td class="best">+ DPI</td>
+                    <td class="best">72.97</td>
+                    <td class="best">56.41</td>
+                    <td class="best">+12.85</td>
+                    <td class="best">+2.12</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis-panel active" id="panel-readiness" role="tabpanel" aria-labelledby="tab-readiness">
+          <p class="section-intro">To characterize what phase structure contributes before execution feedback, we evaluate each trajectory's first test edit with an LLM-as-Judge. The judge scores two dimensions: Target Alignment, whether the test targets the correct code location, and Specification Completeness, whether the test captures the trigger condition, critical input, call path, oracle, and discriminative behavior. We mark a first edit as Ready only when both dimensions receive the maximum score. We instantiate the judge with GPT-5.6-Terra, run it three times independently, apply outcome-aware correction by marking an edit Ready if it already achieves F2P without post-first-edit modification, and report mean case counts.</p>
+          <p class="section-intro">DPI primarily improves pre-feedback test design quality, and this improvement is most critical for weaker models. DPI consistently lifts Ready counts across all three backbones; since Ready cases convert to F2P at over 90% across all configurations, increasing Ready directly expands the solved set. Weaker models benefit more because they rarely recover from Not-Ready first edits, whereas stronger models can self-correct more often, so DPI's new Ready cases overlap with cases they could already solve.</p>
+          <div class="table-panel main-results-panel">
+            <table>
+              <caption>Pre-feedback test design quality on SWT-Bench Verified. Entries are case counts; &Delta; rows are count differences.</caption>
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Config</th>
+                  <th>Target</th>
+                  <th>Spec</th>
+                  <th>Ready</th>
+                  <th>Ready F2P</th>
+                  <th>Total F2P</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="model-cell" rowspan="3"><span class="model-pill model-gpt5m">GPT-5-Mini</span></td>
+                  <td>SWE-Agent</td>
+                  <td>319.7&plusmn;0.6</td>
+                  <td>269.7&plusmn;1.2</td>
+                  <td>269.7&plusmn;1.2</td>
+                  <td>243.7&plusmn;1.5</td>
+                  <td>273.7&plusmn;1.5</td>
+                </tr>
+                <tr>
+                  <td>DPI</td>
+                  <td>370.0&plusmn;1.7</td>
+                  <td>332.7&plusmn;4.2</td>
+                  <td>332.7&plusmn;4.2</td>
+                  <td>311.0&plusmn;2.0</td>
+                  <td>331.0&plusmn;2.0</td>
+                </tr>
+                <tr>
+                  <td class="best">&Delta;</td>
+                  <td class="best">+50.7&plusmn;1.2</td>
+                  <td class="best">+63.0&plusmn;3.5</td>
+                  <td class="best">+63.0&plusmn;3.5</td>
+                  <td class="best">+67.3&plusmn;1.5</td>
+                  <td class="best">+57.7&plusmn;1.2</td>
+                </tr>
+                <tr>
+                  <td class="model-cell" rowspan="3"><span class="model-pill model-gpt5">GPT-5</span></td>
+                  <td>SWE-Agent</td>
+                  <td>369.3&plusmn;1.5</td>
+                  <td>310.0&plusmn;4.0</td>
+                  <td>310.0&plusmn;4.0</td>
+                  <td>284.7&plusmn;3.5</td>
+                  <td>316.7&plusmn;2.5</td>
+                </tr>
+                <tr>
+                  <td>DPI</td>
+                  <td>405.0&plusmn;1.7</td>
+                  <td>377.7&plusmn;1.5</td>
+                  <td>377.7&plusmn;1.5</td>
+                  <td>352.7&plusmn;0.6</td>
+                  <td>355.7&plusmn;0.6</td>
+                </tr>
+                <tr>
+                  <td class="best">&Delta;</td>
+                  <td class="best">+35.3&plusmn;1.2</td>
+                  <td class="best">+67.7&plusmn;4.7</td>
+                  <td class="best">+67.7&plusmn;4.7</td>
+                  <td class="best">+68.0&plusmn;3.6</td>
+                  <td class="best">+38.7&plusmn;2.9</td>
+                </tr>
+                <tr>
+                  <td class="model-cell" rowspan="3"><span class="model-pill model-claude45">Claude-Opus-4.5</span></td>
+                  <td>SWE-Agent</td>
+                  <td>365.0&plusmn;0.0</td>
+                  <td>294.7&plusmn;0.6</td>
+                  <td>294.7&plusmn;0.6</td>
+                  <td>269.7&plusmn;1.5</td>
+                  <td>332.7&plusmn;0.6</td>
+                </tr>
+                <tr>
+                  <td>DPI</td>
+                  <td>392.3&plusmn;0.6</td>
+                  <td>365.0&plusmn;2.6</td>
+                  <td>365.0&plusmn;2.6</td>
+                  <td>338.3&plusmn;1.2</td>
+                  <td>344.3&plusmn;1.2</td>
+                </tr>
+                <tr>
+                  <td class="best">&Delta;</td>
+                  <td class="best">+27.3&plusmn;0.6</td>
+                  <td class="best">+70.3&plusmn;2.1</td>
+                  <td class="best">+70.3&plusmn;2.1</td>
+                  <td class="best">+68.7&plusmn;0.6</td>
+                  <td class="best">+11.7&plusmn;1.5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="bibtex">
+      <div class="container-narrow">
+        <div class="content-block">
+          <h2 class="section-title">BibTeX</h2>
+        </div>
+        <pre><code>@misc{liu2026dpiagent,
+  title  = {DPIAgent: Divide, Protocol, Isolate for Agentic Reproduction Test Generation},
+  author = {Liu, Hao and Liu, Steven and Zhang, Xin and Luo, Jane and Kang, Yu and Wu, Jie and Yang, Fangkai and Huang, Yangyu and Gao, Pengfei and Li, Scarlett and Lu, Yan},
+  year   = {2026}
+}</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">DPIAgent project page preview. Microsoft.</div>
+  </footer>
+  <script>
+    document.querySelectorAll(".analysis-tab").forEach((tab) => {
+      tab.addEventListener("click", () => {
+        document.querySelectorAll(".analysis-tab").forEach((item) => {
+          item.setAttribute("aria-selected", String(item === tab));
+        });
+        document.querySelectorAll(".analysis-panel").forEach((panel) => {
+          panel.classList.toggle("active", panel.id === tab.dataset.panel);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
