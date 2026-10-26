@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="See how DPIAgent separates defect exploration from test generation through an explicit diagnosis handoff and phase-specific tools.">
+  <title>Two phases, one handoff | DPIAgent</title>
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="../assets/theme.css">
+  <link rel="stylesheet" href="demo.css">
+  <script src="demo.js" defer></script>
+</head>
+<body>
+  <nav class="topbar"><a class="brand" href="../" target="_top"><span class="ms-logo" aria-hidden="true"><span></span><span></span><span></span><span></span></span> DPIAgent <span class="brand-sub">/ Method in motion</span></a><a href="../#demo" target="_top">Back to paper ↗</a></nav>
+  <main>
+    <header class="intro"><div><p class="eyebrow">THE METHOD, MADE VISIBLE</p><h1>Two phases.<br><span>One explicit handoff.</span></h1><p>First understand the defect. Then write the reproduction test.<br>The diagnosis crosses the boundary. The toolset changes with the objective.</p></div><div class="principles"><p><b>D</b><span><strong>Divide</strong>Separate the two objectives.</span></p><p><b>P</b><span><strong>Protocol</strong>Carry the diagnosis into the test plan.</span></p><p><b>I</b><span><strong>Isolate</strong>Tailor the tools to each phase.</span></p></div></header>
+    <section class="workspace" aria-label="DPIAgent two-phase replay">
+      <div class="casebar"><span class="case-label">EXPLORE A CASE</span><div id="tasks" class="tasks"></div><label class="config-label">Model<select id="config" aria-label="Model and configuration" disabled></select></label></div>
+      <div class="run-heading"><div><span id="task-id" class="mono muted">Loading trajectories…</span><h2 id="task-title">Opening the trace archive</h2><div class="run-meta"><span id="step-total">— tool calls</span><span id="run-status">Recorded run</span><button id="issue-toggle" aria-expanded="false" aria-controls="issue">Read issue ↗</button><button id="patch-toggle" disabled aria-expanded="false" aria-controls="patch-panel">Final test patch ↗</button></div></div><button id="watch-handoff" disabled>Watch the handoff <span>→</span></button></div>
+      <pre id="issue" class="document" hidden></pre>
+      <div id="patch-panel" class="document" hidden><p>Final submitted test artifact from the recorded run.</p><pre id="patch"></pre><button id="download-patch">Download .patch ↓</button></div>
+      <div id="error" role="alert" hidden></div>
+      <div id="method-board" class="method-board" data-stage="exploration">
+        <section id="exploration-pane" class="phase-pane exploration-pane active" aria-label="Phase 1: defect exploration">
+          <header class="pane-heading"><span class="phase-number">01</span><div><p>DEFECT EXPLORATION</p><h3>Why does it fail?</h3></div><span id="exploration-status" class="pane-status">READY</span></header>
+          <div class="tool-scope"><span class="scope-label">PHASE 1 TOOLSET</span><div id="exploration-tools" class="tool-chips"><span data-rpg>RPG graph tools</span><span>Code inspection</span><span>Shell</span></div><p id="exploration-scope">Investigate the code and reproduce the reported behavior.</p></div>
+          <div id="exploration-stream" class="phase-stream" tabindex="0" aria-label="Exploration actions and output"></div>
+          <footer class="pane-footer"><span id="exploration-count">0 calls</span><button class="phase-jump" data-phase="exploration" disabled>Replay exploration ↗</button></footer>
+        </section>
+        <section id="protocol-pane" class="protocol-pane" aria-label="Handoff protocol between the two phases">
+          <div class="transfer-line" aria-hidden="true"><span></span><b>→</b><span></span></div>
+          <header class="protocol-heading"><p>THE PHASE BOUNDARY</p><h3>Diagnosis → test plan</h3><code>ready_to_write_test</code></header>
+          <div id="protocol-state" class="protocol-state" role="status">Awaiting the exploration summary</div>
+          <div id="protocol-fields" class="protocol-fields"></div>
+          <details id="handoff-record" class="handoff-record" hidden><summary>Read the recorded handoff</summary><pre id="handoff-original"></pre><h4>Recorded tool transition</h4><pre id="tool-transition"></pre><details class="full-handoff"><summary>Full tool call & reasoning</summary><div id="handoff-events"></div></details></details>
+          <div class="boundary-note"><span class="boundary-icon">⇄</span><div><strong id="boundary-title">A deliberate change of objective</strong><p id="boundary-copy">Phase 2 begins after the recorded handoff. The summary keeps the diagnosis available to test writing.</p></div></div>
+          <button id="continue-handoff" hidden>Continue to phase 2 →</button>
+          <button class="phase-jump protocol-jump" data-phase="handoff" disabled>Inspect this handoff ↗</button>
+        </section>
+        <section id="generation-pane" class="phase-pane generation-pane" aria-label="Phase 2: reproduction test generation">
+          <header class="pane-heading"><span class="phase-number">02</span><div><p>TEST GENERATION</p><h3>Make the failure testable.</h3></div><span id="generation-status" class="pane-status">WAITING</span></header>
+          <div class="tool-scope"><span class="scope-label">PHASE 2 TOOLSET</span><div id="generation-tools" class="tool-chips"><span>Test editor</span><span>Shell</span><span>generate_test</span></div><p id="generation-scope">Write tests using the diagnosis and test plan from phase 1.</p></div>
+          <details id="carried-plan" class="carried-plan" hidden><summary>Incoming test plan <span>from phase 1 ↗</span></summary><p id="carried-plan-text"></p></details>
+          <div id="generation-stream" class="phase-stream" tabindex="0" aria-label="Test generation actions and output"></div>
+          <footer class="pane-footer"><span id="generation-count">0 calls</span><button class="phase-jump" data-phase="generation" disabled>Replay test generation ↗</button></footer>
+        </section>
+      </div>
+      <div class="playback">
+        <div class="playback-status"><span id="play-state" role="status">LOADING</span><span id="current-tool">Waiting for trace</span><label><input type="checkbox" id="follow" checked> Follow output</label></div>
+        <div id="phase-track" class="phase-track" aria-label="Replay phase distribution"></div>
+        <div class="scrubber"><span id="position" class="mono">00 / 00</span><input id="seek" type="range" min="0" max="1" value="0" step="any" aria-label="Trajectory progress" disabled><span id="percent" class="mono">0%</span></div>
+        <div class="controls"><button id="play" class="primary" disabled>▶ Start exploration</button><button id="restart" disabled title="Replay from the beginning">↺ Restart</button><button id="prev" disabled aria-label="Previous step">←</button><button id="next" disabled aria-label="Next step">→</button><label class="speed-label">Speed <select id="speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option><option value="8">8×</option></select></label><label class="pause-label"><input type="checkbox" id="pause-handoff" checked> Pause at the handoff</label><span class="playback-note">Recorded run · illustrative timing</span></div>
+      </div>
+      <details class="step-index"><summary>Browse the recorded steps <span id="index-count"></span></summary><div id="steps"></div></details>
+      <footer class="trace-footer"><span>Real trajectories from agent-traces.zip · 4 cases, 16 runs</span><button id="download-trace" disabled>Download trace ↓</button></footer>
+    </section>
+    <p class="footnote">A submitted test patch is an agent artifact, not an independent evaluation result.</p>
+  </main>
+</body>
+</html>

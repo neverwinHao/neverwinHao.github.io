@@ -7,33 +7,9 @@
   <title>DPIAgent | Divide, Protocol, Isolate</title>
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="assets/theme.css">
   <style>
-    :root {
-      color-scheme: light;
-      --bg: #ffffff;
-      --bg-soft: #f7f8fb;
-      --panel: #ffffff;
-      --line: #e6e8ef;
-      --line-dark: #d3d7e0;
-      --text: #0b1020;
-      --muted: #555a6a;
-      --faint: #8a90a0;
-      --accent: #0078d4;
-      --accent-deep: #005a9e;
-      --accent-mint: #00d4a8;
-      --ms-red: #f25022;
-      --ms-green: #7fba00;
-      --ms-yellow: #ffb900;
-      --green: #107c41;
-      --red: #d83b01;
-      --gradient-brand: linear-gradient(135deg, #0078d4 0%, #00d4a8 100%);
-      --gradient-title: linear-gradient(135deg, #0b1020 0%, #0078d4 62%, #00a887 100%);
-      --gradient-soft: radial-gradient(ellipse 80% 56% at 50% 0%, rgba(0, 120, 212, 0.08) 0%, rgba(0, 212, 168, 0.045) 44%, transparent 74%);
-      --shadow: 0 30px 60px -20px rgba(11, 16, 32, 0.22), 0 18px 36px -18px rgba(11, 16, 32, 0.15);
-      --shadow-sm: 0 10px 30px -12px rgba(11, 16, 32, 0.16), 0 4px 10px -4px rgba(11, 16, 32, 0.08);
-      --radius-lg: 18px;
-      --radius-md: 12px;
-    }
+
 
     @keyframes shimmer {
       0% { background-position: 0% 50%; }
@@ -109,7 +85,7 @@
       background: var(--gradient-soft), var(--bg);
       background-repeat: no-repeat;
       background-size: 100% 640px;
-      font-family: "Inter var", "Inter", "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: var(--font-sans);
       font-feature-settings: "cv11", "ss01", "ss03";
       line-height: 1.58;
       -webkit-font-smoothing: antialiased;
@@ -1053,6 +1029,7 @@
       <div class="nav-links">
         <a href="#abstract">Abstract</a>
         <a href="#framework">Framework</a>
+        <a href="#demo">Demo</a>
         <a href="#results">Results</a>
         <a href="#analysis">Analysis</a>
         <a href="#bibtex">BibTeX</a>
@@ -1097,6 +1074,10 @@
         </div>
         <p class="note-line"><sup>*</sup>Equal contribution. <sup>&ddagger;</sup>Corresponding author. <sup>&dagger;</sup>Work done during internship at Microsoft Research Asia.</p>
         <div class="cta-row">
+          <a class="project-button" href="#demo">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <span>Live Demo</span>
+          </a>
           <!-- TODO: replace with arXiv link once available -->
           <a class="project-button" href="paper/DPI-Preprint-Final.pdf">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h8l4 4v14H6V3Z" stroke="currentColor" stroke-width="2"/><path d="M14 3v5h5M8 13h8M8 17h6" stroke="currentColor" stroke-width="2"/></svg>
@@ -1163,6 +1144,17 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="demo" style="scroll-margin-top:90px">
+      <div class="container">
+        <div class="content-block">
+          <h2 class="section-title">Two phases. One explicit handoff.</h2>
+          <p class="section-intro">Watch DPIAgent explore a defect, pass its diagnosis through a structured protocol, and switch tools to write the reproduction test. Two distinct objectives, connected by the evidence.</p>
+          <p style="margin:18px 0 26px;font-size:14px;color:var(--accent)"><a href="demo/" target="_blank" rel="noopener">Open the full trajectory explorer ↗</a></p>
+        </div>
+        <iframe id="trajectory-demo" src="demo/?embed=1" title="DPIAgent interactive trajectory replay" loading="lazy" style="display:block;width:100%;height:860px;border:0;border-radius:12px"></iframe>
       </div>
     </section>
 
@@ -1700,6 +1692,12 @@
     <div class="container">DPIAgent project page preview. Microsoft.</div>
   </footer>
   <script>
+    window.addEventListener('message', function (event) {
+      var frame = document.getElementById('trajectory-demo');
+      if (event.origin !== location.origin || event.source !== frame.contentWindow || event.data?.type !== 'dpi-demo-height') return;
+      var height = Number(event.data.height);
+      if (Number.isFinite(height) && height >= 300 && height <= 4000) frame.style.height = Math.ceil(height) + 'px';
+    });
     document.querySelectorAll(".analysis-tab").forEach((tab) => {
       tab.addEventListener("click", () => {
         document.querySelectorAll(".analysis-tab").forEach((item) => {

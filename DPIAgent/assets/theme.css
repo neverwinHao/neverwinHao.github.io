@@ -1,0 +1,28 @@
+/* Shared visual tokens for the paper page and trajectory demo. */
+:root {
+  color-scheme: light;
+  --font-sans: "Inter var", "Inter", "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --bg: #ffffff;
+  --bg-soft: #f7f8fb;
+  --panel: #ffffff;
+  --line: #e6e8ef;
+  --line-dark: #d3d7e0;
+  --text: #0b1020;
+  --muted: #555a6a;
+  --faint: #8a90a0;
+  --accent: #0078d4;
+  --accent-deep: #005a9e;
+  --accent-mint: #00d4a8;
+  --ms-red: #f25022;
+  --ms-green: #7fba00;
+  --ms-yellow: #ffb900;
+  --green: #107c41;
+  --red: #d83b01;
+  --gradient-brand: linear-gradient(135deg, #0078d4 0%, #00d4a8 100%);
+  --gradient-title: linear-gradient(135deg, #0b1020 0%, #0078d4 62%, #00a887 100%);
+  --gradient-soft: radial-gradient(ellipse 80% 56% at 50% 0%, rgba(0, 120, 212, 0.08) 0%, rgba(0, 212, 168, 0.045) 44%, transparent 74%);
+  --shadow: 0 30px 60px -20px rgba(11, 16, 32, 0.22), 0 18px 36px -18px rgba(11, 16, 32, 0.15);
+  --shadow-sm: 0 10px 30px -12px rgba(11, 16, 32, 0.16), 0 4px 10px -4px rgba(11, 16, 32, 0.08);
+  --radius-lg: 18px;
+  --radius-md: 12px;
+}

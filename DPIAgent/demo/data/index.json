@@ -1,0 +1,119 @@
+{
+  "configs": {
+    "gpt-5-no-selection": "GPT-5 · DPI",
+    "gpt-5-mini-no-selection": "GPT-5 Mini · DPI",
+    "opus-4.5-no-selection": "Claude Opus 4.5 · DPI",
+    "gpt-5-selection": "GPT-5 · DPI + test selection"
+  },
+  "tasks": [
+    {
+      "id": "astropy__astropy-12907",
+      "repo": "astropy/astropy",
+      "runs": [
+        {
+          "config": "gpt-5-no-selection",
+          "file": "astropy__astropy-12907--gpt-5-no-selection.json",
+          "steps": 13
+        },
+        {
+          "config": "gpt-5-mini-no-selection",
+          "file": "astropy__astropy-12907--gpt-5-mini-no-selection.json",
+          "steps": 14
+        },
+        {
+          "config": "opus-4.5-no-selection",
+          "file": "astropy__astropy-12907--opus-4.5-no-selection.json",
+          "steps": 23
+        },
+        {
+          "config": "gpt-5-selection",
+          "file": "astropy__astropy-12907--gpt-5-selection.json",
+          "steps": 12
+        }
+      ],
+      "title": "Modeling's `separability_matrix` does not compute separability correctly for nested CompoundModels"
+    },
+    {
+      "id": "django__django-11099",
+      "repo": "django/django",
+      "runs": [
+        {
+          "config": "gpt-5-no-selection",
+          "file": "django__django-11099--gpt-5-no-selection.json",
+          "steps": 12
+        },
+        {
+          "config": "gpt-5-mini-no-selection",
+          "file": "django__django-11099--gpt-5-mini-no-selection.json",
+          "steps": 24
+        },
+        {
+          "config": "opus-4.5-no-selection",
+          "file": "django__django-11099--opus-4.5-no-selection.json",
+          "steps": 18
+        },
+        {
+          "config": "gpt-5-selection",
+          "file": "django__django-11099--gpt-5-selection.json",
+          "steps": 18
+        }
+      ],
+      "title": "UsernameValidator allows trailing newline in usernames"
+    },
+    {
+      "id": "scikit-learn__scikit-learn-13439",
+      "repo": "scikit-learn/scikit-learn",
+      "runs": [
+        {
+          "config": "gpt-5-no-selection",
+          "file": "scikit-learn__scikit-learn-13439--gpt-5-no-selection.json",
+          "steps": 12
+        },
+        {
+          "config": "gpt-5-mini-no-selection",
+          "file": "scikit-learn__scikit-learn-13439--gpt-5-mini-no-selection.json",
+          "steps": 12
+        },
+        {
+          "config": "opus-4.5-no-selection",
+          "file": "scikit-learn__scikit-learn-13439--opus-4.5-no-selection.json",
+          "steps": 17
+        },
+        {
+          "config": "gpt-5-selection",
+          "file": "scikit-learn__scikit-learn-13439--gpt-5-selection.json",
+          "steps": 12
+        }
+      ],
+      "title": "Pipeline should implement __len__"
+    },
+    {
+      "id": "psf__requests-5414",
+      "repo": "psf/requests",
+      "runs": [
+        {
+          "config": "gpt-5-no-selection",
+          "file": "psf__requests-5414--gpt-5-no-selection.json",
+          "steps": 17
+        },
+        {
+          "config": "gpt-5-mini-no-selection",
+          "file": "psf__requests-5414--gpt-5-mini-no-selection.json",
+          "steps": 11
+        },
+        {
+          "config": "opus-4.5-no-selection",
+          "file": "psf__requests-5414--opus-4.5-no-selection.json",
+          "steps": 29
+        },
+        {
+          "config": "gpt-5-selection",
+          "file": "psf__requests-5414--gpt-5-selection.json",
+          "steps": 17
+        }
+      ],
+      "title": "Getting http://.example.com raises UnicodeError"
+    }
+  ],
+  "archive_trajectory_count": 1731
+}
