@@ -36,7 +36,11 @@ python scripts/record_demo.py
 python scripts/build_demo_pptx.py
 ```
 
-Requires Python Playwright/Chromium, python-pptx and ffmpeg. The second command
+Requires Python Playwright/Chromium, Pillow, python-pptx and ffmpeg. The second command
 writes `../DPIAgent-Demo.pptx` with its editable cover and three embedded videos.
 To sync later user edits to the cover, run `python scripts/build_demo_cover.py`
 before recording and render the extracted cover to a 1600 × 900 PNG.
+
+GIF export reserves 64 palette entries for colored cover artwork and up to 191
+for the replay, with a transparent entry for compression. Static logos keep their
+colors instead of competing with changing terminal output for the whole palette.

@@ -12,10 +12,42 @@ from pathlib import Path
 import subprocess
 import tempfile
 from playwright.sync_api import sync_playwright
+from PIL import Image
 
 
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def export_gif(video, gif, work):
+    """Reserve colors for static cover logos before quantizing the full replay."""
+    def ffmpeg(*args):
+        subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y',*map(str,args)],check=True)
+    cover = work/'cover-frame.png'
+    ffmpeg('-ss',1,'-i',video,'-vf','scale=960:-1:flags=lanczos','-frames:v',1,cover)
+    with Image.open(cover) as frame:
+        pixels = [rgb for rgb in frame.convert('RGB').getdata() if max(rgb)-min(rgb)>12]
+    # Keep small colored logos from losing their palette entries to white/text.
+    pixels = pixels or [(255,255,255)]
+    strip = Image.new('RGB',(256,math.ceil(len(pixels)/256)),'white')
+    strip.putdata(pixels)
+    strip.save(work/'cover-colors.png')
+    ffmpeg('-i',work/'cover-colors.png','-vf','palettegen=max_colors=64:reserve_transparent=0','-frames:v',1,work/'cover-palette.png')
+    ffmpeg('-i',video,'-vf','fps=15,scale=960:-1:flags=lanczos,palettegen=stats_mode=diff:max_colors=191:reserve_transparent=0','-frames:v',1,work/'trace-palette.png')
+    colors = []
+    for name in ['cover-palette.png','trace-palette.png']:
+        with Image.open(work/name) as palette:
+            for color in palette.convert('RGBA').getdata():
+                if color[3] and color not in colors:
+                    colors.append(color)
+    assert len(colors)<=255
+    colors += [(255,255,255,255)]*(255-len(colors))
+    colors.append((0,0,0,0))
+    palette = Image.new('RGBA',(16,16));palette.putdata(colors)
+    palette.save(work/'gif-palette.png')
+    ffmpeg('-i',video,'-i',work/'gif-palette.png','-filter_complex',
+           '[0:v]fps=15,scale=960:-1:flags=lanczos[v];[v][1:v]paletteuse=dither=none:diff_mode=rectangle',
+           '-loop',0,gif)
 
 
 def main():
@@ -75,13 +107,13 @@ def main():
             browser.close()
         print('Encoding GIF…', flush=True)
         gif = work/'dpiagent-demo.gif'
-        subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(video),'-filter_complex','fps=15,scale=960:-1:flags=lanczos,split[a][b];[a]palettegen=stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=3:diff_mode=rectangle','-loop','0',str(gif)],check=True)
+        export_gif(video, gif, work)
         probe = json.loads(subprocess.check_output(['ffprobe','-v','error','-show_format','-show_streams','-of','json',str(video)]))
         stream = next(s for s in probe['streams'] if s['codec_type']=='video')
         assert stream['width']==1600 and stream['height']==900 and stream['codec_name']=='h264'
         assert abs(float(probe['format']['duration'])-duration) < .15
-        sources = ['DPIAgent/assets/demo/dpiagent-cover.png','DPIAgent/assets/demo/dpiagent-cover.pptx','DPIAgent/showcase/index.html','DPIAgent/showcase/showcase.js','DPIAgent/showcase/showcase.css','DPIAgent/demo/demo.js','DPIAgent/demo/demo.css','DPIAgent/demo/data/index.json']
-        metadata = {'playback_rate':playback_rate,'duration_seconds':float(probe['format']['duration']),'frames':count,'fps':args.fps,'resolution':[1600,900],'audio':False,'gif':{'resolution':[960,540],'fps':15,'speed':1},'presentation':'https://neverwinhao.github.io/DPIAgent/showcase/','capture_url':url,'scenes':scenes,'recordings':recordings,'source_files':{s:sha(repo/s) for s in sources},'browser_errors':errors}
+        sources = ['scripts/record_demo.py','DPIAgent/assets/demo/dpiagent-cover.png','DPIAgent/assets/demo/dpiagent-cover.pptx','DPIAgent/showcase/index.html','DPIAgent/showcase/showcase.js','DPIAgent/showcase/showcase.css','DPIAgent/demo/demo.js','DPIAgent/demo/demo.css','DPIAgent/demo/data/index.json']
+        metadata = {'playback_rate':playback_rate,'duration_seconds':float(probe['format']['duration']),'frames':count,'fps':args.fps,'resolution':[1600,900],'audio':False,'gif':{'resolution':[960,540],'fps':15,'speed':1,'palette':'cover-colors-64+trajectory-191','dither':'none'},'presentation':'https://neverwinhao.github.io/DPIAgent/showcase/','capture_url':url,'scenes':scenes,'recordings':recordings,'source_files':{s:sha(repo/s) for s in sources},'browser_errors':errors}
         metadata['artifacts'] = {name:{'bytes':(work/name).stat().st_size,'sha256':sha(work/name)} for name in ['dpiagent-demo.mp4','dpiagent-demo.gif','dpiagent-demo-poster.png']}
         (work/'recording.json').write_text(json.dumps(metadata,indent=2)+'\n')
         for name in ['dpiagent-demo.mp4','dpiagent-demo.gif','dpiagent-demo-poster.png','recording.json']:

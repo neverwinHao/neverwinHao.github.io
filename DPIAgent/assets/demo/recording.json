@@ -14,7 +14,9 @@
       540
     ],
     "fps": 15,
-    "speed": 1
+    "speed": 1,
+    "palette": "cover-colors-64+trajectory-191",
+    "dither": "none"
   },
   "presentation": "https://neverwinhao.github.io/DPIAgent/showcase/",
   "capture_url": "http://localhost:8765/DPIAgent/showcase/?capture=1",
@@ -190,7 +192,8 @@
     "DPIAgent/showcase/showcase.css": "d6e8e18f1374162f58f0aa81a2613142716c1eb7a90f97ddb428226d7aab400c",
     "DPIAgent/demo/demo.js": "ef58e50c9195db7fc8d8c73914a1ceefb7dc2a009d91cbefabf6abcc6d5d6e6b",
     "DPIAgent/demo/demo.css": "ad6250835d424f8127088faf7f34d64ff41da6ff570709d1ad0e4f842b8c0e27",
-    "DPIAgent/demo/data/index.json": "71c6c046453751610c56b49cb2e54bbff75705d2a0a29310f19eb0d12e532b56"
+    "DPIAgent/demo/data/index.json": "71c6c046453751610c56b49cb2e54bbff75705d2a0a29310f19eb0d12e532b56",
+    "scripts/record_demo.py": "dd1cb241e18a22e4ff0382a5d613693d48ece68607b3c78efd506f38f50b6322"
   },
   "browser_errors": [],
   "artifacts": {
@@ -199,8 +202,8 @@
       "sha256": "7e0a5d6d14abd37ca03780080d06ac78a76b597eb6265ec9db9cf2cde815488d"
     },
     "dpiagent-demo.gif": {
-      "bytes": 27939663,
-      "sha256": "53f3634a0a94a647dcc62fc441cd0aa71273690fa0a60545262b6650da98e7b5"
+      "bytes": 23577531,
+      "sha256": "7a05d1986218d680e45e188e9c84d6b43e31d5eeb594fe4d47f35037f618f764"
     },
     "dpiagent-demo-poster.png": {
       "bytes": 91612,
