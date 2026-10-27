@@ -79,7 +79,7 @@ def main():
         stream = next(s for s in probe['streams'] if s['codec_type']=='video')
         assert stream['width']==1600 and stream['height']==900 and stream['codec_name']=='h264'
         assert abs(float(probe['format']['duration'])-duration) < .15
-        sources = ['DPIAgent/showcase/index.html','DPIAgent/showcase/showcase.js','DPIAgent/showcase/showcase.css','DPIAgent/demo/demo.js','DPIAgent/demo/demo.css','DPIAgent/demo/data/index.json']
+        sources = ['DPIAgent/assets/demo/dpiagent-cover.png','DPIAgent/assets/demo/dpiagent-cover.pptx','DPIAgent/showcase/index.html','DPIAgent/showcase/showcase.js','DPIAgent/showcase/showcase.css','DPIAgent/demo/demo.js','DPIAgent/demo/demo.css','DPIAgent/demo/data/index.json']
         metadata = {'duration_seconds':float(probe['format']['duration']),'frames':count,'fps':args.fps,'resolution':[1600,900],'audio':False,'gif':{'resolution':[960,540],'fps':15,'speed':1},'presentation':'https://neverwinhao.github.io/DPIAgent/showcase/','capture_url':url,'scenes':scenes,'recordings':recordings,'source_files':{s:sha(repo/s) for s in sources},'browser_errors':errors}
         metadata['artifacts'] = {name:{'bytes':(work/name).stat().st_size,'sha256':sha(work/name)} for name in ['dpiagent-demo.mp4','dpiagent-demo.gif','dpiagent-demo-poster.png']}
         (work/'recording.json').write_text(json.dumps(metadata,indent=2)+'\n')

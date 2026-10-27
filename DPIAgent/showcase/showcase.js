@@ -4,9 +4,9 @@ const capture = new URLSearchParams(location.search).has('capture');
 document.documentElement.classList.toggle('capture', capture);
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const chapters = [
-  {task:'sphinx-doc__sphinx-9367', config:'gpt-5-mini-no-selection', model:'GPT-5 Mini', title:'Single-element tuples', repo:'Sphinx', inspect:2, edit:6},
-  {task:'matplotlib__matplotlib-26113', config:'gpt-5-no-selection', model:'GPT-5', title:'Hexbin count threshold', repo:'Matplotlib', inspect:5, edit:14},
-  {task:'pydata__xarray-7233', config:'opus-4.5-no-selection', model:'Claude Opus 4.5', title:'Coordinate preservation', repo:'xarray', inspect:9, edit:14},
+  {task:'sphinx-doc__sphinx-9367', config:'gpt-5-mini-no-selection', model:'GPT-5 Mini', title:'Single-element tuples', repo:'Sphinx', explore:[{step:2,needle:'visit_Tuple'},{step:3,needle:'test_unparse'},{step:4,needle:'INPUT'}], edit:6},
+  {task:'matplotlib__matplotlib-26113', config:'gpt-5-no-selection', model:'GPT-5', title:'Hexbin count threshold', repo:'Matplotlib', explore:[{step:3,needle:'hexbin'},{step:5,needle:'len(acc)'},{step:9,needle:'mincnt',command:'h1 ='}], edit:14},
+  {task:'pydata__xarray-7233', config:'opus-4.5-no-selection', model:'Claude Opus 4.5', title:'Coordinate preservation', repo:'xarray', explore:[{step:1,needle:'construct'},{step:9,needle:'_from_temp_dataset'},{step:10,needle:'Is day a coord?',command:'result ='}], edit:14},
 ];
 let slides = [], active = -1, currentTime = 0, playing = false, last = 0, raf = 0;
 let ready = false;
@@ -27,9 +27,9 @@ function addSlide(kind, seconds, chapter, markup) {
   return slide;
 }
 
-addSlide('cover',2,null,'<h1>DPIAgent</h1><p>Reproduction test generation</p>');
+addSlide('cover',4,null,'<img class="cover-image" src="../assets/demo/dpiagent-cover.png" alt="DPIAgent: Agentic Reproduction Test Generation with Structured Phase Boundaries — authors and affiliations">');
 chapters.forEach(chapter=>{
-  const demo=addSlide('demo',13,chapter);
+  const demo=addSlide('demo',28,chapter);
   chapter.frame=el('iframe','replay-frame');chapter.frame.title=`${chapter.repo}: original ${chapter.model} recording`;
   chapter.frame.tabIndex=-1;chapter.frame.inert=true;
   chapter.frame.src=`../demo/?presentation=1&task=${chapter.task}&config=${chapter.config}`;
@@ -50,6 +50,8 @@ main{width:100%!important;max-width:none!important;margin:0!important;padding:0!
 .phase-stream{height:auto!important;flex:1!important;min-height:0!important;padding:14px!important}
 .event pre{font-size:14px!important;line-height:1.65!important}.event .output{max-height:280px!important}
 .event .command{max-height:215px!important;overflow:auto!important}
+#exploration-stream .event{display:none!important}
+#exploration-stream .event.presentation-selected{display:block!important;margin-top:0!important}
 .protocol-pane{height:700px!important;padding-top:8px!important}.protocol-heading h3{font-size:19px!important}
 .protocol-heading{margin-bottom:9px!important}.transfer-line{margin-bottom:10px!important}
 .protocol-state{min-height:30px!important;font-size:11px!important;margin-bottom:8px!important}
@@ -77,18 +79,24 @@ addEventListener('resize',fit);fit();
 function seekReplay(chapter, elapsed) {
   const api=chapter.api, {starts,durations,handoffIndex,total}=api.timing;
   const fail=api.recording.validation[0].step-1;
-  if (elapsed>=9.8) { api.seek(total); return 'evaluation'; }
-  let index,progress,focus;
-  if(elapsed<1.5){index=chapter.inspect-1;progress=.95;focus='inspect';}
-  else if(elapsed<6.2){index=handoffIndex;progress=(elapsed-1.5)/4.7;focus='handoff';}
-  else if(elapsed<7.6){index=chapter.edit-1;progress=Math.min(.9999,.6+(elapsed-6.2)/1.8);focus='edit';}
-  else {index=fail;progress=Math.min(.9999,.7+(elapsed-7.6)/2);focus='failure';}
-  api.seek(starts[index]+durations[index]*Math.min(.9999,progress));
-  if(progress>=.94 && focus!=='handoff'){
-    const needle=focus==='failure'?'AssertionError':focus==='edit'?'assert':chapter.repo==='Sphinx'?'visit_Tuple':chapter.repo==='Matplotlib'?'len(acc)':'construct';
-    api.focus(index+1,needle,focus==='edit'?'command':'output');
-  }
-  return 'trajectory';
+  const reading=elapsed<12;
+  const selected=chapter.explore[reading?Math.min(2,Math.floor(elapsed/4)):2];
+  let index,progress;
+  if(reading){index=selected.step-1;progress=.9999;}
+  else if(elapsed<18){index=handoffIndex;progress=(elapsed-12)/6;}
+  else if(elapsed<21){index=chapter.edit-1;progress=.9999;}
+  else {index=fail;progress=.9999;}
+  api.seek(elapsed>=24?total:starts[index]+durations[index]*Math.min(.9999,progress));
+  // Keep one original exploration action visible, including during the handoff.
+  // Selecting the action does not alter its command or observation.
+  const doc=chapter.frame.contentDocument;
+  doc.querySelectorAll('#exploration-stream .event').forEach(event=>{
+    event.classList.toggle('presentation-selected',Number(event.querySelector('.event-heading>span').textContent)===selected.step);
+  });
+  api.focus(selected.step,selected.needle);
+  if(selected.command)api.focus(selected.step,selected.command,'command');
+  if(elapsed>=18 && elapsed<24)api.focus(index+1,elapsed<21?'assert':'AssertionError',elapsed<21?'command':'output');
+  return elapsed>=24?'evaluation':'trajectory';
 }
 
 function render(seconds) {
@@ -149,6 +157,7 @@ async function init(){
     chapter.api.seek(0);
   }));
   await document.fonts.ready;
+  await Promise.all([...document.querySelectorAll('.cover-image')].map(img=>img.decode()));
   ready=true;$('play').disabled=false;setPlaying(false);render(.4);
 }
 window.dpiShowcase={get ready(){return ready;},duration, get slides(){return slides.map(s=>({kind:s.kind,start:s.start,duration:s.duration,task:s.chapter?.task,config:s.chapter?.config}));},get recordings(){return chapters.map(c=>c.api.recording);},seek(t){setPlaying(false);render(t);}};

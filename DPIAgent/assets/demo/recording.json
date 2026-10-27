@@ -1,6 +1,6 @@
 {
-  "duration_seconds": 41.0,
-  "frames": 820,
+  "duration_seconds": 88.0,
+  "frames": 1760,
   "fps": 20,
   "resolution": [
     1600,
@@ -21,28 +21,28 @@
     {
       "kind": "cover",
       "start": 0,
-      "duration": 2,
+      "duration": 4,
       "task": null,
       "config": null
     },
     {
       "kind": "demo",
-      "start": 2,
-      "duration": 13,
+      "start": 4,
+      "duration": 28,
       "task": "sphinx-doc__sphinx-9367",
       "config": "gpt-5-mini-no-selection"
     },
     {
       "kind": "demo",
-      "start": 15,
-      "duration": 13,
+      "start": 32,
+      "duration": 28,
       "task": "matplotlib__matplotlib-26113",
       "config": "gpt-5-no-selection"
     },
     {
       "kind": "demo",
-      "start": 28,
-      "duration": 13,
+      "start": 60,
+      "duration": 28,
       "task": "pydata__xarray-7233",
       "config": "opus-4.5-no-selection"
     }
@@ -178,9 +178,11 @@
     }
   ],
   "source_files": {
+    "DPIAgent/assets/demo/dpiagent-cover.png": "f0004b247e6c5220a54ea0536a983a73544b7df6fc0f35fc9f37fa29adabd6d9",
+    "DPIAgent/assets/demo/dpiagent-cover.pptx": "177f5091a93243aed158689d299b58f79382ddb7000565d2583ca39a2bc683cb",
     "DPIAgent/showcase/index.html": "cf930a2fa01504a28b72e10dd9a185bb12f63186060c291d064cdd0180c260da",
-    "DPIAgent/showcase/showcase.js": "1470645fa104885f0c42fad4c3698aace0a5f4508e3fe9780c959634de890e57",
-    "DPIAgent/showcase/showcase.css": "4c85a4919756c7c8b5fbe133360f07dd9f5d0ab60677dc64dd15436b378f220b",
+    "DPIAgent/showcase/showcase.js": "dddf432d7add8fbf1866ea998105e812864849859c3c2b56c5f9a53739dc249e",
+    "DPIAgent/showcase/showcase.css": "d6e8e18f1374162f58f0aa81a2613142716c1eb7a90f97ddb428226d7aab400c",
     "DPIAgent/demo/demo.js": "ef58e50c9195db7fc8d8c73914a1ceefb7dc2a009d91cbefabf6abcc6d5d6e6b",
     "DPIAgent/demo/demo.css": "ad6250835d424f8127088faf7f34d64ff41da6ff570709d1ad0e4f842b8c0e27",
     "DPIAgent/demo/data/index.json": "71c6c046453751610c56b49cb2e54bbff75705d2a0a29310f19eb0d12e532b56"
@@ -188,16 +190,16 @@
   "browser_errors": [],
   "artifacts": {
     "dpiagent-demo.mp4": {
-      "bytes": 2525885,
-      "sha256": "6c898f96a445e2c9c0a43a2f8d9ffa49d10485b65979af02107ff7b2330928e6"
+      "bytes": 2291522,
+      "sha256": "1d91094ed24fb52a57f732b4b6402f455015aa0b2b5b177aaa5474914ffc9b0f"
     },
     "dpiagent-demo.gif": {
-      "bytes": 5505586,
-      "sha256": "01aaeabfaf5e533de59c7a1a290b001573853b3d91fe09920f1f61a987e4fe7a"
+      "bytes": 4895416,
+      "sha256": "5656c903fce7cccf231683562557c8bc396f64eee2f108b940dd97c6a3d50319"
     },
     "dpiagent-demo-poster.png": {
-      "bytes": 18725,
-      "sha256": "faa3d36279576f39f2e93b35aed699f76e2d61ce7c9ac35f708200a9b7cd166f"
+      "bytes": 76542,
+      "sha256": "387cd73eddc0ef9ecd7bf10fce9f16d3c15aea5ebd67f49a58726d8a39c3bde7"
     }
   }
 }

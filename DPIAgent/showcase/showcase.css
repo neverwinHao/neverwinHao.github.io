@@ -13,9 +13,8 @@ button:focus-visible,a:focus-visible,input:focus-visible { outline:3px solid var
 .title-rule,.brand-square,.progress-track,#slide-number { display:none; }
 .slide { position:absolute; inset:115px 56px 70px; visibility:hidden; pointer-events:none; }
 .slide.active { visibility:visible; pointer-events:auto; }
-.cover { display:flex; flex-direction:column; align-items:center; justify-content:center; padding-bottom:45px; }
-.cover h1 { font-size:88px; font-weight:600; letter-spacing:-4px; margin:0 0 17px; }
-.cover p { font-size:24px; color:var(--muted); margin:0; }
+.cover { inset:0; }
+.cover-image { display:block; width:1600px; height:900px; }
 .on-cover .masthead,.on-cover .stage-footer { visibility:hidden; }
 .replay-frame { display:block; width:1488px; height:700px; border:0; }
 .stage-footer { position:absolute; left:56px; right:56px; bottom:33px; font-size:15px; color:var(--muted); }
