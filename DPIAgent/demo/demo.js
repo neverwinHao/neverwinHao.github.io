@@ -64,14 +64,18 @@ function stepKind(step) {
   if (step.tool === 'submit') return ['artifact', 'Submission'];
   if (step.tool === 'str_replace_editor' && /^(?:str_replace_editor\s+)?(?:create|insert|str_replace)\b/.test(step.action)) return ['edit', 'Edit'];
   if (step.tool.startsWith('rpg_') || step.tool === 'str_replace_editor') return ['inspect', 'Inspect'];
-  if (step.tool === 'bash') return ['execute', 'Execute'];
+  if (step.tool === 'bash') return ({
+    inspect: ['inspect', 'Inspect'],
+    edit: ['edit', 'Edit'],
+    edit_execute: ['execute', 'Edit + execute'],
+  })[step.activity] || ['execute', 'Execute'];
   return ['inspect', 'Annotation'];
 }
 
 function buildKeyMoments() {
   const entries = [];
   const add = (index, label, kind) => { if (index >= 0) entries.push({index, label, kind}); };
-  add(data.steps.findIndex(s => s.tool.startsWith('rpg_') || s.tool === 'str_replace_editor'), 'Code inspection', 'inspect');
+  add(data.steps.findIndex(s => stepKind(s)[0] === 'inspect' && s.tool !== 'agent'), 'Code inspection', 'inspect');
   add(handoffIndex, 'Diagnosis handoff', 'handoff');
   add(data.steps.findIndex(s => s.phase === 'generation' && stepKind(s)[0] === 'edit'), 'Test edit', 'edit');
   add(data.steps.findIndex(s => s.phase === 'generation' && s.tool === 'bash' && /\b(pytest|runtests\.py|unittest)\b|\bdjango test\b/.test(s.action)), 'Test execution', 'execute');

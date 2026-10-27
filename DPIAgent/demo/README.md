@@ -3,7 +3,7 @@
 Static HTML/CSS/JavaScript; no build step, runtime API, or JavaScript dependencies.
 The paper and demo share visual tokens in `assets/theme.css` and load the same
 Inter stylesheet (with system font fallbacks).
-The model bar switches between Claude Opus 4.5, GPT-5 and GPT-5 Mini.
+The model bar lists GPT-5 Mini, GPT-5 and Claude Opus 4.5, in that order.
 Case tabs below it show recordings available for the selected model. Switching
 models keeps the case when available, otherwise opens that model's first case.
 Only runs without test selection are exported. Retired case URLs preserve a
@@ -125,8 +125,13 @@ step without character animation. Task/config selections are preserved in the UR
 ## Reading the trajectory
 
 The player keeps two spacious phase workspaces around the diagnosis handoff,
-using the paper's shared font and blue accent. Action labels and colored rules distinguish inspection (blue), shell
-execution (ochre), edits/submissions (green), and the handoff (purple). Commands
+using the paper's shared font and blue accent. Action labels and colored rules distinguish inspection (blue), code/test
+execution (ochre), edits/submissions (green), and the handoff (purple). Bash calls
+are labeled by command activity: listing/searching/reading files is Inspect,
+file modifications are Edit, running code or tests is Execute, and commands that
+both modify files and run code are Edit + execute. Unknown shell operations
+remain Execute. These presentation annotations preserve the original command
+and output; they are not a shell security classifier. Commands
 and output have separate surfaces. Source paths, strings, Python keywords, test
 names, and assertions are highlighted; error lines and unified-diff additions,
 deletions, and headers receive distinct backgrounds. These are text patterns,

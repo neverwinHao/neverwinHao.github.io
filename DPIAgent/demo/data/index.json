@@ -1,8 +1,8 @@
 {
   "configs": {
-    "opus-4.5-no-selection": "Claude Opus 4.5 · DPI",
+    "gpt-5-mini-no-selection": "GPT-5 Mini · DPI",
     "gpt-5-no-selection": "GPT-5 · DPI",
-    "gpt-5-mini-no-selection": "GPT-5 Mini · DPI"
+    "opus-4.5-no-selection": "Claude Opus 4.5 · DPI"
   },
   "tasks": [
     {
@@ -11,9 +11,9 @@
       "repo": "sphinx-doc/sphinx",
       "runs": [
         {
-          "config": "opus-4.5-no-selection",
-          "file": "sphinx-doc__sphinx-9367--opus-4.5-no-selection.json",
-          "steps": 13
+          "config": "gpt-5-mini-no-selection",
+          "file": "sphinx-doc__sphinx-9367--gpt-5-mini-no-selection.json",
+          "steps": 9
         },
         {
           "config": "gpt-5-no-selection",
@@ -21,9 +21,9 @@
           "steps": 11
         },
         {
-          "config": "gpt-5-mini-no-selection",
-          "file": "sphinx-doc__sphinx-9367--gpt-5-mini-no-selection.json",
-          "steps": 9
+          "config": "opus-4.5-no-selection",
+          "file": "sphinx-doc__sphinx-9367--opus-4.5-no-selection.json",
+          "steps": 13
         }
       ],
       "title": "1-element tuple rendered incorrectly"
@@ -34,9 +34,9 @@
       "repo": "matplotlib/matplotlib",
       "runs": [
         {
-          "config": "opus-4.5-no-selection",
-          "file": "matplotlib__matplotlib-26113--opus-4.5-no-selection.json",
-          "steps": 24
+          "config": "gpt-5-mini-no-selection",
+          "file": "matplotlib__matplotlib-26113--gpt-5-mini-no-selection.json",
+          "steps": 12
         },
         {
           "config": "gpt-5-no-selection",
@@ -44,9 +44,9 @@
           "steps": 17
         },
         {
-          "config": "gpt-5-mini-no-selection",
-          "file": "matplotlib__matplotlib-26113--gpt-5-mini-no-selection.json",
-          "steps": 12
+          "config": "opus-4.5-no-selection",
+          "file": "matplotlib__matplotlib-26113--opus-4.5-no-selection.json",
+          "steps": 24
         }
       ],
       "title": "Inconsistent behavior of hexbins mincnt parameter, depending on C parameter"
@@ -57,9 +57,9 @@
       "repo": "pydata/xarray",
       "runs": [
         {
-          "config": "opus-4.5-no-selection",
-          "file": "pydata__xarray-7233--opus-4.5-no-selection.json",
-          "steps": 22
+          "config": "gpt-5-mini-no-selection",
+          "file": "pydata__xarray-7233--gpt-5-mini-no-selection.json",
+          "steps": 11
         },
         {
           "config": "gpt-5-no-selection",
@@ -67,9 +67,9 @@
           "steps": 13
         },
         {
-          "config": "gpt-5-mini-no-selection",
-          "file": "pydata__xarray-7233--gpt-5-mini-no-selection.json",
-          "steps": 11
+          "config": "opus-4.5-no-selection",
+          "file": "pydata__xarray-7233--opus-4.5-no-selection.json",
+          "steps": 22
         }
       ],
       "title": "ds.Coarsen.construct demotes non-dimensional coordinates to variables"

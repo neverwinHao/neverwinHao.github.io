@@ -6,6 +6,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import shlex
 import zipfile
 
 TASKS = [
@@ -16,9 +17,9 @@ TASKS = [
 CASE_LABELS = ['Single-element tuples', 'Hexbin count threshold', 'Coordinate preservation']
 MAX_STEPS = 26
 CONFIGS = {
-    'opus-4.5-no-selection': 'Claude Opus 4.5 · DPI',
-    'gpt-5-no-selection': 'GPT-5 · DPI',
     'gpt-5-mini-no-selection': 'GPT-5 Mini · DPI',
+    'gpt-5-no-selection': 'GPT-5 · DPI',
+    'opus-4.5-no-selection': 'Claude Opus 4.5 · DPI',
 }
 CASE_CONFIGS = {task: list(CONFIGS) for task in TASKS}
 REFERENCE_CHECKS = {
@@ -37,6 +38,57 @@ def content_text(value):
     if isinstance(value, list):
         return '\n'.join(x.get('text', '') for x in value if isinstance(x, dict))
     return str(value or '')
+
+
+def bash_activity(action):
+    """Presentation labels for shell commands; unknown operations stay Execute."""
+    if '$(' in action or '`' in action:
+        return 'execute'
+    try:
+        lexer = shlex.shlex(action, posix=True, punctuation_chars=';&|<>\n')
+        lexer.whitespace = ' \t\r'
+        lexer.whitespace_split = True
+        tokens = list(lexer)
+    except ValueError:
+        return 'execute'
+    commands, command = [], []
+    for token in tokens:
+        if token and all(c in ';&|\n' for c in token):
+            if command:
+                commands.append(command)
+                command = []
+        else:
+            command.append(token)
+    if command:
+        commands.append(command)
+
+    kinds = set()
+    for command in commands:
+        while command and re.match(r'^[A-Za-z_][A-Za-z_0-9]*=', command[0]):
+            command = command[1:]
+        if not command:
+            continue
+        name = Path(command[0]).name
+        args = command[1:]
+        if name == 'xargs' and args and not args[0].startswith('-'):
+            name, args = args[0], args[1:]
+        if name in {'cp', 'mv', 'rm', 'touch', 'mkdir', 'rmdir', 'patch'} or (
+                name == 'sed' and any(a == '--in-place' or a.startswith('--in-place=')
+                                     or re.match(r'^-[^-]*i', a) for a in args)):
+            kinds.add('edit')
+        elif (name in {'ls', 'cat', 'head', 'tail', 'grep', 'rg', 'pwd', 'wc', 'nl', 'stat', 'file', 'diff', 'sort', 'uniq', 'cd', 'echo', 'printf', 'true', 'false', 'sed'}
+              or name == 'find' and not any(a in {'-exec', '-execdir', '-delete', '-ok', '-okdir'} for a in args)
+              or name == 'git' and args and args[0] in {'status', 'diff', 'log', 'show', 'ls-files'}):
+            kinds.add('inspect')
+        else:
+            kinds.add('execute')
+        # Writing command output to a file is an edit, unlike discarded output.
+        if any(t in {'>', '>>'} and i + 1 < len(args) and args[i + 1] != '/dev/null'
+               for i, t in enumerate(args)):
+            kinds.add('edit')
+    if 'execute' in kinds:
+        return 'edit_execute' if 'edit' in kinds else 'execute'
+    return 'edit' if 'edit' in kinds else 'inspect' if kinds else 'execute'
 
 
 def convert(raw, task, config, source, digest):
@@ -66,6 +118,8 @@ def convert(raw, task, config, source, digest):
             'handoff': params.get('summary', '') if handoff else '',
             'execution_seconds': original.get('execution_time'),
         })
+        if tool == 'bash':
+            steps[-1]['activity'] = bash_activity(action)
         # A tool request alone is not evidence that the phase actually changed.
         if '###SWE-AGENT-PHASE-TRANSITION###' in observation:
             phase = 'generation'
