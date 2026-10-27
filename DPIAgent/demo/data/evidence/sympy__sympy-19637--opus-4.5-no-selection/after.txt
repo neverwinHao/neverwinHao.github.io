@@ -1,0 +1,430 @@
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z '' ']'
++++ export CONDA_SHLVL=0
++++ CONDA_SHLVL=0
++++ '[' -n '' ']'
++++++ dirname /opt/miniconda3/bin/conda
+++++ dirname /opt/miniconda3/bin
++++ PATH=/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export PATH
++++ '[' -z '' ']'
++++ PS1=
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_1=/opt/miniconda3
+++ CONDA_PREFIX_1=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ cd /testbed
++ git diff HEAD 63f8f465d48559fecb4e4bf3c48b75bf15a3e0ef
++ git config --global --add safe.directory /testbed
++ cd /testbed
++ git status
+On branch master
+nothing to commit, working tree clean
++ git show
+commit 63f8f465d48559fecb4e4bf3c48b75bf15a3e0ef
+Merge: b0b23aaf79 e9ac115d48
+Author: Kalevi Suominen <jksuom@gmail.com>
+Date:   Wed Jun 24 09:49:17 2020 +0300
+
+    Merge pull request #19555 from sachin-4099/gsoc#8
+    
+    [GSoC] Functions: Adds cdir parameter to handle series expansions on branch cuts
+
++ git diff 63f8f465d48559fecb4e4bf3c48b75bf15a3e0ef
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z x ']'
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1='(testbed) '
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=3
++++ CONDA_SHLVL=3
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=4
+++ CONDA_SHLVL=4
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_3=/opt/miniconda3
+++ CONDA_PREFIX_3=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ python -m pip install -e .
+Obtaining file:///testbed
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: mpmath>=0.19 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from sympy==1.7.dev0) (1.3.0)
+Building wheels for collected packages: sympy
+  Building editable for sympy (pyproject.toml): started
+  Building editable for sympy (pyproject.toml): finished with status 'done'
+  Created wheel for sympy: filename=sympy-1.7.dev0-0.editable-py3-none-any.whl size=23825 sha256=ff7e91b7690c38ac6141ed93026b5e5a482a61e6826fd28912e51dfaef5fa5a4
+  Stored in directory: /tmp/pip-ephem-wheel-cache-z6718e9d/wheels/7d/66/67/70d1ee2124ccf21d601c352e25cdca10f611f7c8b3f9ffb9e4
+Successfully built sympy
+Installing collected packages: sympy
+  Attempting uninstall: sympy
+    Found existing installation: sympy 1.7.dev0
+    Uninstalling sympy-1.7.dev0:
+      Successfully uninstalled sympy-1.7.dev0
+Successfully installed sympy-1.7.dev0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ git apply -v -
+Checking patch sympy/core/sympify.py...
+Applied patch sympy/core/sympify.py cleanly.
++ git apply -v -
+<stdin>:11: trailing whitespace.
+    
+<stdin>:16: trailing whitespace.
+    
+<stdin>:23: trailing whitespace.
+    
+<stdin>:27: trailing whitespace.
+    
+<stdin>:30: trailing whitespace.
+    
+Checking patch sympy/core/tests/test_sympify.py...
+Applied patch sympy/core/tests/test_sympify.py cleanly.
+warning: squelched 2 whitespace errors
+warning: 7 lines add whitespace errors.
++ PYTHONWARNINGS=ignore::UserWarning,ignore::SyntaxWarning
++ python3 /root/trace.py --count -C coverage.cover --include-pattern '/testbed/(sympy/core/sympify\.py)' bin/test -C --verbose sympy/core/tests/test_sympify.p
+['--count', '-C', 'coverage.cover', '--include-pattern', '/testbed/(sympy/core/sympify\\.py)']
+============================= test process starts ==============================
+executable:         /opt/miniconda3/envs/testbed/bin/python3  (3.9.25-final-0) [CPython]
+architecture:       64-bit
+cache:              no
+ground types:       python 
+numpy:              None
+random seed:        28875002
+hash randomization: on (PYTHONHASHSEED=2025514857)
+
+sympy/core/tests/test_sympify.py[51] 
+test_issue_3538 ok
+test_sympify1 ok
+test_sympify_Fraction ok
+test_sympify_gmpy ok
+test_sympify_mpmath ok
+test_sympify2 ok
+test_sympify3 ok
+test_sympify_keywords ok
+test_sympify_float ok
+test_sympify_bool ok
+test_sympyify_iterables ok
+test_issue_16772 f
+test_issue_16859 ok
+test_sympify4 ok
+test_sympify_text ok
+test_sympify_function ok
+test_sympify_poly ok
+test_sympify_factorial ok
+test_sage ok
+test_issue_3595 ok
+test_lambda ok
+test_lambda_raises ok
+test_sympify_raises ok
+test__sympify ok
+test_sympifyit ok
+test_int_float ok
+test_evaluate_false E
+test_issue_4133 ok
+test_issue_3982 ok
+test_S_sympify ok
+test_issue_4788 ok
+test_issue_4798_None ok
+test_issue_3218 ok
+test_issue_4988_builtins ok
+test_geometry ok
+test_kernS ok
+test_kernS_parenthesized_without_kern_marker ok
+test_issue_6540_6552 ok
+test_issue_6046 ok
+test_issue_8821_highprec_from_str ok
+test_issue_10295 numpy not installed. s
+test_Range ok
+test_sympify_set ok
+test_sympify_numpy numpy not installed. Abort numpy tests. s
+test_sympify_rational_numbers_set f
+test_issue_13924 numpy not installed. s
+test_numpy_sympify_args numpy not installed. s
+test_issue_5939 ok
+test_issue_16759 ok
+test_issue_17811 E
+test_issue_14706 numpy not installed. s                                   [FAIL]
+
+
+________________________________________________________________________________
+_____________ sympy/core/tests/test_sympify.py:test_evaluate_false _____________
+Traceback (most recent call last):
+  File "/testbed/sympy/core/tests/test_sympify.py", line 435, in test_evaluate_false
+    assert sympify(case, evaluate=False) == result
+  File "/testbed/sympy/core/sympify.py", line 406, in sympify
+    expr = parse_expr(a, local_dict=locals, transformations=transformations, evaluate=evaluate)
+  File "/testbed/sympy/parsing/sympy_parser.py", line 1006, in parse_expr
+    code = compile(evaluateFalse(code), '<string>', 'eval')
+ValueError: Name node can't be used with 'False' constant
+________________________________________________________________________________
+______________ sympy/core/tests/test_sympify.py:test_issue_17811 _______________
+Traceback (most recent call last):
+  File "/testbed/sympy/core/tests/test_sympify.py", line 740, in test_issue_17811
+    assert sympify('a(x)*5', evaluate=False) == Mul(a(x), 5, evaluate=False)
+  File "/testbed/sympy/core/sympify.py", line 406, in sympify
+    expr = parse_expr(a, local_dict=locals, transformations=transformations, evaluate=evaluate)
+  File "/testbed/sympy/parsing/sympy_parser.py", line 1006, in parse_expr
+    code = compile(evaluateFalse(code), '<string>', 'eval')
+ValueError: Name node can't be used with 'False' constant
+
+ tests finished: 42 passed, 5 skipped, 2 expected to fail, 2 exceptions, 
+in 2.19 seconds 
+DO *NOT* COMMIT!
+['--count', '-C', 'coverage.cover', '--include-pattern', '/testbed/(sympy/core/sympify\\.py)']
++ cat coverage.cover
+{"/testbed/sympy/core/sympify.py": {"3": 1, "5": 1, "7": 1, "8": 1, "11": 2, "26": 1, "29": 2, "56": 1, "66": 1, "90": 1, "413": 1, "442": 1, "547": 1, "12": 1, "16": 1, "13": 273, "14": 273, "17": 0, "18": 0, "20": 0, "21": 0, "22": 0, "53": 1, "62": 1834, "63": 790, "70": 0, "71": 0, "72": 0, "73": 0, "75": 0, "77": 0, "78": 0, "79": 0, "82": 0, "83": 0, "84": 0, "85": 0, "86": 0, "87": 0, "277": 18651, "278": 18651, "279": 14043, "281": 4608, "282": 1, "283": 4607, "284": 4607, "285": 0, "286": 4607, "287": 4607, "288": 4185, "290": 1268, "291": 855, "292": 855, "293": 846, "294": 846, "296": 413, "297": 244, "298": 243, "300": 1, "302": 169, "303": 167, "306": 169, "307": 0, "308": 0, "309": 0, "310": 0, "311": 0, "313": 169, "314": 169, "315": 13, "316": 13, "320": 0, "321": 0, "323": 156, "326": 134, "327": 134, "328": 0, "329": 0, "330": 0, "331": 0, "333": 156, "334": 29, "335": 0, "336": 0, "337": 0, "340": 0, "341": 0, "342": 0, "343": 0, "344": 0, "345": 0, "346": 0, "347": 0, "348": 0, "349": 0, "353": 67, "354": 50, "355": 50, "356": 38, "357": 38, "359": 144, "360": 16, "362": 128, "363": 6, "364": 57, "365": 32, "366": 0, "368": 0, "369": 122, "370": 0, "371": 0, "372": 0, "373": 0, "375": 0, "377": 122, "378": 1, "379": 1, "380": 0, "381": 0, "382": 1, "383": 2, "384": 1, "386": 1, "388": 1, "389": 1, "392": 122, "394": 122, "395": 122, "397": 122, "399": 122, "400": 16, "401": 122, "402": 122, "404": 122, "405": 122, "406": 122, "407": 15, "408": 26, "410": 107, "439": 13553, "468": 19, "469": 19, "470": 19, "471": 19, "472": 19, "473": 19, "474": 17, "475": 0, "478": 17, "479": 17, "484": 17, "486": 17, "490": 17, "491": 17, "494": 17, "495": 17, "497": 24, "498": 24, "499": 17, "500": 7, "501": 71, "502": 71, "503": 10, "504": 61, "505": 10, "506": 71, "507": 7, "508": 7, "509": 7, "510": 17, "512": 11, "513": 12, "514": 1, "515": 11, "516": 11, "518": 6, "520": 19, "521": 19, "522": 19, "523": 19, "524": 0, "525": 0, "526": 0, "527": 0, "528": 0, "529": 0, "531": 19, "532": 8, "534": 11, "535": 11, "541": 11, "543": 11, "536": 11, "537": 0, "538": 11, "539": 11, "540": 0}}
+{"/testbed/sympy/core/sympify.py": {"3": 1, "5": 1, "7": 1, "8": 1, "11": 2, "26": 1, "29": 2, "56": 1, "66": 1, "90": 1, "413": 1, "442": 1, "547": 1, "12": 1, "16": 1, "13": 4, "14": 4, "17": 0, "18": 0, "20": 0, "21": 0, "22": 0, "53": 1, "62": 0, "63": 0, "70": 0, "71": 0, "72": 0, "73": 0, "75": 0, "77": 0, "78": 0, "79": 0, "82": 0, "83": 0, "84": 0, "85": 0, "86": 0, "87": 0, "277": 125, "278": 125, "279": 37, "281": 88, "282": 0, "283": 88, "284": 88, "285": 0, "286": 88, "287": 88, "288": 84, "290": 12, "291": 8, "292": 8, "293": 8, "294": 8, "296": 4, "297": 4, "298": 4, "300": 0, "302": 0, "303": 0, "306": 0, "307": 0, "308": 0, "309": 0, "310": 0, "311": 0, "313": 0, "314": 0, "315": 0, "316": 0, "320": 0, "321": 0, "323": 0, "326": 0, "327": 0, "328": 0, "329": 0, "330": 0, "331": 0, "333": 0, "334": 0, "335": 0, "336": 0, "337": 0, "340": 0, "341": 0, "342": 0, "343": 0, "344": 0, "345": 0, "346": 0, "347": 0, "348": 0, "349": 0, "353": 0, "354": 0, "355": 0, "356": 0, "357": 0, "359": 0, "360": 0, "362": 0, "363": 0, "364": 0, "365": 0, "366": 0, "368": 0, "369": 0, "370": 0, "371": 0, "372": 0, "373": 0, "375": 0, "377": 0, "378": 0, "379": 0, "380": 0, "381": 0, "382": 0, "383": 0, "384": 0, "386": 0, "388": 0, "389": 0, "392": 0, "394": 0, "395": 0, "397": 0, "399": 0, "400": 0, "401": 0, "402": 0, "404": 0, "405": 0, "406": 0, "407": 0, "408": 0, "410": 0, "439": 83, "468": 0, "469": 0, "470": 0, "471": 0, "472": 0, "473": 0, "474": 0, "475": 0, "478": 0, "479": 0, "484": 0, "486": 0, "490": 0, "491": 0, "494": 0, "495": 0, "497": 0, "498": 0, "499": 0, "500": 0, "501": 0, "502": 0, "503": 0, "504": 0, "505": 0, "506": 0, "507": 0, "508": 0, "509": 0, "510": 0, "512": 0, "513": 0, "514": 0, "515": 0, "516": 0, "518": 0, "520": 0, "521": 0, "522": 0, "523": 0, "524": 0, "525": 0, "526": 0, "527": 0, "528": 0, "529": 0, "531": 0, "532": 0, "534": 0, "535": 0, "541": 0, "543": 0, "536": 0, "537": 0, "538": 0, "539": 0, "540": 0}}
++ git checkout 63f8f465d48559fecb4e4bf3c48b75bf15a3e0ef
+Note: switching to '63f8f465d48559fecb4e4bf3c48b75bf15a3e0ef'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 63f8f465d4 Merge pull request #19555 from sachin-4099/gsoc#8
+M	sympy/core/sympify.py
+M	sympy/core/tests/test_sympify.py
++ git apply /root/pre_state.patch
+error: unrecognized input

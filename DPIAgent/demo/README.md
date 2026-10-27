@@ -40,9 +40,9 @@ rerun the same tests, then submit only the test patch.
 
 | Case | Total steps | Buggy run | Temporary fix passes | Original restored, fails again |
 | --- | ---: | ---: | ---: | ---: |
-| `sphinx-doc__sphinx-9698` — Property index entries | 18 | 12: 2 failed | 14: 2 passed | 15: 2 failed |
 | `matplotlib__matplotlib-26113` — Hexbin count threshold | 24 | 14: 1 failed | 16: 1 passed | 18: 1 failed |
 | `django__django-15104` — Migration field detection | 24 | 16: 1 error | 18: 1 passed (OK) | 19: 1 error |
+| `sympy__sympy-19637` — Parenthesized expressions | 26 | 17: 1 exception | 19: 1 passed | 21: 1 exception |
 
 These three original runs were chosen for visible validation. Other models and
 cases whose trajectories did not demonstrate that sequence are not showcased.
@@ -58,7 +58,9 @@ records. System prompts and replay configuration are excluded.
 The exporter requires all of the following before writing the gallery:
 
 - No actual `python_add*` or `generate_test` calls in tool/action records.
-- At most 24 steps, a confirmed handoff, and a submitted test-only patch.
+- Every RPG tool call must be `rpg_search_code`; all other `rpg_*` calls are
+  rejected, including calls embedded in shell actions.
+- At most 26 steps, a confirmed handoff, and a submitted test-only patch.
 - The same named regression tests fail, pass after the recorded temporary fix,
   and fail again after restoration in the original trajectory, with the actual
   test targets and implementation-edit commands checked against the source.

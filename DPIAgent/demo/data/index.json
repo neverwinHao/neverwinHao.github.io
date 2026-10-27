@@ -4,19 +4,6 @@
   },
   "tasks": [
     {
-      "id": "sphinx-doc__sphinx-9698",
-      "label": "Property index entries",
-      "repo": "sphinx-doc/sphinx",
-      "runs": [
-        {
-          "config": "opus-4.5-no-selection",
-          "file": "sphinx-doc__sphinx-9698--opus-4.5-no-selection.json",
-          "steps": 18
-        }
-      ],
-      "title": "An index entry with parens was registered for `py:method` directive with `:property:` option"
-    },
-    {
       "id": "matplotlib__matplotlib-26113",
       "label": "Hexbin count threshold",
       "repo": "matplotlib/matplotlib",
@@ -41,6 +28,19 @@
         }
       ],
       "title": "KeyError with migration autodetector and FK field with hardcoded reference"
+    },
+    {
+      "id": "sympy__sympy-19637",
+      "label": "Parenthesized expressions",
+      "repo": "sympy/sympy",
+      "runs": [
+        {
+          "config": "opus-4.5-no-selection",
+          "file": "sympy__sympy-19637--opus-4.5-no-selection.json",
+          "steps": 26
+        }
+      ],
+      "title": "kernS: 'kern' referenced before assignment"
     }
   ],
   "archive_trajectory_count": 1731

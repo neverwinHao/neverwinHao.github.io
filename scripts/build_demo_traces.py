@@ -9,12 +9,12 @@ import re
 import zipfile
 
 TASKS = [
-    'sphinx-doc__sphinx-9698',
     'matplotlib__matplotlib-26113',
     'django__django-15104',
+    'sympy__sympy-19637',
 ]
-CASE_LABELS = ['Property index entries', 'Hexbin count threshold', 'Migration field detection']
-MAX_STEPS = 24
+CASE_LABELS = ['Hexbin count threshold', 'Migration field detection', 'Parenthesized expressions']
+MAX_STEPS = 26
 CONFIGS = {
     'opus-4.5-no-selection': 'Claude Opus 4.5 · DPI',
 }
@@ -113,6 +113,9 @@ def test_result(output, test, status):
     name = re.escape(test)
     if '::' in test:
         return bool(re.search(rf'^(?:{status} {name}(?:\s|$)|{name}\s+{status}\b)', output, re.M))
+    if '(' not in test:
+        result = 'ok' if status == 'PASSED' else '[EF]'
+        return bool(re.search(rf'^{name}\s+{result}\s*$', output, re.M))
     result = 'ok' if status == 'PASSED' else '(?:FAIL|ERROR)'
     # unittest may put a one-line test docstring before its result.
     return bool(re.search(rf'^{name}(?:\n[^\n]*|[^\n]*) \.\.\. {result}\s*$', output, re.M))
@@ -121,12 +124,14 @@ def test_result(output, test, status):
 def recorded_validation(data):
     """Annotate exact original checks; never synthesize a successful tool output."""
     cases = {
-        'sphinx-doc__sphinx-9698': {
-            'target': 'tests/test_domain_py_property_index.py',
-            'patch': 'tests/test_domain_py_property_index.py',
-            'checks': [(12, '2 failed, 7 warnings', 'python -m pytest'),
-                       (14, '2 passed, 7 warnings', 'sed -i "s/%s() (%s property)/%s (%s property)/g"'),
-                       (15, '2 failed, 7 warnings', 'mv sphinx/domains/python.py.bak sphinx/domains/python.py')],
+        'sympy__sympy-19637': {
+            'target': "sympy.test('sympy/core/tests/test_sympify.py', kw='test_kernS_parenthesized_without_kern_marker')",
+            'patch': 'sympy/core/tests/test_sympify.py',
+            'test': 'test_kernS_parenthesized_without_kern_marker',
+            'checks': [(17, '0 passed, 1 exceptions', 'python -c'),
+                       (19, 'tests finished: 1 passed, in', "sed -i 's/^        hit = kern in s$/            hit = kern in s/'"),
+                       (21, '0 passed, 1 exceptions', 'python -c')],
+            'restore': (20, 'mv sympy/core/sympify.py.bak sympy/core/sympify.py'),
         },
         'matplotlib__matplotlib-26113': {
             'target': 'lib/matplotlib/tests/test_axes.py::test_hexbin_mincnt_behavior_with_C_parameter',
@@ -149,9 +154,16 @@ def recorded_validation(data):
     labels = [f'Bug reproduced: {count} failed', f'Temporary fix: {count} passed', f'Original restored: {count} failed']
     for (index, result, command), status in zip(case['checks'], ['FAILED', 'PASSED', 'FAILED'], strict=True):
         step = data['steps'][index - 1]
+        named_result = all(test_result(step['observation'], test, status) for test in data['evaluation']['fail_to_pass'])
+        if 'test' in case:
+            # SymPy's terse runner prints the selected file/count rather than the
+            # passing function name. Require the exact selector, one test and its result.
+            marker = r'\.\s+\[OK\]' if status == 'PASSED' else r'E\s+\[FAIL\]'
+            named_result = (data['evaluation']['fail_to_pass'] == [case['test']]
+                            and bool(re.search(rf'^{re.escape(case["patch"])}\[1\]\s+{marker}', step['observation'], re.M)))
         if (step['tool'] != 'bash' or command not in step['action']
                 or case['target'] not in step['action'] or result not in step['observation']
-                or not all(test_result(step['observation'], test, status) for test in data['evaluation']['fail_to_pass'])):
+                or not named_result):
             raise ValueError(f"{data['source']}: missing original validation at step {index}")
     if 'restore' in case:
         index, command = case['restore']
@@ -161,6 +173,16 @@ def recorded_validation(data):
     if paths != [case['patch']]:
         raise ValueError('Validation must leave only the original test patch')
     return [{'step': check[0], 'label': label} for check, label in zip(case['checks'], labels, strict=True)]
+
+
+def validate_tools(data):
+    forbidden = [step['index'] for step in data['steps']
+                 if step['tool'].startswith('python_add')
+                 or step['tool'] == 'generate_test'
+                 or (step['tool'].startswith('rpg_') and step['tool'] != 'rpg_search_code')
+                 or re.search(r'\b(?:python_add\w*|generate_test|rpg_(?!search_code\b)\w+)\b', step['action'])]
+    if forbidden:
+        raise ValueError(f"{data['source']}: excluded tool called at steps {forbidden}")
 
 
 def main():
@@ -194,12 +216,7 @@ def main():
                     raise ValueError(f'{source}: expected a short, complete two-phase run')
                 # These gallery cases must genuinely avoid the unused helpers.
                 # Reject unsuitable source runs instead of hiding recorded calls.
-                forbidden = [step['index'] for step in data['steps']
-                             if step['tool'].startswith('python_add')
-                             or step['tool'] == 'generate_test'
-                             or re.search(r'\b(?:python_add\w*|generate_test)\b', step['action'])]
-                if forbidden:
-                    raise ValueError(f'{source}: excluded helper called at steps {forbidden}')
+                validate_tools(data)
                 data['evaluation'], evidence_files = evaluation_evidence(data, root, logs[config], aggregates[config], predictions[config][task])
                 data['validation'] = recorded_validation(data)
                 files.update(evidence_files)
