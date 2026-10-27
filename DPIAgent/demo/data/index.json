@@ -1,6 +1,8 @@
 {
   "configs": {
-    "opus-4.5-no-selection": "Claude Opus 4.5 · DPI"
+    "opus-4.5-no-selection": "Claude Opus 4.5 · DPI",
+    "gpt-5-no-selection": "GPT-5 · DPI",
+    "gpt-5-mini-no-selection": "GPT-5 Mini · DPI"
   },
   "tasks": [
     {
@@ -41,6 +43,24 @@
         }
       ],
       "title": "Inconsistent behavior of hexbins mincnt parameter, depending on C parameter"
+    },
+    {
+      "id": "sphinx-doc__sphinx-9367",
+      "label": "Single-element tuples",
+      "repo": "sphinx-doc/sphinx",
+      "runs": [
+        {
+          "config": "gpt-5-no-selection",
+          "file": "sphinx-doc__sphinx-9367--gpt-5-no-selection.json",
+          "steps": 11
+        },
+        {
+          "config": "gpt-5-mini-no-selection",
+          "file": "sphinx-doc__sphinx-9367--gpt-5-mini-no-selection.json",
+          "steps": 9
+        }
+      ],
+      "title": "1-element tuple rendered incorrectly"
     }
   ],
   "archive_trajectory_count": 1731

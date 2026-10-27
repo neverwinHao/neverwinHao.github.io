@@ -89,6 +89,15 @@ h3 { font-size: 20px; line-height: 1.4; font-weight: 600; margin: 0; letter-spac
 .transferred .generation-pane .tool-chips span { border-style: solid; color: var(--edit); border-color: #b7d5c3; background: var(--edit-bg); }
 .tool-scope p { font-size: 13px; color: var(--muted); line-height: 1.5; margin: 5px 0 0; }
 .phase-stream { height: 480px; overflow: auto; padding: 20px 16px; overscroll-behavior: contain; scrollbar-color: #b8c2ce transparent; }
+.reference-check { margin-top: 24px; padding-top: 20px; border-top: 2px solid var(--line-dark); }
+.reference-check h4 { margin: 0; font-size: 18px; font-weight: 600; }
+.reference-source { margin: 5px 0 16px; font-size: 13px; color: var(--muted); }
+.reference-result { margin-top: 12px; padding: 14px; border-radius: 6px; }
+.reference-before { background: var(--error-bg); color: var(--error-ink); }
+.reference-after { background: var(--edit-bg); color: var(--edit); }
+.reference-result strong { font-size: 15px; }
+.reference-result pre { font: 13px/1.7 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; margin: 10px 0; }
+.reference-result a { display: inline-block; color: inherit; font-size: 13px; padding: 8px 0; text-underline-offset: 3px; }
 .empty { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 8px; height: 100%; padding: 24px; font-size: 16px; color: var(--muted); }
 .empty strong { font-weight: 500; color: var(--ink); font-size: 18px; }
 .empty span { max-width: 260px; }

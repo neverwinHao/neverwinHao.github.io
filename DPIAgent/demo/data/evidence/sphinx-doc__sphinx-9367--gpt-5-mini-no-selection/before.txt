@@ -1,0 +1,539 @@
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z '' ']'
++++ export CONDA_SHLVL=0
++++ CONDA_SHLVL=0
++++ '[' -n '' ']'
++++++ dirname /opt/miniconda3/bin/conda
+++++ dirname /opt/miniconda3/bin
++++ PATH=/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export PATH
++++ '[' -z '' ']'
++++ PS1=
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_1=/opt/miniconda3
+++ CONDA_PREFIX_1=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ cd /testbed
++ git diff HEAD 6918e69600810a4664e53653d6ff0290c3c4a788
++ git config --global --add safe.directory /testbed
++ cd /testbed
++ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   setup.py
+	modified:   tox.ini
+
+no changes added to commit (use "git add" and/or "git commit -a")
++ git show
+commit 6918e69600810a4664e53653d6ff0290c3c4a788
+Author: Takeshi KOMIYA <i.tkomiya@gmail.com>
+Date:   Sun Jun 20 23:58:07 2021 +0900
+
+    Update CHANGES for PR #9350
+
+diff --git a/CHANGES b/CHANGES
+index e75e38deb..a0f1bab26 100644
+--- a/CHANGES
++++ b/CHANGES
+@@ -69,6 +69,7 @@ Bugs fixed
+ * #9270: html theme : pyramid theme generates incorrect logo links
+ * #9217: manpage: The name of manpage directory that is generated by
+   :confval:`man_make_section_directory` is not correct
++* #9350: manpage: Fix font isn't reset after keyword at the top of samp role
+ * #9306: Linkcheck reports broken link when remote server closes the connection
+   on HEAD request
+ * #9280: py domain: "exceptions" module is not displayed
++ git diff 6918e69600810a4664e53653d6ff0290c3c4a788
+diff --git a/setup.py b/setup.py
+index 206ff4ad4..4bb5faeb1 100644
+--- a/setup.py
++++ b/setup.py
+@@ -15,22 +15,22 @@ if sys.version_info < (3, 6):
+     sys.exit(1)
+ 
+ install_requires = [
+-    'sphinxcontrib-applehelp',
+-    'sphinxcontrib-devhelp',
++    'sphinxcontrib-applehelp<=1.0.7',
++    'sphinxcontrib-devhelp<=1.0.5',
+     'sphinxcontrib-jsmath',
+-    'sphinxcontrib-htmlhelp',
+-    'sphinxcontrib-serializinghtml',
+-    'sphinxcontrib-qthelp',
+-    'Jinja2>=2.3',
++    'sphinxcontrib-htmlhelp<=2.0.4',
++    'sphinxcontrib-serializinghtml<=1.1.9',
++    'sphinxcontrib-qthelp<=1.0.6',
++    'Jinja2<3.0',
+     'Pygments>=2.0',
+     'docutils>=0.14,<0.18',
+     'snowballstemmer>=1.1',
+     'babel>=1.3',
+-    'alabaster>=0.7,<0.8',
++    'alabaster>=0.7,<0.7.12',
+     'imagesize',
+     'requests>=2.5.0',
+     'setuptools',
+-    'packaging',
++    'packaging', 'markupsafe<=2.0.1',
+ ]
+ 
+ extras_require = {
+diff --git a/tox.ini b/tox.ini
+index a363e187f..3b8bc12d0 100644
+--- a/tox.ini
++++ b/tox.ini
+@@ -27,7 +27,7 @@ setenv =
+     PYTHONWARNINGS = all,ignore::ImportWarning:importlib._bootstrap_external,ignore::DeprecationWarning:site,ignore::DeprecationWarning:distutils,ignore::DeprecationWarning:pip._vendor.packaging.version
+     PYTEST_ADDOPTS = {env:PYTEST_ADDOPTS:} --color yes
+ commands=
+-    python -X dev -m pytest --durations 25 {posargs}
++    python -X dev -m pytest -rA --durations 25 {posargs}
+ 
+ [testenv:flake8]
+ basepython = python3
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z x ']'
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1='(testbed) '
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=3
++++ CONDA_SHLVL=3
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=4
+++ CONDA_SHLVL=4
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_3=/opt/miniconda3
+++ CONDA_PREFIX_3=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ python -m pip install -e '.[test]'
+Obtaining file:///testbed
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: sphinxcontrib-applehelp<=1.0.7 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (1.0.4)
+Requirement already satisfied: sphinxcontrib-devhelp<=1.0.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (1.0.2)
+Requirement already satisfied: sphinxcontrib-jsmath in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (1.0.1)
+Requirement already satisfied: sphinxcontrib-htmlhelp<=2.0.4 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (2.0.1)
+Requirement already satisfied: sphinxcontrib-serializinghtml<=1.1.9 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (1.1.5)
+Requirement already satisfied: sphinxcontrib-qthelp<=1.0.6 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (1.0.3)
+Requirement already satisfied: Jinja2<3.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (2.11.3)
+Requirement already satisfied: Pygments>=2.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (2.21.0)
+Requirement already satisfied: docutils<0.18,>=0.14 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (0.17.1)
+Requirement already satisfied: snowballstemmer>=1.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (3.1.1)
+Requirement already satisfied: babel>=1.3 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (2.18.0)
+Requirement already satisfied: alabaster<0.7.12,>=0.7 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (0.7.11)
+Requirement already satisfied: imagesize in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (1.5.0)
+Requirement already satisfied: requests>=2.5.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (2.32.5)
+Requirement already satisfied: setuptools in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (80.9.0)
+Requirement already satisfied: packaging in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (26.3)
+Requirement already satisfied: markupsafe<=2.0.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (2.0.1)
+Requirement already satisfied: pytest in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (8.4.2)
+Requirement already satisfied: pytest-cov in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (7.1.0)
+Requirement already satisfied: html5lib in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (1.1)
+Requirement already satisfied: cython in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.1.0.dev20261014) (3.3.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests>=2.5.0->Sphinx==4.1.0.dev20261014) (3.5.2)
+Requirement already satisfied: idna<4,>=2.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests>=2.5.0->Sphinx==4.1.0.dev20261014) (3.20)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests>=2.5.0->Sphinx==4.1.0.dev20261014) (2.6.3)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests>=2.5.0->Sphinx==4.1.0.dev20261014) (2026.7.22)
+Requirement already satisfied: six>=1.9 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from html5lib->Sphinx==4.1.0.dev20261014) (1.17.0)
+Requirement already satisfied: webencodings in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from html5lib->Sphinx==4.1.0.dev20261014) (0.5.1)
+Requirement already satisfied: exceptiongroup>=1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest->Sphinx==4.1.0.dev20261014) (1.3.1)
+Requirement already satisfied: iniconfig>=1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest->Sphinx==4.1.0.dev20261014) (2.1.0)
+Requirement already satisfied: pluggy<2,>=1.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest->Sphinx==4.1.0.dev20261014) (1.6.0)
+Requirement already satisfied: tomli>=1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest->Sphinx==4.1.0.dev20261014) (2.5.0)
+Requirement already satisfied: typing-extensions>=4.6.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from exceptiongroup>=1->pytest->Sphinx==4.1.0.dev20261014) (4.16.0)
+Requirement already satisfied: coverage>=7.10.6 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from coverage[toml]>=7.10.6->pytest-cov->Sphinx==4.1.0.dev20261014) (7.10.7)
+Building wheels for collected packages: Sphinx
+  Building editable for Sphinx (pyproject.toml): started
+  Building editable for Sphinx (pyproject.toml): finished with status 'done'
+  Created wheel for Sphinx: filename=sphinx-4.1.0.dev20261014-0.editable-py3-none-any.whl size=8388 sha256=a7ba3295c64d10d1a0ad1d58c0101a557ac905ca2d6e3c7830bf0e75de0f1f97
+  Stored in directory: /tmp/pip-ephem-wheel-cache-atq2b8ej/wheels/7d/66/67/70d1ee2124ccf21d601c352e25cdca10f611f7c8b3f9ffb9e4
+Successfully built Sphinx
+Installing collected packages: Sphinx
+  Attempting uninstall: Sphinx
+    Found existing installation: Sphinx 4.1.0.dev20261014
+    Uninstalling Sphinx-4.1.0.dev20261014:
+      Successfully uninstalled Sphinx-4.1.0.dev20261014
+Successfully installed Sphinx-4.1.0.dev20261014
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ git apply -v -
+Checking patch tests/test_pycode_ast_single_element_tuple.py...
+Applied patch tests/test_pycode_ast_single_element_tuple.py cleanly.
++ python3 /root/trace.py --count -C coverage.cover --include-pattern '/testbed/(sphinx/pycode/ast\.py)' -m tox -epy39 -v -- tests/test_pycode_ast_single_element_tuple.py
+['--count', '-C', 'coverage.cover', '--include-pattern', '/testbed/(sphinx/pycode/ast\\.py)']
+.pkg: find interpreter for spec PythonSpec(major=3, minor=9, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(path=/opt/miniconda3/envs/testbed/bin/python3)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, minor=6, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+['--count', '-C', 'coverage.cover', '--include-pattern', '/testbed/(sphinx/pycode/ast\\.py)']
+['--count', '-C', 'coverage.cover', '--include-pattern', '/testbed/(sphinx/pycode/ast\\.py)']
+['--count', '-C', 'coverage.cover', '--include-pattern', '/testbed/(sphinx/pycode/ast\\.py)']
+.pkg: find interpreter for spec PythonSpec(major=3, minor=7, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, system=/opt/miniconda3/envs/testbed/bin/python3, exe=/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, minor=8, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, system=/opt/miniconda3/envs/testbed/bin/python3, exe=/usr/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(path=/opt/miniconda3/envs/testbed/bin/python3)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(path=/opt/miniconda3/envs/testbed/bin/python3)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(path=/opt/miniconda3/envs/testbed/bin/python3)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(path=/opt/miniconda3/envs/testbed/bin/python3)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(path=/opt/miniconda3/envs/testbed/bin/python3)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(path=/opt/miniconda3/envs/testbed/bin/python3)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(path=/opt/miniconda3/envs/testbed/bin/python3)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+py39: create virtual environment via CPython3Posix(dest=/testbed/.tox/py39, clear=False, no_vcs_ignore=False, venv_redirect=None, global=False)
+py39: add seed packages via FromAppData(download=False, pip=bundle, setuptools=bundle, via=copy, app_data_dir=/root/.cache/virtualenv)
+py39: add activators for Bash, CShell, Fish, Nushell, PowerShell, Python, Xonsh
+.pkg: create virtual environment via CPython3Posix(dest=/testbed/.tox/.pkg, clear=False, no_vcs_ignore=False, venv_redirect=None, global=False)
+.pkg: add seed packages via FromAppData(download=False, pip=bundle, setuptools=bundle, via=copy, app_data_dir=/root/.cache/virtualenv)
+.pkg: add activators for Bash, CShell, Fish, Nushell, PowerShell, Python, Xonsh
+.pkg: install_requires> python -I -m pip install 'setuptools>=40.8.0'
+.pkg: exit 0 (0.77 seconds) /testbed> python -I -m pip install 'setuptools>=40.8.0' pid=84
+.pkg: _optional_hooks> python /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__
+.pkg: exit None (0.24 seconds) /testbed> python /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__ pid=89
+.pkg: get_requires_for_build_editable> python /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__
+.pkg: exit None (0.65 seconds) /testbed> python /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__ pid=92
+.pkg: build_editable> python /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__
+.pkg: exit None (1.01 seconds) /testbed> python /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__ pid=95
+py39: install_package_deps> python -I -m pip install 'Jinja2<3.0' 'Pygments>=2.0' 'alabaster<0.7.12,>=0.7' 'babel>=1.3' 'colorama>=0.3.5; sys_platform == "win32"' cython 'docutils<0.18,>=0.14' html5lib imagesize 'markupsafe<=2.0.1' packaging pytest pytest-cov 'requests>=2.5.0' setuptools 'snowballstemmer>=1.1' 'sphinxcontrib-applehelp<=1.0.7' 'sphinxcontrib-devhelp<=1.0.5' 'sphinxcontrib-htmlhelp<=2.0.4' sphinxcontrib-jsmath 'sphinxcontrib-qthelp<=1.0.6' 'sphinxcontrib-serializinghtml<=1.1.9' 'typed_ast; python_version < "3.8"'
+py39: exit 0 (0.88 seconds) /testbed> python -I -m pip install 'Jinja2<3.0' 'Pygments>=2.0' 'alabaster<0.7.12,>=0.7' 'babel>=1.3' 'colorama>=0.3.5; sys_platform == "win32"' cython 'docutils<0.18,>=0.14' html5lib imagesize 'markupsafe<=2.0.1' packaging pytest pytest-cov 'requests>=2.5.0' setuptools 'snowballstemmer>=1.1' 'sphinxcontrib-applehelp<=1.0.7' 'sphinxcontrib-devhelp<=1.0.5' 'sphinxcontrib-htmlhelp<=2.0.4' sphinxcontrib-jsmath 'sphinxcontrib-qthelp<=1.0.6' 'sphinxcontrib-serializinghtml<=1.1.9' 'typed_ast; python_version < "3.8"' pid=98
+py39: install_package> python -I -m pip install --force-reinstall --no-deps /testbed/.tox/.tmp/package/1/sphinx-4.1.0.dev20261014-0.editable-py3-none-any.whl
+py39: exit 0 (0.83 seconds) /testbed> python -I -m pip install --force-reinstall --no-deps /testbed/.tox/.tmp/package/1/sphinx-4.1.0.dev20261014-0.editable-py3-none-any.whl pid=103
+py39: commands[0]> python -X dev -m pytest -rA --durations 25 tests/test_pycode_ast_single_element_tuple.py
+['--count', '-C', 'coverage.cover', '--include-pattern', '/testbed/(sphinx/pycode/ast\\.py)']
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0
+cachedir: .tox/py39/.pytest_cache
+libraries: Sphinx-4.1.0, docutils-0.17.1
+base tempdir: /tmp/pytest-of-root/pytest-0
+rootdir: /testbed
+configfile: setup.cfg
+plugins: cov-7.1.0
+collected 1 item
+
+tests/test_pycode_ast_single_element_tuple.py [31mF[0m[31m                          [100%][0m
+
+=================================== FAILURES ===================================
+[31m[1m______________________ test_unparse_single_element_tuple _______________________[0m
+
+    [0m[94mdef[39;49;00m[90m [39;49;00m[92mtest_unparse_single_element_tuple[39;49;00m():[90m[39;49;00m
+        source = [33m'[39;49;00m[33m(1,)[39;49;00m[33m'[39;49;00m[90m[39;49;00m
+        module = ast.parse(source)[90m[39;49;00m
+        [90m# The unparser should keep the trailing comma for a single-element tuple[39;49;00m[90m[39;49;00m
+>       [94massert[39;49;00m ast.unparse(module.body[[94m0[39;49;00m].value, source) == [33m'[39;49;00m[33m(1,)[39;49;00m[33m'[39;49;00m[90m[39;49;00m
+[1m[31mE       AssertionError: assert '(1)' == '(1,)'[0m
+[1m[31mE         [0m
+[1m[31mE         [0m[91m- (1,)[39;49;00m[90m[39;49;00m[0m
+[1m[31mE         ?   -[90m[39;49;00m[0m
+[1m[31mE         [92m+ (1)[39;49;00m[90m[39;49;00m[0m
+
+[1m[31mtests/test_pycode_ast_single_element_tuple.py[0m:15: AssertionError
+[33m=============================== warnings summary ===============================[0m
+sphinx/util/docutils.py:44
+  /testbed/sphinx/util/docutils.py:44: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    __version_info__ = tuple(LooseVersion(docutils.__version__).version)
+
+sphinx/highlighting.py:67
+  /testbed/sphinx/highlighting.py:67: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if tuple(LooseVersion(pygmentsversion).version) <= (2, 7, 4):
+
+sphinx/registry.py:24
+  /testbed/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+    from pkg_resources import iter_entry_points
+
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3146
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3146
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3146
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3146
+  /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3146: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxcontrib')`.
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(pkg)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============================= slowest 25 durations =============================
+
+(3 durations < 0.005s hidden.  Use -vv to show these durations.)
+[36m[1m=========================== short test summary info ============================[0m
+[31mFAILED[0m tests/test_pycode_ast_single_element_tuple.py::[1mtest_unparse_single_element_tuple[0m - AssertionError: assert '(1)' == '(1,)'
+[31m======================== [31m[1m1 failed[0m, [33m7 warnings[0m[31m in 0.37s[0m[31m =========================[0m
+py39: exit 0 (1.37 seconds) /testbed> python -X dev -m pytest -rA --durations 25 tests/test_pycode_ast_single_element_tuple.py pid=110
+  py39: OK (7.01=setup[5.64]+cmd[1.37] seconds)
+  congratulations :) (8.54 seconds)
++ cat coverage.cover
+{"/testbed/sphinx/pycode/ast.py": {"11": 1, "12": 1, "14": 1, "15": 1, "17": 0, "19": 0, "20": 0, "21": 0, "25": 1, "26": 1, "27": 1, "28": 1, "29": 1, "30": 1, "31": 1, "32": 1, "33": 1, "34": 1, "35": 1, "36": 1, "37": 1, "38": 1, "39": 1, "40": 1, "41": 1, "42": 1, "43": 1, "24": 1, "47": 1, "65": 1, "66": 1, "70": 1, "71": 1, "75": 1, "85": 2, "52": 1, "54": 1, "55": 0, "58": 0, "59": 0, "62": 0, "67": 0, "72": 0, "77": 1, "78": 0, "79": 1, "80": 0, "81": 1, "86": 1, "89": 1, "91": 20, "92": 19, "94": 1, "100": 1, "110": 1, "148": 1, "151": 1, "154": 1, "158": 1, "163": 1, "174": 1, "180": 1, "183": 1, "186": 1, "189": 1, "192": 1, "195": 1, "212": 1, "215": 1, "221": 1, "223": 0, "226": 0, "229": 0, "232": 0, "235": 0, "238": 1, "87": 1, "90": 0, "95": 0, "96": 0, "98": 0, "102": 0, "103": 0, "104": 0, "105": 0, "107": 0, "108": 0, "111": 0, "112": 0, "113": 0, "114": 0, "115": 0, "116": 0, "117": 0, "118": 0, "120": 0, "121": 0, "122": 0, "124": 0, "125": 0, "126": 0, "127": 0, "129": 0, "130": 0, "132": 0, "133": 0, "135": 0, "136": 0, "138": 0, "139": 0, "140": 0, "141": 0, "143": 0, "144": 0, "146": 0, "149": 0, "152": 0, "155": 0, "156": 0, "159": 0, "160": 0, "161": 0, "164": 1, "165": 0, "166": 1, "167": 1, "168": 1, "170": 0, "172": 0, "175": 0, "176": 0, "177": 0, "178": 0, "181": 0, "184": 0, "187": 0, "190": 0, "193": 0, "196": 0, "203": 0, "204": 0, "205": 0, "206": 0, "207": 0, "208": 0, "210": 0, "198": 0, "199": 0, "200": 0, "197": 0, "213": 0, "216": 1, "217": 3, "219": 0, "224": 0, "227": 0, "230": 0, "233": 0, "236": 0, "239": 0}}
++ git checkout 6918e69600810a4664e53653d6ff0290c3c4a788
+Note: switching to '6918e69600810a4664e53653d6ff0290c3c4a788'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 6918e6960 Update CHANGES for PR #9350
+M	setup.py
+M	tox.ini
++ git apply /root/pre_state.patch
+error: unrecognized input

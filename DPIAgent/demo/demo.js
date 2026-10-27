@@ -10,6 +10,7 @@ let time = 0, total = 0, starts = [], durations = [], playing = false, raf = 0, 
 let rendered = -1, current = -1, elements = [];
 let handoffIndex = -1, boundaryTime = Infinity, transferConfirmed = false, protocolFields = [];
 let handoffActiveField = -1, manualHandoffField = null;
+let evaluationReplay = null;
 const HANDOFF_DURATION = 12;
 const HANDOFF_START = 0.04, HANDOFF_END = 0.92;
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -290,7 +291,9 @@ function updateBoard(index) {
   setText('generation-status', time >= total ? 'RECORDED' : phase === 'generation' ? 'WRITING' : sent ? 'READY' : 'WAITING');
   setText('exploration-scope', sent ? 'RPG tools removed from the action space at the recorded transition.' : 'Investigate the code and reproduce the reported behavior.');
   const validation = (data.validation || []).filter(check => time >= starts[check.step - 1] + durations[check.step - 1] * 0.99).at(-1);
-  setText('generation-scope', validation ? validation.label : sent ? (data.validation?.length ? 'The agent checks the same tests before and after a temporary fix.' : 'Tests run on buggy code here. See “Verified” for the reference-fix results.') : 'Write tests using the diagnosis and test plan from phase 1.');
+  const referenceCheck = data.validation_source === 'reference_fix';
+  const evaluationVisible = evaluationReplay?.isConnected;
+  setText('generation-scope', evaluationVisible ? 'Same test: failed on buggy code → passed with the reference fix.' : validation ? validation.label : sent ? (referenceCheck ? 'Reproduce the failure, then review the recorded reference-fix check.' : 'The agent checks the same tests before and after a temporary fix.') : 'Write tests using the diagnosis and test plan from phase 1.');
   setText('protocol-state', sent ? '✓ Summary recorded · toolset switched' : progress > 0 ? 'Transferring the exploration summary…' : 'Awaiting the exploration summary');
   updateHandoff(progress, index);
   $('handoff-record').hidden = progress < HANDOFF_END;
@@ -391,6 +394,12 @@ function render() {
     });
   }
   const phase = data.steps[Math.max(0, index)].phase;
+  if (evaluationReplay) {
+    const last = data.steps.length - 1;
+    const complete = time >= starts[last] + durations[last] * 0.99;
+    if (complete && !evaluationReplay.isConnected) $('generation-stream').append(evaluationReplay);
+    else if (!complete) evaluationReplay.remove();
+  }
   updateBoard(index);
   document.querySelectorAll('.phase-jump').forEach(button => {
     button.classList.toggle('active', button.dataset.phase === phase);
@@ -456,6 +465,21 @@ function showEvaluation(evaluation) {
   for (const key of ['report', 'before', 'after']) {
     $(`evaluation-${key}`).href = `data/${evaluation[key].file}`;
   }
+  if (evaluation.replay) {
+    evaluationReplay = node('section', 'reference-check');
+    evaluationReplay.setAttribute('aria-label', 'Recorded reference-fix evaluation');
+    evaluationReplay.append(node('h4', '', 'Reference-fix check'), node('p', 'reference-source', 'Recorded SWT-Bench evaluation · same submitted test'));
+    for (const [key, label] of [['before', 'Buggy version · FAILED'], ['after', 'Reference fix · PASSED']]) {
+      const result = node('div', `reference-result reference-${key}`);
+      const output = node('pre', '', evaluation.replay[key]);
+      const link = node('a', '', 'Full log ↗');
+      link.href = `data/${evaluation[key].file}`;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      result.append(node('strong', '', label), output, link);
+      evaluationReplay.append(result);
+    }
+  }
 }
 
 async function loadRun(nextTask, nextConfig) {
@@ -464,6 +488,7 @@ async function loadRun(nextTask, nextConfig) {
   controller = request;
   setPlaying(false);
   data = null;
+  evaluationReplay = null;
   $('continue-handoff').hidden = true;
   time = 0;
   total = 0;
@@ -505,9 +530,12 @@ async function loadRun(nextTask, nextConfig) {
   $('position').textContent = '00 / 00';
   $('percent').textContent = '0%';
   $('seek').value = 0;
-  // Retired case URLs open the first verified case while keeping the model.
-  const task = manifest.tasks.find(t => t.id === nextTask) || manifest.tasks[0];
-  const run = task.runs.find(r => r.config === nextConfig) || task.runs[0];
+  // Model changes keep that model and select one of its recorded cases.
+  const requestedTask = manifest.tasks.find(t => t.id === nextTask);
+  const preferredConfig = Object.hasOwn(manifest.configs, nextConfig) ? nextConfig : requestedTask?.runs[0].config || Object.keys(manifest.configs)[0];
+  const availableTasks = manifest.tasks.filter(task => task.runs.some(run => run.config === preferredConfig));
+  const task = availableTasks.find(task => task.id === nextTask) || availableTasks[0];
+  const run = task.runs.find(run => run.config === preferredConfig);
   taskId = task.id;
   configId = run.config;
   $('task-id').textContent = task.id;
@@ -516,10 +544,10 @@ async function loadRun(nextTask, nextConfig) {
     const active = button.dataset.config === configId;
     button.classList.toggle('active', active);
     button.setAttribute('aria-pressed', String(active));
-    button.disabled = !task.runs.some(run => run.config === button.dataset.config);
-    button.title = button.disabled ? 'No showcased run for this case' : '';
+    button.disabled = false;
   });
   document.querySelectorAll('.task').forEach(button => {
+    button.hidden = !availableTasks.some(task => task.id === button.dataset.task);
     const active = button.dataset.task === taskId;
     button.classList.toggle('active', active);
     button.setAttribute('aria-pressed', String(active));

@@ -12,11 +12,20 @@ TASKS = [
     'django__django-15104',
     'sympy__sympy-19637',
     'matplotlib__matplotlib-26113',
+    'sphinx-doc__sphinx-9367',
 ]
-CASE_LABELS = ['Migration field detection', 'Parenthesized expressions', 'Hexbin count threshold']
+CASE_LABELS = ['Migration field detection', 'Parenthesized expressions', 'Hexbin count threshold', 'Single-element tuples']
 MAX_STEPS = 26
 CONFIGS = {
     'opus-4.5-no-selection': 'Claude Opus 4.5 · DPI',
+    'gpt-5-no-selection': 'GPT-5 · DPI',
+    'gpt-5-mini-no-selection': 'GPT-5 Mini · DPI',
+}
+CASE_CONFIGS = {task: ['opus-4.5-no-selection'] for task in TASKS[:-1]}
+CASE_CONFIGS['sphinx-doc__sphinx-9367'] = ['gpt-5-no-selection', 'gpt-5-mini-no-selection']
+REFERENCE_CHECKS = {
+    ('sphinx-doc__sphinx-9367', 'gpt-5-no-selection'): (9, 'tests/test_pycode_ast_singleton_tuple.py'),
+    ('sphinx-doc__sphinx-9367', 'gpt-5-mini-no-selection'): (7, 'tests/test_pycode_ast_single_element_tuple.py'),
 }
 
 
@@ -123,6 +132,18 @@ def test_result(output, test, status):
 
 def recorded_validation(data):
     """Annotate exact original checks; never synthesize a successful tool output."""
+    reference = REFERENCE_CHECKS.get((data['id'], data['config']))
+    if reference:
+        index, path = reference
+        step = data['steps'][index - 1]
+        tests = data['evaluation']['fail_to_pass']
+        output = re.sub(r'\x1b\[[0-?]*[ -/]*[@-~]', '', step['observation'])
+        if (step['tool'] != 'bash' or step['phase'] != 'generation'
+                or 'pytest' not in step['action'] or path not in step['action']
+                or not all(test.startswith(path + '::') and test_result(output, test, 'FAILED') for test in tests)
+                or re.findall(r'^diff --git a/(.+?) b/', data['patch'], re.M) != [path]):
+            raise ValueError(f"{data['source']}: missing original regression failure at step {index}")
+        return [{'step': index, 'label': f'Bug reproduced: {len(tests)} failed'}]
     cases = {
         'matplotlib__matplotlib-26113': {
             'target': 'lib/matplotlib/tests/test_axes.py::test_hexbin_mincnt_behavior_with_C_parameter',
@@ -175,6 +196,22 @@ def recorded_validation(data):
     return [{'step': check[0], 'label': label} for check, label in zip(case['checks'], labels, strict=True)]
 
 
+def reference_replay(data, files):
+    """Extract named results from verified evaluation logs, separate from agent steps."""
+    replay = {}
+    for key, status in [('before', 'FAILED'), ('after', 'PASSED')]:
+        output = files[data['evaluation'][key]['file']].decode()
+        output = re.sub(r'\x1b\[[0-?]*[ -/]*[@-~]', '', output)
+        lines = []
+        for test in data['evaluation']['fail_to_pass']:
+            line = next((line for line in output.splitlines() if test_result(line, test, status)), None)
+            if line is None:
+                raise ValueError(f"{data['source']}: missing named {status} evaluation excerpt")
+            lines.append(line)
+        replay[key] = '\n'.join(lines)
+    return replay
+
+
 def validate_tools(data):
     forbidden = [step['index'] for step in data['steps']
                  if step['tool'].startswith('python_add')
@@ -207,7 +244,7 @@ def main():
         manifest['archive_trajectory_count'] = sum(n.endswith('.traj') for n in archive.namelist())
         for task, label in zip(TASKS, CASE_LABELS, strict=True):
             entry = {'id': task, 'label': label, 'repo': task.rsplit('-', 1)[0].replace('__', '/'), 'runs': []}
-            for config in CONFIGS:
+            for config in CASE_CONFIGS[task]:
                 source = f'traces/{config}/{task}/{task}.traj'
                 payload = archive.read(source)
                 data = convert(json.loads(payload), task, config, source, hashlib.sha256(payload).hexdigest())
@@ -221,6 +258,9 @@ def main():
                 validate_tools(data)
                 data['evaluation'], evidence_files = evaluation_evidence(data, root, logs[config], aggregates[config], predictions[config][task])
                 data['validation'] = recorded_validation(data)
+                data['validation_source'] = 'reference_fix' if (task, config) in REFERENCE_CHECKS else 'original_trajectory'
+                if data['validation_source'] == 'reference_fix':
+                    data['evaluation']['replay'] = reference_replay(data, evidence_files)
                 files.update(evidence_files)
                 filename = f'{task}--{config}.json'
                 files[filename] = (json.dumps(data, ensure_ascii=False, separators=(',', ':')) + '\n').encode()

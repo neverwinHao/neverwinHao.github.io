@@ -3,9 +3,11 @@
 Static HTML/CSS/JavaScript; no build step, runtime API, or JavaScript dependencies.
 The paper and demo share visual tokens in `assets/theme.css` and load the same
 Inter stylesheet (with system font fallbacks).
-The model bar identifies Claude Opus 4.5, the model used by all showcased
-runs. Case tabs sit below it. Only runs without test selection are exported;
-retired model/case URLs fall back to the available recording.
+The model bar switches between Claude Opus 4.5, GPT-5 and GPT-5 Mini.
+Case tabs below it show recordings available for the selected model. Switching
+models keeps the case when available, otherwise opens that model's first case.
+Only runs without test selection are exported. Retired case URLs preserve a
+valid requested model and fall back to one of its available recordings.
 The project page embeds this player at `DPIAgent/#demo`; the standalone player is at `DPIAgent/demo/`.
 
 The interface presents **two phases**, with the protocol at their boundary.
@@ -33,10 +35,15 @@ For a remote development machine, forward port 8765 to your browser's machine.
 
 ## Trace data
 
-The gallery contains three Claude Opus 4.5 runs, each with an actual fail-to-pass
-sequence inside the original trajectory. External evaluation success alone is not
-sufficient for inclusion. The records also restore the buggy implementation and
-rerun the same tests, then submit only the test patch.
+The gallery contains five runs across three models and four cases. Every run
+shows the generated regression test failing in the original trajectory, and
+the same submitted test passing with the reference fix in the recorded
+SWT-Bench evaluation. The agent's task is to write reproduction tests, not fix
+the implementation. A temporary implementation fix inside its trajectory is
+therefore not required for inclusion.
+
+The three Opus recordings additionally show a temporary implementation fix,
+the tests passing, and failure again after restoring the buggy implementation:
 
 | Case | Total steps | Buggy run | Temporary fix passes | Original restored, fails again |
 | --- | ---: | ---: | ---: | ---: |
@@ -44,11 +51,21 @@ rerun the same tests, then submit only the test patch.
 | `sympy__sympy-19637` — Parenthesized expressions | 26 | 17: 1 exception | 19: 1 passed | 21: 1 exception |
 | `matplotlib__matplotlib-26113` — Hexbin count threshold | 24 | 14: 1 failed | 16: 1 passed | 18: 1 failed |
 
-These original runs were chosen for visible validation. Other models and
-cases whose trajectories did not demonstrate that sequence are not showcased.
-The full actions show the temporary implementation edit and its reversal; the
-final submitted patches change test files only. No successful output is added
-to the replay from the external evaluation.
+The two GPT recordings show the single-element tuple regression in Sphinx
+(`sphinx-doc__sphinx-9367`): `(1,)` is incorrectly rendered as `(1)`.
+
+| Model | Total steps | Original failing test | Reference-fix evaluation |
+| --- | ---: | ---: | --- |
+| GPT-5 | 11 | Step 9 | Same test passes |
+| GPT-5 Mini | 9 | Step 7 | Same test passes |
+
+At the end of these two replays, a separate **Reference-fix check** shows the
+named FAILED and PASSED lines from the recorded evaluation with full-log links.
+This section is labeled as SWT-Bench evaluation, is not a numbered agent tool
+call, and does not change the trajectory or its step count. Seeking backward,
+restarting, or switching recordings removes the result until the replay ends.
+`validation_source` distinguishes `original_trajectory` from `reference_fix`.
+All final submitted patches change test files only.
 
 Counts are complete recorded steps, including repeated submission calls. No steps
 are removed. Each JSON retains original actions, observations, recorded reasoning,
@@ -61,9 +78,9 @@ The exporter requires all of the following before writing the gallery:
 - Every RPG tool call must be `rpg_search_code`; all other `rpg_*` calls are
   rejected, including calls embedded in shell actions.
 - At most 26 steps, a confirmed handoff, and a submitted test-only patch.
-- The same named regression tests fail, pass after the recorded temporary fix,
-  and fail again after restoration in the original trajectory, with the actual
-  test targets and implementation-edit commands checked against the source.
+- The same named regression tests fail in the original trajectory. For Opus,
+  the temporary fix and restoration checks are also verified against the source;
+  for GPT-5 and Mini, the reference-fix results come from the evaluation logs.
 - Resolved status and newly added fail-to-pass tests in the evaluation report,
   with no fail-to-fail or pass-to-fail tests.
 - Matching patches in the trajectory, inference output and both evaluation runs
@@ -74,7 +91,8 @@ The exporter requires all of the following before writing the gallery:
 The **Verified: fail → pass** control opens the test names and links to the
 original per-instance report and before/after logs. These are separate recorded
 evaluations, not extra agent steps or fresh reruns. Terminal color escapes are
-ignored only while validating statuses. Files in `data/evidence/` are
+ignored when validating statuses and displaying the named evaluation excerpts.
+Files in `data/evidence/` are
 byte-for-byte copies from `run_instance_swt_logs/<model>.zip`; the exported run
 records their source paths and SHA-256 hashes. Failures on buggy code in the replay
 are expected for a successful reproduction test. The complete raw logs also
@@ -97,7 +115,7 @@ python scripts/build_demo_traces.py /path/to/DPIAgent-submission/agent-traces.zi
 
 The archive's parent must contain `evaluation_results/`, `inference_outputs/` and
 `run_instance_swt_logs/`; use `--submission-dir` if they live elsewhere. Edit
-`TASKS` and `CASE_LABELS` to change selection. The exporter validates all runs
+`TASKS`, `CASE_LABELS` and `CASE_CONFIGS` to change selection. The exporter validates all runs
 before writing and removes retired trajectory JSON files and their evaluation
 evidence listed in the previous manifest. No source archives are needed to serve the generated site.
 
