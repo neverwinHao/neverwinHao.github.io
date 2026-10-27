@@ -439,8 +439,6 @@ function showModels() {
     button.addEventListener('click', () => loadRun(taskId, config));
     return button;
   }));
-  const runs = manifest.tasks.reduce((count, task) => count + task.runs.length, 0);
-  $('trace-summary').textContent = `${manifest.tasks.length} cases · ${Object.keys(manifest.configs).length} models · ${runs} recorded runs`;
 }
 
 function showTasks() {
@@ -490,7 +488,7 @@ async function loadRun(nextTask, nextConfig) {
   $('patch-panel').hidden = true;
   $('issue-toggle').setAttribute('aria-expanded', 'false');
   $('patch-toggle').setAttribute('aria-expanded', 'false');
-  ['play', 'restart', 'prev', 'next', 'seek', 'download-trace', 'patch-toggle', 'watch-handoff'].forEach(id => $(id).disabled = true);
+  ['play', 'restart', 'prev', 'next', 'seek', 'patch-toggle', 'watch-handoff'].forEach(id => $(id).disabled = true);
   document.querySelectorAll('.phase-jump').forEach(button => { button.disabled = true; button.classList.remove('active'); });
   $('steps').replaceChildren();
   $('step-total').textContent = 'Loading…';
@@ -566,7 +564,7 @@ async function loadRun(nextTask, nextConfig) {
       button.disabled = i < 0;
       button.onclick = () => jump(i);
     });
-    ['play', 'restart', 'seek', 'download-trace'].forEach(id => $(id).disabled = false);
+    ['play', 'restart', 'seek'].forEach(id => $(id).disabled = false);
     const url = new URL(location.href);
     url.searchParams.set('task', taskId);
     url.searchParams.set('config', configId);
@@ -614,7 +612,6 @@ for (const [toggle, panel] of [['issue-toggle', 'issue'], ['patch-toggle', 'patc
   });
 }
 $('download-patch').addEventListener('click', () => data && download(data.patch, `${data.id}.patch`, 'text/plain'));
-$('download-trace').addEventListener('click', () => data && download(JSON.stringify(data, null, 2), `${data.id}--${data.config}.json`, 'application/json'));
 $('follow').addEventListener('change', () => {
   if ($('follow').checked) document.querySelectorAll('.phase-stream').forEach(stream => stream.scrollTop = stream.scrollHeight);
 });
