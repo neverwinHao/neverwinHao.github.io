@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DPIAgent — a visual walkthrough</title>
+  <meta name="description" content="Three real issues, their recorded diagnosis handoffs, and verified fail-to-pass reproduction tests.">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="../assets/theme.css">
+  <link rel="stylesheet" href="showcase.css">
+  <script src="showcase.js" defer></script>
+</head>
+<body>
+  <div id="viewport"><main id="stage" aria-label="DPIAgent presentation">
+    <header class="masthead"><a href="../">DPIAgent<span class="brand-square" aria-hidden="true"></span></a><span id="chapter-label">A visual walkthrough</span></header>
+    <div class="title-rule"><span></span></div>
+    <div id="slides"></div>
+    <footer class="stage-footer"><span id="source-label">Recorded trajectories · verified test outcomes</span><span id="slide-number"></span></footer>
+    <div class="progress-track"><div id="progress-fill"></div></div>
+  </main></div>
+  <nav class="controls" aria-label="Presentation controls">
+    <button id="previous" aria-label="Previous slide">←</button><button id="play" disabled>Loading recordings…</button><button id="next" aria-label="Next slide">→</button>
+    <label class="seek-label">Progress <input id="seek" type="range" min="0" max="1" step="0.05" value="0" aria-label="Presentation progress"></label>
+    <span id="clock" aria-live="off">0:00</span><button id="fullscreen">Fullscreen</button><a href="../demo/" id="open-trace">Open explorer ↗</a>
+  </nav>
+  <p id="error" role="alert" hidden></p>
+</body>
+</html>

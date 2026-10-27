@@ -1,0 +1,259 @@
+{
+  "duration_seconds": 87.533333,
+  "frames": 1313,
+  "fps": 15,
+  "resolution": [
+    1600,
+    900
+  ],
+  "audio": false,
+  "gif": {
+    "resolution": [
+      960,
+      540
+    ],
+    "fps": 10,
+    "speed": 2.5
+  },
+  "presentation": "https://neverwinhao.github.io/DPIAgent/showcase/",
+  "capture_url": "http://localhost:8765/DPIAgent/showcase/?capture=1",
+  "scenes": [
+    {
+      "kind": "cover",
+      "start": 0,
+      "duration": 3,
+      "task": null,
+      "config": null
+    },
+    {
+      "kind": "method",
+      "start": 3,
+      "duration": 4,
+      "task": null,
+      "config": null
+    },
+    {
+      "kind": "issue",
+      "start": 7,
+      "duration": 3.5,
+      "task": "sphinx-doc__sphinx-9367",
+      "config": "gpt-5-mini-no-selection"
+    },
+    {
+      "kind": "demo",
+      "start": 10.5,
+      "duration": 18,
+      "task": "sphinx-doc__sphinx-9367",
+      "config": "gpt-5-mini-no-selection"
+    },
+    {
+      "kind": "result",
+      "start": 28.5,
+      "duration": 4,
+      "task": "sphinx-doc__sphinx-9367",
+      "config": "gpt-5-mini-no-selection"
+    },
+    {
+      "kind": "issue",
+      "start": 32.5,
+      "duration": 3.5,
+      "task": "matplotlib__matplotlib-26113",
+      "config": "gpt-5-no-selection"
+    },
+    {
+      "kind": "demo",
+      "start": 36,
+      "duration": 18,
+      "task": "matplotlib__matplotlib-26113",
+      "config": "gpt-5-no-selection"
+    },
+    {
+      "kind": "result",
+      "start": 54,
+      "duration": 4,
+      "task": "matplotlib__matplotlib-26113",
+      "config": "gpt-5-no-selection"
+    },
+    {
+      "kind": "issue",
+      "start": 58,
+      "duration": 3.5,
+      "task": "pydata__xarray-7233",
+      "config": "opus-4.5-no-selection"
+    },
+    {
+      "kind": "demo",
+      "start": 61.5,
+      "duration": 18,
+      "task": "pydata__xarray-7233",
+      "config": "opus-4.5-no-selection"
+    },
+    {
+      "kind": "result",
+      "start": 79.5,
+      "duration": 4,
+      "task": "pydata__xarray-7233",
+      "config": "opus-4.5-no-selection"
+    },
+    {
+      "kind": "outro",
+      "start": 83.5,
+      "duration": 4,
+      "task": null,
+      "config": null
+    }
+  ],
+  "recordings": [
+    {
+      "id": "sphinx-doc__sphinx-9367",
+      "config": "gpt-5-mini-no-selection",
+      "source": "traces/gpt-5-mini-no-selection/sphinx-doc__sphinx-9367/sphinx-doc__sphinx-9367.traj",
+      "source_sha256": "889e886426256a843197b4d592148de89bf309afc1bc681eb3ad7fbbd32801e1",
+      "steps": 9,
+      "validation": [
+        {
+          "step": 7,
+          "label": "Bug reproduced: 1 failed"
+        }
+      ],
+      "evaluation": {
+        "resolved": true,
+        "added_fail_to_pass": 1,
+        "fail_to_pass": [
+          "tests/test_pycode_ast_single_element_tuple.py::test_unparse_single_element_tuple"
+        ],
+        "aggregate_source": "evaluation_results/gpt-5-mini-no-selection.json",
+        "aggregate_sha256": "28d4c3016ef083de0383a9c44233c32371e86bf9b050e52dc0be82c426c60f65",
+        "archive": "run_instance_swt_logs/gpt-5-mini-no-selection.zip",
+        "report": {
+          "file": "evidence/sphinx-doc__sphinx-9367--gpt-5-mini-no-selection/report.json",
+          "source": "gpt-5-mini-no-selection/gpt-5-mini-no-selection/sphinx-doc__sphinx-9367/report.json",
+          "sha256": "cf6dae17ed9be8d0e65b5b4f26ec6772adc74994db1fc45008e431a6664da5ee"
+        },
+        "before": {
+          "file": "evidence/sphinx-doc__sphinx-9367--gpt-5-mini-no-selection/before.txt",
+          "source": "gpt-5-mini-no-selection/pred_pre__gpt-5-mini-no-selection/sphinx-doc__sphinx-9367/test_output.txt",
+          "sha256": "09e5f9e6f8cf3c760d6b82d511661d721aae118a999dee623de322f020e270f0"
+        },
+        "after": {
+          "file": "evidence/sphinx-doc__sphinx-9367--gpt-5-mini-no-selection/after.txt",
+          "source": "gpt-5-mini-no-selection/pred_post__gpt-5-mini-no-selection/sphinx-doc__sphinx-9367/test_output.txt",
+          "sha256": "2bc182198c43d1bb735db7c84c68f2426c765ca6e762122090a52d940cfbcfdf"
+        },
+        "replay": {
+          "before": "FAILED tests/test_pycode_ast_single_element_tuple.py::test_unparse_single_element_tuple - AssertionError: assert '(1)' == '(1,)'",
+          "after": "PASSED tests/test_pycode_ast_single_element_tuple.py::test_unparse_single_element_tuple"
+        }
+      }
+    },
+    {
+      "id": "matplotlib__matplotlib-26113",
+      "config": "gpt-5-no-selection",
+      "source": "traces/gpt-5-no-selection/matplotlib__matplotlib-26113/matplotlib__matplotlib-26113.traj",
+      "source_sha256": "d4924c4de9ec36e60ff1edf8e9a84d0e86bcd19c1ac758dcb8f28c2de758afc1",
+      "steps": 17,
+      "validation": [
+        {
+          "step": 15,
+          "label": "Bug reproduced: 2 failed"
+        }
+      ],
+      "evaluation": {
+        "resolved": true,
+        "added_fail_to_pass": 2,
+        "fail_to_pass": [
+          "lib/matplotlib/tests/test_hexbin_mincnt.py::test_hexbin_mincnt_c_inclusive_min1",
+          "lib/matplotlib/tests/test_hexbin_mincnt.py::test_hexbin_mincnt_c_inclusive_min2"
+        ],
+        "aggregate_source": "evaluation_results/gpt-5-no-selection.json",
+        "aggregate_sha256": "1b684f8644d4e3d24caebda7a3dd2921c6809249407cbfb80e09d20a47b16ff2",
+        "archive": "run_instance_swt_logs/gpt-5-no-selection.zip",
+        "report": {
+          "file": "evidence/matplotlib__matplotlib-26113--gpt-5-no-selection/report.json",
+          "source": "gpt-5-no-selection/gpt-5-no-selection/matplotlib__matplotlib-26113/report.json",
+          "sha256": "f54ecd2074c9fec37d2e459795e952001cf5863934c27318718738091e480d57"
+        },
+        "before": {
+          "file": "evidence/matplotlib__matplotlib-26113--gpt-5-no-selection/before.txt",
+          "source": "gpt-5-no-selection/pred_pre__gpt-5-no-selection/matplotlib__matplotlib-26113/test_output.txt",
+          "sha256": "fb8b477912d27d72c40bb52d2cd9d78c963f8d72d5c270276043808279b8aba8"
+        },
+        "after": {
+          "file": "evidence/matplotlib__matplotlib-26113--gpt-5-no-selection/after.txt",
+          "source": "gpt-5-no-selection/pred_post__gpt-5-no-selection/matplotlib__matplotlib-26113/test_output.txt",
+          "sha256": "b3fb30247bb6154cc1b42d2bfa2abf68f32e069321e2a85ab165e66fb1d9ad8d"
+        },
+        "replay": {
+          "before": "FAILED lib/matplotlib/tests/test_hexbin_mincnt.py::test_hexbin_mincnt_c_inclusive_min1\nFAILED lib/matplotlib/tests/test_hexbin_mincnt.py::test_hexbin_mincnt_c_inclusive_min2",
+          "after": "PASSED lib/matplotlib/tests/test_hexbin_mincnt.py::test_hexbin_mincnt_c_inclusive_min1\nPASSED lib/matplotlib/tests/test_hexbin_mincnt.py::test_hexbin_mincnt_c_inclusive_min2"
+        }
+      }
+    },
+    {
+      "id": "pydata__xarray-7233",
+      "config": "opus-4.5-no-selection",
+      "source": "traces/opus-4.5-no-selection/pydata__xarray-7233/pydata__xarray-7233.traj",
+      "source_sha256": "a2d77fa754d72ff1119c0b84bd7637737bb6069d1ca61cff734708728e2af501",
+      "steps": 22,
+      "validation": [
+        {
+          "step": 15,
+          "label": "Bug reproduced: 2 failed"
+        }
+      ],
+      "evaluation": {
+        "resolved": true,
+        "added_fail_to_pass": 2,
+        "fail_to_pass": [
+          "xarray/tests/test_coarsen.py::test_coarsen_construct_keeps_coords_multi_dim",
+          "xarray/tests/test_coarsen.py::test_coarsen_construct_keeps_non_dimensional_coords"
+        ],
+        "aggregate_source": "evaluation_results/opus-4.5-no-selection.json",
+        "aggregate_sha256": "aecd2f93b914e8cc1f21461e1fa769b202ef151b1ecb026bc06d363ef46726b7",
+        "archive": "run_instance_swt_logs/opus-4.5-no-selection.zip",
+        "report": {
+          "file": "evidence/pydata__xarray-7233--opus-4.5-no-selection/report.json",
+          "source": "opus-4.5-no-selection/opus-4.5-no-selection/pydata__xarray-7233/report.json",
+          "sha256": "3c4c0902ab85d2a5351c7b335e7f797480e1d8f89f554a90fe92a947c57b4784"
+        },
+        "before": {
+          "file": "evidence/pydata__xarray-7233--opus-4.5-no-selection/before.txt",
+          "source": "opus-4.5-no-selection/pred_pre__opus-4.5-no-selection/pydata__xarray-7233/test_output.txt",
+          "sha256": "f0e0538b1ebf2847bf77981daa2c762fd6bf431c5d661159aac8acd987775984"
+        },
+        "after": {
+          "file": "evidence/pydata__xarray-7233--opus-4.5-no-selection/after.txt",
+          "source": "opus-4.5-no-selection/pred_post__opus-4.5-no-selection/pydata__xarray-7233/test_output.txt",
+          "sha256": "6df616ccd4c18e87bf173795b6ead27070ea59a0b7caee6cc2963a051d839613"
+        },
+        "replay": {
+          "before": "FAILED xarray/tests/test_coarsen.py::test_coarsen_construct_keeps_coords_multi_dim\nFAILED xarray/tests/test_coarsen.py::test_coarsen_construct_keeps_non_dimensional_coords",
+          "after": "PASSED xarray/tests/test_coarsen.py::test_coarsen_construct_keeps_coords_multi_dim\nPASSED xarray/tests/test_coarsen.py::test_coarsen_construct_keeps_non_dimensional_coords"
+        }
+      }
+    }
+  ],
+  "source_files": {
+    "DPIAgent/showcase/index.html": "cf930a2fa01504a28b72e10dd9a185bb12f63186060c291d064cdd0180c260da",
+    "DPIAgent/showcase/showcase.js": "2b4c619f1a3675af141bc47b28edcbda8102453fa551f3d82cd65ca35b5f4cc4",
+    "DPIAgent/showcase/showcase.css": "04e70728c0754ec40eee4931e589134c8bee1276e7026c0eb6e6b3bda585b075",
+    "DPIAgent/demo/demo.js": "ef58e50c9195db7fc8d8c73914a1ceefb7dc2a009d91cbefabf6abcc6d5d6e6b",
+    "DPIAgent/demo/demo.css": "ad6250835d424f8127088faf7f34d64ff41da6ff570709d1ad0e4f842b8c0e27",
+    "DPIAgent/demo/data/index.json": "71c6c046453751610c56b49cb2e54bbff75705d2a0a29310f19eb0d12e532b56"
+  },
+  "browser_errors": [],
+  "artifacts": {
+    "dpiagent-demo.mp4": {
+      "bytes": 6016883,
+      "sha256": "54abbc12294d3ae9e2abbf4905a2dbda89594c5691ecaa15cf5ec58f43764f8d"
+    },
+    "dpiagent-demo.gif": {
+      "bytes": 5635528,
+      "sha256": "1171d35c9aa39fae5f2285c325e6768b36a3d6e4437b43c1404b2ef2f09a41b3"
+    },
+    "dpiagent-demo-poster.png": {
+      "bytes": 59738,
+      "sha256": "a3747db29033fe8eb1a748f74036fbf37219d041e95c7cf4ea3de21b76a48c4c"
+    }
+  }
+}

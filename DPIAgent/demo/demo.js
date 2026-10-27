@@ -15,6 +15,32 @@ const HANDOFF_DURATION = 12;
 const HANDOFF_START = 0.04, HANDOFF_END = 0.92;
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+// The presentation embeds this same player and seeks recorded time; it never
+// inserts synthetic tool calls or replaces original actions and observations.
+if (params.get('presentation') === '1') {
+  document.documentElement.classList.add('presentation');
+  window.dpiReplay = {
+    get ready() { return !!data && !!starts.length; },
+    get recording() { return data; },
+    get timing() { return { starts: [...starts], durations: [...durations], total, handoffIndex }; },
+    seek(seconds) {
+      if (!data) return;
+      setPlaying(false);
+      time = Math.max(0, Math.min(total, seconds));
+      render();
+    },
+    focus(step, needle, target = 'output') {
+      const event = elements[step - 1];
+      if (!event) return;
+      const box = event[target];
+      const line = [...box.querySelectorAll('.trace-line')].find(line => line.textContent.includes(needle));
+      box.scrollTop = line ? box.scrollTop + line.getBoundingClientRect().top - box.getBoundingClientRect().top - 40 : 0;
+      const stream = event.article.closest('.phase-stream');
+      if (stream) stream.scrollTop += event.article.getBoundingClientRect().top - stream.getBoundingClientRect().top - 12;
+    },
+  };
+}
+
 function node(tag, className, text) {
   const el = document.createElement(tag);
   if (className) el.className = className;
