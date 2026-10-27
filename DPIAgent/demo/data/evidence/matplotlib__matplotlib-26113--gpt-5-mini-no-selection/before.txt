@@ -1,0 +1,451 @@
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z '' ']'
++++ export CONDA_SHLVL=0
++++ CONDA_SHLVL=0
++++ '[' -n '' ']'
++++++ dirname /opt/miniconda3/bin/conda
+++++ dirname /opt/miniconda3/bin
++++ PATH=/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export PATH
++++ '[' -z '' ']'
++++ PS1=
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\''
+. "/opt/miniconda3/envs/testbed/etc/conda/activate.d/libglib_activate.sh"
+. "/opt/miniconda3/envs/testbed/etc/conda/activate.d/libxml2-split_activate.sh"'
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\''
+. "/opt/miniconda3/envs/testbed/etc/conda/activate.d/libglib_activate.sh"
+. "/opt/miniconda3/envs/testbed/etc/conda/activate.d/libxml2-split_activate.sh"'
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_1=/opt/miniconda3
+++ CONDA_PREFIX_1=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ . /opt/miniconda3/envs/testbed/etc/conda/activate.d/libglib_activate.sh
++++ export GSETTINGS_SCHEMA_DIR_CONDA_BACKUP=
++++ GSETTINGS_SCHEMA_DIR_CONDA_BACKUP=
++++ export GSETTINGS_SCHEMA_DIR=/opt/miniconda3/envs/testbed/share/glib-2.0/schemas
++++ GSETTINGS_SCHEMA_DIR=/opt/miniconda3/envs/testbed/share/glib-2.0/schemas
+++ . /opt/miniconda3/envs/testbed/etc/conda/activate.d/libxml2-split_activate.sh
++++ test -n ''
++++ xml_catalog_files_libxml2=
++++ XML_CATALOG_FILES=
++++ conda_catalog_files=
++++ ifs_libxml2=' 	
+'
++++ IFS=' '
++++ rem=/opt/miniconda3/envs/testbed
++++ for pre in ${rem}
++++ test '' = /opt/miniconda3/envs/testbed
++++ conda_catalog_files=/opt/miniconda3/envs/testbed
++++ rem=
++++ IFS=' 	
+'
++++ conda_catalog_files='file:///opt/miniconda3/envs/testbed/etc/xml/catalog file:///etc/xml/catalog'
++++ export 'XML_CATALOG_FILES=file:///opt/miniconda3/envs/testbed/etc/xml/catalog file:///etc/xml/catalog'
++++ XML_CATALOG_FILES='file:///opt/miniconda3/envs/testbed/etc/xml/catalog file:///etc/xml/catalog'
++++ unset conda_catalog_files ifs_libxml2 rem
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ cd /testbed
++ git diff HEAD 5ca694b38d861c0e24cd8743753427dda839b90b
++ git config --global --add safe.directory /testbed
++ cd /testbed
++ git status
+On branch main
+nothing to commit, working tree clean
++ git show
+commit 5ca694b38d861c0e24cd8743753427dda839b90b
+Merge: 2811576c65 6469b722bb
+Author: Thomas A Caswell <tcaswell@gmail.com>
+Date:   Mon Jun 12 12:17:52 2023 -0400
+
+    Merge pull request #26112 from rcomer/skip-tests-gallery
+    
+    Skip tests for users-explain gallery
+
++ git diff 5ca694b38d861c0e24cd8743753427dda839b90b
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z x ']'
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1='(testbed) '
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='. "/opt/miniconda3/envs/testbed/etc/conda/deactivate.d/libglib_deactivate.sh"
+PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval '. "/opt/miniconda3/envs/testbed/etc/conda/deactivate.d/libglib_deactivate.sh"
+PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ . /opt/miniconda3/envs/testbed/etc/conda/deactivate.d/libglib_deactivate.sh
+++++ export GSETTINGS_SCHEMA_DIR=
+++++ GSETTINGS_SCHEMA_DIR=
+++++ unset GSETTINGS_SCHEMA_DIR_CONDA_BACKUP
+++++ '[' -z ']'
+++++ unset GSETTINGS_SCHEMA_DIR
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=3
++++ CONDA_SHLVL=3
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\''
+. "/opt/miniconda3/envs/testbed/etc/conda/activate.d/libglib_activate.sh"
+. "/opt/miniconda3/envs/testbed/etc/conda/activate.d/libxml2-split_activate.sh"'
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\''
+. "/opt/miniconda3/envs/testbed/etc/conda/activate.d/libglib_activate.sh"
+. "/opt/miniconda3/envs/testbed/etc/conda/activate.d/libxml2-split_activate.sh"'
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=4
+++ CONDA_SHLVL=4
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_3=/opt/miniconda3
+++ CONDA_PREFIX_3=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ . /opt/miniconda3/envs/testbed/etc/conda/activate.d/libglib_activate.sh
++++ export GSETTINGS_SCHEMA_DIR_CONDA_BACKUP=
++++ GSETTINGS_SCHEMA_DIR_CONDA_BACKUP=
++++ export GSETTINGS_SCHEMA_DIR=/opt/miniconda3/envs/testbed/share/glib-2.0/schemas
++++ GSETTINGS_SCHEMA_DIR=/opt/miniconda3/envs/testbed/share/glib-2.0/schemas
+++ . /opt/miniconda3/envs/testbed/etc/conda/activate.d/libxml2-split_activate.sh
++++ test -n 'file:///opt/miniconda3/envs/testbed/etc/xml/catalog file:///etc/xml/catalog'
++++ xml_catalog_files_libxml2='file:///opt/miniconda3/envs/testbed/etc/xml/catalog file:///etc/xml/catalog'
++++ XML_CATALOG_FILES='file:///opt/miniconda3/envs/testbed/etc/xml/catalog file:///etc/xml/catalog '
++++ conda_catalog_files=
++++ ifs_libxml2=' 	
+'
++++ IFS=' '
++++ rem=/opt/miniconda3/envs/testbed
++++ for pre in ${rem}
++++ test '' = /opt/miniconda3/envs/testbed
++++ conda_catalog_files=/opt/miniconda3/envs/testbed
++++ rem=
++++ IFS=' 	
+'
++++ conda_catalog_files='file:///opt/miniconda3/envs/testbed/etc/xml/catalog file:///etc/xml/catalog'
++++ export 'XML_CATALOG_FILES=file:///opt/miniconda3/envs/testbed/etc/xml/catalog file:///etc/xml/catalog file:///opt/miniconda3/envs/testbed/etc/xml/catalog file:///etc/xml/catalog'
++++ XML_CATALOG_FILES='file:///opt/miniconda3/envs/testbed/etc/xml/catalog file:///etc/xml/catalog file:///opt/miniconda3/envs/testbed/etc/xml/catalog file:///etc/xml/catalog'
++++ unset conda_catalog_files ifs_libxml2 rem
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ python -m pip install -e .
+Obtaining file:///testbed
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: contourpy>=1.0.1 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from matplotlib==3.8.0.dev1303+g5ca694b38) (1.1.0)
+Requirement already satisfied: cycler>=0.10 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from matplotlib==3.8.0.dev1303+g5ca694b38) (0.11.0)
+Requirement already satisfied: fonttools>=4.22.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from matplotlib==3.8.0.dev1303+g5ca694b38) (4.42.1)
+Requirement already satisfied: kiwisolver>=1.0.1 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from matplotlib==3.8.0.dev1303+g5ca694b38) (1.4.5)
+Requirement already satisfied: numpy>=1.21 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from matplotlib==3.8.0.dev1303+g5ca694b38) (1.25.2)
+Requirement already satisfied: packaging>=20.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from matplotlib==3.8.0.dev1303+g5ca694b38) (23.1)
+Requirement already satisfied: pillow>=6.2.0 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from matplotlib==3.8.0.dev1303+g5ca694b38) (10.0.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from matplotlib==3.8.0.dev1303+g5ca694b38) (3.0.9)
+Requirement already satisfied: python-dateutil>=2.7 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from matplotlib==3.8.0.dev1303+g5ca694b38) (2.8.2)
+Requirement already satisfied: setuptools_scm>=7 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from matplotlib==3.8.0.dev1303+g5ca694b38) (7.1.0)
+Requirement already satisfied: six>=1.5 in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from python-dateutil>=2.7->matplotlib==3.8.0.dev1303+g5ca694b38) (1.16.0)
+Requirement already satisfied: setuptools in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from setuptools_scm>=7->matplotlib==3.8.0.dev1303+g5ca694b38) (68.1.2)
+Requirement already satisfied: typing-extensions in /opt/miniconda3/envs/testbed/lib/python3.11/site-packages (from setuptools_scm>=7->matplotlib==3.8.0.dev1303+g5ca694b38) (4.7.1)
+Building wheels for collected packages: matplotlib
+  Building editable for matplotlib (pyproject.toml): started
+  Building editable for matplotlib (pyproject.toml): finished with status 'done'
+  Created wheel for matplotlib: filename=matplotlib-3.8.0.dev1303+g5ca694b38-0.editable-cp311-cp311-linux_x86_64.whl size=22686 sha256=a7999ab79934cff021f238087a22e33ef71b8bb210a1345a1e67fe26e225fac6
+  Stored in directory: /tmp/pip-ephem-wheel-cache-x0lafvsz/wheels/49/5f/4f/01b7d31ea6ddac9643da788242d33e5fd3467d95d17b032c6b
+Successfully built matplotlib
+Installing collected packages: matplotlib
+  Attempting uninstall: matplotlib
+    Found existing installation: matplotlib 3.8.0.dev1303+g5ca694b38
+    Uninstalling matplotlib-3.8.0.dev1303+g5ca694b38:
+      Successfully uninstalled matplotlib-3.8.0.dev1303+g5ca694b38
+Successfully installed matplotlib-3.8.0.dev1303+g5ca694b38
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ git apply -v -
+Checking patch lib/matplotlib/tests/test_hexbin_mincnt.py...
+Applied patch lib/matplotlib/tests/test_hexbin_mincnt.py cleanly.
++ python3 /root/trace.py --count -C coverage.cover --include-pattern '/testbed/(lib/matplotlib/axes/_axes\.py)' -m pytest --no-header -rA -p no:cacheprovider lib/matplotlib/tests/test_hexbin_mincnt.py
+['--count', '-C', 'coverage.cover', '--include-pattern', '/testbed/(lib/matplotlib/axes/_axes\\.py)']
+============================= test session starts ==============================
+collected 1 item
+
+lib/matplotlib/tests/test_hexbin_mincnt.py F                             [100%]
+
+=================================== FAILURES ===================================
+_______________ test_hexbin_mincnt_consistent_with_and_without_C _______________
+
+    def test_hexbin_mincnt_consistent_with_and_without_C():
+        """Ensure hexbin(..., mincnt=1) yields the same visible bins with/without C.
+    
+        The repository currently has differing behavior: when C is None,
+        bins with exactly one point are kept with mincnt=1, but when C is
+        provided the implementation requires strictly more than mincnt
+        points (i.e., len(acc) > mincnt), which excludes single-point
+        bins. This test asserts the counts are the same for identical data.
+        """
+        np.random.seed(42)
+        X, Y = np.random.multivariate_normal(
+            [0.0, 0.0], [[1.0, 0.1], [0.1, 1.0]], size=250
+        ).T
+        Z = np.ones_like(X)
+    
+        extent = [-3.0, 3.0, -3.0, 3.0]
+        gridsize = (7, 7)
+    
+        fig1, ax1 = plt.subplots()
+        hb_noC = ax1.hexbin(X, Y, mincnt=1, extent=extent, gridsize=gridsize)
+        n_noC = len(hb_noC.get_array())
+    
+        fig2, ax2 = plt.subplots()
+        hb_withC = ax2.hexbin(
+            X, Y, C=Z, reduce_C_function=np.sum, mincnt=1,
+            extent=extent, gridsize=gridsize
+        )
+        n_withC = len(hb_withC.get_array())
+    
+        # Clean up figures to avoid resource warnings in test harnesses.
+        plt.close(fig1)
+        plt.close(fig2)
+    
+>       assert n_noC == n_withC, (
+            f"Expected same number of visible hexbin bins, got {n_noC} (no C) "
+            f"vs {n_withC} (with C)"
+        )
+E       AssertionError: Expected same number of visible hexbin bins, got 51 (no C) vs 36 (with C)
+E       assert 51 == 36
+
+lib/matplotlib/tests/test_hexbin_mincnt.py:51: AssertionError
+=========================== short test summary info ============================
+FAILED lib/matplotlib/tests/test_hexbin_mincnt.py::test_hexbin_mincnt_consistent_with_and_without_C
+============================== 1 failed in 6.52s ===============================
++ cat coverage.cover
++ git checkout 5ca694b38d861c0e24cd8743753427dda839b90b
+{"/testbed/lib/matplotlib/axes/_axes.py": {"0": 0, "1": 1, "2": 1, "3": 1, "4": 1, "5": 1, "7": 1, "8": 1, "10": 1, "11": 1, "12": 1, "13": 1, "14": 1, "15": 1, "16": 1, "17": 1, "18": 1, "19": 1, "20": 1, "21": 1, "22": 1, "23": 1, "24": 1, "25": 1, "26": 1, "27": 1, "28": 1, "29": 1, "30": 1, "31": 1, "32": 1, "33": 1, "34": 1, "36": 1, "37": 1, "39": 1, "46": 3, "47": 2, "79": 1, "104": 1, "190": 1, "204": 2, "205": 2, "329": 1, "332": 1, "406": 2, "407": 3, "408": 1, "409": 1, "519": 1, "558": 2, "559": 2, "600": 2, "601": 2, "632": 2, "633": 2, "708": 2, "709": 3, "710": 1, "721": 1, "724": 2, "725": 2, "792": 2, "793": 2, "860": 2, "861": 2, "868": 2, "869": 2, "942": 2, "943": 2, "990": 2, "991": 2, "1047": 3, "1048": 1, "1049": 3, "1050": 1, "1138": 3, "1139": 1, "1140": 3, "1141": 1, "1229": 2, "1232": 2, "1233": 3, "1234": 1, "1235": 1, "1478": 2, "1479": 2, "1732": 2, "1733": 2, "1734": 2, "1814": 2, "1815": 2, "1868": 2, "1869": 2, "1915": 2, "1916": 2, "1961": 2, "1962": 2, "2033": 2, "2034": 3, "2035": 1, "2145": 1, "2213": 2, "2214": 2, "2265": 2, "2266": 2, "2267": 2, "2578": 2, "2579": 3, "2580": 1, "2704": 2, "2705": 1, "2871": 2, "2872": 2, "2873": 2, "2939": 2, "2940": 3, "2941": 1, "3099": 2, "3100": 4, "3101": 1, "3102": 1, "3103": 1, "3104": 2, "3343": 2, "3344": 2, "3375": 3, "3376": 1, "3377": 2, "3378": 3, "3379": 1, "3380": 1, "3381": 1, "3744": 2, "3745": 3, "3746": 1, "3747": 1, "3748": 1, "3749": 1, "3750": 1, "3751": 1, "3752": 1, "3753": 1, "4055": 2, "4056": 1, "4057": 1, "4058": 1, "4059": 1, "4060": 1, "4061": 1, "4343": 2, "4344": 2, "4493": 3, "4496": 1, "4497": 2, "4498": 4, "4499": 1, "4500": 1, "4773": 2, "4774": 2, "4775": 3, "4776": 1, "4777": 1, "4778": 1, "4779": 1, "5164": 2, "5165": 2, "5203": 2, "5204": 2, "5210": 1, "5218": 2, "5219": 2, "5220": 2, "5230": 2, "5231": 2, "5232": 2, "5243": 1, "5296": 1, "5295": 2, "5297": 1, "5491": 2, "5492": 1, "5497": 1, "5498": 2, "5499": 1, "5501": 2, "5502": 1, "5503": 1, "5505": 2, "5506": 1, "5511": 1, "5512": 2, "5513": 1, "5515": 2, "5516": 1, "5517": 1, "5521": 2, "5522": 2, "5523": 3, "5524": 1, "5525": 1, "5526": 1, "5527": 1, "5746": 1, "5862": 2, "5863": 2, "5864": 3, "5865": 1, "6096": 2, "6097": 2, "6098": 3, "6099": 1, "6320": 2, "6321": 2, "6322": 3, "6323": 1, "6502": 2, "6503": 2, "6504": 2, "6518": 2, "6519": 2, "6520": 2, "6534": 1, "6556": 2, "6557": 3, "6558": 1, "6559": 1, "6560": 1, "7023": 2, "7024": 3, "7025": 1, "7100": 2, "7101": 2, "7102": 3, "7103": 1, "7207": 2, "7208": 2, "7209": 3, "7210": 1, "7309": 2, "7310": 2, "7311": 3, "7312": 1, "7313": 1, "7420": 2, "7421": 2, "7422": 3, "7423": 1, "7424": 1, "7522": 2, "7523": 2, "7524": 3, "7525": 1, "7608": 2, "7609": 2, "7610": 3, "7611": 1, "7677": 2, "7678": 2, "7679": 3, "7680": 1, "7746": 2, "7747": 2, "7748": 3, "7749": 1, "7750": 1, "7810": 2, "7811": 2, "7812": 3, "7813": 1, "7814": 1, "7815": 1, "7816": 1, "7966": 2, "7967": 3, "7968": 1, "8105": 1, "8156": 2, "8157": 3, "8158": 1, "8159": 1, "8261": 2, "8262": 1, "8430": 1, "8433": 1, "8435": 3, "8436": 2, "8438": 1, "8439": 1, "8440": 1, "8441": 1, "8443": 1, "98": 0, "99": 0, "100": 0, "101": 0, "102": 0, "157": 0, "158": 0, "160": 0, "161": 0, "162": 0, "163": 0, "165": 0, "166": 0, "168": 0, "169": 0, "170": 0, "171": 0, "173": 0, "174": 0, "175": 0, "176": 0, "172": 0, "177": 0, "178": 0, "179": 0, "180": 0, "181": 0, "182": 0, "183": 0, "184": 0, "185": 0, "186": 0, "187": 0, "188": 0, "200": 0, "201": 0, "202": 0, "319": 0, "320": 0, "321": 0, "322": 0, "323": 0, "324": 0, "325": 0, "326": 0, "327": 0, "330": 0, "388": 0, "389": 0, "390": 0, "393": 0, "394": 0, "395": 0, "396": 0, "400": 0, "402": 0, "404": 0, "467": 0, "469": 0, "470": 0, "471": 0, "473": 0, "474": 0, "475": 0, "476": 0, "477": 0, "478": 0, "480": 0, "482": 0, "484": 0, "488": 0, "489": 0, "490": 0, "491": 0, "492": 0, "493": 0, "494": 0, "495": 0, "496": 0, "497": 0, "498": 0, "499": 0, "500": 0, "503": 0, "504": 0, "505": 0, "506": 0, "507": 0, "508": 0, "509": 0, "510": 0, "511": 0, "512": 0, "513": 0, "514": 0, "515": 0, "517": 0, "553": 0, "554": 0, "555": 0, "556": 0, "591": 0, "592": 0, "593": 0, "594": 0, "595": 0, "597": 0, "623": 0, "624": 0, "625": 0, "626": 0, "627": 0, "629": 0, "695": 0, "696": 0, "697": 0, "698": 0, "694": 0, "699": 0, "700": 0, "702": 0, "703": 0, "704": 0, "705": 0, "706": 0, "713": 0, "714": 0, "715": 0, "716": 0, "717": 0, "718": 0, "719": 0, "720": 0, "775": 0, "776": 0, "777": 0, "779": 0, "782": 0, "783": 0, "785": 0, "786": 0, "787": 0, "788": 0, "789": 0, "790": 0, "843": 0, "844": 0, "845": 0, "847": 0, "850": 0, "851": 0, "853": 0, "854": 0, "855": 0, "856": 0, "857": 0, "858": 0, "863": 0, "864": 0, "865": 0, "866": 0, "918": 0, "919": 0, "920": 0, "922": 0, "923": 0, "926": 0, "928": 0, "930": 0, "931": 0, "932": 0, "933": 0, "934": 0, "935": 0, "936": 0, "937": 0, "939": 0, "940": 0, "980": 0, "981": 0, "983": 0, "984": 0, "985": 0, "986": 0, "987": 0, "988": 0, "1036": 0, "1037": 0, "1039": 0, "1040": 0, "1041": 0, "1042": 0, "1043": 0, "1044": 0, "1045": 0, "1086": 0, "1087": 0, "1089": 0, "1090": 0, "1091": 0, "1092": 0, "1093": 0, "1094": 0, "1097": 0, "1098": 0, "1099": 0, "1100": 0, "1102": 0, "1103": 0, "1104": 0, "1105": 0, "1106": 0, "1108": 0, "1109": 0, "1110": 0, "1111": 0, "1113": 0, "1117": 0, "1118": 0, "1119": 0, "1120": 0, "1121": 0, "1122": 0, "1123": 0, "1124": 0, "1125": 0, "1126": 0, "1128": 0, "1129": 0, "1130": 0, "1131": 0, "1133": 0, "1134": 0, "1135": 0, "1136": 0, "1177": 0, "1178": 0, "1180": 0, "1181": 0, "1182": 0, "1183": 0, "1184": 0, "1185": 0, "1188": 0, "1189": 0, "1190": 0, "1191": 0, "1193": 0, "1194": 0, "1195": 0, "1196": 0, "1197": 0, "1199": 0, "1200": 0, "1201": 0, "1202": 0, "1204": 0, "1208": 0, "1209": 0, "1210": 0, "1211": 0, "1212": 0, "1213": 0, "1214": 0, "1215": 0, "1216": 0, "1217": 0, "1219": 0, "1220": 0, "1221": 0, "1222": 0, "1224": 0, "1225": 0, "1226": 0, "1227": 0, "1340": 0, "1341": 0, "1344": 0, "1345": 0, "1346": 0, "1347": 0, "1349": 0, "1351": 0, "1352": 0, "1353": 0, "1354": 0, "1358": 0, "1359": 0, "1360": 0, "1362": 0, "1363": 0, "1364": 0, "1365": 0, "1366": 0, "1367": 0, "1368": 0, "1369": 0, "1370": 0, "1371": 0, "1372": 0, "1373": 0, "1375": 0, "1376": 0, "1377": 0, "1379": 0, "1380": 0, "1381": 0, "1382": 0, "1383": 0, "1384": 0, "1385": 0, "1386": 0, "1387": 0, "1388": 0, "1389": 0, "1390": 0, "1391": 0, "1394": 0, "1395": 0, "1399": 0, "1401": 0, "1402": 0, "1403": 0, "1404": 0, "1405": 0, "1406": 0, "1407": 0, "1408": 0, "1409": 0, "1410": 0, "1411": 0, "1412": 0, "1413": 0, "1414": 0, "1416": 0, "1417": 0, "1419": 0, "1420": 0, "1422": 0, "1423": 0, "1425": 0, "1426": 0, "1428": 0, "1429": 0, "1431": 0, "1432": 0, "1435": 0, "1438": 0, "1439": 0, "1436": 0, "1437": 0, "1440": 0, "1441": 0, "1442": 0, "1443": 0, "1444": 0, "1445": 0, "1446": 0, "1447": 0, "1448": 0, "1449": 0, "1450": 0, "1452": 0, "1454": 0, "1457": 0, "1458": 0, "1459": 0, "1460": 0, "1462": 0, "1463": 0, "1465": 0, "1466": 0, "1468": 0, "1469": 0, "1470": 0, "1472": 0, "1455": 0, "1722": 0, "1723": 0, "1724": 0, "1725": 0, "1726": 0, "1727": 0, "1728": 0, "1729": 0, "1730": 0, "1807": 0, "1808": 0, "1809": 0, "1810": 0, "1811": 0, "1856": 0, "1859": 0, "1860": 0, "1863": 0, "1864": 0, "1865": 0, "1857": 0, "1861": 0, "1907": 0, "1910": 0, "1911": 0, "1912": 0, "1908": 0, "1954": 0, "1957": 0, "1958": 0, "1959": 0, "1955": 0, "2031": 0, "2108": 0, "2109": 0, "2110": 0, "2112": 0, "2113": 0, "2115": 0, "2117": 0, "2118": 0, "2120": 0, "2121": 0, "2123": 0, "2124": 0, "2125": 0, "2127": 0, "2128": 0, "2130": 0, "2131": 0, "2133": 0, "2134": 0, "2136": 0, "2137": 0, "2138": 0, "2139": 0, "2140": 0, "2209": 0, "2210": 0, "2211": 0, "2225": 0, "2227": 0, "2229": 0, "2231": 0, "2242": 0, "2243": 0, "2244": 0, "2245": 0, "2247": 0, "2248": 0, "2249": 0, "2250": 0, "2252": 0, "2253": 0, "2254": 0, "2255": 0, "2256": 0, "2257": 0, "2258": 0, "2259": 0, "2262": 0, "2263": 0, "2384": 0, "2385": 0, "2386": 0, "2387": 0, "2388": 0, "2389": 0, "2390": 0, "2394": 0, "2395": 0, "2396": 0, "2397": 0, "2398": 0, "2399": 0, "2400": 0, "2403": 0, "2404": 0, "2405": 0, "2406": 0, "2407": 0, "2408": 0, "2413": 0, "2414": 0, "2415": 0, "2416": 0, "2417": 0, "2419": 0, "2420": 0, "2421": 0, "2422": 0, "2424": 0, "2425": 0, "2427": 0, "2431": 0, "2432": 0, "2433": 0, "2434": 0, "2439": 0, "2440": 0, "2441": 0, "2442": 0, "2446": 0, "2447": 0, "2448": 0, "2449": 0, "2450": 0, "2451": 0, "2452": 0, "2453": 0, "2454": 0, "2455": 0, "2456": 0, "2457": 0, "2459": 0, "2461": 0, "2464": 0, "2465": 0, "2466": 0, "2468": 0, "2469": 0, "2471": 0, "2472": 0, "2473": 0, "2475": 0, "2476": 0, "2477": 0, "2478": 0, "2479": 0, "2481": 0, "2482": 0, "2483": 0, "2485": 0, "2486": 0, "2487": 0, "2489": 0, "2490": 0, "2492": 0, "2496": 0, "2497": 0, "2498": 0, "2499": 0, "2500": 0, "2501": 0, "2502": 0, "2503": 0, "2504": 0, "2505": 0, "2507": 0, "2508": 0, "2509": 0, "2510": 0, "2511": 0, "2512": 0, "2513": 0, "2515": 0, "2516": 0, "2518": 0, "2519": 0, "2520": 0, "2521": 0, "2522": 0, "2523": 0, "2524": 0, "2525": 0, "2526": 0, "2527": 0, "2528": 0, "2530": 0, "2531": 0, "2532": 0, "2533": 0, "2535": 0, "2536": 0, "2537": 0, "2539": 0, "2540": 0, "2542": 0, "2543": 0, "2547": 0, "2548": 0, "2550": 0, "2552": 0, "2553": 0, "2554": 0, "2556": 0, "2558": 0, "2560": 0, "2561": 0, "2563": 0, "2565": 0, "2566": 0, "2567": 0, "2568": 0, "2570": 0, "2571": 0, "2572": 0, "2573": 0, "2575": 0, "2699": 0, "2700": 0, "2701": 0, "2702": 0, "2756": 0, "2757": 0, "2758": 0, "2759": 0, "2761": 0, "2762": 0, "2763": 0, "2764": 0, "2768": 0, "2771": 0, "2773": 0, "2774": 0, "2775": 0, "2776": 0, "2778": 0, "2780": 0, "2781": 0, "2782": 0, "2783": 0, "2785": 0, "2787": 0, "2788": 0, "2790": 0, "2792": 0, "2793": 0, "2795": 0, "2796": 0, "2798": 0, "2799": 0, "2800": 0, "2802": 0, "2803": 0, "2805": 0, "2806": 0, "2807": 0, "2808": 0, "2810": 0, "2812": 0, "2813": 0, "2815": 0, "2817": 0, "2818": 0, "2820": 0, "2819": 0, "2826": 0, "2827": 0, "2829": 0, "2831": 0, "2832": 0, "2833": 0, "2835": 0, "2836": 0, "2838": 0, "2839": 0, "2841": 0, "2842": 0, "2843": 0, "2844": 0, "2846": 0, "2848": 0, "2849": 0, "2851": 0, "2852": 0, "2854": 0, "2855": 0, "2857": 0, "2858": 0, "2859": 0, "2860": 0, "2861": 0, "2863": 0, "2864": 0, "2865": 0, "2866": 0, "2867": 0, "2869": 0, "2769": 0, "2821": 0, "2822": 0, "2823": 0, "2915": 0, "2916": 0, "2917": 0, "2918": 0, "2920": 0, "2921": 0, "2922": 0, "2923": 0, "2924": 0, "2925": 0, "2926": 0, "2927": 0, "2928": 0, "2929": 0, "2930": 0, "2931": 0, "2933": 0, "2934": 0, "2935": 0, "2937": 0, "3022": 0, "3023": 0, "3024": 0, "3026": 0, "3027": 0, "3028": 0, "3029": 0, "3030": 0, "3031": 0, "3032": 0, "3034": 0, "3036": 0, "3037": 0, "3039": 0, "3042": 0, "3043": 0, "3044": 0, "3047": 0, "3049": 0, "3050": 0, "3051": 0, "3053": 0, "3052": 0, "3054": 0, "3055": 0, "3056": 0, "3057": 0, "3058": 0, "3059": 0, "3062": 0, "3063": 0, "3064": 0, "3065": 0, "3068": 0, "3069": 0, "3070": 0, "3071": 0, "3072": 0, "3073": 0, "3075": 0, "3076": 0, "3077": 0, "3078": 0, "3079": 0, "3081": 0, "3082": 0, "3083": 0, "3084": 0, "3086": 0, "3087": 0, "3088": 0, "3090": 0, "3091": 0, "3092": 0, "3094": 0, "3095": 0, "3096": 0, "3097": 0, "3218": 0, "3221": 0, "3222": 0, "3223": 0, "3225": 0, "3226": 0, "3228": 0, "3230": 0, "3231": 0, "3232": 0, "3233": 0, "3234": 0, "3235": 0, "3236": 0, "3237": 0, "3238": 0, "3239": 0, "3240": 0, "3241": 0, "3242": 0, "3243": 0, "3245": 0, "3247": 0, "3250": 0, "3252": 0, "3253": 0, "3254": 0, "3257": 0, "3259": 0, "3260": 0, "3261": 0, "3262": 0, "3264": 0, "3265": 0, "3266": 0, "3268": 0, "3269": 0, "3270": 0, "3271": 0, "3272": 0, "3273": 0, "3275": 0, "3276": 0, "3277": 0, "3278": 0, "3279": 0, "3280": 0, "3281": 0, "3282": 0, "3283": 0, "3285": 0, "3288": 0, "3289": 0, "3290": 0, "3291": 0, "3293": 0, "3294": 0, "3295": 0, "3296": 0, "3297": 0, "3298": 0, "3299": 0, "3300": 0, "3301": 0, "3302": 0, "3303": 0, "3304": 0, "3305": 0, "3306": 0, "3307": 0, "3308": 0, "3309": 0, "3310": 0, "3312": 0, "3313": 0, "3314": 0, "3315": 0, "3316": 0, "3317": 0, "3318": 0, "3320": 0, "3321": 0, "3322": 0, "3323": 0, "3324": 0, "3325": 0, "3326": 0, "3327": 0, "3329": 0, "3331": 0, "3332": 0, "3334": 0, "3335": 0, "3336": 0, "3338": 0, "3339": 0, "3341": 0, "3248": 0, "3350": 0, "3351": 0, "3352": 0, "3353": 0, "3354": 0, "3355": 0, "3356": 0, "3358": 0, "3359": 0, "3360": 0, "3361": 0, "3362": 0, "3363": 0, "3364": 0, "3365": 0, "3366": 0, "3367": 0, "3368": 0, "3370": 0, "3371": 0, "3372": 0, "3373": 0, "3513": 0, "3515": 0, "3516": 0, "3519": 0, "3520": 0, "3521": 0, "3522": 0, "3524": 0, "3563": 0, "3564": 0, "3565": 0, "3566": 0, "3567": 0, "3568": 0, "3569": 0, "3571": 0, "3573": 0, "3574": 0, "3580": 0, "3581": 0, "3584": 0, "3585": 0, "3587": 0, "3590": 0, "3591": 0, "3593": 0, "3597": 0, "3598": 0, "3599": 0, "3601": 0, "3602": 0, "3603": 0, "3604": 0, "3608": 0, "3614": 0, "3617": 0, "3619": 0, "3620": 0, "3621": 0, "3622": 0, "3624": 0, "3625": 0, "3626": 0, "3629": 0, "3630": 0, "3631": 0, "3632": 0, "3633": 0, "3634": 0, "3635": 0, "3639": 0, "3641": 0, "3642": 0, "3643": 0, "3645": 0, "3646": 0, "3649": 0, "3655": 0, "3656": 0, "3657": 0, "3658": 0, "3654": 0, "3653": 0, "3660": 0, "3661": 0, "3662": 0, "3663": 0, "3664": 0, "3665": 0, "3666": 0, "3667": 0, "3668": 0, "3670": 0, "3671": 0, "3672": 0, "3674": 0, "3675": 0, "3680": 0, "3681": 0, "3682": 0, "3683": 0, "3684": 0, "3685": 0, "3686": 0, "3688": 0, "3689": 0, "3690": 0, "3691": 0, "3692": 0, "3696": 0, "3697": 0, "3698": 0, "3699": 0, "3700": 0, "3701": 0, "3702": 0, "3705": 0, "3704": 0, "3706": 0, "3703": 0, "3707": 0, "3708": 0, "3710": 0, "3711": 0, "3712": 0, "3713": 0, "3714": 0, "3715": 0, "3716": 0, "3717": 0, "3718": 0, "3719": 0, "3721": 0, "3722": 0, "3723": 0, "3724": 0, "3725": 0, "3726": 0, "3727": 0, "3728": 0, "3730": 0, "3731": 0, "3732": 0, "3734": 0, "3735": 0, "3736": 0, "3737": 0, "3738": 0, "3739": 0, "3740": 0, "3742": 0, "3541": 0, "3539": 0, "3543": 0, "3548": 0, "3551": 0, "3553": 0, "3556": 0, "3559": 0, "3561": 0, "3650": 0, "3942": 0, "3943": 0, "3944": 0, "3945": 0, "3947": 0, "3948": 0, "3949": 0, "3950": 0, "3951": 0, "3952": 0, "3953": 0, "3954": 0, "3955": 0, "3956": 0, "3957": 0, "3958": 0, "3959": 0, "3960": 0, "3961": 0, "3962": 0, "3963": 0, "3964": 0, "3966": 0, "3967": 0, "3968": 0, "3969": 0, "3970": 0, "3971": 0, "3972": 0, "3973": 0, "3974": 0, "3975": 0, "3976": 0, "3977": 0, "3979": 0, "3980": 0, "3981": 0, "3982": 0, "3989": 0, "3993": 0, "3995": 0, "3997": 0, "4002": 0, "4004": 0, "4005": 0, "4007": 0, "4011": 0, "4012": 0, "4013": 0, "4016": 0, "4017": 0, "4018": 0, "4019": 0, "4020": 0, "4023": 0, "4024": 0, "4025": 0, "4027": 0, "4028": 0, "4029": 0, "4030": 0, "4032": 0, "4033": 0, "4034": 0, "4035": 0, "4038": 0, "4039": 0, "4040": 0, "4041": 0, "4043": 0, "4044": 0, "4045": 0, "4046": 0, "4047": 0, "4048": 0, "4049": 0, "4050": 0, "4051": 0, "4052": 0, "4053": 0, "4155": 0, "4156": 0, "4157": 0, "4158": 0, "4159": 0, "4160": 0, "4163": 0, "4166": 0, "4167": 0, "4169": 0, "4171": 0, "4188": 0, "4180": 0, "4181": 0, "4182": 0, "4183": 0, "4184": 0, "4185": 0, "4186": 0, "4187": 0, "4189": 0, "4190": 0, "4191": 0, "4192": 0, "4193": 0, "4194": 0, "4196": 0, "4197": 0, "4200": 0, "4202": 0, "4205": 0, "4213": 0, "4214": 0, "4217": 0, "4218": 0, "4219": 0, "4220": 0, "4222": 0, "4223": 0, "4224": 0, "4227": 0, "4228": 0, "4229": 0, "4230": 0, "4231": 0, "4232": 0, "4235": 0, "4236": 0, "4237": 0, "4238": 0, "4239": 0, "4240": 0, "4242": 0, "4243": 0, "4245": 0, "4248": 0, "4249": 0, "4250": 0, "4252": 0, "4253": 0, "4254": 0, "4255": 0, "4256": 0, "4258": 0, "4259": 0, "4260": 0, "4262": 0, "4263": 0, "4264": 0, "4265": 0, "4266": 0, "4267": 0, "4268": 0, "4269": 0, "4270": 0, "4271": 0, "4272": 0, "4275": 0, "4276": 0, "4277": 0, "4278": 0, "4281": 0, "4282": 0, "4283": 0, "4285": 0, "4286": 0, "4288": 0, "4289": 0, "4290": 0, "4292": 0, "4294": 0, "4295": 0, "4296": 0, "4297": 0, "4298": 0, "4301": 0, "4303": 0, "4304": 0, "4305": 0, "4306": 0, "4308": 0, "4309": 0, "4310": 0, "4311": 0, "4312": 0, "4319": 0, "4320": 0, "4321": 0, "4322": 0, "4323": 0, "4325": 0, "4326": 0, "4327": 0, "4328": 0, "4329": 0, "4330": 0, "4331": 0, "4332": 0, "4333": 0, "4334": 0, "4335": 0, "4336": 0, "4338": 0, "4340": 0, "4341": 0, "4172": 0, "4174": 0, "4175": 0, "4176": 0, "4177": 0, "4178": 0, "4173": 0, "4203": 0, "4206": 0, "4207": 0, "4208": 0, "4209": 0, "4210": 0, "4398": 0, "4399": 0, "4400": 0, "4402": 0, "4404": 0, "4405": 0, "4409": 0, "4410": 0, "4411": 0, "4412": 0, "4413": 0, "4414": 0, "4416": 0, "4417": 0, "4418": 0, "4419": 0, "4420": 0, "4422": 0, "4423": 0, "4425": 0, "4426": 0, "4427": 0, "4428": 0, "4429": 0, "4431": 0, "4432": 0, "4433": 0, "4430": 0, "4435": 0, "4440": 0, "4441": 0, "4442": 0, "4443": 0, "4444": 0, "4450": 0, "4451": 0, "4452": 0, "4453": 0, "4456": 0, "4457": 0, "4458": 0, "4460": 0, "4461": 0, "4462": 0, "4469": 0, "4445": 0, "4446": 0, "4470": 0, "4471": 0, "4472": 0, "4485": 0, "4488": 0, "4473": 0, "4474": 0, "4475": 0, "4477": 0, "4478": 0, "4481": 0, "4482": 0, "4483": 0, "4490": 0, "4491": 0, "4436": 0, "4437": 0, "4438": 0, "4624": 0, "4625": 0, "4626": 0, "4627": 0, "4629": 0, "4632": 0, "4633": 0, "4635": 0, "4638": 0, "4639": 0, "4640": 0, "4641": 0, "4643": 0, "4644": 0, "4645": 0, "4646": 0, "4647": 0, "4648": 0, "4649": 0, "4650": 0, "4651": 0, "4655": 0, "4656": 0, "4657": 0, "4659": 0, "4660": 0, "4661": 0, "4658": 0, "4663": 0, "4664": 0, "4666": 0, "4665": 0, "4669": 0, "4670": 0, "4668": 0, "4672": 0, "4673": 0, "4674": 0, "4675": 0, "4677": 0, "4680": 0, "4681": 0, "4683": 0, "4684": 0, "4686": 0, "4688": 0, "4689": 0, "4690": 0, "4691": 0, "4692": 0, "4693": 0, "4694": 0, "4709": 0, "4711": 0, "4715": 0, "4719": 0, "4721": 0, "4722": 0, "4723": 0, "4724": 0, "4726": 0, "4728": 0, "4730": 0, "4731": 0, "4732": 0, "4733": 0, "4734": 0, "4735": 0, "4736": 0, "4737": 0, "4739": 0, "4740": 0, "4741": 0, "4742": 0, "4743": 0, "4744": 0, "4747": 0, "4746": 0, "4749": 0, "4750": 0, "4751": 0, "4752": 0, "4753": 0, "4754": 0, "4755": 0, "4762": 0, "4763": 0, "4764": 0, "4765": 0, "4766": 0, "4768": 0, "4769": 0, "4771": 0, "4725": 0, "4930": 2, "4932": 2, "4935": 2, "4936": 2, "4938": 0, "4939": 0, "4941": 2, "4942": 2, "4945": 2, "4946": 2, "4948": 2, "4949": 0, "4950": 0, "4951": 0, "4952": 0, "4953": 2, "4954": 0, "4955": 0, "4956": 0, "4957": 0, "4958": 2, "4959": 2, "4961": 0, "4962": 0, "4965": 0, "4966": 0, "4968": 2, "4969": 2, "4970": 2, "4971": 2, "4972": 2, "4976": 2, "4977": 2, "4978": 2, "4979": 2, "4980": 2, "4982": 2, "4983": 2, "4984": 2, "4985": 2, "4986": 2, "4987": 2, "4989": 4, "4990": 2, "4991": 4, "4992": 2, "4994": 2, "4995": 2, "4996": 2, "4998": 2, "4999": 1, "5000": 1, "5001": 1, "5002": 1, "5003": 1, "5004": 1, "5007": 67, "5008": 52, "5009": 251, "5010": 250, "5011": 140, "5013": 110, "5014": 1, "5015": 0, "5016": 2, "5017": 233, "5018": 3, "5020": 1, "5022": 2, "5024": 2, "5025": 2, "5026": 2, "5027": 2, "5028": 2, "5029": 2, "5030": 2, "5031": 2, "5032": 2, "5034": 2, "5035": 2, "5037": 4, "5038": 2, "5040": 2, "5041": 2, "5043": 2, "5044": 0, "5045": 0, "5046": 0, "5047": 0, "5048": 0, "5049": 0, "5050": 0, "5051": 0, "5052": 0, "5053": 0, "5054": 0, "5055": 0, "5056": 0, "5057": 0, "5058": 0, "5061": 4, "5062": 2, "5063": 2, "5064": 2, "5065": 2, "5066": 4, "5067": 2, "5071": 2, "5072": 0, "5073": 0, "5074": 0, "5076": 0, "5077": 0, "5078": 0, "5081": 2, "5082": 0, "5083": 0, "5085": 2, "5086": 0, "5087": 0, "5088": 0, "5089": 0, "5090": 0, "5091": 0, "5093": 2, "5094": 2, "5095": 2, "5096": 2, "5097": 2, "5098": 2, "5100": 2, "5101": 2, "5102": 2, "5105": 2, "5106": 2, "5107": 2, "5110": 0, "5112": 0, "5113": 0, "5111": 0, "5116": 0, "5117": 0, "5119": 0, "5121": 0, "5122": 0, "5123": 0, "5124": 0, "5125": 0, "5126": 0, "5127": 0, "5130": 0, "5131": 0, "5132": 0, "5135": 0, "5136": 0, "5138": 0, "5139": 0, "5140": 0, "5142": 0, "5143": 0, "5144": 0, "5145": 0, "5146": 0, "5147": 0, "5148": 0, "5149": 0, "5150": 0, "5152": 0, "5154": 0, "5160": 0, "5162": 0, "5019": 115, "5155": 0, "5156": 0, "5157": 0, "5158": 0, "5193": 0, "5194": 0, "5195": 0, "5196": 0, "5198": 0, "5199": 0, "5200": 0, "5201": 0, "5205": 0, "5206": 0, "5207": 0, "5211": 0, "5212": 0, "5213": 0, "5214": 0, "5215": 0, "5223": 0, "5224": 0, "5225": 0, "5226": 0, "5227": 0, "5235": 0, "5236": 0, "5237": 0, "5238": 0, "5239": 0, "5287": 0, "5289": 0, "5290": 0, "5291": 0, "5292": 0, "5293": 0, "5384": 0, "5386": 0, "5387": 0, "5388": 0, "5390": 0, "5389": 0, "5393": 0, "5394": 0, "5395": 0, "5398": 0, "5397": 0, "5399": 0, "5400": 0, "5402": 0, "5403": 0, "5405": 0, "5406": 0, "5407": 0, "5408": 0, "5409": 0, "5410": 0, "5412": 0, "5413": 0, "5415": 0, "5416": 0, "5417": 0, "5418": 0, "5419": 0, "5420": 0, "5421": 0, "5423": 0, "5422": 0, "5425": 0, "5426": 0, "5428": 0, "5429": 0, "5431": 0, "5432": 0, "5453": 0, "5454": 0, "5458": 0, "5459": 0, "5461": 0, "5462": 0, "5464": 0, "5465": 0, "5466": 0, "5467": 0, "5469": 0, "5470": 0, "5472": 0, "5474": 0, "5477": 0, "5478": 0, "5479": 0, "5480": 0, "5482": 0, "5483": 0, "5484": 0, "5485": 0, "5487": 0, "5488": 0, "5489": 0, "5433": 0, "5434": 0, "5435": 0, "5436": 0, "5438": 0, "5439": 0, "5440": 0, "5441": 0, "5442": 0, "5444": 0, "5445": 0, "5446": 0, "5447": 0, "5448": 0, "5449": 0, "5450": 0, "5451": 0, "5493": 0, "5494": 0, "5495": 0, "5507": 0, "5508": 0, "5509": 0, "5721": 0, "5722": 0, "5723": 0, "5724": 0, "5725": 0, "5726": 0, "5727": 0, "5728": 0, "5729": 0, "5731": 0, "5732": 0, "5733": 0, "5735": 0, "5736": 0, "5737": 0, "5741": 0, "5743": 0, "5744": 0, "5753": 0, "5754": 0, "5755": 0, "5756": 0, "5757": 0, "5758": 0, "5760": 0, "5762": 0, "5763": 0, "5764": 0, "5765": 0, "5766": 0, "5768": 0, "5769": 0, "5770": 0, "5771": 0, "5773": 0, "5775": 0, "5777": 0, "5778": 0, "5779": 0, "5781": 0, "5782": 0, "5783": 0, "5784": 0, "5789": 0, "5790": 0, "5791": 0, "5792": 0, "5793": 0, "5795": 0, "5797": 0, "5798": 0, "5799": 0, "5800": 0, "5801": 0, "5802": 0, "5803": 0, "5804": 0, "5805": 0, "5806": 0, "5807": 0, "5809": 0, "5810": 0, "5811": 0, "5813": 0, "5815": 0, "5816": 0, "5817": 0, "5818": 0, "5820": 0, "5822": 0, "5823": 0, "5825": 0, "5824": 0, "5826": 0, "5830": 0, "5851": 0, "5852": 0, "5853": 0, "5854": 0, "5855": 0, "5856": 0, "5857": 0, "5859": 0, "5860": 0, "5832": 0, "5833": 0, "5834": 0, "5835": 0, "5836": 0, "5841": 0, "5842": 0, "5843": 0, "5844": 0, "5848": 0, "5849": 0, "6009": 0, "6010": 0, "6011": 0, "6012": 0, "6013": 0, "6014": 0, "6017": 0, "6018": 0, "6019": 0, "6021": 0, "6022": 0, "6023": 0, "6025": 0, "6027": 0, "6028": 0, "6029": 0, "6030": 0, "6031": 0, "6032": 0, "6033": 0, "6034": 0, "6035": 0, "6036": 0, "6038": 0, "6039": 0, "6041": 0, "6043": 0, "6044": 0, "6045": 0, "6046": 0, "6048": 0, "6049": 0, "6050": 0, "6056": 0, "6057": 0, "6058": 0, "6059": 0, "6061": 0, "6063": 0, "6064": 0, "6065": 0, "6067": 0, "6068": 0, "6071": 0, "6072": 0, "6073": 0, "6074": 0, "6076": 0, "6077": 0, "6078": 0, "6079": 0, "6080": 0, "6081": 0, "6083": 0, "6085": 0, "6086": 0, "6087": 0, "6088": 0, "6089": 0, "6090": 0, "6091": 0, "6092": 0, "6093": 0, "6094": 0, "6281": 0, "6282": 0, "6283": 0, "6284": 0, "6286": 0, "6287": 0, "6288": 0, "6290": 0, "6292": 0, "6293": 0, "6294": 0, "6295": 0, "6297": 0, "6300": 0, "6301": 0, "6302": 0, "6303": 0, "6305": 0, "6306": 0, "6307": 0, "6309": 0, "6311": 0, "6312": 0, "6313": 0, "6314": 0, "6315": 0, "6316": 0, "6317": 0, "6318": 0, "6432": 0, "6433": 0, "6434": 0, "6435": 0, "6436": 0, "6437": 0, "6438": 0, "6439": 0, "6440": 0, "6441": 0, "6442": 0, "6443": 0, "6444": 0, "6446": 0, "6447": 0, "6448": 0, "6449": 0, "6450": 0, "6452": 0, "6453": 0, "6454": 0, "6456": 0, "6458": 0, "6460": 0, "6462": 0, "6463": 0, "6464": 0, "6465": 0, "6466": 0, "6467": 0, "6468": 0, "6469": 0, "6470": 0, "6471": 0, "6474": 0, "6475": 0, "6476": 0, "6477": 0, "6478": 0, "6479": 0, "6480": 0, "6481": 0, "6482": 0, "6483": 0, "6484": 0, "6485": 0, "6486": 0, "6487": 0, "6489": 0, "6490": 0, "6492": 0, "6494": 0, "6496": 0, "6497": 0, "6498": 0, "6499": 0, "6500": 0, "6513": 0, "6514": 0, "6515": 0, "6516": 0, "6529": 0, "6530": 0, "6531": 0, "6532": 0, "6552": 0, "6750": 0, "6751": 0, "6753": 0, "6754": 0, "6756": 0, "6757": 0, "6760": 0, "6761": 0, "6762": 0, "6763": 0, "6765": 0, "6766": 0, "6769": 0, "6770": 0, "6775": 0, "6776": 0, "6777": 0, "6778": 0, "6780": 0, "6781": 0, "6782": 0, "6784": 0, "6785": 0, "6787": 0, "6788": 0, "6791": 0, "6792": 0, "6794": 0, "6796": 0, "6797": 0, "6799": 0, "6800": 0, "6801": 0, "6802": 0, "6803": 0, "6804": 0, "6805": 0, "6807": 0, "6808": 0, "6810": 0, "6811": 0, "6812": 0, "6813": 0, "6814": 0, "6816": 0, "6821": 0, "6822": 0, "6823": 0, "6824": 0, "6825": 0, "6828": 0, "6829": 0, "6830": 0, "6831": 0, "6836": 0, "6837": 0, "6838": 0, "6840": 0, "6841": 0, "6842": 0, "6844": 0, "6846": 0, "6847": 0, "6848": 0, "6851": 0, "6853": 0, "6856": 0, "6857": 0, "6858": 0, "6859": 0, "6860": 0, "6861": 0, "6864": 0, "6865": 0, "6866": 0, "6867": 0, "6868": 0, "6869": 0, "6870": 0, "6871": 0, "6873": 0, "6875": 0, "6877": 0, "6879": 0, "6881": 0, "6882": 0, "6883": 0, "6884": 0, "6885": 0, "6887": 0, "6889": 0, "6890": 0, "6891": 0, "6892": 0, "6893": 0, "6894": 0, "6895": 0, "6897": 0, "6898": 0, "6899": 0, "6900": 0, "6902": 0, "6903": 0, "6904": 0, "6906": 0, "6907": 0, "6909": 0, "6910": 0, "6911": 0, "6912": 0, "6913": 0, "6915": 0, "6916": 0, "6917": 0, "6918": 0, "6919": 0, "6920": 0, "6921": 0, "6922": 0, "6926": 0, "6927": 0, "6928": 0, "6930": 0, "6932": 0, "6933": 0, "6935": 0, "6936": 0, "6938": 0, "6939": 0, "6941": 0, "6942": 0, "6944": 0, "6945": 0, "6946": 0, "6948": 0, "6950": 0, "6951": 0, "6952": 0, "6953": 0, "6957": 0, "6959": 0, "6960": 0, "6961": 0, "6963": 0, "6965": 0, "6971": 0, "6973": 0, "6974": 0, "6975": 0, "6977": 0, "6978": 0, "6981": 0, "6985": 0, "6986": 0, "6987": 0, "6988": 0, "6989": 0, "6990": 0, "6991": 0, "6992": 0, "6993": 0, "6994": 0, "6995": 0, "6996": 0, "6997": 0, "6998": 0, "7001": 0, "7005": 0, "7006": 0, "7007": 0, "7008": 0, "7009": 0, "7010": 0, "7011": 0, "7012": 0, "7013": 0, "7014": 0, "7016": 0, "7017": 0, "7019": 0, "7020": 0, "7021": 0, "7066": 0, "7067": 0, "7069": 0, "7070": 0, "7071": 0, "7072": 0, "7074": 0, "7076": 0, "7077": 0, "7079": 0, "7080": 0, "7082": 0, "7083": 0, "7084": 0, "7085": 0, "7086": 0, "7087": 0, "7088": 0, "7089": 0, "7090": 0, "7091": 0, "7092": 0, "7093": 0, "7095": 0, "7096": 0, "7097": 0, "7098": 0, "7193": 0, "7194": 0, "7196": 0, "7197": 0, "7198": 0, "7199": 0, "7201": 0, "7202": 0, "7203": 0, "7205": 0, "7270": 0, "7271": 0, "7272": 0, "7273": 0, "7274": 0, "7275": 0, "7276": 0, "7277": 0, "7278": 0, "7279": 0, "7280": 0, "7282": 0, "7284": 0, "7285": 0, "7286": 0, "7288": 0, "7289": 0, "7290": 0, "7291": 0, "7292": 0, "7293": 0, "7294": 0, "7296": 0, "7297": 0, "7298": 0, "7300": 0, "7301": 0, "7302": 0, "7304": 0, "7305": 0, "7306": 0, "7307": 0, "7392": 0, "7393": 0, "7395": 0, "7396": 0, "7397": 0, "7398": 0, "7400": 0, "7401": 0, "7403": 0, "7405": 0, "7406": 0, "7407": 0, "7408": 0, "7410": 0, "7411": 0, "7412": 0, "7413": 0, "7415": 0, "7416": 0, "7418": 0, "7498": 0, "7499": 0, "7501": 0, "7502": 0, "7503": 0, "7505": 0, "7507": 0, "7508": 0, "7509": 0, "7510": 0, "7512": 0, "7513": 0, "7514": 0, "7515": 0, "7517": 0, "7518": 0, "7520": 0, "7586": 0, "7587": 0, "7589": 0, "7590": 0, "7591": 0, "7593": 0, "7594": 0, "7595": 0, "7596": 0, "7597": 0, "7598": 0, "7600": 0, "7602": 0, "7603": 0, "7604": 0, "7606": 0, "7664": 0, "7665": 0, "7667": 0, "7668": 0, "7669": 0, "7671": 0, "7672": 0, "7673": 0, "7675": 0, "7733": 0, "7734": 0, "7736": 0, "7737": 0, "7738": 0, "7740": 0, "7741": 0, "7742": 0, "7744": 0, "7797": 0, "7798": 0, "7799": 0, "7800": 0, "7801": 0, "7803": 0, "7804": 0, "7805": 0, "7806": 0, "7808": 0, "7910": 0, "7911": 0, "7912": 0, "7913": 0, "7914": 0, "7915": 0, "7916": 0, "7917": 0, "7919": 0, "7920": 0, "7922": 0, "7923": 0, "7924": 0, "7926": 0, "7927": 0, "7928": 0, "7930": 0, "7931": 0, "7932": 0, "7933": 0, "7934": 0, "7935": 0, "7937": 0, "7938": 0, "7939": 0, "7940": 0, "7941": 0, "7943": 0, "7945": 0, "7947": 0, "7949": 0, "7951": 0, "7952": 0, "7953": 0, "7954": 0, "7955": 0, "7957": 0, "7958": 0, "7960": 0, "7961": 0, "7962": 0, "7964": 0, "8045": 0, "8046": 0, "8047": 0, "8048": 0, "8049": 0, "8050": 0, "8052": 0, "8053": 0, "8054": 0, "8055": 0, "8056": 0, "8057": 0, "8058": 0, "8059": 0, "8060": 0, "8061": 0, "8063": 0, "8064": 0, "8065": 0, "8066": 0, "8067": 0, "8069": 0, "8070": 0, "8071": 0, "8073": 0, "8074": 0, "8075": 0, "8076": 0, "8077": 0, "8078": 0, "8079": 0, "8080": 0, "8081": 0, "8082": 0, "8083": 0, "8084": 0, "8085": 0, "8086": 0, "8087": 0, "8088": 0, "8089": 0, "8091": 0, "8092": 0, "8093": 0, "8094": 0, "8095": 0, "8097": 0, "8098": 0, "8099": 0, "8100": 0, "8101": 0, "8102": 0, "8103": 0, "8141": 0, "8142": 0, "8143": 0, "8144": 0, "8145": 0, "8146": 0, "8147": 0, "8148": 0, "8149": 0, "8150": 0, "8151": 0, "8152": 0, "8153": 0, "8154": 0, "8246": 0, "8255": 0, "8256": 0, "8257": 0, "8258": 0, "8259": 0, "8248": 0, "8250": 0, "8251": 0, "8252": 0, "8253": 0, "8349": 0, "8350": 0, "8351": 0, "8352": 0, "8353": 0, "8355": 0, "8357": 0, "8359": 0, "8360": 0, "8364": 0, "8365": 0, "8366": 0, "8367": 0, "8370": 0, "8371": 0, "8372": 0, "8373": 0, "8376": 0, "8379": 0, "8380": 0, "8381": 0, "8383": 0, "8386": 0, "8387": 0, "8388": 0, "8389": 0, "8391": 0, "8392": 0, "8393": 0, "8396": 0, "8397": 0, "8399": 0, "8400": 0, "8401": 0, "8402": 0, "8403": 0, "8404": 0, "8405": 0, "8406": 0, "8407": 0, "8408": 0, "8409": 0, "8410": 0, "8411": 0, "8412": 0, "8414": 0, "8415": 0, "8416": 0, "8417": 0, "8418": 0, "8419": 0, "8420": 0, "8421": 0, "8422": 0, "8423": 0, "8424": 0, "8426": 0, "8448": 0, "8449": 0, "8450": 0, "8451": 0}}
+Note: switching to '5ca694b38d861c0e24cd8743753427dda839b90b'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 5ca694b38d Merge pull request #26112 from rcomer/skip-tests-gallery
++ git apply /root/pre_state.patch
+error: unrecognized input

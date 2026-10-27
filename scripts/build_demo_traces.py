@@ -9,23 +9,27 @@ import re
 import zipfile
 
 TASKS = [
-    'django__django-15104',
-    'sympy__sympy-19637',
-    'matplotlib__matplotlib-26113',
     'sphinx-doc__sphinx-9367',
+    'matplotlib__matplotlib-26113',
+    'pydata__xarray-7233',
 ]
-CASE_LABELS = ['Migration field detection', 'Parenthesized expressions', 'Hexbin count threshold', 'Single-element tuples']
+CASE_LABELS = ['Single-element tuples', 'Hexbin count threshold', 'Coordinate preservation']
 MAX_STEPS = 26
 CONFIGS = {
     'opus-4.5-no-selection': 'Claude Opus 4.5 · DPI',
     'gpt-5-no-selection': 'GPT-5 · DPI',
     'gpt-5-mini-no-selection': 'GPT-5 Mini · DPI',
 }
-CASE_CONFIGS = {task: ['opus-4.5-no-selection'] for task in TASKS[:-1]}
-CASE_CONFIGS['sphinx-doc__sphinx-9367'] = ['gpt-5-no-selection', 'gpt-5-mini-no-selection']
+CASE_CONFIGS = {task: list(CONFIGS) for task in TASKS}
 REFERENCE_CHECKS = {
+    ('sphinx-doc__sphinx-9367', 'opus-4.5-no-selection'): (9, 'tests/test_pycode_ast.py'),
     ('sphinx-doc__sphinx-9367', 'gpt-5-no-selection'): (9, 'tests/test_pycode_ast_singleton_tuple.py'),
     ('sphinx-doc__sphinx-9367', 'gpt-5-mini-no-selection'): (7, 'tests/test_pycode_ast_single_element_tuple.py'),
+    ('matplotlib__matplotlib-26113', 'gpt-5-no-selection'): (15, 'lib/matplotlib/tests/test_hexbin_mincnt.py'),
+    ('matplotlib__matplotlib-26113', 'gpt-5-mini-no-selection'): (10, 'lib/matplotlib/tests/test_hexbin_mincnt.py'),
+    ('pydata__xarray-7233', 'opus-4.5-no-selection'): (15, 'xarray/tests/test_coarsen.py'),
+    ('pydata__xarray-7233', 'gpt-5-no-selection'): (11, 'xarray/tests/test_coarsen.py'),
+    ('pydata__xarray-7233', 'gpt-5-mini-no-selection'): (9, 'xarray/tests/test_coarsen.py'),
 }
 
 
@@ -152,22 +156,6 @@ def recorded_validation(data):
                        (16, '1 passed in', "sed -i 's/len(acc) > mincnt/len(acc) >= mincnt/'"),
                        (18, '1 failed in', 'python -m pytest')],
             'restore': (17, "sed -i 's/len(acc) >= mincnt/len(acc) > mincnt/'"),
-        },
-        'sympy__sympy-19637': {
-            'target': "sympy.test('sympy/core/tests/test_sympify.py', kw='test_kernS_parenthesized_without_kern_marker')",
-            'patch': 'sympy/core/tests/test_sympify.py',
-            'test': 'test_kernS_parenthesized_without_kern_marker',
-            'checks': [(17, '0 passed, 1 exceptions', 'python -c'),
-                       (19, 'tests finished: 1 passed, in', "sed -i 's/^        hit = kern in s$/            hit = kern in s/'"),
-                       (21, '0 passed, 1 exceptions', 'python -c')],
-            'restore': (20, 'mv sympy/core/sympify.py.bak sympy/core/sympify.py'),
-        },
-        'django__django-15104': {
-            'target': 'migrations.test_autodetector.AutodetectorTests.test_fk_field_without_to_in_deconstruct',
-            'patch': 'tests/migrations/test_autodetector.py',
-            'checks': [(16, 'FAILED (errors=1)', 'python tests/runtests.py'),
-                       (18, '\nOK\n', "deconstruction[2].pop('to', None)"),
-                       (19, 'FAILED (errors=1)', "del deconstruction[2]['to']")],
         },
     }
     case = cases[data['id']]

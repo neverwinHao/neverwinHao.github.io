@@ -6,49 +6,15 @@
   },
   "tasks": [
     {
-      "id": "django__django-15104",
-      "label": "Migration field detection",
-      "repo": "django/django",
-      "runs": [
-        {
-          "config": "opus-4.5-no-selection",
-          "file": "django__django-15104--opus-4.5-no-selection.json",
-          "steps": 24
-        }
-      ],
-      "title": "KeyError with migration autodetector and FK field with hardcoded reference"
-    },
-    {
-      "id": "sympy__sympy-19637",
-      "label": "Parenthesized expressions",
-      "repo": "sympy/sympy",
-      "runs": [
-        {
-          "config": "opus-4.5-no-selection",
-          "file": "sympy__sympy-19637--opus-4.5-no-selection.json",
-          "steps": 26
-        }
-      ],
-      "title": "kernS: 'kern' referenced before assignment"
-    },
-    {
-      "id": "matplotlib__matplotlib-26113",
-      "label": "Hexbin count threshold",
-      "repo": "matplotlib/matplotlib",
-      "runs": [
-        {
-          "config": "opus-4.5-no-selection",
-          "file": "matplotlib__matplotlib-26113--opus-4.5-no-selection.json",
-          "steps": 24
-        }
-      ],
-      "title": "Inconsistent behavior of hexbins mincnt parameter, depending on C parameter"
-    },
-    {
       "id": "sphinx-doc__sphinx-9367",
       "label": "Single-element tuples",
       "repo": "sphinx-doc/sphinx",
       "runs": [
+        {
+          "config": "opus-4.5-no-selection",
+          "file": "sphinx-doc__sphinx-9367--opus-4.5-no-selection.json",
+          "steps": 13
+        },
         {
           "config": "gpt-5-no-selection",
           "file": "sphinx-doc__sphinx-9367--gpt-5-no-selection.json",
@@ -61,6 +27,52 @@
         }
       ],
       "title": "1-element tuple rendered incorrectly"
+    },
+    {
+      "id": "matplotlib__matplotlib-26113",
+      "label": "Hexbin count threshold",
+      "repo": "matplotlib/matplotlib",
+      "runs": [
+        {
+          "config": "opus-4.5-no-selection",
+          "file": "matplotlib__matplotlib-26113--opus-4.5-no-selection.json",
+          "steps": 24
+        },
+        {
+          "config": "gpt-5-no-selection",
+          "file": "matplotlib__matplotlib-26113--gpt-5-no-selection.json",
+          "steps": 17
+        },
+        {
+          "config": "gpt-5-mini-no-selection",
+          "file": "matplotlib__matplotlib-26113--gpt-5-mini-no-selection.json",
+          "steps": 12
+        }
+      ],
+      "title": "Inconsistent behavior of hexbins mincnt parameter, depending on C parameter"
+    },
+    {
+      "id": "pydata__xarray-7233",
+      "label": "Coordinate preservation",
+      "repo": "pydata/xarray",
+      "runs": [
+        {
+          "config": "opus-4.5-no-selection",
+          "file": "pydata__xarray-7233--opus-4.5-no-selection.json",
+          "steps": 22
+        },
+        {
+          "config": "gpt-5-no-selection",
+          "file": "pydata__xarray-7233--gpt-5-no-selection.json",
+          "steps": 13
+        },
+        {
+          "config": "gpt-5-mini-no-selection",
+          "file": "pydata__xarray-7233--gpt-5-mini-no-selection.json",
+          "steps": 11
+        }
+      ],
+      "title": "ds.Coarsen.construct demotes non-dimensional coordinates to variables"
     }
   ],
   "archive_trajectory_count": 1731

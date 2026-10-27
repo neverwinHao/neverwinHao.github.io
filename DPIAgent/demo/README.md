@@ -35,31 +35,29 @@ For a remote development machine, forward port 8765 to your browser's machine.
 
 ## Trace data
 
-The gallery contains five runs across three models and four cases. Every run
+The gallery contains nine runs: the same three cases for each of the three
+models. Switching models preserves the selected case. Every run
 shows the generated regression test failing in the original trajectory, and
 the same submitted test passing with the reference fix in the recorded
 SWT-Bench evaluation. The agent's task is to write reproduction tests, not fix
 the implementation. A temporary implementation fix inside its trajectory is
 therefore not required for inclusion.
 
-The three Opus recordings additionally show a temporary implementation fix,
-the tests passing, and failure again after restoring the buggy implementation:
+Complete recorded step counts:
 
-| Case | Total steps | Buggy run | Temporary fix passes | Original restored, fails again |
-| --- | ---: | ---: | ---: | ---: |
-| `django__django-15104` — Migration field detection | 24 | 16: 1 error | 18: 1 passed (OK) | 19: 1 error |
-| `sympy__sympy-19637` — Parenthesized expressions | 26 | 17: 1 exception | 19: 1 passed | 21: 1 exception |
-| `matplotlib__matplotlib-26113` — Hexbin count threshold | 24 | 14: 1 failed | 16: 1 passed | 18: 1 failed |
+| Case | Opus 4.5 | GPT-5 | GPT-5 Mini |
+| --- | ---: | ---: | ---: |
+| `sphinx-doc__sphinx-9367` — Single-element tuples | 13 | 11 | 9 |
+| `matplotlib__matplotlib-26113` — Hexbin count threshold | 24 | 17 | 12 |
+| `pydata__xarray-7233` — Coordinate preservation | 22 | 13 | 11 |
 
-The two GPT recordings show the single-element tuple regression in Sphinx
-(`sphinx-doc__sphinx-9367`): `(1,)` is incorrectly rendered as `(1)`.
+The cases cover a missing trailing comma in `(1,)`, an inclusive bin-count
+threshold, and coordinates becoming data variables after `coarsen.construct`.
 
-| Model | Total steps | Original failing test | Reference-fix evaluation |
-| --- | ---: | ---: | --- |
-| GPT-5 | 11 | Step 9 | Same test passes |
-| GPT-5 Mini | 9 | Step 7 | Same test passes |
+The Opus Matplotlib recording additionally shows a temporary implementation
+fix: step 14 fails, step 16 passes, and step 18 fails after restoration.
 
-At the end of these two replays, a separate **Reference-fix check** shows the
+At the end of the other eight replays, a separate **Reference-fix check** shows the
 named FAILED and PASSED lines from the recorded evaluation with full-log links.
 This section is labeled as SWT-Bench evaluation, is not a numbered agent tool
 call, and does not change the trajectory or its step count. Seeking backward,
@@ -78,9 +76,9 @@ The exporter requires all of the following before writing the gallery:
 - Every RPG tool call must be `rpg_search_code`; all other `rpg_*` calls are
   rejected, including calls embedded in shell actions.
 - At most 26 steps, a confirmed handoff, and a submitted test-only patch.
-- The same named regression tests fail in the original trajectory. For Opus,
+- The same named regression tests fail in the original trajectory. For Opus Matplotlib,
   the temporary fix and restoration checks are also verified against the source;
-  for GPT-5 and Mini, the reference-fix results come from the evaluation logs.
+  for the other eight runs, the reference-fix results come from the evaluation logs.
 - Resolved status and newly added fail-to-pass tests in the evaluation report,
   with no fail-to-fail or pass-to-fail tests.
 - Matching patches in the trajectory, inference output and both evaluation runs
