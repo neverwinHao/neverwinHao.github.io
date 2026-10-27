@@ -1,6 +1,7 @@
 {
-  "duration_seconds": 88.0,
-  "frames": 1760,
+  "playback_rate": 3,
+  "duration_seconds": 107.2,
+  "frames": 2144,
   "fps": 20,
   "resolution": [
     1600,
@@ -22,27 +23,31 @@
       "kind": "cover",
       "start": 0,
       "duration": 4,
+      "replayDuration": null,
       "task": null,
       "config": null
     },
     {
       "kind": "demo",
       "start": 4,
-      "duration": 28,
+      "duration": 20.45692307692308,
+      "replayDuration": 17.45692307692308,
       "task": "sphinx-doc__sphinx-9367",
       "config": "gpt-5-mini-no-selection"
     },
     {
       "kind": "demo",
-      "start": 32,
-      "duration": 28,
+      "start": 24.45692307692308,
+      "duration": 36.79538461538461,
+      "replayDuration": 33.79538461538461,
       "task": "matplotlib__matplotlib-26113",
       "config": "gpt-5-no-selection"
     },
     {
       "kind": "demo",
-      "start": 60,
-      "duration": 28,
+      "start": 61.252307692307696,
+      "duration": 45.93948717948717,
+      "replayDuration": 42.93948717948717,
       "task": "pydata__xarray-7233",
       "config": "opus-4.5-no-selection"
     }
@@ -178,10 +183,10 @@
     }
   ],
   "source_files": {
-    "DPIAgent/assets/demo/dpiagent-cover.png": "f0004b247e6c5220a54ea0536a983a73544b7df6fc0f35fc9f37fa29adabd6d9",
-    "DPIAgent/assets/demo/dpiagent-cover.pptx": "177f5091a93243aed158689d299b58f79382ddb7000565d2583ca39a2bc683cb",
+    "DPIAgent/assets/demo/dpiagent-cover.png": "83f11c88e669b5333b5215284bcf410857cef28bd47acbafe06489af2c66ca81",
+    "DPIAgent/assets/demo/dpiagent-cover.pptx": "2a234bf82b1a1161b260ecdf557de2832b08a369e392295649d10e8c2597130c",
     "DPIAgent/showcase/index.html": "cf930a2fa01504a28b72e10dd9a185bb12f63186060c291d064cdd0180c260da",
-    "DPIAgent/showcase/showcase.js": "dddf432d7add8fbf1866ea998105e812864849859c3c2b56c5f9a53739dc249e",
+    "DPIAgent/showcase/showcase.js": "35b077ad72cb19d13aae6f68a8afaf26960e59acf94872425bbd922722b0832e",
     "DPIAgent/showcase/showcase.css": "d6e8e18f1374162f58f0aa81a2613142716c1eb7a90f97ddb428226d7aab400c",
     "DPIAgent/demo/demo.js": "ef58e50c9195db7fc8d8c73914a1ceefb7dc2a009d91cbefabf6abcc6d5d6e6b",
     "DPIAgent/demo/demo.css": "ad6250835d424f8127088faf7f34d64ff41da6ff570709d1ad0e4f842b8c0e27",
@@ -190,16 +195,16 @@
   "browser_errors": [],
   "artifacts": {
     "dpiagent-demo.mp4": {
-      "bytes": 2291522,
-      "sha256": "1d91094ed24fb52a57f732b4b6402f455015aa0b2b5b177aaa5474914ffc9b0f"
+      "bytes": 14715223,
+      "sha256": "7e0a5d6d14abd37ca03780080d06ac78a76b597eb6265ec9db9cf2cde815488d"
     },
     "dpiagent-demo.gif": {
-      "bytes": 4895416,
-      "sha256": "5656c903fce7cccf231683562557c8bc396f64eee2f108b940dd97c6a3d50319"
+      "bytes": 27939663,
+      "sha256": "53f3634a0a94a647dcc62fc441cd0aa71273690fa0a60545262b6650da98e7b5"
     },
     "dpiagent-demo-poster.png": {
-      "bytes": 76542,
-      "sha256": "387cd73eddc0ef9ecd7bf10fce9f16d3c15aea5ebd67f49a58726d8a39c3bde7"
+      "bytes": 91612,
+      "sha256": "d36d5252cbee5cd11ebd84fa7ef334912f7fe5c5483b68d4480a2600c5644a8a"
     }
   }
 }

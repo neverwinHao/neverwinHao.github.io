@@ -42,6 +42,7 @@ def main():
                 frame.evaluate('document.fonts.ready')
             duration = page.evaluate('dpiShowcase.duration')
             scenes = page.evaluate('dpiShowcase.slides')
+            playback_rate = page.evaluate('dpiShowcase.playbackRate')
             recordings = page.evaluate('dpiShowcase.recordings.map(d=>({id:d.id,config:d.config,source:d.source,source_sha256:d.source_sha256,steps:d.steps.length,validation:d.validation,evaluation:d.evaluation}))')
             assert len(recordings) == 3
             assert len({d['config'] for d in recordings}) == 3
@@ -80,7 +81,7 @@ def main():
         assert stream['width']==1600 and stream['height']==900 and stream['codec_name']=='h264'
         assert abs(float(probe['format']['duration'])-duration) < .15
         sources = ['DPIAgent/assets/demo/dpiagent-cover.png','DPIAgent/assets/demo/dpiagent-cover.pptx','DPIAgent/showcase/index.html','DPIAgent/showcase/showcase.js','DPIAgent/showcase/showcase.css','DPIAgent/demo/demo.js','DPIAgent/demo/demo.css','DPIAgent/demo/data/index.json']
-        metadata = {'duration_seconds':float(probe['format']['duration']),'frames':count,'fps':args.fps,'resolution':[1600,900],'audio':False,'gif':{'resolution':[960,540],'fps':15,'speed':1},'presentation':'https://neverwinhao.github.io/DPIAgent/showcase/','capture_url':url,'scenes':scenes,'recordings':recordings,'source_files':{s:sha(repo/s) for s in sources},'browser_errors':errors}
+        metadata = {'playback_rate':playback_rate,'duration_seconds':float(probe['format']['duration']),'frames':count,'fps':args.fps,'resolution':[1600,900],'audio':False,'gif':{'resolution':[960,540],'fps':15,'speed':1},'presentation':'https://neverwinhao.github.io/DPIAgent/showcase/','capture_url':url,'scenes':scenes,'recordings':recordings,'source_files':{s:sha(repo/s) for s in sources},'browser_errors':errors}
         metadata['artifacts'] = {name:{'bytes':(work/name).stat().st_size,'sha256':sha(work/name)} for name in ['dpiagent-demo.mp4','dpiagent-demo.gif','dpiagent-demo-poster.png']}
         (work/'recording.json').write_text(json.dumps(metadata,indent=2)+'\n')
         for name in ['dpiagent-demo.mp4','dpiagent-demo.gif','dpiagent-demo-poster.png','recording.json']:

@@ -3,10 +3,12 @@ const $ = id => document.getElementById(id);
 const capture = new URLSearchParams(location.search).has('capture');
 document.documentElement.classList.toggle('capture', capture);
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const PLAYBACK_RATE = 3;
+const RESULT_SECONDS = 3;
 const chapters = [
-  {task:'sphinx-doc__sphinx-9367', config:'gpt-5-mini-no-selection', model:'GPT-5 Mini', title:'Single-element tuples', repo:'Sphinx', explore:[{step:2,needle:'visit_Tuple'},{step:3,needle:'test_unparse'},{step:4,needle:'INPUT'}], edit:6},
-  {task:'matplotlib__matplotlib-26113', config:'gpt-5-no-selection', model:'GPT-5', title:'Hexbin count threshold', repo:'Matplotlib', explore:[{step:3,needle:'hexbin'},{step:5,needle:'len(acc)'},{step:9,needle:'mincnt',command:'h1 ='}], edit:14},
-  {task:'pydata__xarray-7233', config:'opus-4.5-no-selection', model:'Claude Opus 4.5', title:'Coordinate preservation', repo:'xarray', explore:[{step:1,needle:'construct'},{step:9,needle:'_from_temp_dataset'},{step:10,needle:'Is day a coord?',command:'result ='}], edit:14},
+  {task:'sphinx-doc__sphinx-9367', config:'gpt-5-mini-no-selection', model:'GPT-5 Mini', title:'Single-element tuples', repo:'Sphinx'},
+  {task:'matplotlib__matplotlib-26113', config:'gpt-5-no-selection', model:'GPT-5', title:'Hexbin count threshold', repo:'Matplotlib'},
+  {task:'pydata__xarray-7233', config:'opus-4.5-no-selection', model:'Claude Opus 4.5', title:'Coordinate preservation', repo:'xarray'},
 ];
 let slides = [], active = -1, currentTime = 0, playing = false, last = 0, raf = 0;
 let ready = false;
@@ -29,13 +31,13 @@ function addSlide(kind, seconds, chapter, markup) {
 
 addSlide('cover',4,null,'<img class="cover-image" src="../assets/demo/dpiagent-cover.png" alt="DPIAgent: Agentic Reproduction Test Generation with Structured Phase Boundaries — authors and affiliations">');
 chapters.forEach(chapter=>{
-  const demo=addSlide('demo',28,chapter);
+  const demo=addSlide('demo',1,chapter);
   chapter.frame=el('iframe','replay-frame');chapter.frame.title=`${chapter.repo}: original ${chapter.model} recording`;
   chapter.frame.tabIndex=-1;chapter.frame.inert=true;
   chapter.frame.src=`../demo/?presentation=1&task=${chapter.task}&config=${chapter.config}`;
   demo.node.append(chapter.frame);
 });
-const duration = slides.reduce((sum,s)=>sum+s.duration,0);
+let duration = slides.reduce((sum,s)=>sum+s.duration,0);
 $('seek').max=duration;
 
 const playerCSS = `
@@ -50,8 +52,6 @@ main{width:100%!important;max-width:none!important;margin:0!important;padding:0!
 .phase-stream{height:auto!important;flex:1!important;min-height:0!important;padding:14px!important}
 .event pre{font-size:14px!important;line-height:1.65!important}.event .output{max-height:280px!important}
 .event .command{max-height:215px!important;overflow:auto!important}
-#exploration-stream .event{display:none!important}
-#exploration-stream .event.presentation-selected{display:block!important;margin-top:0!important}
 .protocol-pane{height:700px!important;padding-top:8px!important}.protocol-heading h3{font-size:19px!important}
 .protocol-heading{margin-bottom:9px!important}.transfer-line{margin-bottom:10px!important}
 .protocol-state{min-height:30px!important;font-size:11px!important;margin-bottom:8px!important}
@@ -77,26 +77,12 @@ function fit() {
 addEventListener('resize',fit);fit();
 
 function seekReplay(chapter, elapsed) {
-  const api=chapter.api, {starts,durations,handoffIndex,total}=api.timing;
-  const fail=api.recording.validation[0].step-1;
-  const reading=elapsed<12;
-  const selected=chapter.explore[reading?Math.min(2,Math.floor(elapsed/4)):2];
-  let index,progress;
-  if(reading){index=selected.step-1;progress=.9999;}
-  else if(elapsed<18){index=handoffIndex;progress=(elapsed-12)/6;}
-  else if(elapsed<21){index=chapter.edit-1;progress=.9999;}
-  else {index=fail;progress=.9999;}
-  api.seek(elapsed>=24?total:starts[index]+durations[index]*Math.min(.9999,progress));
-  // Keep one original exploration action visible, including during the handoff.
-  // Selecting the action does not alter its command or observation.
-  const doc=chapter.frame.contentDocument;
-  doc.querySelectorAll('#exploration-stream .event').forEach(event=>{
-    event.classList.toggle('presentation-selected',Number(event.querySelector('.event-heading>span').textContent)===selected.step);
-  });
-  api.focus(selected.step,selected.needle);
-  if(selected.command)api.focus(selected.step,selected.command,'command');
-  if(elapsed>=18 && elapsed<24)api.focus(index+1,elapsed<21?'assert':'AssertionError',elapsed<21?'command':'output');
-  return elapsed>=24?'evaluation':'trajectory';
+  const api=chapter.api;
+  // A linear clock mapping replays every original action, including the handoff.
+  // No selected steps, frozen commands, or per-step timing overrides.
+  const replayTime=Math.min(api.timing.total,elapsed*PLAYBACK_RATE);
+  api.seek(replayTime);
+  return replayTime>=api.timing.total?'evaluation':'trajectory';
 }
 
 function render(seconds) {
@@ -126,7 +112,7 @@ function render(seconds) {
   $('open-trace').href=slide.chapter?`../demo/?task=${slide.chapter.task}&config=${slide.chapter.config}`:'../demo/';
   if(ready && slide.kind==='demo'){
     const state=seekReplay(slide.chapter,elapsed);
-    $('source-label').textContent=`${slide.chapter.model} · ${state==='evaluation'?'Recorded reference-fix evaluation':'Selected recorded steps'}`;
+    $('source-label').textContent=`${slide.chapter.model} · ${state==='evaluation'?'Recorded reference-fix evaluation':`Full recording · ${PLAYBACK_RATE}×`}`;
 
   }
 }
@@ -156,9 +142,18 @@ async function init(){
     if(recording.id!==chapter.task||recording.config!==chapter.config||!recording.evaluation?.replay)throw Error('Recording or evaluation mismatch.');
     chapter.api.seek(0);
   }));
+  let start=0;
+  for(const slide of slides){
+    if(slide.chapter){
+      slide.chapter.replayDuration=slide.chapter.api.timing.total/PLAYBACK_RATE;
+      slide.duration=slide.chapter.replayDuration+RESULT_SECONDS;
+    }
+    slide.start=start;start+=slide.duration;
+  }
+  duration=start;$('seek').max=duration;
   await document.fonts.ready;
   await Promise.all([...document.querySelectorAll('.cover-image')].map(img=>img.decode()));
   ready=true;$('play').disabled=false;setPlaying(false);render(.4);
 }
-window.dpiShowcase={get ready(){return ready;},duration, get slides(){return slides.map(s=>({kind:s.kind,start:s.start,duration:s.duration,task:s.chapter?.task,config:s.chapter?.config}));},get recordings(){return chapters.map(c=>c.api.recording);},seek(t){setPlaying(false);render(t);}};
+window.dpiShowcase={get ready(){return ready;},get duration(){return duration;},playbackRate:PLAYBACK_RATE, get slides(){return slides.map(s=>({kind:s.kind,start:s.start,duration:s.duration,replayDuration:s.chapter?.replayDuration,task:s.chapter?.task,config:s.chapter?.config}));},get recordings(){return chapters.map(c=>c.api.recording);},seek(t){setPlaying(false);render(t);}};
 init().catch(error=>{$('error').hidden=false;$('error').textContent=error.message;$('play').textContent='Unable to load';});

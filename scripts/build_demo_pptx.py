@@ -18,7 +18,7 @@ WORK = Path('/tmp/dpi-preview/pptx-export')
 WORK.mkdir(exist_ok=True)
 OUT = ROOT / 'DPIAgent-Demo.pptx'
 meta = json.loads((ASSETS / 'recording.json').read_text())
-assert meta['duration_seconds'] == 88
+assert len(meta['scenes']) == 4 and meta['playback_rate'] == 3
 prs = Presentation(ASSETS / 'dpiagent-cover.pptx')
 prs.slide_width = Inches(13.333333)
 prs.slide_height = Inches(7.5)
@@ -39,6 +39,8 @@ def slide(seconds):
     return s
 
 cover = prs.slides[0]
+for old in cover._element.xpath('./p:transition'):
+    cover._element.remove(old)
 transition = OxmlElement('p:transition')
 transition.set('spd','slow');transition.set('advTm','4000');transition.set('advClick','1')
 transition.append(OxmlElement('p:fade'))
@@ -59,7 +61,7 @@ for scene in meta['scenes']:
     url = f"https://neverwinhao.github.io/DPIAgent/demo/?task={task}&config={record['config']}"
     s.notes_slide.notes_text_frame.text = (
         f"{task}\n{url}\nEmbedded {scene['duration']}-second video, automatic playback in Slide Show. "
-        'Selected original trajectory moments; original actions and observations unchanged. '
+        f"Complete original trajectory at {meta['playback_rate']}x speed; every action and observation retained in order. "
         'Final FAILED/PASSED excerpts come from separate recorded reference-fix evaluation of the same submitted test patch.\n'
         f"Original trajectory SHA-256: {record['source_sha256']}\n" + json.dumps(record['evaluation'], indent=2)
     )
