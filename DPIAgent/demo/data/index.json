@@ -28,6 +28,19 @@
         }
       ],
       "title": "kernS: 'kern' referenced before assignment"
+    },
+    {
+      "id": "matplotlib__matplotlib-26113",
+      "label": "Hexbin count threshold",
+      "repo": "matplotlib/matplotlib",
+      "runs": [
+        {
+          "config": "opus-4.5-no-selection",
+          "file": "matplotlib__matplotlib-26113--opus-4.5-no-selection.json",
+          "steps": 24
+        }
+      ],
+      "title": "Inconsistent behavior of hexbins mincnt parameter, depending on C parameter"
     }
   ],
   "archive_trajectory_count": 1731
