@@ -33,34 +33,56 @@ For a remote development machine, forward port 8765 to your browser's machine.
 
 ## Trace data
 
-The gallery contains four cases and three models (12 runs), selected from
-the supplied `agent-traces.zip`. Only the selected run is fetched. Each JSON keeps
-the original actions, observations, recorded reasoning, issue, and submitted patch.
-Repeated queries, system prompts, environment settings, and replay configuration
-are excluded. Source member names and SHA-256 hashes identify the original records.
+The gallery contains three cases and three models (9 runs), selected from the
+submitted archive and its recorded SWT-Bench evaluations. Every run has 9–16
+original tool calls and is resolved in both the aggregate and per-instance report.
 
-The Astropy case is `astropy__astropy-14365` (QDP command case sensitivity),
-and Django is `django__django-10999` (negative duration parsing). Together with
-the existing scikit-learn and Requests cases, all 12 original runs have been
-checked for zero `python_add*` or `generate_test` invocations in their tool/action
-records. The exporter rejects a selected run if it calls those helpers; it does
-not filter individual steps. Original observations can still mention a helper
-in an environment-generated usage hint. Such hints are not tool calls.
+| Case | GPT-5 | GPT-5 Mini | Claude Opus 4.5 |
+| --- | ---: | ---: | ---: |
+| `scikit-learn__scikit-learn-13135` — K-means bin edges | 9 | 10 | 13 |
+| `scikit-learn__scikit-learn-13328` — Boolean regression input | 11 | 14 | 11 |
+| `pydata__xarray-3151` — Coordinate merging | 16 | 13 | 16 |
 
-Old links to the replaced Astropy/Django cases resolve to the new case for that
-library. The previously recorded GIF/MP4 remain historical recordings of the
-old Django username-validation case, separate from the current gallery.
+Counts are complete recorded steps, including repeated submission calls. No steps
+are removed. Each JSON retains original actions, observations, recorded reasoning,
+issue, handoff and submitted patch; source names and SHA-256 hashes identify the
+records. System prompts and replay configuration are excluded.
 
-Regenerate the checked-in JSON from the archive:
+The exporter requires all of the following before writing the gallery:
+
+- No actual `python_add*` or `generate_test` calls in tool/action records.
+- At most 16 steps, a confirmed handoff, and a submitted patch.
+- Resolved status and newly added fail-to-pass tests in the evaluation report,
+  with no fail-to-fail or pass-to-fail tests.
+- Matching patches in the trajectory, inference output and both evaluation runs
+  (ignoring surrounding whitespace).
+- A `FAILED` result before the reference fix and `PASSED` afterward for every
+  reported fail-to-pass test, corroborated in the raw evaluation logs.
+
+The **Verified: fail → pass** control opens the test names and links to the
+original per-instance report and before/after logs. These are separate recorded
+evaluations, not extra agent steps or fresh reruns. Files in `data/evidence/` are
+byte-for-byte copies from `run_instance_swt_logs/<model>.zip`; the exported run
+records their source paths and SHA-256 hashes. Failures on buggy code in the replay
+are expected for a successful reproduction test. The complete raw logs also
+retain evaluator setup/cleanup output; the verification concerns the named tests.
+
+Environment-generated usage hints can still mention unused helpers; these hints
+are not invocations. Retired case URLs fall back to the first verified case while
+preserving the chosen model. Historical GIF/MP4 recordings are separate from this
+gallery.
+
+Regenerate from a complete submission directory:
 
 ```bash
-python scripts/build_demo_traces.py /path/to/agent-traces.zip
+python scripts/build_demo_traces.py /path/to/DPIAgent-submission/agent-traces.zip
 ```
 
-Edit `TASKS` in that script to change the case selection. The archive is not
-required to serve the generated site. A `ready_to_write_test` call marks a handoff;
-the explicit phase-transition marker in its observation changes subsequent steps
-to test generation. Exit status is displayed verbatim and is not a benchmark score.
+The archive's parent must contain `evaluation_results/`, `inference_outputs/` and
+`run_instance_swt_logs/`; use `--submission-dir` if they live elsewhere. Edit
+`TASKS` and `CASE_LABELS` to change selection. The exporter validates all runs
+before writing and removes retired trajectory JSON files listed in the previous
+manifest. No source archives are needed to serve the generated site.
 
 Playback uses illustrative timing (3–9 seconds per ordinary tool call and
 12 seconds for the diagnosis handoff at 1×), not original wall-clock time. All action/output text is retained; long outputs can be expanded
@@ -75,8 +97,8 @@ execution (ochre), edits/submissions (green), and the handoff (purple). Commands
 and output have separate surfaces. Source paths, strings, Python keywords, test
 names, and assertions are highlighted; error lines and unified-diff additions,
 deletions, and headers receive distinct backgrounds. These are text patterns,
-not independent judgments of correctness. A green edit or submitted patch does
-not imply a passing evaluation.
+not independent judgments of correctness. The separate verification control is
+backed by recorded before/after evaluation evidence.
 
 Key-step links are derived from the recorded tool calls and command text. The
 handoff puts root cause and test plan first, with the original summary available
@@ -105,11 +127,11 @@ rendered when complete or explicitly opened rather than on every frame.
 Validated in Chromium: play/pause, restart, speed selection, phase and step jumps,
 seeking through completion, task/config changes, URL reload, artifact downloads,
 load-error recovery, reduced motion, and desktop/mobile embedded layouts.
-Also checked across all 12 runs: protocol fields match their source summaries,
+Also checked across all 9 runs: protocol fields match their source summaries,
 phase histories stay separate, the incoming plan matches the handoff, and rewinding
 clears the transferred state. Automatic boundary pause and continuous playback
 were exercised separately.
-All 12 exported runs were compared against the source archive for exact action,
+All 9 exported runs were compared against the source archive for exact action,
 observation, and final-patch fidelity.
 
 The files can be served from GitHub Pages without changing paths. Publishing is

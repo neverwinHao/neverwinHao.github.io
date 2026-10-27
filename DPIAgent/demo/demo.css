@@ -43,6 +43,12 @@ select { color: var(--ink); border: 1px solid var(--line-dark); border-radius: 4
 h2 { font-size: 23px; line-height: 1.45; font-weight: 600; letter-spacing: -.02em; margin: 5px 0 0; max-width: 920px; }
 .run-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 10px; font-size: 14px; color: var(--muted); }
 .run-meta button { border: 0; background: none; padding: 4px 0; color: var(--blue); font-size: 12px; }
+#run-status { color: var(--edit); font-size: 14px; }
+.document.evaluation-panel { font-family: var(--font-sans); white-space: normal; }
+.evaluation-panel p { margin: 0 0 12px; }
+.evaluation-panel pre { font-family: var(--mono); overflow-wrap: anywhere; }
+.evidence-links { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.evidence-links a { color: var(--blue); text-decoration: underline; padding: 8px 0; }
 #watch-handoff { display: flex; align-items: center; gap: 14px; flex-shrink: 0; border: 1px solid var(--line-dark); border-radius: 4px; background: white; padding: 9px 12px; color: var(--blue); font-size: 12px; }
 #watch-handoff:hover { background: var(--inspect-bg); border-color: var(--blue); }
 .document { margin: 0 22px 18px; padding: 18px; background: #f8fafc; border: 1px solid var(--line); border-radius: 4px; white-space: pre-wrap; overflow-wrap: anywhere; overflow: auto; max-height: 440px; font: 14px/1.75 var(--mono); }

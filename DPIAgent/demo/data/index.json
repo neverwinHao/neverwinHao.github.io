@@ -6,92 +6,73 @@
   },
   "tasks": [
     {
-      "id": "astropy__astropy-14365",
-      "repo": "astropy/astropy",
-      "runs": [
-        {
-          "config": "gpt-5-no-selection",
-          "file": "astropy__astropy-14365--gpt-5-no-selection.json",
-          "steps": 12
-        },
-        {
-          "config": "gpt-5-mini-no-selection",
-          "file": "astropy__astropy-14365--gpt-5-mini-no-selection.json",
-          "steps": 10
-        },
-        {
-          "config": "opus-4.5-no-selection",
-          "file": "astropy__astropy-14365--opus-4.5-no-selection.json",
-          "steps": 25
-        }
-      ],
-      "title": "ascii.qdp Table format assumes QDP commands are upper case"
-    },
-    {
-      "id": "django__django-10999",
-      "repo": "django/django",
-      "runs": [
-        {
-          "config": "gpt-5-no-selection",
-          "file": "django__django-10999--gpt-5-no-selection.json",
-          "steps": 11
-        },
-        {
-          "config": "gpt-5-mini-no-selection",
-          "file": "django__django-10999--gpt-5-mini-no-selection.json",
-          "steps": 16
-        },
-        {
-          "config": "opus-4.5-no-selection",
-          "file": "django__django-10999--opus-4.5-no-selection.json",
-          "steps": 21
-        }
-      ],
-      "title": "Fix parse_duration() for some negative durations"
-    },
-    {
-      "id": "scikit-learn__scikit-learn-13439",
+      "id": "scikit-learn__scikit-learn-13135",
+      "label": "K-means bin edges",
       "repo": "scikit-learn/scikit-learn",
       "runs": [
         {
           "config": "gpt-5-no-selection",
-          "file": "scikit-learn__scikit-learn-13439--gpt-5-no-selection.json",
-          "steps": 12
+          "file": "scikit-learn__scikit-learn-13135--gpt-5-no-selection.json",
+          "steps": 9
         },
         {
           "config": "gpt-5-mini-no-selection",
-          "file": "scikit-learn__scikit-learn-13439--gpt-5-mini-no-selection.json",
-          "steps": 12
+          "file": "scikit-learn__scikit-learn-13135--gpt-5-mini-no-selection.json",
+          "steps": 10
         },
         {
           "config": "opus-4.5-no-selection",
-          "file": "scikit-learn__scikit-learn-13439--opus-4.5-no-selection.json",
-          "steps": 17
+          "file": "scikit-learn__scikit-learn-13135--opus-4.5-no-selection.json",
+          "steps": 13
         }
       ],
-      "title": "Pipeline should implement __len__"
+      "title": "KBinsDiscretizer: kmeans fails due to unsorted bin_edges"
     },
     {
-      "id": "psf__requests-5414",
-      "repo": "psf/requests",
+      "id": "scikit-learn__scikit-learn-13328",
+      "label": "Boolean regression input",
+      "repo": "scikit-learn/scikit-learn",
       "runs": [
         {
           "config": "gpt-5-no-selection",
-          "file": "psf__requests-5414--gpt-5-no-selection.json",
-          "steps": 17
-        },
-        {
-          "config": "gpt-5-mini-no-selection",
-          "file": "psf__requests-5414--gpt-5-mini-no-selection.json",
+          "file": "scikit-learn__scikit-learn-13328--gpt-5-no-selection.json",
           "steps": 11
         },
         {
+          "config": "gpt-5-mini-no-selection",
+          "file": "scikit-learn__scikit-learn-13328--gpt-5-mini-no-selection.json",
+          "steps": 14
+        },
+        {
           "config": "opus-4.5-no-selection",
-          "file": "psf__requests-5414--opus-4.5-no-selection.json",
-          "steps": 29
+          "file": "scikit-learn__scikit-learn-13328--opus-4.5-no-selection.json",
+          "steps": 11
         }
       ],
-      "title": "Getting http://.example.com raises UnicodeError"
+      "title": "TypeError when supplying a boolean X to HuberRegressor fit"
+    },
+    {
+      "id": "pydata__xarray-3151",
+      "label": "Coordinate merging",
+      "repo": "pydata/xarray",
+      "runs": [
+        {
+          "config": "gpt-5-no-selection",
+          "file": "pydata__xarray-3151--gpt-5-no-selection.json",
+          "steps": 16
+        },
+        {
+          "config": "gpt-5-mini-no-selection",
+          "file": "pydata__xarray-3151--gpt-5-mini-no-selection.json",
+          "steps": 13
+        },
+        {
+          "config": "opus-4.5-no-selection",
+          "file": "pydata__xarray-3151--opus-4.5-no-selection.json",
+          "steps": 16
+        }
+      ],
+      "title": "xr.combine_by_coords raises ValueError if identical coordinates are non-monotonic"
     }
   ],
   "archive_trajectory_count": 1731

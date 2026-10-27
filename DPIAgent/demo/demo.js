@@ -5,17 +5,6 @@ const params = new URLSearchParams(location.search);
 const embedded = params.get('embed') === '1';
 document.documentElement.classList.toggle('embed', embedded);
 const phaseNames = { exploration: 'Exploration', handoff: 'Handoff', generation: 'Test generation' };
-const shortTitles = {
-  'astropy__astropy-14365': 'QDP command case sensitivity',
-  'django__django-10999': 'Negative duration parsing',
-  'scikit-learn__scikit-learn-13439': 'Pipeline length & slicing',
-  'psf__requests-5414': 'Invalid URL labels',
-};
-// Preserve existing links when a gallery case is replaced.
-const taskAliases = {
-  'astropy__astropy-12907': 'astropy__astropy-14365',
-  'django__django-11099': 'django__django-10999',
-};
 let manifest, data, taskId, configId, controller;
 let time = 0, total = 0, starts = [], durations = [], playing = false, raf = 0, last = 0;
 let rendered = -1, current = -1, elements = [];
@@ -300,7 +289,7 @@ function updateBoard(index) {
   setText('exploration-status', progress > 0 ? 'RECORDED' : index < 0 ? 'READY' : 'EXPLORING');
   setText('generation-status', time >= total ? 'RECORDED' : phase === 'generation' ? 'WRITING' : sent ? 'READY' : 'WAITING');
   setText('exploration-scope', sent ? 'RPG tools removed from the action space at the recorded transition.' : 'Investigate the code and reproduce the reported behavior.');
-  setText('generation-scope', sent ? 'Test editor, shell and submit now available.' : 'Write tests using the diagnosis and test plan from phase 1.');
+  setText('generation-scope', sent ? 'Tests run on buggy code here. See “Verified” for the reference-fix results.' : 'Write tests using the diagnosis and test plan from phase 1.');
   setText('protocol-state', sent ? '✓ Summary recorded · toolset switched' : progress > 0 ? 'Transferring the exploration summary…' : 'Awaiting the exploration summary');
   updateHandoff(progress, index);
   $('handoff-record').hidden = progress < HANDOFF_END;
@@ -445,12 +434,27 @@ function showTasks() {
   $('tasks').replaceChildren();
   manifest.tasks.forEach((task, i) => {
     const button = node('button', 'task');
-    button.textContent = task.repo.split('/')[1];
-    button.title = shortTitles[task.id] || task.title;
+    button.textContent = task.label || task.repo.split('/')[1];
+    button.title = `${task.repo}: ${task.title}`;
     button.dataset.task = task.id;
     button.addEventListener('click', () => loadRun(task.id, configId));
     $('tasks').append(button);
   });
+}
+
+function showEvaluation(evaluation) {
+  if (!evaluation?.resolved || !evaluation.fail_to_pass?.length) {
+    $('run-status').textContent = 'Evaluation unavailable';
+    return;
+  }
+  $('run-status').textContent = 'Verified: fail → pass ↗';
+  $('run-status').disabled = false;
+  const count = evaluation.added_fail_to_pass;
+  $('evaluation-summary').textContent = `Recorded SWT-Bench evaluation: ${count} new ${count === 1 ? 'test fails' : 'tests fail'} on the buggy version and ${count === 1 ? 'passes' : 'pass'} with the reference fix.`;
+  $('evaluation-tests').textContent = evaluation.fail_to_pass.join('\n');
+  for (const key of ['report', 'before', 'after']) {
+    $(`evaluation-${key}`).href = `data/${evaluation[key].file}`;
+  }
 }
 
 async function loadRun(nextTask, nextConfig) {
@@ -486,20 +490,22 @@ async function loadRun(nextTask, nextConfig) {
   $('error').hidden = true;
   $('issue').hidden = true;
   $('patch-panel').hidden = true;
+  $('evaluation-panel').hidden = true;
+  $('run-status').setAttribute('aria-expanded', 'false');
   $('issue-toggle').setAttribute('aria-expanded', 'false');
   $('patch-toggle').setAttribute('aria-expanded', 'false');
-  ['play', 'restart', 'prev', 'next', 'seek', 'patch-toggle', 'watch-handoff'].forEach(id => $(id).disabled = true);
+  ['play', 'restart', 'prev', 'next', 'seek', 'patch-toggle', 'watch-handoff', 'run-status'].forEach(id => $(id).disabled = true);
   document.querySelectorAll('.phase-jump').forEach(button => { button.disabled = true; button.classList.remove('active'); });
   $('steps').replaceChildren();
   $('step-total').textContent = 'Loading…';
-  $('run-status').textContent = 'Recorded run';
+  $('run-status').textContent = 'Loading evaluation…';
   $('play-state').textContent = 'LOADING';
   $('current-tool').textContent = 'Loading trajectory';
   $('position').textContent = '00 / 00';
   $('percent').textContent = '0%';
   $('seek').value = 0;
-  const requestedTask = taskAliases[nextTask] || nextTask;
-  const task = manifest.tasks.find(t => t.id === requestedTask) || manifest.tasks[0];
+  // Retired case URLs open the first verified case while keeping the model.
+  const task = manifest.tasks.find(t => t.id === nextTask) || manifest.tasks[0];
   const run = task.runs.find(r => r.config === nextConfig) || task.runs[0];
   taskId = task.id;
   configId = run.config;
@@ -546,7 +552,7 @@ async function loadRun(nextTask, nextConfig) {
     }
     $('seek').max = total;
     $('step-total').textContent = `${data.steps.length} tool calls`;
-    $('run-status').textContent = `Exit: ${data.exit_status}`;
+    showEvaluation(data.evaluation);
     $('issue').textContent = data.issue;
     paintTrace($('patch'), data.patch || '', 'diff');
     buildKeyMoments();
@@ -605,7 +611,7 @@ $('seek').addEventListener('input', () => {
   render();
   setPlaying(false);
 });
-for (const [toggle, panel] of [['issue-toggle', 'issue'], ['patch-toggle', 'patch-panel']]) {
+for (const [toggle, panel] of [['issue-toggle', 'issue'], ['patch-toggle', 'patch-panel'], ['run-status', 'evaluation-panel']]) {
   $(toggle).addEventListener('click', () => {
     $(panel).hidden = !$(panel).hidden;
     $(toggle).setAttribute('aria-expanded', String(!$(panel).hidden));

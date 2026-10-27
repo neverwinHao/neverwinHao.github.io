@@ -17,9 +17,14 @@
     <section class="workspace" aria-label="DPIAgent two-phase replay">
       <nav class="model-bar" aria-label="Choose a model"><span class="model-label">Model</span><div id="models" class="models"></div></nav>
       <div class="casebar"><span class="case-label">CASE</span><div id="tasks" class="tasks"></div></div>
-      <div class="run-heading"><div><span id="task-id" class="mono muted">Loading trajectories…</span><h2 id="task-title">Opening the trace archive</h2><div class="run-meta"><span id="step-total">— tool calls</span><span id="run-status">Recorded run</span><button id="issue-toggle" aria-expanded="false" aria-controls="issue">Read issue ↗</button><button id="patch-toggle" disabled aria-expanded="false" aria-controls="patch-panel">Final test patch ↗</button></div></div><div class="run-actions"><button id="play" class="primary" disabled>▶ Start exploration</button><button id="watch-handoff" disabled>Watch the handoff <span>→</span></button></div></div>
+      <div class="run-heading"><div><span id="task-id" class="mono muted">Loading trajectories…</span><h2 id="task-title">Opening the trace archive</h2><div class="run-meta"><span id="step-total">— tool calls</span><button id="run-status" disabled aria-expanded="false" aria-controls="evaluation-panel">Loading evaluation…</button><button id="issue-toggle" aria-expanded="false" aria-controls="issue">Read issue ↗</button><button id="patch-toggle" disabled aria-expanded="false" aria-controls="patch-panel">Final test patch ↗</button></div></div><div class="run-actions"><button id="play" class="primary" disabled>▶ Start exploration</button><button id="watch-handoff" disabled>Watch the handoff <span>→</span></button></div></div>
       <pre id="issue" class="document" hidden></pre>
       <div id="patch-panel" class="document" hidden><p>Final submitted test artifact from the recorded run.</p><pre id="patch"></pre><button id="download-patch">Download .patch ↓</button></div>
+      <section id="evaluation-panel" class="document evaluation-panel" aria-label="Recorded reproduction evaluation" hidden>
+        <p id="evaluation-summary"></p>
+        <pre id="evaluation-tests"></pre>
+        <div class="evidence-links"><a id="evaluation-report" target="_blank" rel="noopener">Evaluation report ↗</a><a id="evaluation-before" target="_blank" rel="noopener">Buggy-version log ↗</a><a id="evaluation-after" target="_blank" rel="noopener">Reference-fix log ↗</a></div>
+      </section>
       <div id="error" role="alert" hidden></div>
       <div id="method-board" class="method-board" data-stage="exploration">
         <section id="exploration-pane" class="phase-pane exploration-pane active" aria-label="Phase 1: defect exploration">
@@ -63,7 +68,7 @@
       </details>
       <details class="step-index"><summary>Browse the recorded steps <span id="index-count"></span></summary><div id="steps"></div></details>
     </section>
-    <p class="footnote">A submitted test patch is an agent artifact, not an independent evaluation result.</p>
+    <p class="footnote">Reproduction tests are expected to fail on buggy code and pass after the reference fix.</p>
   </main>
 </body>
 </html>

@@ -1,0 +1,626 @@
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z '' ']'
++++ export CONDA_SHLVL=0
++++ CONDA_SHLVL=0
++++ '[' -n '' ']'
++++++ dirname /opt/miniconda3/bin/conda
+++++ dirname /opt/miniconda3/bin
++++ PATH=/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export PATH
++++ '[' -z '' ']'
++++ PS1=
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_1=/opt/miniconda3
+++ CONDA_PREFIX_1=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ cd /testbed
++ git diff HEAD 37b0e66c871e8fb032a9c7086b2a1d5419838154
++ git config --global --add safe.directory /testbed
++ cd /testbed
++ git status
+On branch main
+nothing to commit, working tree clean
++ git show
+commit 37b0e66c871e8fb032a9c7086b2a1d5419838154
+Author: Albert Thomas <albertthomas88@gmail.com>
+Date:   Sat Mar 2 08:52:17 2019 +0100
+
+    [MRG] add implementation details for Isolation Forest (#13364)
+    
+    * add implementation details of Isolation Forest
+    
+    * fix formula syntax
+
+diff --git a/doc/modules/outlier_detection.rst b/doc/modules/outlier_detection.rst
+index 69f7a275ab..b27b0c8a59 100644
+--- a/doc/modules/outlier_detection.rst
++++ b/doc/modules/outlier_detection.rst
+@@ -239,7 +239,13 @@ Random partitioning produces noticeably shorter paths for anomalies.
+ Hence, when a forest of random trees collectively produce shorter path
+ lengths for particular samples, they are highly likely to be anomalies.
+ 
+-This strategy is illustrated below.
++The implementation of :class:`ensemble.IsolationForest` is based on an ensemble
++of :class:`tree.ExtraTreeRegressor`. Following Isolation Forest original paper,
++the maximum depth of each tree is set to :math:`\lceil \log_2(n) \rceil` where
++:math:`n` is the number of samples used to build the tree (see (Liu et al.,
++2008) for more details).
++
++This algorithm is illustrated below.
+ 
+ .. figure:: ../auto_examples/ensemble/images/sphx_glr_plot_isolation_forest_001.png
+    :target: ../auto_examples/ensemble/plot_isolation_forest.html
+diff --git a/sklearn/ensemble/iforest.py b/sklearn/ensemble/iforest.py
+index 7050fb18f9..4f04df5699 100644
+--- a/sklearn/ensemble/iforest.py
++++ b/sklearn/ensemble/iforest.py
+@@ -142,6 +142,13 @@ class IsolationForest(BaseBagging, OutlierMixin):
+         ``offset_ = -0.5``, making the decision function independent from the
+         contamination parameter.
+ 
++    Notes
++    -----
++    The implementation is based on an ensemble of ExtraTreeRegressor. The
++    maximum depth of each tree is set to ``ceil(log_2(n))`` where
++    :math:`n` is the number of samples used to build the tree
++    (see (Liu et al., 2008) for more details).
++
+     References
+     ----------
+     .. [1] Liu, Fei Tony, Ting, Kai Ming and Zhou, Zhi-Hua. "Isolation forest."
++ git diff 37b0e66c871e8fb032a9c7086b2a1d5419838154
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z x ']'
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1='(testbed) '
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=3
++++ CONDA_SHLVL=3
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=4
+++ CONDA_SHLVL=4
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_3=/opt/miniconda3
+++ CONDA_PREFIX_3=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ python -m pip install -v --no-use-pep517 --no-build-isolation -e .
+Using pip 21.2.2 from /opt/miniconda3/envs/testbed/lib/python3.6/site-packages/pip (python 3.6)
+Obtaining file:///testbed
+    Running command python setup.py egg_info
+    running egg_info
+    creating /tmp/pip-pip-egg-info-5uy4cslr/scikit_learn.egg-info
+    writing /tmp/pip-pip-egg-info-5uy4cslr/scikit_learn.egg-info/PKG-INFO
+    writing dependency_links to /tmp/pip-pip-egg-info-5uy4cslr/scikit_learn.egg-info/dependency_links.txt
+    writing requirements to /tmp/pip-pip-egg-info-5uy4cslr/scikit_learn.egg-info/requires.txt
+    writing top-level names to /tmp/pip-pip-egg-info-5uy4cslr/scikit_learn.egg-info/top_level.txt
+    writing manifest file '/tmp/pip-pip-egg-info-5uy4cslr/scikit_learn.egg-info/SOURCES.txt'
+    reading manifest file '/tmp/pip-pip-egg-info-5uy4cslr/scikit_learn.egg-info/SOURCES.txt'
+    reading manifest template 'MANIFEST.in'
+    adding license file 'COPYING'
+    writing manifest file '/tmp/pip-pip-egg-info-5uy4cslr/scikit_learn.egg-info/SOURCES.txt'
+    Partial import of sklearn during the build process.
+Requirement already satisfied: numpy>=1.11.0 in /opt/miniconda3/envs/testbed/lib/python3.6/site-packages (from scikit-learn==0.21.dev0) (1.19.2)
+Requirement already satisfied: scipy>=0.17.0 in /opt/miniconda3/envs/testbed/lib/python3.6/site-packages (from scikit-learn==0.21.dev0) (1.5.2)
+Installing collected packages: scikit-learn
+  Attempting uninstall: scikit-learn
+    Found existing installation: scikit-learn 0.21.dev0
+    Uninstalling scikit-learn-0.21.dev0:
+      Removing file or directory /opt/miniconda3/envs/testbed/lib/python3.6/site-packages/scikit-learn.egg-link
+      Removing pth entries from /opt/miniconda3/envs/testbed/lib/python3.6/site-packages/easy-install.pth:
+      Removing entry: /testbed
+      Successfully uninstalled scikit-learn-0.21.dev0
+  Running setup.py develop for scikit-learn
+    Running command /opt/miniconda3/envs/testbed/bin/python -c 'import io, os, sys, setuptools, tokenize; sys.argv[0] = '"'"'/testbed/setup.py'"'"'; __file__='"'"'/testbed/setup.py'"'"';f = getattr(tokenize, '"'"'open'"'"', open)(__file__) if os.path.exists(__file__) else io.StringIO('"'"'from setuptools import setup; setup()'"'"');code = f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' develop --no-deps
+    blas_opt_info:
+    blas_mkl_info:
+    customize UnixCCompiler
+      libraries mkl_rt not found in ['/opt/miniconda3/envs/testbed/lib', '/usr/local/lib', '/usr/lib64', '/usr/lib', '/usr/lib/x86_64-linux-gnu']
+      NOT AVAILABLE
+
+    blis_info:
+      libraries blis not found in ['/opt/miniconda3/envs/testbed/lib', '/usr/local/lib', '/usr/lib64', '/usr/lib', '/usr/lib/x86_64-linux-gnu']
+      NOT AVAILABLE
+
+    openblas_info:
+    C compiler: gcc -pthread -B /opt/miniconda3/envs/testbed/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC
+
+    creating /tmp/tmp5an949kz/tmp
+    creating /tmp/tmp5an949kz/tmp/tmp5an949kz
+    compile options: '-c'
+    gcc: /tmp/tmp5an949kz/source.c
+    gcc -pthread -B /opt/miniconda3/envs/testbed/compiler_compat -Wl,--sysroot=/ /tmp/tmp5an949kz/tmp/tmp5an949kz/source.o -L/opt/miniconda3/envs/testbed/lib -lopenblas -o /tmp/tmp5an949kz/a.out
+      FOUND:
+        libraries = ['openblas', 'openblas']
+        library_dirs = ['/opt/miniconda3/envs/testbed/lib']
+        language = c
+        define_macros = [('HAVE_CBLAS', None)]
+
+      FOUND:
+        libraries = ['openblas', 'openblas']
+        library_dirs = ['/opt/miniconda3/envs/testbed/lib']
+        language = c
+        define_macros = [('HAVE_CBLAS', None)]
+
+    running develop
+    running build_scripts
+    running egg_info
+    running build_src
+    build_src
+    building library "libsvm-skl" sources
+    building extension "sklearn.__check_build._check_build" sources
+    building extension "sklearn.preprocessing._csr_polynomial_expansion" sources
+    building extension "sklearn.cluster._dbscan_inner" sources
+    building extension "sklearn.cluster._hierarchical" sources
+    building extension "sklearn.cluster._k_means_elkan" sources
+    building extension "sklearn.cluster._k_means" sources
+    building extension "sklearn.datasets._svmlight_format" sources
+    building extension "sklearn.decomposition._online_lda" sources
+    building extension "sklearn.decomposition.cdnmf_fast" sources
+    building extension "sklearn.ensemble._gradient_boosting" sources
+    building extension "sklearn.feature_extraction._hashing" sources
+    building extension "sklearn.manifold._utils" sources
+    building extension "sklearn.manifold._barnes_hut_tsne" sources
+    building extension "sklearn.metrics.cluster.expected_mutual_info_fast" sources
+    building extension "sklearn.metrics.pairwise_fast" sources
+    building extension "sklearn.neighbors.ball_tree" sources
+    building extension "sklearn.neighbors.kd_tree" sources
+    building extension "sklearn.neighbors.dist_metrics" sources
+    building extension "sklearn.neighbors.typedefs" sources
+    building extension "sklearn.neighbors.quad_tree" sources
+    building extension "sklearn.tree._tree" sources
+    building extension "sklearn.tree._splitter" sources
+    building extension "sklearn.tree._criterion" sources
+    building extension "sklearn.tree._utils" sources
+    building extension "sklearn.utils.sparsefuncs_fast" sources
+    building extension "sklearn.utils._cython_blas" sources
+    building extension "sklearn.utils.arrayfuncs" sources
+    building extension "sklearn.utils.murmurhash" sources
+    building extension "sklearn.utils.lgamma" sources
+    building extension "sklearn.utils.graph_shortest_path" sources
+    building extension "sklearn.utils.fast_dict" sources
+    building extension "sklearn.utils.seq_dataset" sources
+    building extension "sklearn.utils.weight_vector" sources
+    building extension "sklearn.utils._random" sources
+    building extension "sklearn.utils._logistic_sigmoid" sources
+    building extension "sklearn.svm.libsvm" sources
+    building extension "sklearn.svm.liblinear" sources
+    building extension "sklearn.svm.libsvm_sparse" sources
+    building extension "sklearn.linear_model.cd_fast" sources
+    building extension "sklearn.linear_model.sgd_fast" sources
+    building extension "sklearn.linear_model.sag_fast" sources
+    building extension "sklearn._isotonic" sources
+    building data_files sources
+    build_src: building npy-pkg config files
+    writing scikit_learn.egg-info/PKG-INFO
+    writing dependency_links to scikit_learn.egg-info/dependency_links.txt
+    writing requirements to scikit_learn.egg-info/requires.txt
+    writing top-level names to scikit_learn.egg-info/top_level.txt
+    reading manifest file 'scikit_learn.egg-info/SOURCES.txt'
+    reading manifest template 'MANIFEST.in'
+    adding license file 'COPYING'
+    writing manifest file 'scikit_learn.egg-info/SOURCES.txt'
+    running build_ext
+    customize UnixCCompiler
+    customize UnixCCompiler using build_clib
+    customize UnixCCompiler
+    customize UnixCCompiler using build_ext_subclass
+    customize UnixCCompiler
+    customize UnixCCompiler using build_ext_subclass
+    Creating /opt/miniconda3/envs/testbed/lib/python3.6/site-packages/scikit-learn.egg-link (link to .)
+    Adding scikit-learn 0.21.dev0 to easy-install.pth file
+
+    Installed /testbed
+    Partial import of sklearn during the build process.
+Successfully installed scikit-learn-0.21.dev0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ git apply -v -
+Checking patch sklearn/linear_model/tests/test_huber.py...
+Applied patch sklearn/linear_model/tests/test_huber.py cleanly.
++ python3 /root/trace.py --count -C coverage.cover --include-pattern '/testbed/(sklearn/linear_model/huber\.py)' -m pytest --no-header -rA -p no:cacheprovider sklearn/linear_model/tests/test_huber.py
+['--count', '-C', 'coverage.cover', '--include-pattern', '/testbed/(sklearn/linear_model/huber\\.py)']
+============================= test session starts ==============================
+collected 10 items
+
+sklearn/linear_model/tests/test_huber.py .........F                      [100%]
+
+=================================== FAILURES ===================================
+______________________________ test_huber_bool_X _______________________________
+
+    def test_huber_bool_X():
+        # Test that HuberRegressor works with boolean X
+        # Non-regression test for issue:
+        # https://github.com/scikit-learn/scikit-learn/issues/13328
+        X, y = make_regression(n_samples=200, n_features=2, noise=4.0,
+                               random_state=0)
+        X_bool = X > 0
+        X_bool_as_float = np.asarray(X_bool, dtype=float)
+    
+        # Fit HuberRegressor with boolean X - this should not raise TypeError
+>       huber_bool = HuberRegressor().fit(X_bool, y)
+
+sklearn/linear_model/tests/test_huber.py:214: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+sklearn/linear_model/huber.py:288: in fit
+    iprint=0)
+/opt/miniconda3/envs/testbed/lib/python3.6/site-packages/scipy/optimize/lbfgsb.py:198: in fmin_l_bfgs_b
+    **opts)
+/opt/miniconda3/envs/testbed/lib/python3.6/site-packages/scipy/optimize/lbfgsb.py:308: in _minimize_lbfgsb
+    finite_diff_rel_step=finite_diff_rel_step)
+/opt/miniconda3/envs/testbed/lib/python3.6/site-packages/scipy/optimize/optimize.py:262: in _prepare_scalar_function
+    finite_diff_rel_step, bounds, epsilon=epsilon)
+/opt/miniconda3/envs/testbed/lib/python3.6/site-packages/scipy/optimize/_differentiable_functions.py:76: in __init__
+    self._update_fun()
+/opt/miniconda3/envs/testbed/lib/python3.6/site-packages/scipy/optimize/_differentiable_functions.py:166: in _update_fun
+    self._update_fun_impl()
+/opt/miniconda3/envs/testbed/lib/python3.6/site-packages/scipy/optimize/_differentiable_functions.py:73: in update_fun
+    self.f = fun_wrapped(self.x)
+/opt/miniconda3/envs/testbed/lib/python3.6/site-packages/scipy/optimize/_differentiable_functions.py:70: in fun_wrapped
+    return fun(x, *args)
+/opt/miniconda3/envs/testbed/lib/python3.6/site-packages/scipy/optimize/optimize.py:74: in __call__
+    self._compute_if_needed(x, *args)
+/opt/miniconda3/envs/testbed/lib/python3.6/site-packages/scipy/optimize/optimize.py:68: in _compute_if_needed
+    fg = self.fun(x, *args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+w = array([0., 0.])
+X = array([[False, False],
+       [False,  True],
+       [False,  True],
+       [ True,  True],
+       [False,  True],
+   ...e],
+       [False, False],
+       [ True,  True],
+       [ True, False],
+       [False, False],
+       [False,  True]])
+y = array([-36.74055607,   7.19003131,  44.38901836,  57.01951456,
+       -16.08855418,  -8.57916018, -31.39240867,  19.01...-87.29054611, -31.60922508,  37.50568861,  -2.62204748,
+        56.94948602, -43.52307458, -31.06118393,  34.93490838])
+epsilon = 1.35, alpha = 0.0001
+sample_weight = array([1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+       1., 1., 1., 1., 1., 1., 1., 1., 1., ...1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
+       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.])
+
+    def _huber_loss_and_gradient(w, X, y, epsilon, alpha, sample_weight=None):
+        """Returns the Huber loss and the gradient.
+    
+        Parameters
+        ----------
+        w : ndarray, shape (n_features + 1,) or (n_features + 2,)
+            Feature vector.
+            w[:n_features] gives the coefficients
+            w[-1] gives the scale factor and if the intercept is fit w[-2]
+            gives the intercept factor.
+    
+        X : ndarray, shape (n_samples, n_features)
+            Input data.
+    
+        y : ndarray, shape (n_samples,)
+            Target vector.
+    
+        epsilon : float
+            Robustness of the Huber estimator.
+    
+        alpha : float
+            Regularization parameter.
+    
+        sample_weight : ndarray, shape (n_samples,), optional
+            Weight assigned to each sample.
+    
+        Returns
+        -------
+        loss : float
+            Huber loss.
+    
+        gradient : ndarray, shape (len(w))
+            Returns the derivative of the Huber loss with respect to each
+            coefficient, intercept and the scale as a vector.
+        """
+        _, n_features = X.shape
+        fit_intercept = (n_features + 2 == w.shape[0])
+        if fit_intercept:
+            intercept = w[-2]
+        sigma = w[-1]
+        w = w[:n_features]
+        n_samples = np.sum(sample_weight)
+    
+        # Calculate the values where |y - X'w -c / sigma| > epsilon
+        # The values above this threshold are outliers.
+        linear_loss = y - safe_sparse_dot(X, w)
+        if fit_intercept:
+            linear_loss -= intercept
+        abs_linear_loss = np.abs(linear_loss)
+        outliers_mask = abs_linear_loss > epsilon * sigma
+    
+        # Calculate the linear loss due to the outliers.
+        # This is equal to (2 * M * |y - X'w -c / sigma| - M**2) * sigma
+        outliers = abs_linear_loss[outliers_mask]
+        num_outliers = np.count_nonzero(outliers_mask)
+        n_non_outliers = X.shape[0] - num_outliers
+    
+        # n_sq_outliers includes the weight give to the outliers while
+        # num_outliers is just the number of outliers.
+        outliers_sw = sample_weight[outliers_mask]
+        n_sw_outliers = np.sum(outliers_sw)
+        outlier_loss = (2. * epsilon * np.sum(outliers_sw * outliers) -
+                        sigma * n_sw_outliers * epsilon ** 2)
+    
+        # Calculate the quadratic loss due to the non-outliers.-
+        # This is equal to |(y - X'w - c)**2 / sigma**2| * sigma
+        non_outliers = linear_loss[~outliers_mask]
+        weighted_non_outliers = sample_weight[~outliers_mask] * non_outliers
+        weighted_loss = np.dot(weighted_non_outliers.T, non_outliers)
+        squared_loss = weighted_loss / sigma
+    
+        if fit_intercept:
+            grad = np.zeros(n_features + 2)
+        else:
+            grad = np.zeros(n_features + 1)
+    
+        # Gradient due to the squared loss.
+>       X_non_outliers = -axis0_safe_slice(X, ~outliers_mask, n_non_outliers)
+E       TypeError: The numpy boolean negative, the `-` operator, is not supported, use the `~` operator or the logical_not function instead.
+
+sklearn/linear_model/huber.py:93: TypeError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED sklearn/linear_model/tests/test_huber.py::test_huber_equals_lr_for_high_epsilon
+PASSED sklearn/linear_model/tests/test_huber.py::test_huber_max_iter
+PASSED sklearn/linear_model/tests/test_huber.py::test_huber_gradient
+PASSED sklearn/linear_model/tests/test_huber.py::test_huber_sample_weights
+PASSED sklearn/linear_model/tests/test_huber.py::test_huber_sparse
+PASSED sklearn/linear_model/tests/test_huber.py::test_huber_scaling_invariant
+PASSED sklearn/linear_model/tests/test_huber.py::test_huber_and_sgd_same_results
+PASSED sklearn/linear_model/tests/test_huber.py::test_huber_warm_start
+PASSED sklearn/linear_model/tests/test_huber.py::test_huber_better_r2_score
+FAILED sklearn/linear_model/tests/test_huber.py::test_huber_bool_X - TypeErro...
+========================= 1 failed, 9 passed in 2.13s ==========================
++ cat coverage.cover
+{"/testbed/sklearn/linear_model/huber.py": {"4": 1, "6": 1, "8": 1, "9": 1, "10": 1, "11": 1, "12": 1, "13": 1, "16": 1, "124": 2, "51": 1577, "52": 1577, "53": 1577, "54": 1138, "55": 1577, "56": 1577, "57": 1577, "61": 1577, "62": 1577, "63": 1138, "64": 1577, "65": 1577, "69": 1577, "70": 1577, "71": 1577, "75": 1577, "76": 1577, "77": 1577, "78": 1577, "82": 1577, "83": 1577, "84": 1577, "85": 1577, "87": 1577, "88": 1138, "90": 439, "93": 1577, "95": 1576, "98": 1576, "99": 1576, "100": 1576, "101": 1576, "102": 1576, "103": 1576, "104": 1576, "107": 1576, "110": 1576, "111": 1576, "112": 1576, "115": 1576, "116": 1137, "117": 1137, "119": 1576, "120": 1576, "121": 1576, "226": 1, "234": 1, "227": 11, "228": 11, "229": 11, "230": 11, "231": 11, "232": 11, "253": 18, "254": 18, "255": 18, "256": 3, "257": 3, "259": 15, "261": 18, "262": 0, "263": 0, "264": 0, "266": 18, "267": 1, "268": 1, "270": 17, "271": 12, "273": 5, "276": 17, "281": 18, "282": 18, "284": 18, "285": 18, "286": 18, "287": 18, "288": 18, "289": 17, "290": 0, "292": 0, "295": 17, "296": 17, "297": 17, "298": 12, "300": 5, "301": 17, "303": 17, "304": 17, "305": 17, "306": 17}}
++ git checkout 37b0e66c871e8fb032a9c7086b2a1d5419838154
+Note: switching to '37b0e66c871e8fb032a9c7086b2a1d5419838154'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 37b0e66c87 [MRG] add implementation details for Isolation Forest (#13364)
+M	sklearn/linear_model/tests/test_huber.py
++ git apply /root/pre_state.patch
+error: unrecognized input
