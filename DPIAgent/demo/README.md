@@ -3,9 +3,9 @@
 Static HTML/CSS/JavaScript; no build step, runtime API, or JavaScript dependencies.
 The paper and demo share visual tokens in `assets/theme.css` and load the same
 Inter stylesheet (with system font fallbacks).
-A model navigation bar switches between GPT-5, GPT-5 Mini, and Claude Opus 4.5.
-Case tabs sit below it. Only the DPI runs without test selection are exported;
-old selection URLs fall back to the default model for the same case.
+The model bar identifies Claude Opus 4.5, the model used by all three showcased
+runs. Case tabs sit below it. Only runs without test selection are exported;
+retired model/case URLs fall back to the available recording.
 The project page embeds this player at `DPIAgent/#demo`; the standalone player is at `DPIAgent/demo/`.
 
 The interface presents **two phases**, with the protocol at their boundary.
@@ -33,15 +33,22 @@ For a remote development machine, forward port 8765 to your browser's machine.
 
 ## Trace data
 
-The gallery contains three cases and three models (9 runs), selected from the
-submitted archive and its recorded SWT-Bench evaluations. Every run has 9–16
-original tool calls and is resolved in both the aggregate and per-instance report.
+The gallery contains three Claude Opus 4.5 runs, each with an actual fail-to-pass
+sequence inside the original trajectory. External evaluation success alone is not
+sufficient for inclusion. The records also restore the buggy implementation and
+rerun the same tests, then submit only the test patch.
 
-| Case | GPT-5 | GPT-5 Mini | Claude Opus 4.5 |
-| --- | ---: | ---: | ---: |
-| `scikit-learn__scikit-learn-13135` — K-means bin edges | 9 | 10 | 13 |
-| `scikit-learn__scikit-learn-13328` — Boolean regression input | 11 | 14 | 11 |
-| `pydata__xarray-3151` — Coordinate merging | 16 | 13 | 16 |
+| Case | Total steps | Buggy run | Temporary fix passes | Original restored, fails again |
+| --- | ---: | ---: | ---: | ---: |
+| `sphinx-doc__sphinx-9698` — Property index entries | 18 | 12: 2 failed | 14: 2 passed | 15: 2 failed |
+| `matplotlib__matplotlib-26113` — Hexbin count threshold | 24 | 14: 1 failed | 16: 1 passed | 18: 1 failed |
+| `django__django-15104` — Migration field detection | 24 | 16: 1 error | 18: 1 passed (OK) | 19: 1 error |
+
+These three original runs were chosen for visible validation. Other models and
+cases whose trajectories did not demonstrate that sequence are not showcased.
+The full actions show the temporary implementation edit and its reversal; the
+final submitted patches change test files only. No successful output is added
+to the replay from the external evaluation.
 
 Counts are complete recorded steps, including repeated submission calls. No steps
 are removed. Each JSON retains original actions, observations, recorded reasoning,
@@ -51,25 +58,28 @@ records. System prompts and replay configuration are excluded.
 The exporter requires all of the following before writing the gallery:
 
 - No actual `python_add*` or `generate_test` calls in tool/action records.
-- At most 16 steps, a confirmed handoff, and a submitted patch.
+- At most 24 steps, a confirmed handoff, and a submitted test-only patch.
+- The same named regression tests fail, pass after the recorded temporary fix,
+  and fail again after restoration in the original trajectory, with the actual
+  test targets and implementation-edit commands checked against the source.
 - Resolved status and newly added fail-to-pass tests in the evaluation report,
   with no fail-to-fail or pass-to-fail tests.
 - Matching patches in the trajectory, inference output and both evaluation runs
   (ignoring surrounding whitespace).
-- A `FAILED` result before the reference fix and `PASSED` afterward for every
+- A named failing result before the reference fix and passing result afterward for every
   reported fail-to-pass test, corroborated in the raw evaluation logs.
 
 The **Verified: fail → pass** control opens the test names and links to the
 original per-instance report and before/after logs. These are separate recorded
-evaluations, not extra agent steps or fresh reruns. Files in `data/evidence/` are
+evaluations, not extra agent steps or fresh reruns. Terminal color escapes are
+ignored only while validating statuses. Files in `data/evidence/` are
 byte-for-byte copies from `run_instance_swt_logs/<model>.zip`; the exported run
 records their source paths and SHA-256 hashes. Failures on buggy code in the replay
 are expected for a successful reproduction test. The complete raw logs also
 retain evaluator setup/cleanup output; the verification concerns the named tests.
 
 Environment-generated usage hints can still mention unused helpers; these hints
-are not invocations. Retired case URLs fall back to the first verified case while
-preserving the chosen model. Historical GIF/MP4 recordings are separate from this
+are not invocations. Retired case/model URLs fall back to an available showcased recording. Historical GIF/MP4 recordings are separate from this
 gallery.
 
 Regenerate from a complete submission directory:
@@ -81,8 +91,8 @@ python scripts/build_demo_traces.py /path/to/DPIAgent-submission/agent-traces.zi
 The archive's parent must contain `evaluation_results/`, `inference_outputs/` and
 `run_instance_swt_logs/`; use `--submission-dir` if they live elsewhere. Edit
 `TASKS` and `CASE_LABELS` to change selection. The exporter validates all runs
-before writing and removes retired trajectory JSON files listed in the previous
-manifest. No source archives are needed to serve the generated site.
+before writing and removes retired trajectory JSON files and their evaluation
+evidence listed in the previous manifest. No source archives are needed to serve the generated site.
 
 Playback uses illustrative timing (3–9 seconds per ordinary tool call and
 12 seconds for the diagnosis handoff at 1×), not original wall-clock time. All action/output text is retained; long outputs can be expanded
@@ -127,11 +137,11 @@ rendered when complete or explicitly opened rather than on every frame.
 Validated in Chromium: play/pause, restart, speed selection, phase and step jumps,
 seeking through completion, task/config changes, URL reload, artifact downloads,
 load-error recovery, reduced motion, and desktop/mobile embedded layouts.
-Also checked across all 9 runs: protocol fields match their source summaries,
+Also checked across all 3 runs: protocol fields match their source summaries,
 phase histories stay separate, the incoming plan matches the handoff, and rewinding
 clears the transferred state. Automatic boundary pause and continuous playback
 were exercised separately.
-All 9 exported runs were compared against the source archive for exact action,
+All 3 exported runs were compared against the source archive for exact action,
 observation, and final-patch fidelity.
 
 The files can be served from GitHub Pages without changing paths. Publishing is

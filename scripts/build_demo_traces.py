@@ -9,15 +9,13 @@ import re
 import zipfile
 
 TASKS = [
-    'scikit-learn__scikit-learn-13135',
-    'scikit-learn__scikit-learn-13328',
-    'pydata__xarray-3151',
+    'sphinx-doc__sphinx-9698',
+    'matplotlib__matplotlib-26113',
+    'django__django-15104',
 ]
-CASE_LABELS = ['K-means bin edges', 'Boolean regression input', 'Coordinate merging']
-MAX_STEPS = 16
+CASE_LABELS = ['Property index entries', 'Hexbin count threshold', 'Migration field detection']
+MAX_STEPS = 24
 CONFIGS = {
-    'gpt-5-no-selection': 'GPT-5 · DPI',
-    'gpt-5-mini-no-selection': 'GPT-5 Mini · DPI',
     'opus-4.5-no-selection': 'Claude Opus 4.5 · DPI',
 }
 
@@ -98,14 +96,71 @@ def evaluation_evidence(data, root, logs, aggregate, prediction):
         if patch.strip() != data['patch'].strip():
             raise ValueError(f'{prefix}: evaluation patch differs from trace submission')
         output = logs.read(f'{prefix}/test_output.txt')
+        # Match terminal-colored pytest statuses without modifying the stored log.
+        plain_output = re.sub(r'\x1b\[[0-?]*[ -/]*[@-~]', '', output.decode())
         for test in tests['FAIL_TO_PASS']:
-            if not re.search(rf'^{status} {re.escape(test)}(?:\s|$)', output.decode(), re.M):
+            if not test_result(plain_output, test, status):
                 raise ValueError(f'{prefix}: missing {status} evidence for {test}')
         filename = f'{directory}/{key}.txt'
         files[filename] = output
         evidence[key] = {'file': filename, 'source': f'{prefix}/test_output.txt',
                          'sha256': hashlib.sha256(output).hexdigest()}
     return evidence, files
+
+
+def test_result(output, test, status):
+    """Match a named pytest or unittest result, not an unrelated passing test."""
+    name = re.escape(test)
+    if '::' in test:
+        return bool(re.search(rf'^(?:{status} {name}(?:\s|$)|{name}\s+{status}\b)', output, re.M))
+    result = 'ok' if status == 'PASSED' else '(?:FAIL|ERROR)'
+    # unittest may put a one-line test docstring before its result.
+    return bool(re.search(rf'^{name}(?:\n[^\n]*|[^\n]*) \.\.\. {result}\s*$', output, re.M))
+
+
+def recorded_validation(data):
+    """Annotate exact original checks; never synthesize a successful tool output."""
+    cases = {
+        'sphinx-doc__sphinx-9698': {
+            'target': 'tests/test_domain_py_property_index.py',
+            'patch': 'tests/test_domain_py_property_index.py',
+            'checks': [(12, '2 failed, 7 warnings', 'python -m pytest'),
+                       (14, '2 passed, 7 warnings', 'sed -i "s/%s() (%s property)/%s (%s property)/g"'),
+                       (15, '2 failed, 7 warnings', 'mv sphinx/domains/python.py.bak sphinx/domains/python.py')],
+        },
+        'matplotlib__matplotlib-26113': {
+            'target': 'lib/matplotlib/tests/test_axes.py::test_hexbin_mincnt_behavior_with_C_parameter',
+            'patch': 'lib/matplotlib/tests/test_axes.py',
+            'checks': [(14, '1 failed in', 'python -m pytest'),
+                       (16, '1 passed in', "sed -i 's/len(acc) > mincnt/len(acc) >= mincnt/'"),
+                       (18, '1 failed in', 'python -m pytest')],
+            'restore': (17, "sed -i 's/len(acc) >= mincnt/len(acc) > mincnt/'"),
+        },
+        'django__django-15104': {
+            'target': 'migrations.test_autodetector.AutodetectorTests.test_fk_field_without_to_in_deconstruct',
+            'patch': 'tests/migrations/test_autodetector.py',
+            'checks': [(16, 'FAILED (errors=1)', 'python tests/runtests.py'),
+                       (18, '\nOK\n', "deconstruction[2].pop('to', None)"),
+                       (19, 'FAILED (errors=1)', "del deconstruction[2]['to']")],
+        },
+    }
+    case = cases[data['id']]
+    count = len(data['evaluation']['fail_to_pass'])
+    labels = [f'Bug reproduced: {count} failed', f'Temporary fix: {count} passed', f'Original restored: {count} failed']
+    for (index, result, command), status in zip(case['checks'], ['FAILED', 'PASSED', 'FAILED'], strict=True):
+        step = data['steps'][index - 1]
+        if (step['tool'] != 'bash' or command not in step['action']
+                or case['target'] not in step['action'] or result not in step['observation']
+                or not all(test_result(step['observation'], test, status) for test in data['evaluation']['fail_to_pass'])):
+            raise ValueError(f"{data['source']}: missing original validation at step {index}")
+    if 'restore' in case:
+        index, command = case['restore']
+        if command not in data['steps'][index - 1]['action']:
+            raise ValueError(f"{data['source']}: missing original implementation restoration")
+    paths = re.findall(r'^diff --git a/(.+?) b/', data['patch'], re.M)
+    if paths != [case['patch']]:
+        raise ValueError('Validation must leave only the original test patch')
+    return [{'step': check[0], 'label': label} for check, label in zip(case['checks'], labels, strict=True)]
 
 
 def main():
@@ -146,6 +201,7 @@ def main():
                 if forbidden:
                     raise ValueError(f'{source}: excluded helper called at steps {forbidden}')
                 data['evaluation'], evidence_files = evaluation_evidence(data, root, logs[config], aggregates[config], predictions[config][task])
+                data['validation'] = recorded_validation(data)
                 files.update(evidence_files)
                 filename = f'{task}--{config}.json'
                 files[filename] = (json.dumps(data, ensure_ascii=False, separators=(',', ':')) + '\n').encode()
@@ -163,7 +219,17 @@ def main():
         for run in task['runs']:
             filename = run['file']
             if filename not in files:
-                (args.output / filename).unlink(missing_ok=True)
+                retired_path = args.output / filename
+                if retired_path.exists():
+                    retired = json.loads(retired_path.read_text())
+                    for key in ['report', 'before', 'after']:
+                        evidence = retired.get('evaluation', {}).get(key)
+                        if evidence and evidence['file'] not in files:
+                            path = args.output / evidence['file']
+                            path.unlink(missing_ok=True)
+                            if path.parent.exists() and not any(path.parent.iterdir()):
+                                path.parent.rmdir()
+                    retired_path.unlink()
     previous_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
     print(f"Exported {sum(len(t['runs']) for t in manifest['tasks'])} runs across {len(TASKS)} tasks.")
 

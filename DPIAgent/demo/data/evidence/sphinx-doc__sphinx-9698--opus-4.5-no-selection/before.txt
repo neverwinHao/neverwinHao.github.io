@@ -1,0 +1,735 @@
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z '' ']'
++++ export CONDA_SHLVL=0
++++ CONDA_SHLVL=0
++++ '[' -n '' ']'
++++++ dirname /opt/miniconda3/bin/conda
+++++ dirname /opt/miniconda3/bin
++++ PATH=/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export PATH
++++ '[' -z '' ']'
++++ PS1=
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_1='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_1=/opt/miniconda3
+++ CONDA_PREFIX_1=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ cd /testbed
++ git diff HEAD f050a7775dfc9000f55d023d36d925a8d02ccfa8
++ git config --global --add safe.directory /testbed
++ cd /testbed
++ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   setup.py
+	modified:   tox.ini
+
+no changes added to commit (use "git add" and/or "git commit -a")
++ git show
+commit f050a7775dfc9000f55d023d36d925a8d02ccfa8
+Merge: 0f0b93df9 2760b3bb7
+Author: Takeshi KOMIYA <i.tkomiya@gmail.com>
+Date:   Sat Oct 9 14:48:31 2021 +0900
+
+    Merge pull request #9715 from tk0miya/test_with_py311-dev
+    
+    CI: Install the latest py package on testing with py3.11-dev
+
++ git diff f050a7775dfc9000f55d023d36d925a8d02ccfa8
+diff --git a/setup.py b/setup.py
+index 3dbc8746b..31bd48c0a 100644
+--- a/setup.py
++++ b/setup.py
+@@ -15,22 +15,22 @@ if sys.version_info < (3, 6):
+     sys.exit(1)
+ 
+ install_requires = [
+-    'sphinxcontrib-applehelp',
+-    'sphinxcontrib-devhelp',
++    'sphinxcontrib-applehelp<=1.0.7',
++    'sphinxcontrib-devhelp<=1.0.5',
+     'sphinxcontrib-jsmath',
+-    'sphinxcontrib-htmlhelp>=2.0.0',
+-    'sphinxcontrib-serializinghtml>=1.1.5',
+-    'sphinxcontrib-qthelp',
+-    'Jinja2>=2.3',
++    'sphinxcontrib-htmlhelp>=2.0.0,<=2.0.4',
++    'sphinxcontrib-serializinghtml>=1.1.5,<=1.1.9',
++    'sphinxcontrib-qthelp<=1.0.6',
++    'Jinja2<3.0',
+     'Pygments>=2.0',
+     'docutils>=0.14,<0.18',
+     'snowballstemmer>=1.1',
+     'babel>=1.3',
+-    'alabaster>=0.7,<0.8',
++    'alabaster>=0.7,<0.7.12',
+     'imagesize',
+     'requests>=2.5.0',
+     'setuptools',
+-    'packaging',
++    'packaging', 'markupsafe<=2.0.1',
+ ]
+ 
+ extras_require = {
+diff --git a/tox.ini b/tox.ini
+index 00c8e13bd..11d3352df 100644
+--- a/tox.ini
++++ b/tox.ini
+@@ -22,14 +22,14 @@ deps =
+     du15: docutils==0.15.*
+     du16: docutils==0.16.*
+     du17: docutils==0.17.*
+-    py311: git+https://github.com/pytest-dev/py
++    py311: git+https://github.com/pytest -rA-dev/py
+ extras =
+     test
+ setenv =
+     PYTHONWARNINGS = all,ignore::ImportWarning:importlib._bootstrap_external,ignore::DeprecationWarning:site,ignore::DeprecationWarning:distutils,ignore::DeprecationWarning:pip._vendor.packaging.version
+     PYTEST_ADDOPTS = {env:PYTEST_ADDOPTS:} --color yes
+ commands=
+-    python -X dev -m pytest --durations 25 {posargs}
++    python -X dev -m pytest -rA --durations 25 {posargs}
+ 
+ [testenv:du-latest]
+ commands =
++ source /opt/miniconda3/bin/activate
+++ _CONDA_ROOT=/opt/miniconda3
+++ . /opt/miniconda3/etc/profile.d/conda.sh
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ '[' -z x ']'
+++ conda activate
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1='(testbed) '
++++ __conda_exe shell.posix activate
++++ /opt/miniconda3/bin/conda shell.posix activate
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3'\''
+export CONDA_SHLVL='\''3'\''
+export CONDA_DEFAULT_ENV='\''base'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\''
+export CONDA_PREFIX_2='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++++ PS1='(base) '
++++ export PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/opt/miniconda3/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ export CONDA_PREFIX=/opt/miniconda3
++++ CONDA_PREFIX=/opt/miniconda3
++++ export CONDA_SHLVL=3
++++ CONDA_SHLVL=3
++++ export CONDA_DEFAULT_ENV=base
++++ CONDA_DEFAULT_ENV=base
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
++++ export CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ CONDA_PREFIX_2=/opt/miniconda3/envs/testbed
++++ export CONDA_EXE=/opt/miniconda3/bin/conda
++++ CONDA_EXE=/opt/miniconda3/bin/conda
++++ export _CE_M=
++++ _CE_M=
++++ export _CE_CONDA=
++++ _CE_CONDA=
++++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate testbed
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate testbed
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate testbed
+++ /opt/miniconda3/bin/conda shell.posix activate testbed
++ ask_conda='PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
++ eval 'PS1='\''(testbed) '\''
+export PATH='\''/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'\''
+export CONDA_PREFIX='\''/opt/miniconda3/envs/testbed'\''
+export CONDA_SHLVL='\''4'\''
+export CONDA_DEFAULT_ENV='\''testbed'\''
+export CONDA_PROMPT_MODIFIER='\''(testbed) '\''
+export CONDA_PREFIX_3='\''/opt/miniconda3'\''
+export CONDA_EXE='\''/opt/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/opt/miniconda3/bin/python'\'''
+++ PS1='(testbed) '
+++ export PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/opt/miniconda3/envs/testbed/bin:/opt/miniconda3/condabin:/opt/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ CONDA_PREFIX=/opt/miniconda3/envs/testbed
+++ export CONDA_SHLVL=4
+++ CONDA_SHLVL=4
+++ export CONDA_DEFAULT_ENV=testbed
+++ CONDA_DEFAULT_ENV=testbed
+++ export 'CONDA_PROMPT_MODIFIER=(testbed) '
+++ CONDA_PROMPT_MODIFIER='(testbed) '
+++ export CONDA_PREFIX_3=/opt/miniconda3
+++ CONDA_PREFIX_3=/opt/miniconda3
+++ export CONDA_EXE=/opt/miniconda3/bin/conda
+++ CONDA_EXE=/opt/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/opt/miniconda3/bin/python
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ python -m pip install -e '.[test]'
+Obtaining file:///testbed
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: sphinxcontrib-applehelp<=1.0.7 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (1.0.4)
+Requirement already satisfied: sphinxcontrib-devhelp<=1.0.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (1.0.2)
+Requirement already satisfied: sphinxcontrib-jsmath in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (1.0.1)
+Requirement already satisfied: sphinxcontrib-htmlhelp<=2.0.4,>=2.0.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (2.0.1)
+Requirement already satisfied: sphinxcontrib-serializinghtml<=1.1.9,>=1.1.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (1.1.5)
+Requirement already satisfied: sphinxcontrib-qthelp<=1.0.6 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (1.0.3)
+Requirement already satisfied: Jinja2<3.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (2.11.3)
+Requirement already satisfied: Pygments>=2.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (2.20.0)
+Requirement already satisfied: docutils<0.18,>=0.14 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (0.17.1)
+Requirement already satisfied: snowballstemmer>=1.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (3.0.1)
+Requirement already satisfied: babel>=1.3 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (2.18.0)
+Requirement already satisfied: alabaster<0.7.12,>=0.7 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (0.7.11)
+Requirement already satisfied: imagesize in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (1.5.0)
+Requirement already satisfied: requests>=2.5.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (2.32.5)
+Requirement already satisfied: setuptools in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (80.9.0)
+Requirement already satisfied: packaging in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (26.0)
+Requirement already satisfied: markupsafe<=2.0.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (2.0.1)
+Requirement already satisfied: pytest in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (8.4.2)
+Requirement already satisfied: pytest-cov in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (7.1.0)
+Requirement already satisfied: html5lib in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (1.1)
+Requirement already satisfied: cython in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from Sphinx==4.3.0.dev20260404) (3.2.4)
+Requirement already satisfied: charset_normalizer<4,>=2 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests>=2.5.0->Sphinx==4.3.0.dev20260404) (3.4.7)
+Requirement already satisfied: idna<4,>=2.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests>=2.5.0->Sphinx==4.3.0.dev20260404) (3.11)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests>=2.5.0->Sphinx==4.3.0.dev20260404) (2.6.3)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from requests>=2.5.0->Sphinx==4.3.0.dev20260404) (2026.2.25)
+Requirement already satisfied: six>=1.9 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from html5lib->Sphinx==4.3.0.dev20260404) (1.17.0)
+Requirement already satisfied: webencodings in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from html5lib->Sphinx==4.3.0.dev20260404) (0.5.1)
+Requirement already satisfied: exceptiongroup>=1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest->Sphinx==4.3.0.dev20260404) (1.3.1)
+Requirement already satisfied: iniconfig>=1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest->Sphinx==4.3.0.dev20260404) (2.1.0)
+Requirement already satisfied: pluggy<2,>=1.5 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest->Sphinx==4.3.0.dev20260404) (1.6.0)
+Requirement already satisfied: tomli>=1 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from pytest->Sphinx==4.3.0.dev20260404) (2.4.1)
+Requirement already satisfied: typing-extensions>=4.6.0 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from exceptiongroup>=1->pytest->Sphinx==4.3.0.dev20260404) (4.15.0)
+Requirement already satisfied: coverage>=7.10.6 in /opt/miniconda3/envs/testbed/lib/python3.9/site-packages (from coverage[toml]>=7.10.6->pytest-cov->Sphinx==4.3.0.dev20260404) (7.10.7)
+Building wheels for collected packages: Sphinx
+  Building editable for Sphinx (pyproject.toml): started
+  Building editable for Sphinx (pyproject.toml): finished with status 'done'
+  Created wheel for Sphinx: filename=sphinx-4.3.0.dev20260404-0.editable-py3-none-any.whl size=8393 sha256=caa2d9986a222346971be3f382b1d7c31b31400c2f549e74190a1d369d422e14
+  Stored in directory: /tmp/pip-ephem-wheel-cache-liu2e9m5/wheels/7d/66/67/70d1ee2124ccf21d601c352e25cdca10f611f7c8b3f9ffb9e4
+Successfully built Sphinx
+Installing collected packages: Sphinx
+  Attempting uninstall: Sphinx
+    Found existing installation: Sphinx 4.3.0.dev20260404
+    Uninstalling Sphinx-4.3.0.dev20260404:
+      Successfully uninstalled Sphinx-4.3.0.dev20260404
+Successfully installed Sphinx-4.3.0.dev20260404
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ git apply -v -
+<stdin>:34: trailing whitespace.
+    
+<stdin>:35: trailing whitespace.
+    The bug was that PyMethod.get_index_text() returned '%s() (%s property)' 
+<stdin>:43: trailing whitespace.
+    
+<stdin>:45: trailing whitespace.
+    
+<stdin>:51: trailing whitespace.
+    
+Checking patch tests/test_domain_py_property_index.py...
+Applied patch tests/test_domain_py_property_index.py cleanly.
+warning: squelched 6 whitespace errors
+warning: 11 lines add whitespace errors.
++ python3 /root/trace.py --count -C coverage.cover --include-pattern '/testbed/(sphinx/domains/python\.py)' -m tox -epy39 -v -- tests/test_domain_py_property_index.py
+['--count', '-C', 'coverage.cover', '--include-pattern', '/testbed/(sphinx/domains/python\\.py)']
+.pkg: find interpreter for spec PythonSpec(major=3, minor=9, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(path=/opt/miniconda3/envs/testbed/bin/python3)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, minor=6, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+['--count', '-C', 'coverage.cover', '--include-pattern', '/testbed/(sphinx/domains/python\\.py)']
+['--count', '-C', 'coverage.cover', '--include-pattern', '/testbed/(sphinx/domains/python\\.py)']
+['--count', '-C', 'coverage.cover', '--include-pattern', '/testbed/(sphinx/domains/python\\.py)']
+.pkg: find interpreter for spec PythonSpec(major=3, minor=7, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, system=/opt/miniconda3/envs/testbed/bin/python3, exe=/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, minor=8, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, system=/opt/miniconda3/envs/testbed/bin/python3, exe=/usr/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, minor=10, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, system=/opt/miniconda3/envs/testbed/bin/python3, exe=/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+['--count', '-C', 'coverage.cover', '--include-pattern', '/testbed/(sphinx/domains/python\\.py)']
+['--count', '-C', 'coverage.cover', '--include-pattern', '/testbed/(sphinx/domains/python\\.py)']
+.pkg: find interpreter for spec PythonSpec(path=/opt/miniconda3/envs/testbed/bin/python3)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(path=/opt/miniconda3/envs/testbed/bin/python3)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(path=/opt/miniconda3/envs/testbed/bin/python3)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(path=/opt/miniconda3/envs/testbed/bin/python3)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(path=/opt/miniconda3/envs/testbed/bin/python3)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(path=/opt/miniconda3/envs/testbed/bin/python3)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(path=/opt/miniconda3/envs/testbed/bin/python3)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(path=/opt/miniconda3/envs/testbed/bin/python3)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+.pkg: find interpreter for spec PythonSpec(major=3, minor=11, free_threaded=False)
+.pkg: proposed PythonInfo(spec=CPython3.9.25.final.0-64-x86_64, exe=/opt/miniconda3/envs/testbed/bin/python3, platform=linux, version='3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]', encoding_fs_io=utf-8-utf-8)
+['--count', '-C', 'coverage.cover', '--include-pattern', '/testbed/(sphinx/domains/python\\.py)']
+py39: create virtual environment via CPython3Posix(dest=/testbed/.tox/py39, clear=False, no_vcs_ignore=False, global=False)
+py39: add seed packages via FromAppData(download=False, pip=bundle, setuptools=bundle, via=copy, app_data_dir=/root/.cache/virtualenv)
+py39: add activators for Bash, CShell, Fish, Nushell, PowerShell, Python
+.pkg: create virtual environment via CPython3Posix(dest=/testbed/.tox/.pkg, clear=False, no_vcs_ignore=False, global=False)
+.pkg: add seed packages via FromAppData(download=False, pip=bundle, setuptools=bundle, via=copy, app_data_dir=/root/.cache/virtualenv)
+.pkg: add activators for Bash, CShell, Fish, Nushell, PowerShell, Python
+.pkg: install_requires> python -I -m pip install 'setuptools>=40.8.0'
+.pkg: exit 0 (0.77 seconds) /testbed> python -I -m pip install 'setuptools>=40.8.0' pid=90
+.pkg: _optional_hooks> python /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__
+.pkg: exit None (0.23 seconds) /testbed> python /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__ pid=95
+.pkg: get_requires_for_build_editable> python /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__
+.pkg: exit None (0.60 seconds) /testbed> python /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__ pid=98
+.pkg: build_editable> python /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__
+.pkg: exit None (0.94 seconds) /testbed> python /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pyproject_api/_backend.py True setuptools.build_meta __legacy__ pid=102
+py39: install_package_deps> python -I -m pip install 'Jinja2<3.0' 'Pygments>=2.0' 'alabaster<0.7.12,>=0.7' 'babel>=1.3' 'colorama>=0.3.5; sys_platform == "win32"' cython 'docutils<0.18,>=0.14' html5lib imagesize 'markupsafe<=2.0.1' packaging pytest pytest-cov 'requests>=2.5.0' setuptools 'snowballstemmer>=1.1' 'sphinxcontrib-applehelp<=1.0.7' 'sphinxcontrib-devhelp<=1.0.5' 'sphinxcontrib-htmlhelp<=2.0.4,>=2.0.0' sphinxcontrib-jsmath 'sphinxcontrib-qthelp<=1.0.6' 'sphinxcontrib-serializinghtml<=1.1.9,>=1.1.5' 'typed_ast; python_version < "3.8"'
+py39: exit 0 (0.91 seconds) /testbed> python -I -m pip install 'Jinja2<3.0' 'Pygments>=2.0' 'alabaster<0.7.12,>=0.7' 'babel>=1.3' 'colorama>=0.3.5; sys_platform == "win32"' cython 'docutils<0.18,>=0.14' html5lib imagesize 'markupsafe<=2.0.1' packaging pytest pytest-cov 'requests>=2.5.0' setuptools 'snowballstemmer>=1.1' 'sphinxcontrib-applehelp<=1.0.7' 'sphinxcontrib-devhelp<=1.0.5' 'sphinxcontrib-htmlhelp<=2.0.4,>=2.0.0' sphinxcontrib-jsmath 'sphinxcontrib-qthelp<=1.0.6' 'sphinxcontrib-serializinghtml<=1.1.9,>=1.1.5' 'typed_ast; python_version < "3.8"' pid=106
+py39: install_package> python -I -m pip install --force-reinstall --no-deps /testbed/.tox/.tmp/package/1/sphinx-4.3.0.dev20260404-0.editable-py3-none-any.whl
+py39: exit 0 (0.79 seconds) /testbed> python -I -m pip install --force-reinstall --no-deps /testbed/.tox/.tmp/package/1/sphinx-4.3.0.dev20260404-0.editable-py3-none-any.whl pid=111
+py39: commands[0]> python -X dev -m pytest -rA --durations 25 tests/test_domain_py_property_index.py
+['--count', '-C', 'coverage.cover', '--include-pattern', '/testbed/(sphinx/domains/python\\.py)']
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.9.25, pytest-8.4.2, pluggy-1.6.0
+cachedir: .tox/py39/.pytest_cache
+libraries: Sphinx-4.3.0+/f050a7775, docutils-0.17.1
+base tempdir: /tmp/pytest-of-root/pytest-0
+rootdir: /testbed
+configfile: setup.cfg
+plugins: cov-7.1.0
+collected 2 items
+
+tests/test_domain_py_property_index.py [31mF[0m[31mF[0m[31m                                [100%][0m
+
+=================================== FAILURES ===================================
+[31m[1m____________________ test_pymethod_property_index_no_parens ____________________[0m
+
+app = <SphinxTestApp buildername='dummy'>
+
+    [0m[37m@pytest[39;49;00m.mark.sphinx([33m'[39;49;00m[33mdummy[39;49;00m[33m'[39;49;00m)[90m[39;49;00m
+    [94mdef[39;49;00m[90m [39;49;00m[92mtest_pymethod_property_index_no_parens[39;49;00m(app):[90m[39;49;00m
+    [90m    [39;49;00m[33m"""[39;49;00m
+    [33m    Test that py:method directive with :property: option generates an index entry[39;49;00m
+    [33m    WITHOUT parentheses, consistent with py:property directive.[39;49;00m
+    [33m[39;49;00m
+    [33m    The bug was that PyMethod.get_index_text() returned '%s() (%s property)'[39;49;00m
+    [33m    (with parens) instead of '%s (%s property)' (without parens) when the[39;49;00m
+    [33m    :property: option was set.[39;49;00m
+    [33m    """[39;49;00m[90m[39;49;00m
+        text = ([33m"[39;49;00m[33m.. py:class:: Foo[39;49;00m[33m\n[39;49;00m[33m"[39;49;00m[90m[39;49;00m
+                [33m"[39;49;00m[33m\n[39;49;00m[33m"[39;49;00m[90m[39;49;00m
+                [33m"[39;49;00m[33m   .. py:method:: bar[39;49;00m[33m\n[39;49;00m[33m"[39;49;00m[90m[39;49;00m
+                [33m"[39;49;00m[33m      :property:[39;49;00m[33m\n[39;49;00m[33m"[39;49;00m)[90m[39;49;00m
+    [90m[39;49;00m
+        doctree = restructuredtext.parse(app, text)[90m[39;49;00m
+    [90m[39;49;00m
+        [90m# The index node for the method with :property: option is at doctree[1][1][0][39;49;00m[90m[39;49;00m
+        [90m# doctree[0] is the index node for the class[39;49;00m[90m[39;49;00m
+        [90m# doctree[1] is the desc node for the class[39;49;00m[90m[39;49;00m
+        [90m# doctree[1][1] is the desc_content node[39;49;00m[90m[39;49;00m
+        [90m# doctree[1][1][0] is the index node for the method[39;49;00m[90m[39;49;00m
+    [90m[39;49;00m
+        [90m# The index entry should NOT have parentheses because it's a property.[39;49;00m[90m[39;49;00m
+        [90m# Expected: 'bar (Foo property)' - without parentheses[39;49;00m[90m[39;49;00m
+        [90m# Bug produces: 'bar() (Foo property)' - with parentheses[39;49;00m[90m[39;49;00m
+>       assert_node(doctree[[94m1[39;49;00m][[94m1[39;49;00m][[94m0[39;49;00m], addnodes.index,[90m[39;49;00m
+                    entries=[([33m'[39;49;00m[33msingle[39;49;00m[33m'[39;49;00m, [33m'[39;49;00m[33mbar (Foo property)[39;49;00m[33m'[39;49;00m, [33m'[39;49;00m[33mFoo.bar[39;49;00m[33m'[39;49;00m, [33m'[39;49;00m[33m'[39;49;00m, [94mNone[39;49;00m)])[90m[39;49;00m
+
+[1m[31mtests/test_domain_py_property_index.py[0m:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+node = <index: >, cls = <class 'sphinx.addnodes.index'>, xpath = ''
+kwargs = {'entries': [('single', 'bar (Foo property)', 'Foo.bar', '', None)]}
+key = 'entries', value = [('single', 'bar (Foo property)', 'Foo.bar', '', None)]
+
+    [0m[94mdef[39;49;00m[90m [39;49;00m[92massert_node[39;49;00m(node: Node, [96mcls[39;49;00m: Any = [94mNone[39;49;00m, xpath: [96mstr[39;49;00m = [33m"[39;49;00m[33m"[39;49;00m, **kwargs: Any) -> [94mNone[39;49;00m:[90m[39;49;00m
+        [94mif[39;49;00m [96mcls[39;49;00m:[90m[39;49;00m
+            [94mif[39;49;00m [96misinstance[39;49;00m([96mcls[39;49;00m, [96mlist[39;49;00m):[90m[39;49;00m
+                assert_node(node, [96mcls[39;49;00m[[94m0[39;49;00m], xpath=xpath, **kwargs)[90m[39;49;00m
+                [94mif[39;49;00m [96mcls[39;49;00m[[94m1[39;49;00m:]:[90m[39;49;00m
+                    [94mif[39;49;00m [96misinstance[39;49;00m([96mcls[39;49;00m[[94m1[39;49;00m], [96mtuple[39;49;00m):[90m[39;49;00m
+                        assert_node(node, [96mcls[39;49;00m[[94m1[39;49;00m], xpath=xpath, **kwargs)[90m[39;49;00m
+                    [94melse[39;49;00m:[90m[39;49;00m
+                        [94massert[39;49;00m [96misinstance[39;49;00m(node, nodes.Element), \
+                            [33m'[39;49;00m[33mThe node[39;49;00m[33m%s[39;49;00m[33m does not have any children[39;49;00m[33m'[39;49;00m % xpath[90m[39;49;00m
+                        [94massert[39;49;00m [96mlen[39;49;00m(node) == [94m1[39;49;00m, \
+                            [33m'[39;49;00m[33mThe node[39;49;00m[33m%s[39;49;00m[33m has [39;49;00m[33m%d[39;49;00m[33m child nodes, not one[39;49;00m[33m'[39;49;00m % (xpath, [96mlen[39;49;00m(node))[90m[39;49;00m
+                        assert_node(node[[94m0[39;49;00m], [96mcls[39;49;00m[[94m1[39;49;00m:], xpath=xpath + [33m"[39;49;00m[33m[0][39;49;00m[33m"[39;49;00m, **kwargs)[90m[39;49;00m
+            [94melif[39;49;00m [96misinstance[39;49;00m([96mcls[39;49;00m, [96mtuple[39;49;00m):[90m[39;49;00m
+                [94massert[39;49;00m [96misinstance[39;49;00m(node, ([96mlist[39;49;00m, nodes.Element)), \
+                    [33m'[39;49;00m[33mThe node[39;49;00m[33m%s[39;49;00m[33m does not have any items[39;49;00m[33m'[39;49;00m % xpath[90m[39;49;00m
+                [94massert[39;49;00m [96mlen[39;49;00m(node) == [96mlen[39;49;00m([96mcls[39;49;00m), \
+                    [33m'[39;49;00m[33mThe node[39;49;00m[33m%s[39;49;00m[33m has [39;49;00m[33m%d[39;49;00m[33m child nodes, not [39;49;00m[33m%r[39;49;00m[33m'[39;49;00m % (xpath, [96mlen[39;49;00m(node), [96mlen[39;49;00m([96mcls[39;49;00m))[90m[39;49;00m
+                [94mfor[39;49;00m i, nodecls [95min[39;49;00m [96menumerate[39;49;00m([96mcls[39;49;00m):[90m[39;49;00m
+                    path = xpath + [33m"[39;49;00m[33m[[39;49;00m[33m%d[39;49;00m[33m][39;49;00m[33m"[39;49;00m % i[90m[39;49;00m
+                    assert_node(node[i], nodecls, xpath=path, **kwargs)[90m[39;49;00m
+            [94melif[39;49;00m [96misinstance[39;49;00m([96mcls[39;49;00m, [96mstr[39;49;00m):[90m[39;49;00m
+                [94massert[39;49;00m node == [96mcls[39;49;00m, [33m'[39;49;00m[33mThe node [39;49;00m[33m%r[39;49;00m[33m is not [39;49;00m[33m%r[39;49;00m[33m: [39;49;00m[33m%r[39;49;00m[33m'[39;49;00m % (xpath, [96mcls[39;49;00m, node)[90m[39;49;00m
+            [94melse[39;49;00m:[90m[39;49;00m
+                [94massert[39;49;00m [96misinstance[39;49;00m(node, [96mcls[39;49;00m), \
+                    [33m'[39;49;00m[33mThe node[39;49;00m[33m%s[39;49;00m[33m is not subclass of [39;49;00m[33m%r[39;49;00m[33m: [39;49;00m[33m%r[39;49;00m[33m'[39;49;00m % (xpath, [96mcls[39;49;00m, node)[90m[39;49;00m
+    [90m[39;49;00m
+        [94mif[39;49;00m kwargs:[90m[39;49;00m
+            [94massert[39;49;00m [96misinstance[39;49;00m(node, nodes.Element), \
+                [33m'[39;49;00m[33mThe node[39;49;00m[33m%s[39;49;00m[33m does not have any attributes[39;49;00m[33m'[39;49;00m % xpath[90m[39;49;00m
+    [90m[39;49;00m
+            [94mfor[39;49;00m key, value [95min[39;49;00m kwargs.items():[90m[39;49;00m
+                [94massert[39;49;00m key [95min[39;49;00m node, \
+                    [33m'[39;49;00m[33mThe node[39;49;00m[33m%s[39;49;00m[33m does not have [39;49;00m[33m%r[39;49;00m[33m attribute: [39;49;00m[33m%r[39;49;00m[33m'[39;49;00m % (xpath, key, node)[90m[39;49;00m
+>               [94massert[39;49;00m node[key] == value, \
+                    [33m'[39;49;00m[33mThe node[39;49;00m[33m%s[39;49;00m[33m[[39;49;00m[33m%s[39;49;00m[33m] is not [39;49;00m[33m%r[39;49;00m[33m: [39;49;00m[33m%r[39;49;00m[33m'[39;49;00m % (xpath, key, value, node[key])[90m[39;49;00m
+[1m[31mE               AssertionError: The node[entries] is not [('single', 'bar (Foo property)', 'Foo.bar', '', None)]: [('single', 'bar() (Foo property)', 'Foo.bar', '', None)][0m
+
+[1m[31msphinx/testing/util.py[0m:82: AssertionError
+--------------------------- Captured stdout teardown ---------------------------
+# testroot: root
+# builder: dummy
+# srcdir: /tmp/pytest-of-root/pytest-0/root
+# outdir: /tmp/pytest-of-root/pytest-0/root/_build/dummy
+# status: 
+[01mRunning Sphinx v4.3.0+/f050a7775[39;49;00m
+
+# warning: 
+
+[31m[1m_______________ test_pyproperty_vs_pymethod_property_consistency _______________[0m
+
+app = <SphinxTestApp buildername='dummy'>
+
+    [0m[37m@pytest[39;49;00m.mark.sphinx([33m'[39;49;00m[33mdummy[39;49;00m[33m'[39;49;00m)[90m[39;49;00m
+    [94mdef[39;49;00m[90m [39;49;00m[92mtest_pyproperty_vs_pymethod_property_consistency[39;49;00m(app):[90m[39;49;00m
+    [90m    [39;49;00m[33m"""[39;49;00m
+    [33m    Test that py:property directive and py:method directive with :property: option[39;49;00m
+    [33m    generate consistent index entries (both without parentheses).[39;49;00m
+    [33m[39;49;00m
+    [33m    Both should produce index entries without parentheses because properties[39;49;00m
+    [33m    are not callable.[39;49;00m
+    [33m    """[39;49;00m[90m[39;49;00m
+        [90m# Test py:property directive[39;49;00m[90m[39;49;00m
+        text_property = ([33m"[39;49;00m[33m.. py:class:: Foo[39;49;00m[33m\n[39;49;00m[33m"[39;49;00m[90m[39;49;00m
+                         [33m"[39;49;00m[33m\n[39;49;00m[33m"[39;49;00m[90m[39;49;00m
+                         [33m"[39;49;00m[33m   .. py:property:: baz[39;49;00m[33m\n[39;49;00m[33m"[39;49;00m)[90m[39;49;00m
+    [90m[39;49;00m
+        doctree_property = restructuredtext.parse(app, text_property)[90m[39;49;00m
+    [90m[39;49;00m
+        [90m# Get the index entry for py:property[39;49;00m[90m[39;49;00m
+        [90m# This should be 'baz (Foo property)' without parentheses[39;49;00m[90m[39;49;00m
+        assert_node(doctree_property[[94m1[39;49;00m][[94m1[39;49;00m][[94m0[39;49;00m], addnodes.index,[90m[39;49;00m
+                    entries=[([33m'[39;49;00m[33msingle[39;49;00m[33m'[39;49;00m, [33m'[39;49;00m[33mbaz (Foo property)[39;49;00m[33m'[39;49;00m, [33m'[39;49;00m[33mFoo.baz[39;49;00m[33m'[39;49;00m, [33m'[39;49;00m[33m'[39;49;00m, [94mNone[39;49;00m)])[90m[39;49;00m
+    [90m[39;49;00m
+        [90m# Now test py:method with :property: option[39;49;00m[90m[39;49;00m
+        text_method = ([33m"[39;49;00m[33m.. py:class:: Bar[39;49;00m[33m\n[39;49;00m[33m"[39;49;00m[90m[39;49;00m
+                       [33m"[39;49;00m[33m\n[39;49;00m[33m"[39;49;00m[90m[39;49;00m
+                       [33m"[39;49;00m[33m   .. py:method:: qux[39;49;00m[33m\n[39;49;00m[33m"[39;49;00m[90m[39;49;00m
+                       [33m"[39;49;00m[33m      :property:[39;49;00m[33m\n[39;49;00m[33m"[39;49;00m)[90m[39;49;00m
+    [90m[39;49;00m
+        doctree_method = restructuredtext.parse(app, text_method)[90m[39;49;00m
+    [90m[39;49;00m
+        [90m# Get the index entry for py:method with :property:[39;49;00m[90m[39;49;00m
+        [90m# This should ALSO be 'qux (Bar property)' without parentheses,[39;49;00m[90m[39;49;00m
+        [90m# consistent with py:property directive.[39;49;00m[90m[39;49;00m
+        [90m# The bug causes this to be 'qux() (Bar property)' with parentheses.[39;49;00m[90m[39;49;00m
+>       assert_node(doctree_method[[94m1[39;49;00m][[94m1[39;49;00m][[94m0[39;49;00m], addnodes.index,[90m[39;49;00m
+                    entries=[([33m'[39;49;00m[33msingle[39;49;00m[33m'[39;49;00m, [33m'[39;49;00m[33mqux (Bar property)[39;49;00m[33m'[39;49;00m, [33m'[39;49;00m[33mBar.qux[39;49;00m[33m'[39;49;00m, [33m'[39;49;00m[33m'[39;49;00m, [94mNone[39;49;00m)])[90m[39;49;00m
+
+[1m[31mtests/test_domain_py_property_index.py[0m:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+node = <index: >, cls = <class 'sphinx.addnodes.index'>, xpath = ''
+kwargs = {'entries': [('single', 'qux (Bar property)', 'Bar.qux', '', None)]}
+key = 'entries', value = [('single', 'qux (Bar property)', 'Bar.qux', '', None)]
+
+    [0m[94mdef[39;49;00m[90m [39;49;00m[92massert_node[39;49;00m(node: Node, [96mcls[39;49;00m: Any = [94mNone[39;49;00m, xpath: [96mstr[39;49;00m = [33m"[39;49;00m[33m"[39;49;00m, **kwargs: Any) -> [94mNone[39;49;00m:[90m[39;49;00m
+        [94mif[39;49;00m [96mcls[39;49;00m:[90m[39;49;00m
+            [94mif[39;49;00m [96misinstance[39;49;00m([96mcls[39;49;00m, [96mlist[39;49;00m):[90m[39;49;00m
+                assert_node(node, [96mcls[39;49;00m[[94m0[39;49;00m], xpath=xpath, **kwargs)[90m[39;49;00m
+                [94mif[39;49;00m [96mcls[39;49;00m[[94m1[39;49;00m:]:[90m[39;49;00m
+                    [94mif[39;49;00m [96misinstance[39;49;00m([96mcls[39;49;00m[[94m1[39;49;00m], [96mtuple[39;49;00m):[90m[39;49;00m
+                        assert_node(node, [96mcls[39;49;00m[[94m1[39;49;00m], xpath=xpath, **kwargs)[90m[39;49;00m
+                    [94melse[39;49;00m:[90m[39;49;00m
+                        [94massert[39;49;00m [96misinstance[39;49;00m(node, nodes.Element), \
+                            [33m'[39;49;00m[33mThe node[39;49;00m[33m%s[39;49;00m[33m does not have any children[39;49;00m[33m'[39;49;00m % xpath[90m[39;49;00m
+                        [94massert[39;49;00m [96mlen[39;49;00m(node) == [94m1[39;49;00m, \
+                            [33m'[39;49;00m[33mThe node[39;49;00m[33m%s[39;49;00m[33m has [39;49;00m[33m%d[39;49;00m[33m child nodes, not one[39;49;00m[33m'[39;49;00m % (xpath, [96mlen[39;49;00m(node))[90m[39;49;00m
+                        assert_node(node[[94m0[39;49;00m], [96mcls[39;49;00m[[94m1[39;49;00m:], xpath=xpath + [33m"[39;49;00m[33m[0][39;49;00m[33m"[39;49;00m, **kwargs)[90m[39;49;00m
+            [94melif[39;49;00m [96misinstance[39;49;00m([96mcls[39;49;00m, [96mtuple[39;49;00m):[90m[39;49;00m
+                [94massert[39;49;00m [96misinstance[39;49;00m(node, ([96mlist[39;49;00m, nodes.Element)), \
+                    [33m'[39;49;00m[33mThe node[39;49;00m[33m%s[39;49;00m[33m does not have any items[39;49;00m[33m'[39;49;00m % xpath[90m[39;49;00m
+                [94massert[39;49;00m [96mlen[39;49;00m(node) == [96mlen[39;49;00m([96mcls[39;49;00m), \
+                    [33m'[39;49;00m[33mThe node[39;49;00m[33m%s[39;49;00m[33m has [39;49;00m[33m%d[39;49;00m[33m child nodes, not [39;49;00m[33m%r[39;49;00m[33m'[39;49;00m % (xpath, [96mlen[39;49;00m(node), [96mlen[39;49;00m([96mcls[39;49;00m))[90m[39;49;00m
+                [94mfor[39;49;00m i, nodecls [95min[39;49;00m [96menumerate[39;49;00m([96mcls[39;49;00m):[90m[39;49;00m
+                    path = xpath + [33m"[39;49;00m[33m[[39;49;00m[33m%d[39;49;00m[33m][39;49;00m[33m"[39;49;00m % i[90m[39;49;00m
+                    assert_node(node[i], nodecls, xpath=path, **kwargs)[90m[39;49;00m
+            [94melif[39;49;00m [96misinstance[39;49;00m([96mcls[39;49;00m, [96mstr[39;49;00m):[90m[39;49;00m
+                [94massert[39;49;00m node == [96mcls[39;49;00m, [33m'[39;49;00m[33mThe node [39;49;00m[33m%r[39;49;00m[33m is not [39;49;00m[33m%r[39;49;00m[33m: [39;49;00m[33m%r[39;49;00m[33m'[39;49;00m % (xpath, [96mcls[39;49;00m, node)[90m[39;49;00m
+            [94melse[39;49;00m:[90m[39;49;00m
+                [94massert[39;49;00m [96misinstance[39;49;00m(node, [96mcls[39;49;00m), \
+                    [33m'[39;49;00m[33mThe node[39;49;00m[33m%s[39;49;00m[33m is not subclass of [39;49;00m[33m%r[39;49;00m[33m: [39;49;00m[33m%r[39;49;00m[33m'[39;49;00m % (xpath, [96mcls[39;49;00m, node)[90m[39;49;00m
+    [90m[39;49;00m
+        [94mif[39;49;00m kwargs:[90m[39;49;00m
+            [94massert[39;49;00m [96misinstance[39;49;00m(node, nodes.Element), \
+                [33m'[39;49;00m[33mThe node[39;49;00m[33m%s[39;49;00m[33m does not have any attributes[39;49;00m[33m'[39;49;00m % xpath[90m[39;49;00m
+    [90m[39;49;00m
+            [94mfor[39;49;00m key, value [95min[39;49;00m kwargs.items():[90m[39;49;00m
+                [94massert[39;49;00m key [95min[39;49;00m node, \
+                    [33m'[39;49;00m[33mThe node[39;49;00m[33m%s[39;49;00m[33m does not have [39;49;00m[33m%r[39;49;00m[33m attribute: [39;49;00m[33m%r[39;49;00m[33m'[39;49;00m % (xpath, key, node)[90m[39;49;00m
+>               [94massert[39;49;00m node[key] == value, \
+                    [33m'[39;49;00m[33mThe node[39;49;00m[33m%s[39;49;00m[33m[[39;49;00m[33m%s[39;49;00m[33m] is not [39;49;00m[33m%r[39;49;00m[33m: [39;49;00m[33m%r[39;49;00m[33m'[39;49;00m % (xpath, key, value, node[key])[90m[39;49;00m
+[1m[31mE               AssertionError: The node[entries] is not [('single', 'qux (Bar property)', 'Bar.qux', '', None)]: [('single', 'qux() (Bar property)', 'Bar.qux', '', None)][0m
+
+[1m[31msphinx/testing/util.py[0m:82: AssertionError
+--------------------------- Captured stdout teardown ---------------------------
+# testroot: root
+# builder: dummy
+# srcdir: /tmp/pytest-of-root/pytest-0/root
+# outdir: /tmp/pytest-of-root/pytest-0/root/_build/dummy
+# status: 
+[01mRunning Sphinx v4.3.0+/f050a7775[39;49;00m
+
+# warning: 
+
+[33m=============================== warnings summary ===============================[0m
+sphinx/util/docutils.py:44
+  /testbed/sphinx/util/docutils.py:44: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    __version_info__ = tuple(LooseVersion(docutils.__version__).version)
+
+sphinx/highlighting.py:67
+  /testbed/sphinx/highlighting.py:67: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if tuple(LooseVersion(pygmentsversion).version) <= (2, 7, 4):
+
+sphinx/registry.py:24
+  /testbed/sphinx/registry.py:24: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+    from pkg_resources import iter_entry_points
+
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3146
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3146
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3146
+../opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3146
+  /opt/miniconda3/envs/testbed/lib/python3.9/site-packages/pkg_resources/__init__.py:3146: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sphinxcontrib')`.
+  Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+    declare_namespace(pkg)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============================= slowest 25 durations =============================
+1.57s setup    tests/test_domain_py_property_index.py::test_pymethod_property_index_no_parens
+0.13s call     tests/test_domain_py_property_index.py::test_pymethod_property_index_no_parens
+0.04s setup    tests/test_domain_py_property_index.py::test_pyproperty_vs_pymethod_property_consistency
+0.02s call     tests/test_domain_py_property_index.py::test_pyproperty_vs_pymethod_property_consistency
+
+(2 durations < 0.005s hidden.  Use -vv to show these durations.)
+[36m[1m=========================== short test summary info ============================[0m
+[31mFAILED[0m tests/test_domain_py_property_index.py::[1mtest_pymethod_property_index_no_parens[0m - AssertionError: The node[entries] is not [('single', 'bar (Foo property)', ...
+[31mFAILED[0m tests/test_domain_py_property_index.py::[1mtest_pyproperty_vs_pymethod_property_consistency[0m - AssertionError: The node[entries] is not [('single', 'qux (Bar property)', ...
+[31m======================== [31m[1m2 failed[0m, [33m7 warnings[0m[31m in 2.31s[0m[31m =========================[0m
+py39: exit 0 (5.16 seconds) /testbed> python -X dev -m pytest -rA --durations 25 tests/test_domain_py_property_index.py pid=118
+  py39: OK (10.39=setup[5.23]+cmd[5.16] seconds)
+  congratulations :) (13.54 seconds)
++ cat coverage.cover
+{"/testbed/sphinx/domains/python.py": {"11": 1, "12": 1, "13": 1, "14": 1, "15": 1, "16": 1, "17": 1, "18": 1, "20": 1, "21": 1, "22": 1, "23": 1, "25": 1, "26": 1, "27": 1, "28": 1, "29": 1, "30": 1, "31": 1, "32": 1, "33": 1, "34": 1, "35": 1, "36": 1, "37": 1, "38": 1, "39": 1, "40": 1, "41": 1, "42": 1, "44": 1, "48": 2, "49": 1, "54": 1, "58": 1, "59": 1, "60": 1, "61": 1, "62": 1, "63": 1, "64": 1, "57": 1, "68": 2, "75": 2, "83": 1, "110": 1, "211": 1, "261": 1, "312": 2, "370": 2, "383": 2, "387": 2, "400": 2, "621": 2, "659": 2, "676": 2, "713": 2, "743": 2, "806": 2, "818": 2, "830": 2, "846": 2, "891": 2, "942": 2, "965": 2, "1028": 2, "1049": 2, "1072": 1, "1087": 2, "1159": 2, "1431": 2, "1432": 1, "1456": 1, "69": 1, "70": 1, "71": 1, "72": 1, "76": 1, "77": 1, "78": 1, "79": 1, "80": 1, "85": 0, "86": 0, "88": 0, "90": 0, "91": 0, "92": 0, "94": 0, "96": 0, "100": 0, "101": 0, "102": 0, "104": 0, "106": 0, "107": 0, "112": 0, "194": 0, "195": 0, "196": 0, "198": 0, "199": 0, "200": 0, "201": 0, "202": 0, "203": 0, "204": 0, "205": 0, "206": 0, "207": 0, "208": 0, "113": 0, "114": 0, "115": 0, "116": 0, "117": 0, "118": 0, "119": 0, "120": 0, "121": 0, "122": 0, "123": 0, "124": 0, "125": 0, "126": 0, "127": 0, "128": 0, "129": 0, "130": 0, "131": 0, "132": 0, "136": 0, "137": 0, "138": 0, "139": 0, "140": 0, "141": 0, "142": 0, "143": 0, "147": 0, "148": 0, "149": 0, "150": 0, "151": 0, "152": 0, "153": 0, "154": 0, "155": 0, "156": 0, "157": 0, "158": 0, "159": 0, "160": 0, "161": 0, "162": 0, "163": 0, "166": 0, "167": 0, "168": 0, "169": 0, "170": 0, "171": 0, "172": 0, "173": 0, "174": 0, "175": 0, "176": 0, "177": 0, "178": 0, "179": 0, "181": 0, "182": 0, "184": 0, "186": 0, "187": 0, "188": 0, "189": 0, "190": 0, "192": 0, "213": 0, "214": 0, "215": 0, "216": 0, "217": 0, "219": 0, "220": 0, "221": 0, "222": 0, "224": 0, "226": 0, "227": 0, "228": 0, "229": 0, "230": 0, "231": 0, "232": 0, "234": 0, "236": 0, "237": 0, "238": 0, "239": 0, "240": 0, "241": 0, "242": 0, "243": 0, "244": 0, "245": 0, "247": 0, "248": 0, "249": 0, "251": 0, "252": 0, "254": 0, "256": 0, "258": 0, "268": 0, "269": 0, "270": 0, "271": 0, "272": 0, "273": 0, "274": 0, "275": 0, "276": 0, "277": 0, "278": 0, "279": 0, "280": 0, "281": 0, "282": 0, "283": 0, "284": 0, "285": 0, "286": 0, "287": 0, "288": 0, "289": 0, "290": 0, "291": 0, "292": 0, "293": 0, "294": 0, "295": 0, "296": 0, "297": 0, "298": 0, "299": 0, "303": 0, "304": 0, "305": 0, "307": 0, "314": 2, "315": 2, "316": 2, "313": 2, "347": 2, "348": 2, "349": 2, "346": 2, "319": 0, "320": 0, "321": 0, "322": 0, "323": 0, "324": 0, "325": 0, "326": 0, "327": 0, "328": 0, "329": 0, "330": 0, "331": 0, "332": 0, "333": 0, "334": 0, "335": 0, "336": 0, "338": 0, "339": 0, "340": 0, "341": 0, "342": 0, "344": 0, "350": 0, "351": 0, "352": 0, "354": 0, "356": 0, "357": 0, "358": 0, "359": 0, "361": 0, "362": 0, "364": 0, "365": 0, "367": 0, "372": 2, "373": 2, "374": 2, "371": 2, "375": 0, "377": 0, "379": 0, "380": 0, "384": 1, "389": 2, "390": 2, "391": 2, "388": 2, "392": 0, "394": 0, "396": 0, "397": 0, "408": 1, "409": 1, "410": 1, "411": 1, "412": 1, "407": 1, "416": 2, "417": 1, "419": 1, "420": 1, "421": 2, "422": 1, "423": 1, "424": 1, "425": 2, "426": 1, "427": 1, "428": 2, "429": 1, "430": 2, "431": 1, "415": 1, "434": 1, "436": 1, "442": 1, "448": 1, "531": 1, "535": 2, "536": 1, "562": 1, "595": 1, "440": 0, "446": 4, "457": 6, "458": 6, "459": 0, "460": 6, "463": 6, "464": 6, "465": 6, "466": 3, "467": 3, "468": 0, "469": 0, "471": 0, "472": 3, "475": 0, "478": 3, "480": 3, "481": 3, "482": 0, "483": 0, "485": 3, "486": 3, "488": 6, "489": 6, "490": 6, "492": 6, "493": 6, "494": 6, "496": 6, "497": 0, "498": 6, "499": 0, "500": 0, "502": 6, "503": 6, "504": 0, "505": 0, "506": 0, "509": 0, "510": 0, "511": 0, "512": 0, "513": 0, "515": 6, "517": 0, "519": 6, "520": 0, "521": 0, "523": 6, "524": 6, "525": 0, "526": 0, "527": 0, "529": 6, "533": 0, "537": 6, "538": 6, "539": 6, "540": 6, "544": 6, "545": 0, "547": 6, "549": 6, "550": 6, "552": 6, "553": 6, "554": 0, "555": 0, "557": 6, "558": 6, "559": 6, "560": 6, "574": 6, "575": 6, "580": 6, "581": 6, "582": 3, "583": 3, "584": 0, "585": 6, "586": 3, "587": 3, "588": 3, "589": 3, "590": 6, "591": 0, "592": 0, "593": 0, "605": 6, "606": 6, "607": 3, "608": 3, "609": 0, "610": 0, "611": 12, "612": 3, "613": 6, "614": 0, "615": 0, "616": 0, "618": 0, "624": 1, "625": 2, "626": 1, "629": 1, "636": 1, "639": 2, "640": 1, "654": 1, "630": 0, "631": 0, "632": 0, "634": 0, "637": 0, "641": 0, "642": 0, "643": 0, "644": 0, "646": 0, "647": 0, "648": 0, "649": 0, "651": 0, "652": 0, "656": 0, "662": 1, "667": 1, "672": 1, "664": 0, "665": 0, "668": 0, "669": 0, "670": 0, "673": 0, "679": 1, "680": 2, "681": 1, "682": 1, "685": 1, "705": 1, "686": 0, "688": 0, "689": 0, "690": 0, "691": 0, "692": 0, "693": 0, "695": 0, "696": 0, "697": 0, "698": 0, "699": 0, "700": 0, "701": 0, "703": 0, "706": 0, "707": 0, "708": 0, "710": 0, "718": 1, "719": 2, "720": 1, "723": 1, "725": 1, "732": 1, "726": 3, "727": 0, "728": 0, "730": 3, "733": 3, "734": 3, "735": 3, "736": 0, "737": 0, "738": 0, "740": 0, "746": 1, "747": 2, "748": 1, "749": 1, "750": 1, "751": 1, "752": 1, "753": 1, "756": 1, "762": 1, "784": 1, "757": 2, "758": 2, "760": 0, "763": 2, "764": 2, "765": 0, "766": 0, "767": 2, "768": 0, "769": 0, "770": 2, "771": 0, "772": 0, "773": 2, "774": 0, "775": 0, "776": 2, "777": 2, "778": 2, "779": 2, "780": 0, "781": 0, "782": 2, "785": 2, "786": 2, "787": 2, "788": 2, "789": 0, "790": 0, "791": 0, "792": 0, "794": 0, "796": 2, "797": 0, "798": 2, "799": 2, "800": 0, "801": 0, "803": 0, "809": 1, "811": 1, "812": 0, "813": 0, "815": 0, "821": 1, "823": 1, "824": 0, "825": 0, "827": 0, "833": 1, "837": 1, "842": 1, "834": 0, "835": 0, "838": 0, "839": 0, "840": 0, "843": 0, "849": 1, "850": 2, "851": 1, "852": 1, "855": 1, "876": 1, "856": 0, "858": 0, "859": 0, "860": 0, "861": 0, "862": 0, "863": 0, "864": 0, "866": 0, "867": 0, "868": 0, "869": 0, "870": 0, "871": 0, "872": 0, "874": 0, "877": 0, "878": 0, "879": 0, "880": 0, "881": 0, "882": 0, "883": 0, "884": 0, "886": 0, "888": 0, "894": 1, "895": 2, "896": 1, "897": 1, "898": 1, "901": 1, "914": 1, "927": 1, "902": 1, "904": 1, "905": 1, "906": 0, "907": 0, "908": 0, "909": 0, "910": 0, "912": 1, "915": 1, "916": 1, "917": 0, "918": 0, "919": 1, "920": 0, "921": 0, "923": 1, "924": 1, "925": 1, "928": 1, "929": 1, "930": 1, "931": 1, "932": 0, "933": 0, "934": 0, "935": 0, "937": 0, "939": 1, "946": 1, "961": 1, "947": 0, "948": 0, "949": 0, "950": 0, "951": 0, "952": 0, "954": 0, "955": 0, "957": 0, "958": 0, "959": 0, "962": 0, "970": 1, "971": 1, "972": 1, "973": 1, "975": 1, "976": 1, "977": 1, "978": 1, "974": 1, "981": 1, "1017": 1, "982": 0, "984": 0, "985": 0, "986": 0, "987": 0, "988": 0, "990": 0, "991": 0, "992": 0, "996": 0, "997": 0, "998": 0, "1000": 0, "1002": 0, "1003": 0, "1004": 0, "1005": 0, "1006": 0, "1007": 0, "1011": 0, "1012": 0, "1013": 0, "1014": 0, "1015": 0, "1025": 0, "1034": 1, "1035": 1, "1036": 1, "1037": 1, "1038": 1, "1040": 1, "1041": 0, "1042": 0, "1043": 0, "1045": 0, "1046": 0, "1050": 2, "1051": 1, "1052": 0, "1053": 0, "1054": 0, "1055": 0, "1056": 0, "1059": 0, "1060": 0, "1061": 0, "1062": 0, "1063": 0, "1066": 0, "1067": 0, "1068": 0, "1069": 0, "1074": 6, "1075": 0, "1077": 12, "1078": 6, "1079": 0, "1080": 0, "1081": 0, "1082": 0, "1083": 0, "1084": 0, "1092": 1, "1093": 1, "1094": 1, "1096": 2, "1097": 1, "1098": 0, "1100": 0, "1101": 0, "1103": 0, "1104": 0, "1106": 0, "1107": 0, "1108": 0, "1109": 0, "1110": 0, "1112": 0, "1113": 0, "1114": 0, "1115": 0, "1116": 0, "1118": 0, "1121": 0, "1122": 0, "1124": 0, "1126": 0, "1127": 0, "1129": 0, "1131": 0, "1132": 0, "1133": 0, "1134": 0, "1135": 0, "1137": 0, "1138": 0, "1140": 0, "1141": 0, "1143": 0, "1144": 0, "1145": 0, "1146": 0, "1151": 0, "1154": 0, "1156": 0, "1161": 1, "1162": 1, "1164": 1, "1165": 1, "1166": 1, "1167": 1, "1168": 1, "1169": 1, "1170": 1, "1171": 1, "1172": 1, "1173": 1, "1163": 1, "1177": 1, "1178": 1, "1179": 1, "1180": 1, "1181": 1, "1182": 1, "1183": 1, "1184": 1, "1185": 1, "1186": 1, "1187": 1, "1188": 1, "1189": 1, "1176": 1, "1192": 1, "1193": 1, "1194": 1, "1195": 1, "1196": 1, "1197": 1, "1198": 1, "1199": 1, "1200": 1, "1191": 1, "1203": 1, "1204": 1, "1202": 1, "1207": 1, "1206": 1, "1210": 1, "1211": 1, "1214": 2, "1215": 1, "1235": 1, "1236": 1, "1239": 2, "1240": 1, "1248": 1, "1256": 1, "1265": 2, "1266": 1, "1267": 1, "1321": 2, "1322": 1, "1323": 1, "1368": 2, "1369": 1, "1370": 1, "1396": 2, "1397": 1, "1410": 1, "1421": 1, "1212": 12, "1220": 6, "1221": 0, "1222": 0, "1224": 0, "1225": 0, "1227": 0, "1230": 0, "1232": 0, "1233": 6, "1237": 0, "1245": 0, "1246": 0, "1249": 0, "1250": 0, "1251": 0, "1252": 0, "1253": 0, "1254": 0, "1258": 0, "1259": 0, "1260": 0, "1261": 0, "1262": 0, "1263": 0, "1272": 0, "1273": 0, "1275": 0, "1276": 0, "1278": 0, "1280": 0, "1281": 0, "1282": 0, "1283": 0, "1285": 0, "1286": 0, "1287": 0, "1288": 0, "1289": 0, "1290": 0, "1291": 0, "1292": 0, "1293": 0, "1294": 0, "1295": 0, "1296": 0, "1299": 0, "1300": 0, "1305": 0, "1306": 0, "1307": 0, "1309": 0, "1310": 0, "1311": 0, "1312": 0, "1313": 0, "1314": 0, "1315": 0, "1316": 0, "1317": 0, "1318": 0, "1319": 0, "1301": 0, "1302": 0, "1324": 0, "1325": 0, "1326": 0, "1327": 0, "1328": 0, "1330": 0, "1334": 0, "1335": 0, "1341": 0, "1343": 0, "1344": 0, "1345": 0, "1346": 0, "1347": 0, "1348": 0, "1350": 0, "1351": 0, "1352": 0, "1353": 0, "1355": 0, "1356": 0, "1359": 0, "1360": 0, "1361": 0, "1364": 0, "1366": 0, "1371": 0, "1372": 0, "1373": 0, "1376": 0, "1377": 0, "1378": 0, "1379": 0, "1380": 0, "1381": 0, "1384": 0, "1385": 0, "1386": 0, "1389": 0, "1391": 0, "1392": 0, "1393": 0, "1394": 0, "1399": 0, "1400": 0, "1401": 0, "1402": 0, "1403": 0, "1404": 0, "1405": 0, "1406": 0, "1407": 0, "1408": 0, "1411": 0, "1412": 0, "1413": 0, "1414": 0, "1415": 0, "1417": 0, "1419": 0, "1422": 0, "1423": 0, "1424": 0, "1425": 0, "1426": 0, "1428": 0, "1434": 0, "1440": 0, "1441": 0, "1442": 0, "1443": 0, "1444": 0, "1445": 0, "1446": 0, "1448": 0, "1449": 0, "1451": 0, "1453": 0, "1435": 0, "1436": 0, "1438": 0, "1457": 2, "1459": 2, "1460": 2, "1461": 2, "1462": 2, "1465": 2, "1466": 2, "1467": 2, "1468": 2, "1464": 2}}
++ git checkout f050a7775dfc9000f55d023d36d925a8d02ccfa8
+Note: switching to 'f050a7775dfc9000f55d023d36d925a8d02ccfa8'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at f050a7775 Merge pull request #9715 from tk0miya/test_with_py311-dev
+M	setup.py
+M	tox.ini
++ git apply /root/pre_state.patch
+error: unrecognized input

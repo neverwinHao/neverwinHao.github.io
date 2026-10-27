@@ -1,78 +1,46 @@
 {
   "configs": {
-    "gpt-5-no-selection": "GPT-5 · DPI",
-    "gpt-5-mini-no-selection": "GPT-5 Mini · DPI",
     "opus-4.5-no-selection": "Claude Opus 4.5 · DPI"
   },
   "tasks": [
     {
-      "id": "scikit-learn__scikit-learn-13135",
-      "label": "K-means bin edges",
-      "repo": "scikit-learn/scikit-learn",
+      "id": "sphinx-doc__sphinx-9698",
+      "label": "Property index entries",
+      "repo": "sphinx-doc/sphinx",
       "runs": [
         {
-          "config": "gpt-5-no-selection",
-          "file": "scikit-learn__scikit-learn-13135--gpt-5-no-selection.json",
-          "steps": 9
-        },
-        {
-          "config": "gpt-5-mini-no-selection",
-          "file": "scikit-learn__scikit-learn-13135--gpt-5-mini-no-selection.json",
-          "steps": 10
-        },
-        {
           "config": "opus-4.5-no-selection",
-          "file": "scikit-learn__scikit-learn-13135--opus-4.5-no-selection.json",
-          "steps": 13
+          "file": "sphinx-doc__sphinx-9698--opus-4.5-no-selection.json",
+          "steps": 18
         }
       ],
-      "title": "KBinsDiscretizer: kmeans fails due to unsorted bin_edges"
+      "title": "An index entry with parens was registered for `py:method` directive with `:property:` option"
     },
     {
-      "id": "scikit-learn__scikit-learn-13328",
-      "label": "Boolean regression input",
-      "repo": "scikit-learn/scikit-learn",
+      "id": "matplotlib__matplotlib-26113",
+      "label": "Hexbin count threshold",
+      "repo": "matplotlib/matplotlib",
       "runs": [
         {
-          "config": "gpt-5-no-selection",
-          "file": "scikit-learn__scikit-learn-13328--gpt-5-no-selection.json",
-          "steps": 11
-        },
-        {
-          "config": "gpt-5-mini-no-selection",
-          "file": "scikit-learn__scikit-learn-13328--gpt-5-mini-no-selection.json",
-          "steps": 14
-        },
-        {
           "config": "opus-4.5-no-selection",
-          "file": "scikit-learn__scikit-learn-13328--opus-4.5-no-selection.json",
-          "steps": 11
+          "file": "matplotlib__matplotlib-26113--opus-4.5-no-selection.json",
+          "steps": 24
         }
       ],
-      "title": "TypeError when supplying a boolean X to HuberRegressor fit"
+      "title": "Inconsistent behavior of hexbins mincnt parameter, depending on C parameter"
     },
     {
-      "id": "pydata__xarray-3151",
-      "label": "Coordinate merging",
-      "repo": "pydata/xarray",
+      "id": "django__django-15104",
+      "label": "Migration field detection",
+      "repo": "django/django",
       "runs": [
         {
-          "config": "gpt-5-no-selection",
-          "file": "pydata__xarray-3151--gpt-5-no-selection.json",
-          "steps": 16
-        },
-        {
-          "config": "gpt-5-mini-no-selection",
-          "file": "pydata__xarray-3151--gpt-5-mini-no-selection.json",
-          "steps": 13
-        },
-        {
           "config": "opus-4.5-no-selection",
-          "file": "pydata__xarray-3151--opus-4.5-no-selection.json",
-          "steps": 16
+          "file": "django__django-15104--opus-4.5-no-selection.json",
+          "steps": 24
         }
       ],
-      "title": "xr.combine_by_coords raises ValueError if identical coordinates are non-monotonic"
+      "title": "KeyError with migration autodetector and FK field with hardcoded reference"
     }
   ],
   "archive_trajectory_count": 1731

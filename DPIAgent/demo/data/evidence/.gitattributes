@@ -1,2 +1,2 @@
-# Preserve raw evaluator logs byte-for-byte, including original whitespace.
-*.txt -text -whitespace
+# Preserve raw evaluator logs byte-for-byte; their output may contain diff/conflict-like markers.
+*.txt -text -diff -whitespace

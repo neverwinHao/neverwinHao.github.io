@@ -167,11 +167,11 @@ const protocolSchema = [
 function buildProtocol() {
   const handoff = data?.steps[handoffIndex];
   const source = handoff?.handoff || '';
-  const pattern = /\*{0,2}(bug location|root cause|expected vs actual(?: behavior)?|reproduction|reference tests(?: examined)?|test plan)\*{0,2}\s*:/gi;
+  const pattern = /\*{0,2}(bug location|root cause|expected(?: vs actual(?: behavior)?)?|reproduction|reference tests(?: examined)?|test plan)\*{0,2}\s*:/gi;
   const matches = [...source.matchAll(pattern)];
   const fields = {};
   matches.forEach((match, i) => {
-    const key = match[1].toLowerCase().replace(' behavior', '').replace(' examined', '');
+    const key = match[1].toLowerCase().replace(' behavior', '').replace(' examined', '').replace(/^expected$/, 'expected vs actual');
     fields[key] = source.slice(match.index + match[0].length, matches[i + 1]?.index ?? source.length).trim();
   });
   $('protocol-fields').replaceChildren();
@@ -289,7 +289,8 @@ function updateBoard(index) {
   setText('exploration-status', progress > 0 ? 'RECORDED' : index < 0 ? 'READY' : 'EXPLORING');
   setText('generation-status', time >= total ? 'RECORDED' : phase === 'generation' ? 'WRITING' : sent ? 'READY' : 'WAITING');
   setText('exploration-scope', sent ? 'RPG tools removed from the action space at the recorded transition.' : 'Investigate the code and reproduce the reported behavior.');
-  setText('generation-scope', sent ? 'Tests run on buggy code here. See “Verified” for the reference-fix results.' : 'Write tests using the diagnosis and test plan from phase 1.');
+  const validation = (data.validation || []).filter(check => time >= starts[check.step - 1] + durations[check.step - 1] * 0.99).at(-1);
+  setText('generation-scope', validation ? validation.label : sent ? (data.validation?.length ? 'The agent checks the same tests before and after a temporary fix.' : 'Tests run on buggy code here. See “Verified” for the reference-fix results.') : 'Write tests using the diagnosis and test plan from phase 1.');
   setText('protocol-state', sent ? '✓ Summary recorded · toolset switched' : progress > 0 ? 'Transferring the exploration summary…' : 'Awaiting the exploration summary');
   updateHandoff(progress, index);
   $('handoff-record').hidden = progress < HANDOFF_END;
@@ -516,6 +517,7 @@ async function loadRun(nextTask, nextConfig) {
     button.classList.toggle('active', active);
     button.setAttribute('aria-pressed', String(active));
     button.disabled = !task.runs.some(run => run.config === button.dataset.config);
+    button.title = button.disabled ? 'No showcased run for this case' : '';
   });
   document.querySelectorAll('.task').forEach(button => {
     const active = button.dataset.task === taskId;
