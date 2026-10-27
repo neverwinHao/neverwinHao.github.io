@@ -5,8 +5,8 @@
 [MP4](dpiagent-demo.mp4) · [GIF](dpiagent-demo.gif) · [Poster](dpiagent-demo-poster.png) · [Slide presentation](https://neverwinhao.github.io/DPIAgent/showcase/) · [Full explorer](https://neverwinhao.github.io/DPIAgent/demo/)
 
 The walkthrough uses the latest trajectory player within a slide presentation:
-cover, method overview, issue introductions, selected original replay moments,
-recorded fail-to-pass evaluation, and links to explore all nine runs.
+a short cover and three demos, with smooth fades through white. Each demo ends
+on the recorded fail-to-pass evaluation in the player.
 
 | Chapter | Issue | Model |
 | --- | --- | --- |
@@ -16,20 +16,19 @@ recorded fail-to-pass evaluation, and links to explore all nine runs.
 
 | Artifact | Format |
 | --- | --- |
-| `dpiagent-demo.mp4` | About 88 seconds, 1600 × 900, H.264, 15 fps, silent |
-| `dpiagent-demo.gif` | 35 seconds, 960 × 540, 10 fps, looping; 2.5× condensed version |
+| `dpiagent-demo.mp4` | 41 seconds, 1600 × 900, H.264, 20 fps, silent |
+| `dpiagent-demo.gif` | 41 seconds, 960 × 540, 15 fps, looping; same speed as MP4 |
 | `dpiagent-demo-poster.png` | Cover slide, 1600 × 900 |
 | `recording.json` | Scene timings, original trajectory and evaluation references, source/artifact SHA-256 hashes |
 
 The clips show selected recorded moments with editorial timing. Original tool
 commands and outputs are unchanged. The framing scrolls to relevant code and
-assertion lines. FAILED/PASSED result slides are exact named excerpts from the
+assertion lines. FAILED/PASSED player cards are exact named excerpts from the
 separate recorded SWT-Bench evaluations of the same submitted test patch.
 The complete explorer retains every step and all nine recordings.
 
-The chapter structure takes inspiration from InfiniDepth's overview GIF. The
-white slide background, blue title rule, and progressive explanation of the
-workflow follow the user-provided `TestExplora-Pre.pptx` as a visual reference.
+Short titles and fades through white take inspiration from InfiniDepth's demo
+GIF. The user-provided `TestExplora-Pre.pptx` also informed the visual reference.
 
 ## Re-record
 

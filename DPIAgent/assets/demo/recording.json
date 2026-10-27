@@ -1,7 +1,7 @@
 {
-  "duration_seconds": 87.533333,
-  "frames": 1313,
-  "fps": 15,
+  "duration_seconds": 41.0,
+  "frames": 820,
+  "fps": 20,
   "resolution": [
     1600,
     900
@@ -12,8 +12,8 @@
       960,
       540
     ],
-    "fps": 10,
-    "speed": 2.5
+    "fps": 15,
+    "speed": 1
   },
   "presentation": "https://neverwinhao.github.io/DPIAgent/showcase/",
   "capture_url": "http://localhost:8765/DPIAgent/showcase/?capture=1",
@@ -21,86 +21,30 @@
     {
       "kind": "cover",
       "start": 0,
-      "duration": 3,
+      "duration": 2,
       "task": null,
       "config": null
     },
     {
-      "kind": "method",
-      "start": 3,
-      "duration": 4,
-      "task": null,
-      "config": null
-    },
-    {
-      "kind": "issue",
-      "start": 7,
-      "duration": 3.5,
+      "kind": "demo",
+      "start": 2,
+      "duration": 13,
       "task": "sphinx-doc__sphinx-9367",
       "config": "gpt-5-mini-no-selection"
     },
     {
       "kind": "demo",
-      "start": 10.5,
-      "duration": 18,
-      "task": "sphinx-doc__sphinx-9367",
-      "config": "gpt-5-mini-no-selection"
-    },
-    {
-      "kind": "result",
-      "start": 28.5,
-      "duration": 4,
-      "task": "sphinx-doc__sphinx-9367",
-      "config": "gpt-5-mini-no-selection"
-    },
-    {
-      "kind": "issue",
-      "start": 32.5,
-      "duration": 3.5,
+      "start": 15,
+      "duration": 13,
       "task": "matplotlib__matplotlib-26113",
       "config": "gpt-5-no-selection"
     },
     {
       "kind": "demo",
-      "start": 36,
-      "duration": 18,
-      "task": "matplotlib__matplotlib-26113",
-      "config": "gpt-5-no-selection"
-    },
-    {
-      "kind": "result",
-      "start": 54,
-      "duration": 4,
-      "task": "matplotlib__matplotlib-26113",
-      "config": "gpt-5-no-selection"
-    },
-    {
-      "kind": "issue",
-      "start": 58,
-      "duration": 3.5,
+      "start": 28,
+      "duration": 13,
       "task": "pydata__xarray-7233",
       "config": "opus-4.5-no-selection"
-    },
-    {
-      "kind": "demo",
-      "start": 61.5,
-      "duration": 18,
-      "task": "pydata__xarray-7233",
-      "config": "opus-4.5-no-selection"
-    },
-    {
-      "kind": "result",
-      "start": 79.5,
-      "duration": 4,
-      "task": "pydata__xarray-7233",
-      "config": "opus-4.5-no-selection"
-    },
-    {
-      "kind": "outro",
-      "start": 83.5,
-      "duration": 4,
-      "task": null,
-      "config": null
     }
   ],
   "recordings": [
@@ -235,8 +179,8 @@
   ],
   "source_files": {
     "DPIAgent/showcase/index.html": "cf930a2fa01504a28b72e10dd9a185bb12f63186060c291d064cdd0180c260da",
-    "DPIAgent/showcase/showcase.js": "2b4c619f1a3675af141bc47b28edcbda8102453fa551f3d82cd65ca35b5f4cc4",
-    "DPIAgent/showcase/showcase.css": "04e70728c0754ec40eee4931e589134c8bee1276e7026c0eb6e6b3bda585b075",
+    "DPIAgent/showcase/showcase.js": "1470645fa104885f0c42fad4c3698aace0a5f4508e3fe9780c959634de890e57",
+    "DPIAgent/showcase/showcase.css": "4c85a4919756c7c8b5fbe133360f07dd9f5d0ab60677dc64dd15436b378f220b",
     "DPIAgent/demo/demo.js": "ef58e50c9195db7fc8d8c73914a1ceefb7dc2a009d91cbefabf6abcc6d5d6e6b",
     "DPIAgent/demo/demo.css": "ad6250835d424f8127088faf7f34d64ff41da6ff570709d1ad0e4f842b8c0e27",
     "DPIAgent/demo/data/index.json": "71c6c046453751610c56b49cb2e54bbff75705d2a0a29310f19eb0d12e532b56"
@@ -244,16 +188,16 @@
   "browser_errors": [],
   "artifacts": {
     "dpiagent-demo.mp4": {
-      "bytes": 6016883,
-      "sha256": "54abbc12294d3ae9e2abbf4905a2dbda89594c5691ecaa15cf5ec58f43764f8d"
+      "bytes": 2525885,
+      "sha256": "6c898f96a445e2c9c0a43a2f8d9ffa49d10485b65979af02107ff7b2330928e6"
     },
     "dpiagent-demo.gif": {
-      "bytes": 5635528,
-      "sha256": "1171d35c9aa39fae5f2285c325e6768b36a3d6e4437b43c1404b2ef2f09a41b3"
+      "bytes": 5505586,
+      "sha256": "01aaeabfaf5e533de59c7a1a290b001573853b3d91fe09920f1f61a987e4fe7a"
     },
     "dpiagent-demo-poster.png": {
-      "bytes": 59738,
-      "sha256": "a3747db29033fe8eb1a748f74036fbf37219d041e95c7cf4ea3de21b76a48c4c"
+      "bytes": 18725,
+      "sha256": "faa3d36279576f39f2e93b35aed699f76e2d61ce7c9ac35f708200a9b7cd166f"
     }
   }
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Record the real slide presentation, then export MP4, condensed GIF and poster.
+"""Record the real slide presentation, then export MP4, GIF and poster.
 
 Requires Python Playwright/Chromium and ffmpeg. Start the static site server
 before running. The three embedded players use the current exported recordings.
@@ -22,7 +22,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--base-url', default='http://localhost:8765')
     parser.add_argument('--output', type=Path, default=Path(__file__).resolve().parents[1] / 'DPIAgent/assets/demo')
-    parser.add_argument('--fps', type=int, default=15)
+    parser.add_argument('--fps', type=int, default=20)
     args = parser.parse_args()
     repo = Path(__file__).resolve().parents[1]
     args.output.mkdir(parents=True, exist_ok=True)
@@ -72,15 +72,15 @@ def main():
                 assert frame.evaluate('!!window.dpiReplay?.ready')
             assert not errors, errors
             browser.close()
-        print('Encoding condensed GIF…', flush=True)
+        print('Encoding GIF…', flush=True)
         gif = work/'dpiagent-demo.gif'
-        subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(video),'-filter_complex','setpts=PTS/2.5,fps=10,scale=960:-1:flags=lanczos,split[a][b];[a]palettegen=stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=3:diff_mode=rectangle','-loop','0',str(gif)],check=True)
+        subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(video),'-filter_complex','fps=15,scale=960:-1:flags=lanczos,split[a][b];[a]palettegen=stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=3:diff_mode=rectangle','-loop','0',str(gif)],check=True)
         probe = json.loads(subprocess.check_output(['ffprobe','-v','error','-show_format','-show_streams','-of','json',str(video)]))
         stream = next(s for s in probe['streams'] if s['codec_type']=='video')
         assert stream['width']==1600 and stream['height']==900 and stream['codec_name']=='h264'
         assert abs(float(probe['format']['duration'])-duration) < .15
         sources = ['DPIAgent/showcase/index.html','DPIAgent/showcase/showcase.js','DPIAgent/showcase/showcase.css','DPIAgent/demo/demo.js','DPIAgent/demo/demo.css','DPIAgent/demo/data/index.json']
-        metadata = {'duration_seconds':float(probe['format']['duration']),'frames':count,'fps':args.fps,'resolution':[1600,900],'audio':False,'gif':{'resolution':[960,540],'fps':10,'speed':2.5},'presentation':'https://neverwinhao.github.io/DPIAgent/showcase/','capture_url':url,'scenes':scenes,'recordings':recordings,'source_files':{s:sha(repo/s) for s in sources},'browser_errors':errors}
+        metadata = {'duration_seconds':float(probe['format']['duration']),'frames':count,'fps':args.fps,'resolution':[1600,900],'audio':False,'gif':{'resolution':[960,540],'fps':15,'speed':1},'presentation':'https://neverwinhao.github.io/DPIAgent/showcase/','capture_url':url,'scenes':scenes,'recordings':recordings,'source_files':{s:sha(repo/s) for s in sources},'browser_errors':errors}
         metadata['artifacts'] = {name:{'bytes':(work/name).stat().st_size,'sha256':sha(work/name)} for name in ['dpiagent-demo.mp4','dpiagent-demo.gif','dpiagent-demo-poster.png']}
         (work/'recording.json').write_text(json.dumps(metadata,indent=2)+'\n')
         for name in ['dpiagent-demo.mp4','dpiagent-demo.gif','dpiagent-demo-poster.png','recording.json']:
