@@ -3,7 +3,7 @@
 Static HTML/CSS/JavaScript; no build step, runtime API, or JavaScript dependencies.
 The paper and demo share visual tokens in `assets/theme.css` and load the same
 Inter stylesheet (with system font fallbacks).
-The model bar identifies Claude Opus 4.5, the model used by all three showcased
+The model bar identifies Claude Opus 4.5, the model used by both showcased
 runs. Case tabs sit below it. Only runs without test selection are exported;
 retired model/case URLs fall back to the available recording.
 The project page embeds this player at `DPIAgent/#demo`; the standalone player is at `DPIAgent/demo/`.
@@ -33,18 +33,17 @@ For a remote development machine, forward port 8765 to your browser's machine.
 
 ## Trace data
 
-The gallery contains three Claude Opus 4.5 runs, each with an actual fail-to-pass
+The gallery contains two Claude Opus 4.5 runs, each with an actual fail-to-pass
 sequence inside the original trajectory. External evaluation success alone is not
 sufficient for inclusion. The records also restore the buggy implementation and
 rerun the same tests, then submit only the test patch.
 
 | Case | Total steps | Buggy run | Temporary fix passes | Original restored, fails again |
 | --- | ---: | ---: | ---: | ---: |
-| `matplotlib__matplotlib-26113` — Hexbin count threshold | 24 | 14: 1 failed | 16: 1 passed | 18: 1 failed |
 | `django__django-15104` — Migration field detection | 24 | 16: 1 error | 18: 1 passed (OK) | 19: 1 error |
 | `sympy__sympy-19637` — Parenthesized expressions | 26 | 17: 1 exception | 19: 1 passed | 21: 1 exception |
 
-These three original runs were chosen for visible validation. Other models and
+Both original runs were chosen for visible validation. Other models and
 cases whose trajectories did not demonstrate that sequence are not showcased.
 The full actions show the temporary implementation edit and its reversal; the
 final submitted patches change test files only. No successful output is added
@@ -60,6 +59,8 @@ The exporter requires all of the following before writing the gallery:
 - No actual `python_add*` or `generate_test` calls in tool/action records.
 - Every RPG tool call must be `rpg_search_code`; all other `rpg_*` calls are
   rejected, including calls embedded in shell actions.
+- RPG output must not contain `ERROR:root:` indexing errors. Matplotlib was
+  removed because its indexer tried to parse vendored Python 2 scripts.
 - At most 26 steps, a confirmed handoff, and a submitted test-only patch.
 - The same named regression tests fail, pass after the recorded temporary fix,
   and fail again after restoration in the original trajectory, with the actual
@@ -139,11 +140,11 @@ rendered when complete or explicitly opened rather than on every frame.
 Validated in Chromium: play/pause, restart, speed selection, phase and step jumps,
 seeking through completion, task/config changes, URL reload, artifact downloads,
 load-error recovery, reduced motion, and desktop/mobile embedded layouts.
-Also checked across all 3 runs: protocol fields match their source summaries,
+Also checked across both runs: protocol fields match their source summaries,
 phase histories stay separate, the incoming plan matches the handoff, and rewinding
 clears the transferred state. Automatic boundary pause and continuous playback
 were exercised separately.
-All 3 exported runs were compared against the source archive for exact action,
+Both exported runs were compared against the source archive for exact action,
 observation, and final-patch fidelity.
 
 The files can be served from GitHub Pages without changing paths. Publishing is

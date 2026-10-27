@@ -9,11 +9,10 @@ import re
 import zipfile
 
 TASKS = [
-    'matplotlib__matplotlib-26113',
     'django__django-15104',
     'sympy__sympy-19637',
 ]
-CASE_LABELS = ['Hexbin count threshold', 'Migration field detection', 'Parenthesized expressions']
+CASE_LABELS = ['Migration field detection', 'Parenthesized expressions']
 MAX_STEPS = 26
 CONFIGS = {
     'opus-4.5-no-selection': 'Claude Opus 4.5 · DPI',
@@ -133,14 +132,6 @@ def recorded_validation(data):
                        (21, '0 passed, 1 exceptions', 'python -c')],
             'restore': (20, 'mv sympy/core/sympify.py.bak sympy/core/sympify.py'),
         },
-        'matplotlib__matplotlib-26113': {
-            'target': 'lib/matplotlib/tests/test_axes.py::test_hexbin_mincnt_behavior_with_C_parameter',
-            'patch': 'lib/matplotlib/tests/test_axes.py',
-            'checks': [(14, '1 failed in', 'python -m pytest'),
-                       (16, '1 passed in', "sed -i 's/len(acc) > mincnt/len(acc) >= mincnt/'"),
-                       (18, '1 failed in', 'python -m pytest')],
-            'restore': (17, "sed -i 's/len(acc) >= mincnt/len(acc) > mincnt/'"),
-        },
         'django__django-15104': {
             'target': 'migrations.test_autodetector.AutodetectorTests.test_fk_field_without_to_in_deconstruct',
             'patch': 'tests/migrations/test_autodetector.py',
@@ -183,6 +174,11 @@ def validate_tools(data):
                  or re.search(r'\b(?:python_add\w*|generate_test|rpg_(?!search_code\b)\w+)\b', step['action'])]
     if forbidden:
         raise ValueError(f"{data['source']}: excluded tool called at steps {forbidden}")
+    parsing_errors = [step['index'] for step in data['steps']
+                      if step['tool'].startswith('rpg_')
+                      and re.search(r'^ERROR:root:', step['observation'], re.M)]
+    if parsing_errors:
+        raise ValueError(f"{data['source']}: RPG indexing errors at steps {parsing_errors}")
 
 
 def main():
