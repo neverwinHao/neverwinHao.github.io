@@ -2,63 +2,52 @@
   "configs": {
     "gpt-5-no-selection": "GPT-5 · DPI",
     "gpt-5-mini-no-selection": "GPT-5 Mini · DPI",
-    "opus-4.5-no-selection": "Claude Opus 4.5 · DPI",
-    "gpt-5-selection": "GPT-5 · DPI + test selection"
+    "opus-4.5-no-selection": "Claude Opus 4.5 · DPI"
   },
   "tasks": [
     {
-      "id": "astropy__astropy-12907",
+      "id": "astropy__astropy-14365",
       "repo": "astropy/astropy",
       "runs": [
         {
           "config": "gpt-5-no-selection",
-          "file": "astropy__astropy-12907--gpt-5-no-selection.json",
-          "steps": 13
+          "file": "astropy__astropy-14365--gpt-5-no-selection.json",
+          "steps": 12
         },
         {
           "config": "gpt-5-mini-no-selection",
-          "file": "astropy__astropy-12907--gpt-5-mini-no-selection.json",
-          "steps": 14
+          "file": "astropy__astropy-14365--gpt-5-mini-no-selection.json",
+          "steps": 10
         },
         {
           "config": "opus-4.5-no-selection",
-          "file": "astropy__astropy-12907--opus-4.5-no-selection.json",
-          "steps": 23
-        },
-        {
-          "config": "gpt-5-selection",
-          "file": "astropy__astropy-12907--gpt-5-selection.json",
-          "steps": 12
+          "file": "astropy__astropy-14365--opus-4.5-no-selection.json",
+          "steps": 25
         }
       ],
-      "title": "Modeling's `separability_matrix` does not compute separability correctly for nested CompoundModels"
+      "title": "ascii.qdp Table format assumes QDP commands are upper case"
     },
     {
-      "id": "django__django-11099",
+      "id": "django__django-10999",
       "repo": "django/django",
       "runs": [
         {
           "config": "gpt-5-no-selection",
-          "file": "django__django-11099--gpt-5-no-selection.json",
-          "steps": 12
+          "file": "django__django-10999--gpt-5-no-selection.json",
+          "steps": 11
         },
         {
           "config": "gpt-5-mini-no-selection",
-          "file": "django__django-11099--gpt-5-mini-no-selection.json",
-          "steps": 24
+          "file": "django__django-10999--gpt-5-mini-no-selection.json",
+          "steps": 16
         },
         {
           "config": "opus-4.5-no-selection",
-          "file": "django__django-11099--opus-4.5-no-selection.json",
-          "steps": 18
-        },
-        {
-          "config": "gpt-5-selection",
-          "file": "django__django-11099--gpt-5-selection.json",
-          "steps": 18
+          "file": "django__django-10999--opus-4.5-no-selection.json",
+          "steps": 21
         }
       ],
-      "title": "UsernameValidator allows trailing newline in usernames"
+      "title": "Fix parse_duration() for some negative durations"
     },
     {
       "id": "scikit-learn__scikit-learn-13439",
@@ -78,11 +67,6 @@
           "config": "opus-4.5-no-selection",
           "file": "scikit-learn__scikit-learn-13439--opus-4.5-no-selection.json",
           "steps": 17
-        },
-        {
-          "config": "gpt-5-selection",
-          "file": "scikit-learn__scikit-learn-13439--gpt-5-selection.json",
-          "steps": 12
         }
       ],
       "title": "Pipeline should implement __len__"
@@ -105,11 +89,6 @@
           "config": "opus-4.5-no-selection",
           "file": "psf__requests-5414--opus-4.5-no-selection.json",
           "steps": 29
-        },
-        {
-          "config": "gpt-5-selection",
-          "file": "psf__requests-5414--gpt-5-selection.json",
-          "steps": 17
         }
       ],
       "title": "Getting http://.example.com raises UnicodeError"

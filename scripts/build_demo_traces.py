@@ -8,14 +8,13 @@ import re
 import zipfile
 
 TASKS = [
-    'astropy__astropy-12907', 'django__django-11099',
+    'astropy__astropy-14365', 'django__django-10999',
     'scikit-learn__scikit-learn-13439', 'psf__requests-5414',
 ]
 CONFIGS = {
     'gpt-5-no-selection': 'GPT-5 · DPI',
     'gpt-5-mini-no-selection': 'GPT-5 Mini · DPI',
     'opus-4.5-no-selection': 'Claude Opus 4.5 · DPI',
-    'gpt-5-selection': 'GPT-5 · DPI + test selection',
 }
 
 
@@ -81,6 +80,14 @@ def main():
                     continue
                 payload = archive.read(source)
                 data = convert(json.loads(payload), task, config, source, hashlib.sha256(payload).hexdigest())
+                # These gallery cases must genuinely avoid the unused helpers.
+                # Reject unsuitable source runs instead of hiding recorded calls.
+                forbidden = [step['index'] for step in data['steps']
+                             if step['tool'].startswith('python_add')
+                             or step['tool'] == 'generate_test'
+                             or re.search(r'\b(?:python_add\w*|generate_test)\b', step['action'])]
+                if forbidden:
+                    raise ValueError(f'{source}: excluded helper called at steps {forbidden}')
                 filename = f'{task}--{config}.json'
                 (args.output / filename).write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')) + '\n')
                 entry.setdefault('title', data['title'])
