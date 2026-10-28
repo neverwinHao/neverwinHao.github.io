@@ -42,7 +42,7 @@ cover = prs.slides[0]
 for old in cover._element.xpath('./p:transition'):
     cover._element.remove(old)
 transition = OxmlElement('p:transition')
-transition.set('spd','slow');transition.set('advTm','4000');transition.set('advClick','1')
+transition.set('spd','slow');transition.set('advTm',str(round(meta['scenes'][0]['duration']*1000)));transition.set('advClick','1')
 transition.append(OxmlElement('p:fade'))
 cover._element.insert_element_before(transition,'p:timing','p:extLst')
 

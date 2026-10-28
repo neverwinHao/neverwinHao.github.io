@@ -4,7 +4,7 @@
 
 [MP4](dpiagent-demo.mp4) · [GIF](dpiagent-demo.gif) · [Presentation](https://neverwinhao.github.io/DPIAgent/showcase/) · [Full explorer](https://neverwinhao.github.io/DPIAgent/demo/)
 
-The user's updated NIPS cover, followed by three **complete replays at 3× speed**.
+The user's updated NIPS cover for 1.2 seconds, followed by three **complete replays at 3× speed**.
 All 48 original actions play continuously and in order. Each case ends with its
 recorded fail-to-pass evaluation, and scenes fade through white.
 
@@ -16,8 +16,8 @@ recorded fail-to-pass evaluation, and scenes fade through white.
 
 | Artifact | Format |
 | --- | --- |
-| `dpiagent-demo.mp4` | About 107 seconds, 1600 × 900, H.264, 20 fps, silent |
-| `dpiagent-demo.gif` | About 107 seconds, 960 × 540, 15 fps, looping, same speed as MP4 |
+| `dpiagent-demo.mp4` | About 104 seconds, 1600 × 900, H.264, 20 fps, silent |
+| `dpiagent-demo.gif` | About 104 seconds, 960 × 540, 15 fps, looping, same speed as MP4 |
 | `dpiagent-demo-poster.png` | Updated NIPS cover, 1600 × 900 |
 | `dpiagent-cover.pptx` / `.png` | User's editable cover and matching rendered image |
 | `recording.json` | Playback rate, scene timings, trajectory/evaluation references and hashes |

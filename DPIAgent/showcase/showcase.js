@@ -29,7 +29,7 @@ function addSlide(kind, seconds, chapter, markup) {
   return slide;
 }
 
-addSlide('cover',4,null,'<img class="cover-image" src="../assets/demo/dpiagent-cover.png" alt="DPIAgent: Agentic Reproduction Test Generation with Structured Phase Boundaries — authors and affiliations">');
+addSlide('cover',1.2,null,'<img class="cover-image" src="../assets/demo/dpiagent-cover.png" alt="DPIAgent: Agentic Reproduction Test Generation with Structured Phase Boundaries — authors and affiliations">');
 chapters.forEach(chapter=>{
   const demo=addSlide('demo',1,chapter);
   chapter.frame=el('iframe','replay-frame');chapter.frame.title=`${chapter.repo}: original ${chapter.model} recording`;

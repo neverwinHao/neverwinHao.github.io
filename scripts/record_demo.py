@@ -24,7 +24,7 @@ def export_gif(video, gif, work):
     def ffmpeg(*args):
         subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y',*map(str,args)],check=True)
     cover = work/'cover-frame.png'
-    ffmpeg('-ss',1,'-i',video,'-vf','scale=960:-1:flags=lanczos','-frames:v',1,cover)
+    ffmpeg('-ss',0,'-i',video,'-vf','scale=960:-1:flags=lanczos','-frames:v',1,cover)
     with Image.open(cover) as frame:
         pixels = [rgb for rgb in frame.convert('RGB').getdata() if max(rgb)-min(rgb)>12]
     # Keep small colored logos from losing their palette entries to white/text.
@@ -78,7 +78,7 @@ def main():
             recordings = page.evaluate('dpiShowcase.recordings.map(d=>({id:d.id,config:d.config,source:d.source,source_sha256:d.source_sha256,steps:d.steps.length,validation:d.validation,evaluation:d.evaluation}))')
             assert len(recordings) == 3
             assert len({d['config'] for d in recordings}) == 3
-            page.evaluate('dpiShowcase.seek(1)')
+            page.evaluate('dpiShowcase.seek(0)')
             page.screenshot(path=str(work/'dpiagent-demo-poster.png'))
             command = ['ffmpeg','-hide_banner','-loglevel','error','-y','-f','image2pipe','-framerate',str(args.fps),'-vcodec','png','-i','-','-an','-c:v','libx264','-threads','4','-preset','fast','-crf','18','-pix_fmt','yuv420p','-movflags','+faststart',str(video)]
             with (work/'encoder.log').open('wb') as log:

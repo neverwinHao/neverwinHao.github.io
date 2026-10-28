@@ -12,8 +12,8 @@ its recorded reference-fix evaluation. Transitions fade through white.
 | Matplotlib Hexbin threshold | GPT-5 | 17 | 33.80 seconds |
 | xarray coordinate preservation | Claude Opus 4.5 | 22 | 42.94 seconds |
 
-Including the four-second cover and evaluation displays, the presentation lasts
-about 107 seconds. These are the player's replay timings, not original inference
+Including the 1.2-second cover and evaluation displays, the presentation lasts
+about 104 seconds. These are the player's replay timings, not original inference
 wall-clock times. Commands, observations, tools and tests are unchanged. The
 FAILED/PASSED cards are archived SWT-Bench reference-fix evaluations of the same
 submitted test patch, separately labeled from the agent's own output.
