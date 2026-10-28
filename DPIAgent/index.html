@@ -527,16 +527,6 @@
       padding: 30px 0 58px;
     }
 
-    .demo-video {
-      display: block;
-      width: 100%;
-      height: auto;
-      aspect-ratio: 16 / 9;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #fff;
-    }
-
     .image-panel {
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
@@ -1037,9 +1027,9 @@
         <span>DPIAgent</span>
       </a>
       <div class="nav-links">
-        <a href="#demo">Demo</a>
         <a href="#abstract">Abstract</a>
         <a href="#framework">Framework</a>
+        <a href="#demo">Demo</a>
         <a href="#results">Results</a>
         <a href="#analysis">Analysis</a>
         <a href="#bibtex">BibTeX</a>
@@ -1109,13 +1099,12 @@
       </div>
     </section>
 
-    <section class="teaser" id="demo" aria-label="DPIAgent video demo" style="scroll-margin-top:90px">
+    <section class="teaser">
       <div class="container">
-        <video controls playsinline preload="none" poster="assets/demo/dpiagent-demo-poster.png" width="1600" height="900" class="demo-video" aria-label="DPIAgent walkthrough: three issues, recorded handoffs, and fail-to-pass evaluation">
-          <source src="assets/demo/dpiagent-demo.mp4?v=3794a393" type="video/mp4">
-          <a href="assets/demo/dpiagent-demo.mp4?v=3794a393">Download the walkthrough video</a>
-        </video>
-        <p class="teaser-caption"><a href="#trajectory-explorer">Explore the recorded trajectories ↓</a></p>
+        <div class="image-panel">
+          <img src="assets/teaser_barchart-refine.png" alt="Main result figure showing DPI's gains in success rate and agent steps across three backbones.">
+        </div>
+        <p class="teaser-caption">DPIAgent consistently improves reproduction success and TDD coverage over SWE-Agent across GPT-5-Mini, GPT-5, and Claude-Opus-4.5.</p>
       </div>
     </section>
 
@@ -1158,10 +1147,10 @@
       </div>
     </section>
 
-    <section class="section" id="trajectory-explorer" style="scroll-margin-top:90px">
+    <section class="section" id="demo" style="scroll-margin-top:90px">
       <div class="container">
         <div class="content-block">
-          <h2 class="section-title">Trajectory explorer</h2>
+          <h2 class="section-title">Demo</h2>
           <p class="section-intro">Three real issues, from diagnosis to verified reproduction tests.</p>
           <p style="margin:12px 0 26px;font-size:14px;color:var(--accent)"><a href="demo/" target="_blank" rel="noopener">Open all nine recorded runs ↗</a></p>
         </div>
