@@ -552,6 +552,37 @@
       line-height: 1.5;
     }
 
+    .leaderboard-section {
+      padding: 0 0 66px;
+      scroll-margin-top: 120px;
+    }
+
+    .leaderboard-section .section-intro {
+      margin: 18px auto 0;
+    }
+
+    .leaderboard-shot {
+      margin: 28px auto 0;
+      padding: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .leaderboard-shot img {
+      height: auto;
+    }
+
+    .leaderboard-link {
+      color: var(--accent-deep);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .leaderboard-shot a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
     .section {
       padding: 66px 0;
     }
@@ -1030,6 +1061,7 @@
         <a href="#abstract">Abstract</a>
         <a href="#framework">Framework</a>
         <a href="#demo">Demo</a>
+        <a href="#leaderboard">Leaderboard</a>
         <a href="#results">Results</a>
         <a href="#analysis">Analysis</a>
         <a href="#bibtex">BibTeX</a>
@@ -1105,6 +1137,21 @@
           <img src="assets/teaser_barchart-refine.png" alt="Main result figure showing DPI's gains in success rate and agent steps across three backbones.">
         </div>
         <p class="teaser-caption">DPIAgent consistently improves reproduction success and TDD coverage over SWE-Agent across GPT-5-Mini, GPT-5, and Claude-Opus-4.5.</p>
+      </div>
+    </section>
+
+    <section class="leaderboard-section" id="leaderboard" aria-labelledby="leaderboard-title">
+      <div class="container-narrow">
+        <div class="content-block">
+          <h2 class="section-title" id="leaderboard-title">🏆 #1 on SWT-Bench Verified</h2>
+          <p class="section-intro">On October 23, 2026, DPIAgent + GPT-5 with test selection ranked first in Unit Test Mode, with <strong>87.5% reproduction success</strong> and <strong>71.6% change coverage</strong>.</p>
+        </div>
+        <figure class="image-panel leaderboard-shot">
+          <a href="assets/swtbench-verified-leaderboard.png" target="_blank" rel="noopener" aria-label="Open the full-size SWT-Bench Verified leaderboard screenshot">
+            <img src="assets/swtbench-verified-leaderboard.png" width="2016" height="1846" loading="lazy" alt="SWT-Bench Verified leaderboard showing DPIAgent with GPT-5 and test selection in first place with 87.5% success and 71.6% change coverage.">
+          </a>
+          <figcaption class="caption">Leaderboard snapshot from October 23, 2026. <a class="leaderboard-link" href="assets/swtbench-verified-leaderboard.png" target="_blank" rel="noopener">View full screenshot ↗</a> · <a class="leaderboard-link" href="https://swtbench.com/?results=verified" target="_blank" rel="noopener noreferrer">Official leaderboard ↗</a></figcaption>
+        </figure>
       </div>
     </section>
 
