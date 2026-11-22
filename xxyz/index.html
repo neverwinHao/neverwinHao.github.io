@@ -1196,7 +1196,7 @@ dialog{width:min(610px,calc(100% - 30px));max-height:85dvh;overflow:auto;padding
     "buildings": [
       {
         "id": "north-west",
-        "name": "A部宿舍",
+        "name": "北部西楼",
         "x": -73,
         "z": -93,
         "w": 112,
@@ -1210,7 +1210,7 @@ dialog{width:min(610px,calc(100% - 30px));max-height:85dvh;overflow:auto;padding
       },
       {
         "id": "north-east",
-        "name": "B部宿舍",
+        "name": "北部东楼",
         "x": 56,
         "z": -93,
         "w": 114,
@@ -1224,7 +1224,7 @@ dialog{width:min(610px,calc(100% - 30px));max-height:85dvh;overflow:auto;padding
       },
       {
         "id": "middle-west",
-        "name": "中部西楼",
+        "name": "A部宿舍",
         "x": -76,
         "z": -12,
         "w": 106,
@@ -1233,11 +1233,12 @@ dialog{width:min(610px,calc(100% - 30px));max-height:85dvh;overflow:auto;padding
         "kind": "building",
         "profile": "northPlain",
         "roofPanels": false,
-        "closeFace": "south"
+        "closeFace": "south",
+        "labelPriority": 1
       },
       {
         "id": "middle-east",
-        "name": "中部东楼",
+        "name": "B部宿舍",
         "x": 60,
         "z": -12,
         "w": 108,
@@ -1246,7 +1247,8 @@ dialog{width:min(610px,calc(100% - 30px));max-height:85dvh;overflow:auto;padding
         "kind": "building",
         "profile": "northTeaching",
         "roofPanels": true,
-        "closeFace": "south"
+        "closeFace": "south",
+        "labelPriority": 1
       },
       {
         "id": "south-west",
@@ -1437,8 +1439,8 @@ dialog{width:min(610px,calc(100% - 30px));max-height:85dvh;overflow:auto;padding
       "sculpture",
       "south-west",
       "south-east",
-      "north-west",
-      "north-east",
+      "middle-west",
+      "middle-east",
       "a-canteen",
       "b-canteen"
     ],
@@ -1507,14 +1509,12 @@ dialog{width:min(610px,calc(100% - 30px));max-height:85dvh;overflow:auto;padding
       "sculpture",
       "south-west",
       "south-east",
-      "north-west",
-      "north-east",
+      "middle-west",
+      "middle-east",
       "a-canteen",
       "b-canteen"
     ],
     "selectionAliases": {
-      "middle-west": "south-west",
-      "middle-east": "south-east",
       "observatory": "south-east",
       "courtyard": "south-east"
     }
@@ -3265,7 +3265,7 @@ dialog{width:min(610px,calc(100% - 30px));max-height:85dvh;overflow:auto;padding
   let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(!scene)return;if(mode==='overview')scene.overview(false);else if(mode==='top')scene.top();},150);});
   try{
     scene=window.createCampusScene($('canvas-host'),choose,()=>{stopTour();if(mode!=='detail'&&mode!=='walk')updateModes('free');});
-    loadCampus(location.hash.slice(1));scene.onFrame=updateFrame;$('loading').hidden=true;
+    loadCampus(location.hash.slice(1));scene.onFrame=updateFrame;$('loading').hidden=true;startTour();
     // Read-only diagnostics for local acceptance checks.
     window.campusDiagnostics=()=>({campus:current.id,selected,mode,touring:Boolean(tour),places:places.length,labelsOn,evening,webgl:true,drawCalls:scene.renderer.info.render.calls,triangles:scene.renderer.info.render.triangles,geometries:scene.renderer.info.memory.geometries,textures:scene.renderer.info.memory.textures});
   }catch(error){$('loading').hidden=true;$('error').hidden=false;$('error-detail').textContent=error.message;console.error(error);}
