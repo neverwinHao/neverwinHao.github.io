@@ -43,6 +43,11 @@ dialog{width:min(610px,calc(100% - 30px));max-height:85dvh;overflow:auto;padding
 /* Names and controls only. */
 .brand{padding-bottom:12px}.brand h1{margin-bottom:0}.campus-intro{margin-top:21px;margin-bottom:12px}.search-wrap{margin-bottom:14px}.place-item{padding-top:12px;padding-bottom:12px}.tour-card{margin-bottom:24px;padding:13px 14px}.place-card{align-items:center;padding:13px 16px;min-width:155px;gap:24px}.place-card h3{margin:0;font-size:18px}.place-card>button{margin:0 0 0 auto;padding:0 2px}.place-actions{margin-left:0}body:not(.focused) .bottom-left{display:none}.bottom-left{max-width:260px}.walk-bar{padding-top:12px;padding-bottom:12px}
 @media(max-width:760px){.brand{padding-bottom:15px}.place-card{padding:11px 13px}.bottom-left{bottom:105px}.walk-bar strong{font-size:12px}}
+
+/* A shared page-view count, kept below the camera and walking controls. */
+.visit-counter{position:absolute;right:25px;bottom:7px;z-index:4;display:flex;align-items:center;gap:6px;padding:3px 9px;border-radius:20px;background:#fffff59c;color:#6b7661;font-size:10px;line-height:18px;pointer-events:none;white-space:nowrap}
+.visit-counter svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5}.visit-counter strong{font-weight:500;font-variant-numeric:tabular-nums;color:#4c5d42}
+@media(max-width:760px){.visit-counter{right:16px;bottom:max(10px,env(safe-area-inset-bottom));font-size:10px}}
 </style>
 </head>
 <body>
@@ -77,6 +82,7 @@ dialog{width:min(610px,calc(100% - 30px));max-height:85dvh;overflow:auto;padding
     </section>
     <div id="toast" role="status" hidden></div>
     <div id="tour-progress" hidden><span id="tour-step"></span><button id="stop-tour">结束漫游 ×</button><div><i id="tour-bar"></i></div></div>
+    <div id="visit-counter" class="visit-counter" aria-live="polite" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="2.5"/></svg><span>访问 <strong id="visit-count"></strong> 次</span></div>
   </main>
 
   <script>/**
@@ -3269,6 +3275,28 @@ dialog{width:min(610px,calc(100% - 30px));max-height:85dvh;overflow:auto;padding
     // Read-only diagnostics for local acceptance checks.
     window.campusDiagnostics=()=>({campus:current.id,selected,mode,touring:Boolean(tour),places:places.length,labelsOn,evening,webgl:true,drawCalls:scene.renderer.info.render.calls,triangles:scene.renderer.info.render.triangles,geometries:scene.renderer.info.memory.geometries,textures:scene.renderer.info.memory.textures});
   }catch(error){$('loading').hidden=true;$('error').hidden=false;$('error-detail').textContent=error.message;console.error(error);}
+})();
+</script>
+  <script>(function () {
+  'use strict';
+  const container=document.getElementById('visit-counter'),value=document.getElementById('visit-count');
+  // Count only the published campus page; previews and offline copies stay offline.
+  if(!container||!value||location.hostname!=='neverwinhao.github.io'||!location.pathname.startsWith('/xxyz/'))return;
+  const callback='campusVisits_'+Math.random().toString(36).slice(2),script=document.createElement('script');
+  let settled=false;
+  function finish(){
+    if(settled)return;settled=true;clearTimeout(timer);script.remove();delete window[callback];
+  }
+  const timer=setTimeout(finish,8000);
+  window[callback]=data=>{
+    const count=data?.page_pv;
+    if(Number.isSafeInteger(count)&&count>=0){value.textContent=count.toLocaleString('zh-CN');container.hidden=false;}
+    finish();
+  };
+  // Busuanzi page_pv groups visits by page URL; campus hashes share the same page.
+  script.async=true;script.referrerPolicy='no-referrer-when-downgrade';
+  script.src='https://busuanzi.ibruce.info/busuanzi?jsonpCallback='+callback;
+  script.onerror=finish;document.head.append(script);
 })();
 </script>
 </body>
