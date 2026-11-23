@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>献县一中 · 联机连接测试</title>
+  <style>
+    body{margin:0;font:15px/1.6 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#fcfbf7;color:#303e39}
+    main{max-width:520px;margin:auto;padding:24px 18px 40px}
+    h1{font-size:20px;margin:0 0 4px}p{margin:0 0 16px;color:#6b7661;font-size:13px}
+    ol{list-style:none;padding:0;margin:0 0 18px}li{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid #e7e7df}
+    li b{width:22px;flex-shrink:0;text-align:center}li span{flex:1}li small{color:#8a8d80;white-space:nowrap}
+    .ok b{color:#3a8a4a}.fail b{color:#a33a35}.fail small{color:#a33a35;white-space:normal}
+    #verdict{padding:12px 14px;border-radius:8px;background:#eee9df;margin-bottom:16px;font-weight:600}
+    #verdict.ok{background:#e3f0dc;color:#2f6b3a}#verdict.fail{background:#f6e1de;color:#8c2f2a}
+    #peers{font-size:13px;color:#56684e}#peers div{padding:3px 0}
+    button{font:inherit;padding:9px 16px;border:0;border-radius:6px;background:#743c36;color:#fff;margin-top:16px}
+  </style>
+</head>
+<body>
+<main>
+  <h1>联机连接测试</h1>
+  <p>测试这台设备能否连上联机服务。测完请把整页截图发回。</p>
+  <div id="verdict">测试中…</div>
+  <ol id="steps"></ol>
+  <div id="peers"></div>
+  <button id="again">重新测试</button>
+</main>
+<script>
+(function () {
+  'use strict';
+  const URL_BASE='https://rbtzkzadbnlriypdkbgk.supabase.co',KEY='sb_publishable_jxbqAU3P8JG9ZSUfi6Xipg_WPWp6tqe';
+  const $=id=>document.getElementById(id),ua=navigator.userAgent;
+  const device=(/MicroMessenger/i.test(ua)?'微信 · ':'')+(/iPhone|iPad|iPod/.test(ua)?'iOS':/Android/.test(ua)?'安卓':'电脑');
+  const me='测试者'+Math.floor(1000+Math.random()*9000);
+  const STEPS=['访问服务器（HTTPS）','建立实时连接（WebSocket）','加入测试房间','消息往返（5 次取中位数）'];
+  let socket=null,heartbeat=null,ref=0,run=0;
+  function row(i,state,note){
+    const li=$('steps').children[i];li.className=state;li.querySelector('b').textContent=state==='ok'?'✓':state==='fail'?'✗':'…';li.querySelector('small').textContent=note||'';
+  }
+  function within(ms,promise,what){return Promise.race([promise,new Promise((_,reject)=>setTimeout(()=>reject(new Error(what+'超时（'+ms/1000+' 秒）')),ms))]);}
+  // Phoenix matches later messages to a channel by join_ref, which the join itself must carry.
+  function send(topic,event,payload,joinRef){const r=String(++ref);socket.send(JSON.stringify({topic,event,payload,ref:r,join_ref:event==='phx_join'?r:joinRef}));return r;}
+  function reply(r){return new Promise((resolve,reject)=>{
+    const on=e=>{const m=JSON.parse(e.data);if(m.ref!==r||m.event!=='phx_reply')return;socket.removeEventListener('message',on);m.payload.status==='ok'?resolve(m.payload):reject(new Error(JSON.stringify(m.payload.response).slice(0,160)));};
+    socket.addEventListener('message',on);
+  });}
+  function showPeers(state){
+    const people=Object.values(state).map(p=>p.metas[0]).filter(Boolean);
+    // Presence payloads come from other clients, so they are inserted as text only.
+    const line=(text,bold)=>{const div=document.createElement('div'),node=document.createElement(bold?'b':'span');node.textContent=text;div.append(node);return div;};
+    $('peers').replaceChildren(line('当前在线的测试者：'+people.length+' 人',true),...people.map(p=>line((p.name===me?'👉 ':'')+String(p.name).slice(0,20)+' · '+String(p.device).slice(0,20))));
+  }
+  async function test(){
+    const mine=++run;socket?.close();clearInterval(heartbeat);ref=0;
+    $('steps').innerHTML=STEPS.map(s=>'<li><b>…</b><span>'+s+'</span><small></small></li>').join('');
+    $('verdict').className='';$('verdict').textContent='测试中…（'+me+' · '+device+'）';$('peers').textContent='';
+    let step=0;
+    try{
+      let t=performance.now();
+      // The auth health check accepts publishable keys and sends CORS headers; the realtime one does neither.
+      const health=await within(10000,fetch(URL_BASE+'/auth/v1/health',{headers:{apikey:KEY}}),'访问');
+      if(!health.ok)throw new Error('HTTP '+health.status);
+      row(0,'ok',Math.round(performance.now()-t)+' ms');step=1;
+      t=performance.now();
+      socket=new WebSocket(URL_BASE.replace('https','wss')+'/realtime/v1/websocket?apikey='+encodeURIComponent(KEY)+'&vsn=1.0.0');
+      await within(10000,new Promise((resolve,reject)=>{socket.onopen=resolve;socket.onerror=()=>reject(new Error('连接被拒绝或中断'));}),'连接');
+      row(1,'ok',Math.round(performance.now()-t)+' ms');step=2;
+      heartbeat=setInterval(()=>send('phoenix','heartbeat',{}),25000);
+      const topic='realtime:xxyz-nettest',presence={};
+      socket.addEventListener('message',e=>{
+        const m=JSON.parse(e.data);if(m.topic!==topic)return;
+        if(m.event==='presence_state')Object.assign(presence,m.payload);
+        else if(m.event==='presence_diff'){for(const k of Object.keys(m.payload.leaves))delete presence[k];Object.assign(presence,m.payload.joins);}
+        else return;
+        if(mine===run)showPeers(presence);
+      });
+      t=performance.now();
+      const join=send(topic,'phx_join',{config:{broadcast:{self:true,ack:true},presence:{key:me},private:false}});
+      await within(10000,reply(join),'加入房间');
+      send(topic,'presence',{type:'presence',event:'track',payload:{name:me,device}},join);
+      row(2,'ok',Math.round(performance.now()-t)+' ms');step=3;
+      const times=[];
+      for(let i=0;i<5;i++){t=performance.now();await within(10000,reply(send(topic,'broadcast',{type:'broadcast',event:'ping',payload:{i}},join)),'消息往返');times.push(performance.now()-t);}
+      times.sort((a,b)=>a-b);row(3,'ok',Math.round(times[2])+' ms');
+      $('verdict').className='ok';$('verdict').textContent='✓ 全部通过，可以联机（'+me+' · '+device+'）';
+    }catch(error){
+      row(step,'fail',error.message);for(let i=step+1;i<STEPS.length;i++)row(i,'','未进行');
+      $('verdict').className='fail';$('verdict').textContent='✗ 连接失败（'+me+' · '+device+'）';
+    }
+  }
+  $('again').addEventListener('click',test);test();
+})();
+</script>
+</body>
+</html>
