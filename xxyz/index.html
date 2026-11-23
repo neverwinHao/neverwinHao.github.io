@@ -3337,11 +3337,13 @@ dialog{width:min(610px,calc(100% - 30px));max-height:85dvh;overflow:auto;padding
   }
   const timer=setTimeout(finish,8000);
   window[callback]=data=>{
-    const count=data?.page_pv;
+    const count=data?.site_pv;
     if(Number.isSafeInteger(count)&&count>=0){value.textContent=count.toLocaleString('zh-CN');container.hidden=false;}
     finish();
   };
-  // Busuanzi page_pv groups visits by page URL; campus hashes share the same page.
+  // Busuanzi keys page_pv by the Referer URL, but WebKit (all iOS browsers, Safari)
+  // trims cross-site Referers to the origin, so Apple visits would land on another
+  // page. site_pv only needs the host; this page is the only one on it that counts.
   script.async=true;script.referrerPolicy='no-referrer-when-downgrade';
   script.src='https://busuanzi.ibruce.info/busuanzi?jsonpCallback='+callback;
   script.onerror=finish;document.head.append(script);
